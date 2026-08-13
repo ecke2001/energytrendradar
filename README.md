@@ -3,8 +3,7 @@ title: Energy Trend Radar Agent (Austria & International)
 emoji: 🌊⚡
 colorFrom: blue
 colorTo: green
-sdk: docker
-app_port: 7860
+sdk: static
 pinned: false
 license: mit
 ---
@@ -19,6 +18,3 @@ Ein KI-gestütztes Monitoring-Agenten-Dashboard für den Energiesektor mit beson
 - **Wasserkraft Spezial-Radar**: Detaillierte KPIs für Pegelstände, Laufwasser- und Speicherkraft-Erzeugung in Österreich.
 - **AI Strategy Advisor**: Interaktiver Assistent für strategische Unternehmens- & Investitionsentscheidungen.
 - **Live Signal Stream**: Aggregierte News von E-Control, APG, Verbund, BMK und internationalen Quellen.
-
-## HF Space Deployment
-Dieses Repository ist mit einem optimierten `Dockerfile` ausgestattet und nutzt Node.js Standalone auf Port `7860`.
