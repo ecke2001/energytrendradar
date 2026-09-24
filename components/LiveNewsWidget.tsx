@@ -42,7 +42,7 @@ export default function LiveNewsWidget() {
 
             <div className="pt-2 border-t border-slate-800/80 flex items-center justify-end">
               <a
-                href={item.link}
+                href={item.link?.startsWith('http://') || item.link?.startsWith('https://') ? item.link : '#'}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1"

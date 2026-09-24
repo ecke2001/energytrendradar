@@ -70,7 +70,7 @@ export default function TrendCard({ trend }: TrendCardProps) {
           <span>Quelle: <strong className="text-slate-300">{trend.source}</strong></span>
           {trend.sourceUrl && (
             <a
-              href={trend.sourceUrl}
+              href={trend.sourceUrl.startsWith('http://') || trend.sourceUrl.startsWith('https://') ? trend.sourceUrl : '#'}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-cyan-400 hover:underline"

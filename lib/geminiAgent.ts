@@ -3,7 +3,7 @@ import { WeeklyReport, ChatMessage } from './types';
 import { MOCK_WEEKLY_REPORTS, MOCK_TRENDS } from './mockData';
 import { generationData, spotPriceData, crossBorderData, renewableShareData, realNewsItems } from './dataLoader';
 
-const apiKey = process.env.GEMINI_API_KEY || process.env.NEXT_PUBLIC_GEMINI_API_KEY || '';
+const apiKey = process.env.GEMINI_API_KEY || '';
 const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
 
 export async function generateWeeklyReportWithAI(targetWeekNumber?: number): Promise<WeeklyReport> {
