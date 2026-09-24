@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Activity, FileText, Bot, Newspaper, Zap, ShieldCheck } from 'lucide-react';
+import { Activity, FileText, Bot, Newspaper, Zap, Clock } from 'lucide-react';
+import { appMetadata } from '@/lib/dataLoader';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,8 +16,10 @@ export default function Navbar() {
     { href: '/feed', label: 'Signal Feed', icon: Newspaper },
   ];
 
+  const updateTime = appMetadata?.lastUpdatedFormatted || 'Heute';
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[var(--border-glass)] bg-[#060b18]/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full border-b border-[var(--border-glass)] bg-[#060b18]/85 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         
         {/* Brand Logo */}
@@ -35,7 +38,7 @@ export default function Navbar() {
                 AUSTRIA & INT
               </span>
             </div>
-            <span className="text-[11px] text-slate-400 block -mt-1">Hydro & Renewables AI Agent</span>
+            <span className="text-[11px] text-slate-400 block -mt-1">Hydro & Renewables AI Monitor</span>
           </div>
         </Link>
 
@@ -61,15 +64,16 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Status Badge */}
+        {/* Status Badges */}
         <div className="flex items-center gap-3">
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Agent Active (Gemini AI)</span>
+          <div className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px] text-slate-300 font-mono">
+            <Clock className="w-3.5 h-3.5 text-cyan-400" />
+            <span>Update: {updateTime}</span>
           </div>
-          <div className="px-2.5 py-1 rounded-lg bg-slate-800/60 border border-slate-700/50 text-[11px] text-slate-300 flex items-center gap-1.5">
-            <ShieldCheck className="w-3.5 h-3.5 text-cyan-400" />
-            <span>HF Space Ready</span>
+
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span className="hidden sm:inline">Live Echtdaten</span>
           </div>
         </div>
 

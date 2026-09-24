@@ -1,136 +1,182 @@
-# Plan: Energy Trend Radar Austria & International Agent App
+# Überarbeitungsplan v2 – Energy Trend Radar Agent
 
-Eine moderne Web-App und KI-Agent zur Analyse aktueller Energie-Trends, mit Fokus auf Österreich, internationale Entwicklungen, Erneuerbare Energien (speziell Wasserkraft) sowie automatisierte wöchentliche Berichte und strategische Handlungsempfehlungen.
-
----
-
-## 1. Übersicht & Zielsetzung
-
-Der **Energy Trend Radar Agent** beobachtet kontinuierlich den Energiesektor mit Schwerpunkt auf:
-- **Österreich**: E-Control, APG, Verbund, BMK, Erneuerbaren-Ausbau-Gesetz (EAG), Netzausbau.
-- **Wasserkraft-Fokus**: Laufwasserkraft, Pumpspeicher-Kapazitäten, Pegelstände, Effizienzsteigerungen und Umweltauflagen.
-- **International**: EU-Regulierungen (RED III), Strombörsen-Trends, Wasserstoff-Entwicklungen.
-- **Wöchentliche Berichte**: Automatisierte Erstellung von detaillierten Markt-Reports mit PDF/Markdown-Export.
-- **Strategische Tipps**: KI-generierte Handlungsempfehlungen für Entscheidungsträger, Investoren und Energie-Experten.
+> **Ziel**: Die bestehende App von statischen Mock-Daten auf **echte, täglich aktualisierte Datenquellen** umstellen und auf Hugging Face Spaces (Static, kostenlos) mit einem **GitHub Actions Cron-Pipeline** für tägliche Auto-Refreshes deployen.
 
 ---
 
-## 2. System-Architektur & Hugging Face Space Kompatibilität
+## 1. Getroffene Architektur-Entscheidungen
 
-Die Architektur ist speziell für die Bereitstellung auf **Hugging Face Spaces (Docker SDK)** optimiert:
-
-| Komponente | Technologie | Beschreibung |
-| :--- | :--- | :--- |
-| **Frontend & Server** | Next.js 14 (App Router, TS) | Reaktives, modernes Fullstack Dashboard |
-| **Styling** | Custom CSS (Hydro Dark Mode) | Glassmorphism, tiefblaue/smaragdgrüne Farbtöne, dynamische Animationen |
-| **Agent / AI Engine** | Google Gemini API Integration | KI-Recherche, Trend-Synthese, wöchentliche Berichte, Strategie-Chatbot |
-| **Visualisierung** | Recharts & SVG Widgets | Wasserkraft-KPIs, Erneuerbaren-Mix, Preisentwicklungen |
-| **Export Engine** | HTML-to-PDF & Markdown | Ein-Klick Export von wöchentlichen Reports |
-| **HF Space Deployment** | Docker SDK (Port 7860) | Custom `Dockerfile` (Multi-stage Node.js build) für HF Space hosting |
-
----
-
-## 3. Features der App
-
-### Dashboard & Trend Radar
-- Live-Metriken zu Erneuerbaren in Österreich (% Wasserkraft, PV, Wind).
-- Interaktive Trend-Cards mit Relevanz-Scores und Quellenangaben.
-- Wasserkraft-Spezialbereich (Laufkraft vs. Speicher, Pumpspeicher-Status).
-
-### Wöchentlicher Report Generator & Archiv
-- KI-gestützte Erstellung strukturierter Wochenberichte.
-- Gliederung: Executive Summary, Österreich-Focus, International, Wasserkraft-Deep-Dive, Strategische Empfehlungen.
-- Historisches Archiv vergangener Berichte.
-- PDF & Markdown Download.
-
-### AI Strategy Advisor (Chatbot)
-- Interaktiver KI-Assistent für strategische Unternehmens- und Marktfragen.
-- Vordefinierte Schnellfragen ("Welche Trends betreffen Wasserkraft in Österreich?", "Welche Förderstrategien sind aktuell?").
-
-### News Signal Stream
-- Nachrichten-Aggregator sortiert nach Datum, Region (AT / EU / Int) und Sparte (Wasserkraft, Solar, Wind, Wasserstoff, Markt).
+| Entscheidung | Ergebnis |
+| :--- | :--- |
+| **Architektur** | Next.js SSR-fähig (Docker) → bleibt Static Export + externer GitHub Actions Aggregator |
+| **Datenquellen** | Alle 4 echten, kostenlosen APIs: Energy-Charts, ENTSO-E, APG Transparency, News-Feeds |
+| **Aktualisierung** | GitHub Actions Cron (täglich 06:00 UTC) → API-Abruf → Build → Auto-Deploy auf HF Spaces |
+| **Deployment** | Hugging Face Static Space (kostenlos, `ecke1985/energy-trend-radar-agent`) |
+| **LLM** | Google Gemini 1.5 Flash (Free Tier) via GitHub Secret `GEMINI_API_KEY` |
+| **Dashboard-Daten** | Erzeugung (Hydro, PV, Wind), Spotpreise, Erneuerbare-Quote, Cross-Border, Speicherfüllstände, News |
+| **Sprache** | Deutsch (durchgängig) |
 
 ---
 
-## 4. Schritt-für-Schritt Umsetzungsplan (Roadmap)
+## 2. Echte Datenquellen im Detail
 
-```mermaid
-graph TD
-    A[Phase 1: Projekt-Setup & Design System] --> B[Phase 2: Data Models & KI Agent Engine]
-    B --> C[Phase 3: Interactive Dashboard & Wasserkraft Widgets]
-    C --> D[Phase 4: Wöchentliche Report Engine & Export]
-    D --> E[Phase 5: AI Strategy Advisor & News Stream]
-    E --> F[Phase 6: Funktionstests & Lokale User-Abnahme]
-    F --> G[Phase 7: Hugging Face Spaces Deployment nach Freigabe]
+### 2.1 Energy-Charts API (Fraunhofer ISE)
+- **URL**: `https://api.energy-charts.info`
+- **Kosten**: Kostenlos (CC BY 4.0), kein API-Key nötig
+- **Rate Limit**: ~2 Requests/Minute
+- **Endpunkte**:
+  - `/public_power?country=at` → Stromerzeugung nach Typ (Hydro Run-of-River, Hydro Pumped Storage, PV, Wind, Biomass)
+  - `/price?country=at&bzn=AT` → Day-Ahead Spotmarktpreise AT
+  - `/ren_share?country=at` → Erneuerbaren-Anteil (%)
+- **Datenformat**: JSON
+- **Nutzen**: Hauptquelle für Dashboard KPIs, Charts und Erzeugungsmix
+
+### 2.2 ENTSO-E Transparency Platform API
+- **URL**: `https://web-api.tp.entsoe.eu/api`
+- **Kosten**: Kostenlos (Token nach E-Mail-Registrierung)
+- **Bidding Zone AT**: `10YAT-APG------L`
+- **Endpunkte**:
+  - Actual Generation per Type (A75)
+  - Cross-Border Physical Flows (A11)
+  - Hydro Reservoir Filling Rate (A72)
+- **Datenformat**: XML (wird serverseitig zu JSON transformiert)
+- **Nutzen**: Cross-Border-Flüsse, Speicherfüllstände, offizielle EU-Daten
+
+### 2.3 APG Transparency (Austrian Power Grid)
+- **URL**: `https://transparency.apg.at/api/v1/`
+- **Kosten**: Kostenlos, kein Token nötig
+- **Endpunkte**:
+  - Generation per type
+  - Grid load & demand
+  - Hydro reservoir levels
+- **Datenformat**: JSON
+- **Nutzen**: Ergänzende/redundante Echtzeit-AT-Daten direkt vom Netzbetreiber
+
+### 2.4 News & Regulierungs-Feeds
+- **BMK (Klimaschutzministerium)**: RSS/Atom Feed von `bmk.gv.at`
+- **E-Control Austria**: News-Seite `e-control.at/news` (HTML Scraping oder RSS)
+- **IEA (International Energy Agency)**: RSS Feed für Renewable Energy News
+- **Nutzen**: Aktuelle Meldungen zu EAG-Förderungen, Netzausbau, EU-Regulierung
+
+---
+
+## 3. Schritt-für-Schritt Umsetzungsplan
+
+### Phase 1: Daten-Aggregator Skript erstellen
+- [ ] **`scripts/fetch-data.ts`** erstellen: Node.js Skript das alle 4 APIs abruft
+  - [ ] Energy-Charts: Erzeugung nach Typ (Hydro Lauf, Hydro Speicher, PV, Wind) der letzten 30 Tage
+  - [ ] Energy-Charts: Day-Ahead Spotpreise AT der letzten 30 Tage
+  - [ ] Energy-Charts: Erneuerbare-Quote AT
+  - [ ] ENTSO-E: Cross-Border-Flüsse AT ↔ Nachbarländer (DE, IT, CH, CZ, HU, SI)
+  - [ ] ENTSO-E/APG: Speicherfüllstände alpine Pumpspeicher
+  - [ ] News-Feeds: BMK, E-Control, IEA aggregieren
+- [ ] Alle Ergebnisse als JSON-Dateien in `data/` Verzeichnis schreiben
+  - `data/generation.json` – Erzeugung nach Typ
+  - `data/prices.json` – Spotmarktpreise
+  - `data/renewable-share.json` – Erneuerbare-Quote
+  - `data/cross-border.json` – Import/Export-Flüsse
+  - `data/hydro-storage.json` – Speicherfüllstände
+  - `data/news.json` – Aggregierte News-Meldungen
+  - `data/meta.json` – Zeitstempel des letzten Updates
+- [ ] Error-Handling & Fallback: Bei API-Ausfall werden vorhandene JSON-Dateien beibehalten
+
+### Phase 2: GitHub Actions CI/CD Pipeline
+- [ ] **`.github/workflows/daily-update.yml`** erstellen
+  - [ ] Cron: `0 6 * * *` (täglich 06:00 UTC / 08:00 MESZ)
+  - [ ] Job 1: `npm ci` → `npx tsx scripts/fetch-data.ts` (Daten abrufen)
+  - [ ] Job 2: `npm run build` (Static Export mit frischen Daten)
+  - [ ] Job 3: Upload `out/` Verzeichnis auf HF Space via `huggingface_hub`
+  - [ ] Secrets: `HF_TOKEN`, `GEMINI_API_KEY`, optional `ENTSOE_TOKEN`
+- [ ] Manueller Trigger (`workflow_dispatch`) für Ad-hoc Updates
+
+### Phase 3: Datenmodelle & Typen aktualisieren
+- [ ] `lib/types.ts` erweitern um neue Interfaces:
+  - `RealGenerationData` – Echtzeit-Erzeugungswerte pro Typ & Stunde
+  - `SpotPriceData` – Day-Ahead Preise mit Timestamps
+  - `CrossBorderFlow` – Import/Export pro Nachbarland
+  - `HydroStorageLevel` – Pumpspeicher-Füllstände in %
+  - `NewsItem` – Aggregierte News-Meldungen mit Quelle & Datum
+- [ ] `lib/mockData.ts` durch `lib/dataLoader.ts` ersetzen → liest aus `data/*.json`
+
+### Phase 4: Dashboard UI überarbeiten
+- [ ] **KPI Header Row**: 4 große Kennzahlen-Karten
+  - Aktuelle Wasserkraft-Erzeugung (GWh heute) – Echte Daten
+  - Erneuerbare-Quote (%) – Echte Daten
+  - Day-Ahead Spotpreis (€/MWh aktuell) – Echte Daten
+  - Netto-Stromexport AT (GWh) – Echte Daten
+- [ ] **Erzeugungsmix Chart** (Recharts): Echte Stunden-/Tagesdaten der letzten 7–30 Tage
+- [ ] **Preis-Chart**: Day-Ahead Spotmarktpreise AT der letzten 30 Tage
+- [ ] **Cross-Border Widget**: Import/Export-Flüsse als Balkendarstellung (DE, IT, CH, CZ, HU, SI)
+- [ ] **Speicherfüllstands-Gauge**: Alpine Pumpspeicher Füllstand in % mit historischem Verlauf
+- [ ] **Live News Feed**: Echte Meldungen von BMK, E-Control, IEA mit Datum & Quellen-Link
+- [ ] **Letztes Update Badge**: Anzeige wann die Daten zuletzt aktualisiert wurden (aus `data/meta.json`)
+
+### Phase 5: Reports & AI Advisor mit echten Daten verbinden
+- [ ] **Report-Generator**: Gemini-Prompt erhält echte Daten aus `data/*.json` als Kontext
+  - Echte Erzeugungswerte, Preise, Speicherfüllstände werden dem Prompt mitgegeben
+  - Ergebnis: Wochenberichte basieren auf **realen Marktdaten**
+- [ ] **AI Strategy Advisor**: Chatbot-Prompt wird mit aktuellen Echtdaten angereichert
+  - Aktuelle Preise, Erzeugung und News werden als Kontext in jede Anfrage eingebettet
+  - Ergebnis: Strategische Antworten sind datenbasiert und aktuell
+
+### Phase 6: Architektur-Anpassungen (Static → Docker-Ready)
+- [ ] `next.config.js`: `output: 'export'` beibehalten für HF Static, aber
+  Docker-Alternative vorbereiten (`output: 'standalone'`) falls PRO-Upgrade gewünscht
+- [ ] `Dockerfile` aktualisiert halten für zukünftiges Docker-Deployment
+- [ ] `.env.example` erstellen mit allen benötigten Umgebungsvariablen
+
+### Phase 7: Funktionstests & Deployment
+- [ ] Daten-Aggregator lokal testen (`npx tsx scripts/fetch-data.ts`)
+- [ ] Build mit echten Daten testen (`npm run build`)
+- [ ] GitHub Actions Workflow testen (manueller Trigger)
+- [ ] Lokale Abnahme durch den User (`npx next dev -p 7860`)
+- [ ] Hugging Face Space mit echten Daten aktualisieren
+- [ ] Dokumentation (README.md, plan.md) finalisieren
+
+---
+
+## 4. Kostenübersicht
+
+| Komponente | Kosten |
+| :--- | :--- |
+| Energy-Charts API | **0 €** (kostenlos, CC BY 4.0) |
+| ENTSO-E API | **0 €** (kostenlos, Token per E-Mail) |
+| APG Transparency | **0 €** (öffentlich) |
+| Gemini 1.5 Flash | **0 €** (Free Tier: 15 RPM, 1M TPM) |
+| GitHub Actions Cron | **0 €** (2.000 Min/Monat im Free Tier) |
+| Hugging Face Static Space | **0 €** (kostenlos) |
+| **Gesamt** | **0 € / Monat** |
+
+---
+
+## 5. Ablaufdiagramm der täglichen Pipeline
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  GitHub Actions Cron (täglich 06:00 UTC)                        │
+│                                                                 │
+│  1. npm ci                                                      │
+│  2. npx tsx scripts/fetch-data.ts                               │
+│     ├── Energy-Charts API → data/generation.json                │
+│     ├── Energy-Charts API → data/prices.json                    │
+│     ├── Energy-Charts API → data/renewable-share.json           │
+│     ├── ENTSO-E API       → data/cross-border.json              │
+│     ├── ENTSO-E/APG API   → data/hydro-storage.json             │
+│     ├── News Feeds        → data/news.json                      │
+│     └── Timestamp         → data/meta.json                      │
+│  3. npm run build         → out/                                │
+│  4. huggingface_hub upload out/ → HF Static Space               │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### Phase 1: Projekt-Setup & Design System
-- Initialisierung von Next.js (TypeScript) im Projektverzeichnis.
-- Erstellung des Hydro Energy CSS Themes (`globals.css`) mit Farbvariablen, Glassmorphism-Karten und Responsive Utilities.
-- Erstellung des `Dockerfile` für Hugging Face Spaces (Port 7860).
-- Aufbau der App-Shell (Navigation, Sidebar, Header, Mobile Drawer).
-
-### Phase 2: Data Models & KI Agent Engine
-- Definition der Datenstrukturen (`TrendItem`, `WeeklyReport`, `HydroMetric`, `StrategyTip`).
-- Integration der KI-Agent-Logik zur Trend-Synthese und wöchentlichen Berichtserstellung.
-- Einrichtung von Mock- & Live-Datenquellen für Österreich & Wasserkraft.
-
-### Phase 3: Interactive Dashboard UI
-- Entwicklung der KPI-Karten (Wasserkraft-Erzeugung, Erneuerbaren-Quote AT, Strompreis Index).
-- Integration interaktiver Charts (Erzeugung nach Quelle, Pumpspeicher-Füllstände).
-- Wasserkraft-Special Widget (Hydro Power Radar).
-
-### Phase 4: Report-Engine & Export
-- Erstellung des Report-Generators ("Neuen Bericht generieren").
-- Strukturierte Darstellung von Wochenberichten mit Filtern.
-- Export-Funktion für PDF & Markdown.
-
-### Phase 5: AI Strategy Advisor & News Stream
-- Interaktiver AI Strategy Advisor Chat mit Antworten auf Fragen zur Energiestrategie.
-- News-Aggregator Feed mit Quellennachweisen.
-
-### Phase 6: Ausführliche Funktionstests & Lokale Abnahme
-- Build & Type Check (`npm run build`).
-- Interaktiver Funktionstest aller App-Bereiche (Report-Erstellung, Chatbot, Export, UI Responsiveness).
-- Lokale Präsentation und Abnahme durch den User.
-
-### Phase 7: Hugging Face Spaces Veröffentlichung (Nach Freigabe)
-- Deployment des Repositories / Docker Containers auf Hugging Face Spaces.
-
 ---
 
-## 5. Vorgehens-Checkliste
+## 6. Vorgehens-Checkliste
 
-- [x] **Phase 1: Foundation Setup**
-  - [x] Next.js + TypeScript Projekt initialisieren (`package.json`, `tsconfig.json`, App Router)
-  - [x] CSS & Hydro Energy Dark Mode Theme einrichten (`globals.css`, Variable-Tokens, Glassmorphism Cards)
-  - [x] Hauptnavigation & App-Layout erstellen (`Navbar`, `Sidebar`, `Footer`)
-  - [x] Hugging Face `Dockerfile` & HF Space Config anlegen (`Dockerfile`, `.dockerignore`)
-
-- [x] **Phase 2: Data Models & KI Agent Engine**
-  - [x] Datenmodelle definieren (`TrendItem`, `WeeklyReport`, `HydroMetric`, `StrategyTip`)
-  - [x] AI Agent Service für Trend-Synthese & wöchentliche Report-Generierung implementieren
-  - [x] Mock- & Live-Datenquellen für Österreich (E-Control/APG/Verbund) & Wasserkraft einbinden
-
-- [x] **Phase 3: Interactive Dashboard UI**
-  - [x] KPI Summary Header (Wasserkraft-Erzeugung, Erneuerbaren-Quote AT, Strompreis Index)
-  - [x] Interactive Charts (Recharts Wasserkraft Erzeugung vs. Verbrauch)
-  - [x] Hydro-Power Deep-Dive Component (Laufkraftwerke vs. Pumpspeicher & Modernisierung)
-  - [x] Dynamic Trend Radar Cards mit Filterfunktionen (Österreich / Int / Erneuerbare)
-
-- [x] **Phase 4: Weekly Report Engine & Export**
-  - [x] Wöchentlicher KI-Bericht Generator ("Neuen Report generieren")
-  - [x] Report-Detailansicht (Österreich, International, Wasserkraft, Strategie-Tipps)
-  - [x] PDF & Markdown Export-Funktionalität
-
-- [x] **Phase 5: AI Strategy Advisor & Live Feed**
-  - [x] Interaktiver Chatbot ("Frag den Energy-Agenten") mit vordefinierten Fragen & KI-Antworten
-  - [x] Live News Feed mit Filtern & Quellenangaben (APG, E-Control, EU Commission, Hydro Review)
-
-- [x] **Phase 6: Function Tests & Local User Abnahme**
-  - [x] Full Build & Type-Check (`npm run build`)
-  - [x] Interaktiver Funktionstest aller App-Bereiche
-  - [x] **Lokale Abnahme durch den User** (Bereit unter http://localhost:7860)
-
-- [ ] **Phase 7: Hugging Face Spaces Release**
-  - [ ] Deployment auf Hugging Face Spaces via Docker SDK (Port 7860) nach User-Freigabe
+- [ ] Phase 1: Daten-Aggregator Skript (`scripts/fetch-data.ts`)
+- [ ] Phase 2: GitHub Actions Pipeline (`.github/workflows/daily-update.yml`)
+- [ ] Phase 3: Datenmodelle & DataLoader (`lib/types.ts`, `lib/dataLoader.ts`)
+- [ ] Phase 4: Dashboard UI Überarbeitung (echte Charts, KPIs, News, Cross-Border)
+- [ ] Phase 5: Reports & AI Advisor mit echten Daten verbinden
+- [ ] Phase 6: Architektur-Konfiguration & Docker-Ready
+- [ ] Phase 7: Funktionstests, lokale Abnahme & Deployment

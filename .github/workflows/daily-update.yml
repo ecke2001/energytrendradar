@@ -1,0 +1,77 @@
+name: Daily Energy Trend Radar Update & HF Deploy
+
+on:
+  schedule:
+    # Runs daily at 06:00 UTC (08:00 CEST)
+    - cron: '0 6 * * *'
+  workflow_dispatch: # Allows manual trigger anytime from GitHub Actions tab
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Node Dependencies
+        run: npm ci || npm install
+
+      - name: Install Python HuggingFace Hub
+        run: pip install huggingface_hub
+
+      - name: Fetch Real Energy & News Data
+        run: npm run fetch-data
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Build Next.js Static Web Application
+        run: npm run build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+
+      - name: Deploy to Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          python3 -c "
+          import os, sys
+          from huggingface_hub import HfApi
+
+          token = os.environ.get('HF_TOKEN')
+          if not token:
+              print('Warning: HF_TOKEN secret is not set, skipping HF upload.')
+              sys.exit(0)
+
+          api = HfApi(token=token)
+          user = api.whoami()['name']
+          space_id = f'{user}/energy-trend-radar-agent'
+
+          print(f'Deploying static build to HF Space: {space_id}...')
+          api.upload_folder(
+              folder_path='out',
+              repo_id=space_id,
+              repo_type='space'
+          )
+          print('Successfully deployed to Hugging Face Spaces!')
+          "
+
+      - name: Commit & Push Updated Data to GitHub
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [Daily Energy Radar]"
+          git add data/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): automated daily energy data update [skip ci]" && git push)
