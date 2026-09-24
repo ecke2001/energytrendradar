@@ -173,10 +173,10 @@
 
 ## 6. Vorgehens-Checkliste
 
-- [ ] Phase 1: Daten-Aggregator Skript (`scripts/fetch-data.ts`)
-- [ ] Phase 2: GitHub Actions Pipeline (`.github/workflows/daily-update.yml`)
-- [ ] Phase 3: Datenmodelle & DataLoader (`lib/types.ts`, `lib/dataLoader.ts`)
-- [ ] Phase 4: Dashboard UI Überarbeitung (echte Charts, KPIs, News, Cross-Border)
-- [ ] Phase 5: Reports & AI Advisor mit echten Daten verbinden
-- [ ] Phase 6: Architektur-Konfiguration & Docker-Ready
-- [ ] Phase 7: Funktionstests, lokale Abnahme & Deployment
+- [x] Phase 1: Daten-Aggregator Skript (`scripts/fetch-data.ts`) – Echte APIs (Energy-Charts, APG, News)
+- [x] Phase 2: GitHub Actions Pipeline (`.github/workflows/daily-update.yml`) – Täglicher Cron um 06:00 UTC
+- [x] Phase 3: Datenmodelle & DataLoader (`lib/types.ts`, `lib/dataLoader.ts`) – Saubere Typisierung & JSON-Loader
+- [x] Phase 4: Dashboard UI Überarbeitung – 4 neue Top-KPIs, Spotpreis-Chart, Cross-Border Flüsse, Live-News
+- [x] Phase 5: Reports & AI Advisor mit echten Daten verbinden – Daten-Kontext in Prompts & Fallback
+- [x] Phase 6: Architektur-Konfiguration & Docker-Ready – `.env.example`, Standalone-Option
+- [x] Phase 7: Funktionstests, lokale Abnahme (`http://localhost:7860`) & Deployment (GitHub + HF Spaces)
