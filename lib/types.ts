@@ -71,6 +71,8 @@ export interface SpotPriceData {
   currentPrice: number;
   currentSlotStart?: number;
   resolutionMinutes?: number;
+  /** Hours covered by avg24h/min24h/max24h (24 normally, less after an unranged fallback). */
+  windowHours?: number;
   avg24h: number;
   min24h: number;
   max24h: number;
@@ -194,6 +196,8 @@ export interface WeeklyReport {
   keyFigures?: Array<{ label: string; value: string }>;
   /** Weekly totals the report is based on (used for week-over-week comparison). */
   totals?: WeeklyStats['totals'];
+  /** Number of days included in `totals` (7 unless days had to be skipped). */
+  totalsDays?: number;
   newsSources?: Array<{ title: string; link: string; source: string; pubDate: string }>;
 }
 
