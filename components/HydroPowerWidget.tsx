@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { generationData, crossBorderData } from '@/lib/dataLoader';
+import { generationData, crossBorderData, formatDataTime } from '@/lib/dataLoader';
 import { Droplets, Activity, Gauge, TrendingUp, Waves, ArrowUpRight, ArrowDownRight } from 'lucide-react';
 
 export default function HydroPowerWidget() {
@@ -31,10 +31,10 @@ export default function HydroPowerWidget() {
             <h2 className="text-xl font-bold text-white flex items-center gap-2">
               Wasserkraft Radar Österreich
               <span className="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-mono">
-                Echtdaten Energy-Charts / APG
+                Echtdaten Energy-Charts
               </span>
             </h2>
-            <p className="text-xs text-slate-400">Echtzeit-Leistung der Laufwasser- & Speicherkraftwerke in Österreich</p>
+            <p className="text-xs text-slate-400">Leistung der Laufwasser- & Speicherkraftwerke in Österreich · Stand {formatDataTime(snapshot?.timestamp)}</p>
           </div>
         </div>
 
@@ -118,7 +118,7 @@ export default function HydroPowerWidget() {
             <Droplets className="w-4 h-4 text-cyan-400" />
             Wasserkraft-Deckungsgrad am aktuellen Gesamtverbrauch Österreichs
           </span>
-          <span className="font-bold text-[#00f2fe]">{hydroShare}% Deckung ({totalHydroMW.toLocaleString('de-AT')} MW von {snapshot?.loadMW.toLocaleString('de-AT')} MW Last)</span>
+          <span className="font-bold text-[#00f2fe]">{hydroShare}% Deckung ({totalHydroMW.toLocaleString('de-AT')} MW von {snapshot?.loadMW?.toLocaleString('de-AT') ?? '–'} MW Last)</span>
         </div>
         <div className="hydro-gauge mb-2">
           <div className="hydro-fill" style={{ width: `${Math.min(100, Math.max(5, hydroShare))}%` }} />

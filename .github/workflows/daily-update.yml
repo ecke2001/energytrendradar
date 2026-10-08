@@ -1,77 +1,130 @@
-name: Daily Energy Trend Radar Update & HF Deploy
+name: Energy Radar Update (Daten, Berichte & HF Deploy)
 
 on:
   schedule:
-    # Runs daily at 06:00 UTC (08:00 CEST)
-    - cron: '0 6 * * *'
-  workflow_dispatch: # Allows manual trigger anytime from GitHub Actions tab
+    # 4x daily, deliberately not on the full hour: GitHub delays runs at :00 by hours.
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: energy-radar-update
+  cancel-in-progress: false
 
 jobs:
   update-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: write # commit refreshed data/ back to the branch
+      issues: write # open / close the pipeline failure issue
+    env:
+      HF_SPACE_ID: ${{ vars.HF_SPACE_ID || 'ecke1985/energy-trend-radar-agent' }}
+      NEXT_TELEMETRY_DISABLED: '1'
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version: 22
+          cache: npm
 
+      - name: Install dependencies (lockfile only)
+        run: npm ci --no-audit --no-fund
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Fetch energy data & news
+        run: npm run fetch-data
+
+      - name: Generate weekly report
+        run: npm run generate-report
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+
+      - name: Validate data files
+        run: npm run validate-data -- --schema
+
+      - name: Build static site
+        id: build
+        run: npm run build
+
+      # Deploy and data commit run independently once the build succeeded,
+      # so a problem in one of them never silently blocks the other.
       - name: Setup Python
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && github.ref == 'refs/heads/main' }}
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.12'
 
-      - name: Install Node Dependencies
-        run: npm ci || npm install
+      # Installed in its own step so package install scripts never see HF_TOKEN.
+      - name: Install Hugging Face Hub client
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && github.ref == 'refs/heads/main' }}
+        run: pip install --disable-pip-version-check --quiet "huggingface_hub==1.33.0"
 
-      - name: Install Python HuggingFace Hub
-        run: pip install huggingface_hub
-
-      - name: Fetch Real Energy & News Data
-        run: npm run fetch-data
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-
-      - name: Build Next.js Static Web Application
-        run: npm run build
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-
-      - name: Deploy to Hugging Face Spaces
+      - name: Deploy to Hugging Face Space
+        if: ${{ !cancelled() && steps.build.outcome == 'success' && github.ref == 'refs/heads/main' }}
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: python scripts/deploy_hf.py
+
+      - name: Commit & push data
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
         run: |
-          python3 -c "
-          import os, sys
-          from huggingface_hub import HfApi
-
-          token = os.environ.get('HF_TOKEN')
-          if not token:
-              print('Warning: HF_TOKEN secret is not set, skipping HF upload.')
-              sys.exit(0)
-
-          api = HfApi(token=token)
-          user = api.whoami()['name']
-          space_id = f'{user}/energy-trend-radar-agent'
-
-          print(f'Deploying static build to HF Space: {space_id}...')
-          api.upload_folder(
-              folder_path='out',
-              repo_id=space_id,
-              repo_type='space'
-          )
-          print('Successfully deployed to Hugging Face Spaces!')
-          "
-
-      - name: Commit & Push Updated Data to GitHub
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action [Daily Energy Radar]"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          git diff --quiet && git diff --staged --quiet || (git commit -m "chore(data): automated daily energy data update [skip ci]" && git push)
+          if git diff --cached --quiet; then
+            echo "Keine Datenänderungen."
+            exit 0
+          fi
+          git commit --quiet -m "chore(data): automatisches Energiedaten-Update $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+          for attempt in 1 2 3; do
+            if git pull --rebase --quiet origin "$GITHUB_REF_NAME" && git push --quiet origin "HEAD:$GITHUB_REF_NAME"; then
+              echo "Daten nach $GITHUB_REF_NAME gepusht."
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 10))
+          done
+          echo "::error::Push der aktualisierten Daten fehlgeschlagen."
+          exit 1
+
+      - name: Check data freshness
+        if: ${{ !cancelled() && steps.build.outcome == 'success' }}
+        run: npm run validate-data -- --freshness
+
+      - name: Open or update failure issue
+        if: ${{ failure() && github.event_name == 'schedule' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Energy Radar: automatisches Update fehlgeschlagen"
+          number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue comment "$number" --repo "$GITHUB_REPOSITORY" --body "Erneut fehlgeschlagen: $RUN_URL"
+          else
+            gh issue create --repo "$GITHUB_REPOSITORY" --title "$title" --body "Der geplante Lauf ist fehlgeschlagen: $RUN_URL
+
+          Die Website zeigt bis zur Behebung einen Hinweis auf veraltete Daten. Häufige Ursachen: fehlendes oder abgelaufenes \`HF_TOKEN\`, Ausfall der Energy-Charts-API, ungültige Daten. Dieses Issue wird nach dem nächsten erfolgreichen Lauf automatisch geschlossen."
+          fi
+
+      - name: Close failure issue after recovery
+        if: ${{ success() && github.event_name == 'schedule' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          title="Energy Radar: automatisches Update fehlgeschlagen"
+          number=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$number" ]; then
+            gh issue close "$number" --repo "$GITHUB_REPOSITORY" --comment "Wieder erfolgreich: $RUN_URL"
+          fi

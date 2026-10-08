@@ -1,0 +1,167 @@
+[
+  {
+    "id": "report-2026-kw41",
+    "weekNumber": 41,
+    "year": 2026,
+    "title": "Wochenbericht KW 41/2026: Wasserkraft 352 GWh, Spotpreis Ø 185,37 €/MWh",
+    "dateGenerated": "2026-10-08",
+    "executiveSummary": "Im Zeitraum 01.10.2026–07.10.2026 erzeugten Österreichs Wasserkraftwerke 352,2 GWh – davon 241 GWh aus Laufwasserkraft und 111,2 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 72 %. Der Day-Ahead-Preis lag im Schnitt bei 185,37 €/MWh (Spanne 0,00 bis 406,00 €/MWh). Österreich war in Summe Netto-Importeur (243,7 GWh).",
+    "austriaHighlights": [
+      "Laufwasserkraft: 241 GWh, Tageswerte zwischen 32,7 GWh (03.10.2026) und 35,7 GWh (06.10.2026).",
+      "Spotmarkt: teuerster Tag 06.10.2026 (Ø 216,65 €/MWh), günstigster Tag 03.10.2026 (Ø 152,72 €/MWh).",
+      "Photovoltaik lieferte 150,1 GWh, Windkraft 136,8 GWh, Gaskraftwerke 144,7 GWh bei einem Verbrauch von 1 054,2 GWh.",
+      "Grenzflüsse aktuell: Saldo +63 MW (Netto-Export); größter Einzelfluss: Deutschland +63 MW (Export)."
+    ],
+    "internationalHighlights": [
+      "Wie der Strompreis für den Norden sinken könnte - und was Dänemark damit zu tun hat (NDR.de, 06.10.2026)",
+      "Der Mann, der Autos ins Stromnetz bringt (AutomotiveIT, 06.10.2026)",
+      "Warum Strom in Deutschland schmutzig und teuer ist – alle Zahlen, täglich aktualisiert (NZZ, 05.10.2026)"
+    ],
+    "hydroDeepDive": {
+      "laufkraftTrend": "Im Mittel 34,4 GWh pro Tag (≈ 1 435 MW). Zweite gegenüber erster Wochenhälfte: +3 % – weitgehend stabil.",
+      "pumpspeicherStatus": "Turbinenbetrieb 111,2 GWh, Pumpbetrieb 46,5 GWh. Die Preisspanne von 406,00 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung.",
+      "projektUpdates": [
+        "Strom wird knapp: diese Batteriespeicher machen Österreichs Firmen unabhängig (Wirtschaftsnachrichten Süd, 06.10.2026)",
+        "Flaute bei Wasserkraft: Österreichs Stromimporte legen stark zu (Kleine Zeitung, 02.10.2026)",
+        "Das Erneuerbaren-Ausbau-Beschleunigungsgesetz (EABG) (WKO.at, 01.10.2026)"
+      ]
+    },
+    "strategicTips": [
+      {
+        "topic": "Preisspitzen bedienen",
+        "recommendation": "Bei einer Preisspanne von 406,00 €/MWh (Minimum 0,00, Maximum 406,00 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "targetGroup": "Erzeuger"
+      },
+      {
+        "topic": "Wert von Flexibilität",
+        "recommendation": "Preisspanne 406,00 €/MWh und 46,5 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "targetGroup": "Investoren"
+      },
+      {
+        "topic": "Grenzkuppelstellen beobachten",
+        "recommendation": "Österreich war Netto-Importeur (243,7 GWh). Größter aktueller Fluss: Deutschland (+63 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "targetGroup": "Netzbetreiber"
+      }
+    ],
+    "periodStart": "2026-10-01",
+    "periodEnd": "2026-10-07",
+    "dataAsOf": "2026-10-08T04:45:00.000Z",
+    "generatedAt": "2026-10-08T07:25:22.866Z",
+    "generatedBy": "data",
+    "keyFigures": [
+      {
+        "label": "Wasserkraft gesamt (7 Tage)",
+        "value": "352,2 GWh"
+      },
+      {
+        "label": "Laufwasserkraft",
+        "value": "241 GWh"
+      },
+      {
+        "label": "Speicher- & Pumpspeicherturbinen",
+        "value": "111,2 GWh"
+      },
+      {
+        "label": "Pumpenergie (Speicherung)",
+        "value": "46,5 GWh"
+      },
+      {
+        "label": "Photovoltaik / Wind",
+        "value": "150,1 / 136,8 GWh"
+      },
+      {
+        "label": "Erneuerbaren-Anteil an der Erzeugung",
+        "value": "72 %"
+      },
+      {
+        "label": "Day-Ahead Ø (Min / Max)",
+        "value": "185,37 €/MWh (0,00 / 406,00)"
+      },
+      {
+        "label": "Stunden mit Negativpreisen",
+        "value": "0 h"
+      },
+      {
+        "label": "Netto-Import (7 Tage)",
+        "value": "243,7 GWh"
+      },
+      {
+        "label": "Momentaufnahme Wasserkraft",
+        "value": "3 020 MW (39 % der Last)"
+      },
+      {
+        "label": "Momentaufnahme Spotpreis",
+        "value": "209,18 €/MWh"
+      }
+    ],
+    "totals": {
+      "laufkraftGWh": 241,
+      "speicherGWh": 111.2,
+      "pumpenGWh": 46.5,
+      "pvGWh": 150.1,
+      "windGWh": 136.8,
+      "biomasseGWh": 30.6,
+      "gasGWh": 144.7,
+      "loadGWh": 1054.2,
+      "renewableGWh": 599.8,
+      "totalGenerationGWh": 835.3,
+      "renewableSharePercent": 72,
+      "priceAvg": 185.37,
+      "priceMin": 0,
+      "priceMax": 406,
+      "negativePriceHours": 0,
+      "netExportGWh": -243.7
+    },
+    "newsSources": [
+      {
+        "title": "Stromimport nähert sich Wert von 2025",
+        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1waEpGWXZwdlZMTEMtU1JvRHpQd0t5SlFxREVUcng0RWQ5a0ZwZkZqV0pVUXZPemxFYXRkeUswbHZwTXFkbHBfdGpwR3hOajVROHpONUJpb1MzVmtFRlBNckxtNHFkc3I2NVdCSm4zNGQ5TFUwNm96b3NKZDZoUQ?oc=5",
+        "source": "Elektrobranche",
+        "pubDate": "2026-10-07"
+      },
+      {
+        "title": "Führungskräfte unter strom",
+        "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5laTJkeFJfc2NtS2RjNUdFTUhMMW1hZnNHVlVWZjBCSHhUZDlvLWsyQkpTR3VhVndYd1E4YW1ybTN4LUxfVFlMbm5OZ19SRWtrMDlTY0RvQnozZTFDWi05SkR3NzVqeGxKQ2c?oc=5",
+        "source": "Forbes Austria",
+        "pubDate": "2026-10-07"
+      },
+      {
+        "title": "EAG-Bericht 2026: Die Energiewende gerät ins Stocken",
+        "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBmeU13VTFaTmc4TGtLRFFJbmYzRUNmR21lTkp5WFFfSTh5b1N5ZVVlTXpvRHY5LU02dUdELTNUelZQaGFLdXF5d29RRko5UC1SbEdNS0xCMW81TjR1NkRQREx0VlFRSU1ZRVZCQ2ZHOXlkUjQ4U2ptQnpn?oc=5",
+        "source": "Elektrobranche",
+        "pubDate": "2026-10-07"
+      },
+      {
+        "title": "ee-news.ch",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1U4T2IwbkZKeC1TWklQVFhTYVM3RUFHZWd0cC04ZzFhTkxjRGxlQ29lczV2MkFJTFZYVE1HdnN4b1lsUXB6aGR0UXpUbV9hUU93UndWcDdfclVFVGtqQ3d1b0IxVzFDc0dOWnhqZURVOUEzQ2c4MDlFRkowMDJmSGxXMmxJZkhTOUdZOG12MDZfZlVPUUZXYldQSTFJTEFQcWw3Ny1LOGhpYzlMZm5aS3Jn?oc=5",
+        "source": "ee-news.ch",
+        "pubDate": "2026-10-07"
+      },
+      {
+        "title": "Strom wird knapp: diese Batteriespeicher machen Österreichs Firmen unabhängig",
+        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNakwxZFQtSVNnM2dzczBhOGpwbUFmZXUzYnBNdFVXRVIxeDNQWVVsUHdxSk5WNm52NXloS0pmSDlxMklKdm12R1JmNHJIaGxYV0podFhNZ3REZlhvYXFZb3RGa3BWLWhtRktHemhJeHA1WVdwRGp2M09YUlk3MzdrcnBKRUROaW1GaEV1cEN6Qk5ranZhTUdpNVA1dkQ3N29YU3NJVGlHWXZTNjU4NERWbVd6bVhrMHM?oc=5",
+        "source": "Wirtschaftsnachrichten Süd",
+        "pubDate": "2026-10-06"
+      },
+      {
+        "title": "REPORT Mehrwert für Manager – Österreichs grüne Energiepolitik",
+        "link": "https://news.google.com/rss/articles/CBMickFVX3lxTFBYWHpUbThSNkVoUjNLb0R5bllQWldLRTEzUXZEYUxEYzNnVHk1WkNEV0lFZWhWWUNqakZGV3BhcnRNcWZoa01BdnBHQVkxd3pRLTdBVFBjZXFYQ19fR2l6T0NZOEc3U3MyZkJyLU9uYk9rZw?oc=5",
+        "source": "Report Verlag",
+        "pubDate": "2026-10-06"
+      },
+      {
+        "title": "Energiegemeinschaft Zwentendorf: Regionaler PV-Strom",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPLXZkT3JXa2lDVmpvbjB1U2xzeU5lejNYY2dyOUFGcTRCVmlScFJvTUo1QjVhLTRQVTZEUEFyTkNQQkpvTWo1cjMtb0E5Zko1ZWFjbXRHYWQ0VDdRU3QzRG9uTS1fVjFRWURyX1dHWS1iQjlGb3d2VnlWZ0VjWTBONWJxMk85endhc0gweHZFQXFZS2lMd3lDS2p0SXNfeTZ3Yk4w?oc=5",
+        "source": "austria.com",
+        "pubDate": "2026-10-06"
+      },
+      {
+        "title": "Stromnetz-Reform: Präsentation verschoben, Winterrabatt wackelt",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQM3BJdnV0ZWRhamY1RTEwYzhKaFQ2UVIwUFcyR04wSk1QVThzY2luNU9FdjItQkJjVjE1VEdkN3RCNUkyUkZnNjhNSms2Z3FaWEd3bnVndV9yRGpIcWpQRkx1QW5TTWgwcXNWaUhaNkRpdnduRlh4aVljbGlBQ1RKNnMyZHQ4VkRfM3FjaUJCNEtFbktMRHUwNHVuaGtockJKTnE4ZFJmbV9LVWQx?oc=5",
+        "source": "Kleine Zeitung",
+        "pubDate": "2026-10-06"
+      }
+    ]
+  }
+]

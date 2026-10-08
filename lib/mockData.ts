@@ -1,4 +1,4 @@
-import { TrendItem, HydroMetric, WeeklyReport } from './types';
+import { TrendItem } from './types';
 
 export const MOCK_TRENDS: TrendItem[] = [
   {
@@ -109,62 +109,5 @@ export const MOCK_TRENDS: TrendItem[] = [
       isPositive: true
     },
     keyTakeaway: 'Grundlastfähiger Wasserstoff aus Flusskraftwerken bietet stabile Industriepreise unabhängig von Wind/Sonne.'
-  }
-];
-
-export const MOCK_HYDRO_METRICS: HydroMetric[] = [
-  { date: 'KW 28', laufkraftGWh: 820, pumpspeicherGWh: 340, pegelstandIndex: 88, oesterreichExportNettoGWh: 180 },
-  { date: 'KW 29', laufkraftGWh: 850, pumpspeicherGWh: 310, pegelstandIndex: 92, oesterreichExportNettoGWh: 220 },
-  { date: 'KW 30', laufkraftGWh: 890, pumpspeicherGWh: 390, pegelstandIndex: 95, oesterreichExportNettoGWh: 310 },
-  { date: 'KW 31', laufkraftGWh: 860, pumpspeicherGWh: 420, pegelstandIndex: 90, oesterreichExportNettoGWh: 280 },
-  { date: 'KW 32', laufkraftGWh: 910, pumpspeicherGWh: 460, pegelstandIndex: 94, oesterreichExportNettoGWh: 350 },
-  { date: 'KW 33 (Aktuell)', laufkraftGWh: 930, pumpspeicherGWh: 490, pegelstandIndex: 96, oesterreichExportNettoGWh: 390 },
-];
-
-export const MOCK_WEEKLY_REPORTS: WeeklyReport[] = [
-  {
-    id: 'report-kw-33-2026',
-    weekNumber: 33,
-    year: 2026,
-    title: 'Wochenbericht KW 33/2026: Hydro-Hochkonjunktur & Strategische Speicherarbitrage',
-    dateGenerated: '2026-08-12',
-    executiveSummary: 'Die Kalenderwoche 33 zeigt ein starkes hydrologisches Jahr in Österreich. Dank stabiler Pegelstände an Donau, Inn und Enns lag die Laufwasserkraft-Erzeugung 12% über dem 5-Jahres-Mittel. Gleichzeitig profitierten Pumpspeicherkraftwerke von hohen Preisspreizungen zwischen sonnenreichen Mittagsstunden (Negativpreise) und Abendspitzen.',
-    austriaHighlights: [
-      'Erneuerbaren-Anteil an der Gesamterzeugung in AT stieg temporär auf 91,4%.',
-      'APG meldet stabilen Exportüberschuss von 390 GWh in Nachbarländer.',
-      'Klimaschutzministerium stellt zusätzliche Mittel für Fluss-Renaturierung & Fischaufstiegshilfen bei Wasserkraftwerken bereit.'
-    ],
-    internationalHighlights: [
-      'EU-Kommission genehmigt österreichische Beihilfen für Wasserkraft-Modernisierung im Rahmen des EAG.',
-      'Schweizer Strombörse verzeichnet steigende Nachfrage nach alpiner flexibler Speicherenergie.',
-      'Globaler Wasserkraft-Report verzeichnet 32 GW Zubau weltweit, mit Führenden Regionen Nordamerika und Skandinavien.'
-    ],
-    hydroDeepDive: {
-      laufkraftTrend: 'Laufwasserkraftwerke arbeiten aktuell im Volllastbereich. Die Donaukraftwerke lieferten in KW 33 im Schnitt 510 MW Dauerleistung.',
-      pumpspeicherStatus: 'Füllstand der alpinen Jahresspeicher (Kaprun, Schopsdorf, Tauern) liegt bei 96% der Höchstkapazität.',
-      pegelstandAnalyse: 'Schmelzwasser und sommerliche Niederschläge garantieren auch für KW 34 hervorragende Erzeugungsvoraussetzungen.',
-      projektUpdates: [
-        'Limberg III: Rohbauarbeiten am unterirdischen Maschinenkavernen-Komplex zu 85% abgeschlossen.',
-        'Kraftwerk Toggenburg: Neue Kaplan-Turbinen erfolgreich synchronisiert.'
-      ]
-    },
-    strategicTips: [
-      {
-        topic: 'Speicher-Flexibilität nutzen',
-        recommendation: 'Betreiber von Pumpspeichern sollten automatisierte Algorithmen für die Tag-Nacht-Arbitrage verschärfen, um Negativpreis-Fenster zur günstigen Befüllung voll auszuschöpfen.',
-        targetGroup: 'Erzeuger'
-      },
-      {
-        topic: 'EAG-Förderfenster sichern',
-        recommendation: 'Investoren sollten Anträge für Repowering-Projekte vor der nächsten Tranche im Herbst finalisieren, da vereinfachte UVP-Kriterien greifen.',
-        targetGroup: 'Investoren'
-      },
-      {
-        topic: 'Engpassmanagement & Redispatch',
-        recommendation: 'Netzbetreiber im Westen Österreichs sollten verstärkt regionale Hydro-Flexibilitäten zur Entlastung der 380-kV-Leitung einplanen.',
-        targetGroup: 'Netzbetreiber'
-      }
-    ],
-    featuredTrends: MOCK_TRENDS.slice(0, 4)
   }
 ];

@@ -1,17 +1,42 @@
 {
-  "currentPercent": 0,
+  "currentPercent": 72,
   "trend": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
+    84,
+    72,
+    76,
+    74,
+    62,
+    64,
+    71
+  ],
+  "daily": [
+    {
+      "date": "2026-10-01",
+      "percent": 84
+    },
+    {
+      "date": "2026-10-02",
+      "percent": 72
+    },
+    {
+      "date": "2026-10-03",
+      "percent": 76
+    },
+    {
+      "date": "2026-10-04",
+      "percent": 74
+    },
+    {
+      "date": "2026-10-05",
+      "percent": 62
+    },
+    {
+      "date": "2026-10-06",
+      "percent": 64
+    },
+    {
+      "date": "2026-10-07",
+      "percent": 71
+    }
   ]
 }

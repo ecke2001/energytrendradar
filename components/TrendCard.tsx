@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { TrendItem } from '@/lib/types';
+import { safeExternalUrl } from '@/lib/safeUrl';
 import { ExternalLink, ArrowUpRight, ArrowDownRight, Layers, Sparkles } from 'lucide-react';
 
 interface TrendCardProps {
@@ -68,9 +69,9 @@ export default function TrendCard({ trend }: TrendCardProps) {
         </div>
         <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
           <span>Quelle: <strong className="text-slate-300">{trend.source}</strong></span>
-          {trend.sourceUrl && (
+          {safeExternalUrl(trend.sourceUrl) && (
             <a
-              href={trend.sourceUrl.startsWith('http://') || trend.sourceUrl.startsWith('https://') ? trend.sourceUrl : '#'}
+              href={safeExternalUrl(trend.sourceUrl) as string}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-cyan-400 hover:underline"
