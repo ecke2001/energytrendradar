@@ -5,17 +5,17 @@
     "year": 2026,
     "title": "Wochenbericht KW 41/2026: Wasserkraft 352 GWh, Spotpreis Ø 185,37 €/MWh",
     "dateGenerated": "2026-10-08",
-    "executiveSummary": "Im Zeitraum 01.10.2026–07.10.2026 erzeugten Österreichs Wasserkraftwerke 352,2 GWh – davon 241 GWh aus Laufwasserkraft und 111,2 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 72 %. Der Day-Ahead-Preis lag im Schnitt bei 185,37 €/MWh (Spanne 0,00 bis 406,00 €/MWh). Österreich war in Summe Netto-Importeur (243,5 GWh).",
+    "executiveSummary": "Im Zeitraum 01.10.2026–07.10.2026 erzeugten Österreichs Wasserkraftwerke 352,2 GWh – davon 241 GWh aus Laufwasserkraft und 111,2 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 72 %. Der Day-Ahead-Preis lag im Schnitt bei 185,37 €/MWh (Spanne 0,00 bis 406,00 €/MWh). Österreich war in Summe Netto-Importeur (243,7 GWh).",
     "austriaHighlights": [
       "Laufwasserkraft: 241 GWh, Tageswerte zwischen 32,7 GWh (03.10.2026) und 35,7 GWh (06.10.2026).",
       "Spotmarkt: teuerster Tag 06.10.2026 (Ø 216,65 €/MWh), günstigster Tag 03.10.2026 (Ø 152,72 €/MWh).",
       "Photovoltaik lieferte 150,1 GWh, Windkraft 136,8 GWh, Gaskraftwerke 144,7 GWh bei einem Verbrauch von 1 054,2 GWh.",
-      "Grenzflüsse aktuell: Saldo -1 457 MW (Netto-Import); größter Einzelfluss: Tschechien -2 114 MW (Import)."
+      "Grenzflüsse aktuell: Saldo +63 MW (Netto-Export); größter Einzelfluss: Deutschland +63 MW (Export)."
     ],
     "internationalHighlights": [
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 06.10.2026)",
       "Wie der Strompreis für den Norden sinken könnte - und was Dänemark damit zu tun hat (NDR.de, 06.10.2026)",
-      "Der Mann, der Autos ins Stromnetz bringt (AutomotiveIT, 06.10.2026)"
+      "Der Mann, der Autos ins Stromnetz bringt (AutomotiveIT, 06.10.2026)",
+      "Warum Strom in Deutschland schmutzig und teuer ist – alle Zahlen, täglich aktualisiert (NZZ, 05.10.2026)"
     ],
     "hydroDeepDive": {
       "laufkraftTrend": "Im Mittel 34,4 GWh pro Tag (≈ 1 435 MW). Zweite gegenüber erster Wochenhälfte: +3 % – weitgehend stabil.",
@@ -40,14 +40,14 @@
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (243,5 GWh). Größter aktueller Fluss: Tschechien (-2 114 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (243,7 GWh). Größter aktueller Fluss: Deutschland (+63 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
     "periodStart": "2026-10-01",
     "periodEnd": "2026-10-07",
-    "dataAsOf": "2026-10-08T05:45:00.000Z",
-    "generatedAt": "2026-10-08T08:31:59.553Z",
+    "dataAsOf": "2026-10-08T04:45:00.000Z",
+    "generatedAt": "2026-10-08T07:25:22.866Z",
     "generatedBy": "data",
     "keyFigures": [
       {
@@ -84,15 +84,15 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "243,5 GWh"
+        "value": "243,7 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "3 267 MW (40 % der Last)"
+        "value": "3 020 MW (39 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "162,28 €/MWh"
+        "value": "209,18 €/MWh"
       }
     ],
     "totals": {
@@ -111,9 +111,8 @@
       "priceMin": 0,
       "priceMax": 406,
       "negativePriceHours": 0,
-      "netExportGWh": -243.5
+      "netExportGWh": -243.7
     },
-    "totalsDays": 7,
     "newsSources": [
       {
         "title": "Stromimport nähert sich Wert von 2025",
@@ -131,6 +130,12 @@
         "title": "EAG-Bericht 2026: Die Energiewende gerät ins Stocken",
         "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBmeU13VTFaTmc4TGtLRFFJbmYzRUNmR21lTkp5WFFfSTh5b1N5ZVVlTXpvRHY5LU02dUdELTNUelZQaGFLdXF5d29RRko5UC1SbEdNS0xCMW81TjR1NkRQREx0VlFRSU1ZRVZCQ2ZHOXlkUjQ4U2ptQnpn?oc=5",
         "source": "Elektrobranche",
+        "pubDate": "2026-10-07"
+      },
+      {
+        "title": "ee-news.ch",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ1U4T2IwbkZKeC1TWklQVFhTYVM3RUFHZWd0cC04ZzFhTkxjRGxlQ29lczV2MkFJTFZYVE1HdnN4b1lsUXB6aGR0UXpUbV9hUU93UndWcDdfclVFVGtqQ3d1b0IxVzFDc0dOWnhqZURVOUEzQ2c4MDlFRkowMDJmSGxXMmxJZkhTOUdZOG12MDZfZlVPUUZXYldQSTFJTEFQcWw3Ny1LOGhpYzlMZm5aS3Jn?oc=5",
+        "source": "ee-news.ch",
         "pubDate": "2026-10-07"
       },
       {
@@ -155,12 +160,6 @@
         "title": "Stromnetz-Reform: Präsentation verschoben, Winterrabatt wackelt",
         "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQM3BJdnV0ZWRhamY1RTEwYzhKaFQ2UVIwUFcyR04wSk1QVThzY2luNU9FdjItQkJjVjE1VEdkN3RCNUkyUkZnNjhNSms2Z3FaWEd3bnVndV9yRGpIcWpQRkx1QW5TTWgwcXNWaUhaNkRpdnduRlh4aVljbGlBQ1RKNnMyZHQ4VkRfM3FjaUJCNEtFbktMRHUwNHVuaGtockJKTnE4ZFJmbV9LVWQx?oc=5",
         "source": "Kleine Zeitung",
-        "pubDate": "2026-10-06"
-      },
-      {
-        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
-        "source": "DIE ZEIT",
         "pubDate": "2026-10-06"
       }
     ]
