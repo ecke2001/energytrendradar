@@ -33,6 +33,7 @@ test('RSS items are parsed, cleaned and the source suffix removed', () => {
     ${item('<![CDATA[Neues Pumpspeicherkraftwerk - ORF]]>', 'https://news.google.com/a')}
     ${item('Böser Link', 'javascript:alert(document.cookie)')}
     ${item('Ohne Datum', 'https://news.google.com/b', 'kein Datum')}
+    ${item('ee-news.ch', 'https://news.google.com/c', undefined, 'ee-news.ch')}
   </channel></rss>`;
   const items = parseRssItems(xml, 'Wasserkraft');
   assert.equal(items.length, 1);

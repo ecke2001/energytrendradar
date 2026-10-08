@@ -87,11 +87,13 @@ export function computeKeyFigures(input: ReportInput): Array<{ label: string; va
   return figures;
 }
 
-function newsFor(input: ReportInput, categories: string[], pattern?: RegExp): NewsItem[] {
-  return input.news
-    .filter(n => input.weekly ? n.pubDate >= input.weekly.periodStart : true)
-    .filter(n => categories.includes(n.category || '') || (pattern ? pattern.test(n.title) : false));
+/** News of the report period in the given categories (category order = priority). */
+function newsFor(input: ReportInput, categories: string[]): NewsItem[] {
+  const inPeriod = input.news.filter(n => (input.weekly ? n.pubDate >= input.weekly.periodStart : true));
+  return categories.flatMap(c => inPeriod.filter(n => n.category === c));
 }
+
+const PROJECT_PATTERN = /kraftwerk|pumpspeicher|speicher|wasserkraft|ausbau|projekt|leitung|umspannwerk|netzausbau/i;
 
 export function selectNewsSources(input: ReportInput): NonNullable<WeeklyReport['newsSources']> {
   return input.news.slice(0, 8).map(n => ({ title: n.title, link: n.link, source: n.source, pubDate: n.pubDate }));
@@ -188,7 +190,7 @@ export function buildDataReport(input: ReportInput): WeeklyReport {
   const prevLauf = prevTotals ? prevTotals.laufkraftGWh : null;
   const pegelstandAnalyse = `Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung${t && prevLauf !== null ? `: ${num(t.laufkraftGWh)} GWh gegenüber ${num(prevLauf)} GWh im Vorbericht (${signed(pct(t.laufkraftGWh, prevLauf))} %).` : '.'}`;
 
-  const projectNews = newsFor(input, ['Wasserkraft'], /kraftwerk|pumpspeicher|speicher|wasserkraft|ausbau/i).slice(0, 3);
+  const projectNews = newsFor(input, ['Wasserkraft', 'Österreich', 'Markt', 'EU']).filter(n => PROJECT_PATTERN.test(n.title)).slice(0, 3);
   const projektUpdates = projectNews.length > 0
     ? projectNews.map(headline)
     : ['Keine neuen Projektmeldungen in den Nachrichten des Berichtszeitraums.'];

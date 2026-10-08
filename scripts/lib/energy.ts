@@ -322,6 +322,16 @@ export function crossBorderFactor(raw: EcCrossBorder): { factor: number; unit: '
 
 const isSum = (name: string) => /^sum$/i.test(name.trim());
 
+/**
+ * Energy-Charts pads hours that are not yet published with 0 instead of null.
+ * Real AC border flows are practically never exactly 0, so a slot only counts
+ * if at least half of the borders report a non-zero value.
+ */
+function isPublishedSlot(neighbors: EcSeries[], i: number): boolean {
+  const reported = neighbors.filter(c => isFiniteNumber(c.data[i]) && c.data[i] !== 0).length;
+  return reported >= Math.ceil(neighbors.length / 2);
+}
+
 export function transformCrossBorder(raw: EcCrossBorder, nowSec: number): CrossBorderData {
   const ts = raw.unix_seconds;
   const neighbors = raw.countries.filter(c => !isSum(c.name));
@@ -329,12 +339,9 @@ export function transformCrossBorder(raw: EcCrossBorder, nowSec: number): CrossB
   if (neighbors.length === 0) throw new Error('cbpf: no neighbour countries');
   const { factor, unit } = crossBorderFactor(raw);
 
-  // Newest slot where at least half of the borders report a value.
-  const needed = Math.ceil(neighbors.length / 2);
   let idx = -1;
   for (let i = ts.length - 1; i >= 0; i--) {
-    if (ts[i] > nowSec) continue;
-    if (neighbors.filter(c => isFiniteNumber(c.data[i])).length >= needed) { idx = i; break; }
+    if (ts[i] <= nowSec && isPublishedSlot(neighbors, i)) { idx = i; break; }
   }
   if (idx < 0) throw new Error('cbpf: no valid data point');
 
@@ -444,7 +451,7 @@ export function aggregateNetExportDaily(raw: EcCrossBorder, nowSec: number): Map
   const sum = raw.countries.find(c => isSum(c.name));
   const out = new Map<string, number>();
   for (let i = 0; i < ts.length; i++) {
-    if (ts[i] > nowSec) continue;
+    if (ts[i] > nowSec || !isPublishedSlot(neighbors, i)) continue;
     let net: number | null = null;
     if (sum && isFiniteNumber(sum.data[i])) net = -(sum.data[i] as number) * factor;
     else if (neighbors.every(c => isFiniteNumber(c.data[i]))) net = neighbors.reduce((a, c) => a - (c.data[i] as number) * factor, 0);

@@ -13,18 +13,18 @@
       "Grenzflüsse aktuell: Saldo +63 MW (Netto-Export); größter Einzelfluss: Deutschland +63 MW (Export)."
     ],
     "internationalHighlights": [
-      "Energiegemeinschaft Zwentendorf: Regionaler PV-Strom (austria.com, 06.10.2026)",
-      "Stromnetz-Reform: Präsentation verschoben, Winterrabatt wackelt (Kleine Zeitung, 06.10.2026)",
-      "Wie der Strompreis für den Norden sinken könnte - und was Dänemark damit zu tun hat (NDR.de, 06.10.2026)"
+      "Wie der Strompreis für den Norden sinken könnte - und was Dänemark damit zu tun hat (NDR.de, 06.10.2026)",
+      "Der Mann, der Autos ins Stromnetz bringt (AutomotiveIT, 06.10.2026)",
+      "Warum Strom in Deutschland schmutzig und teuer ist – alle Zahlen, täglich aktualisiert (NZZ, 05.10.2026)"
     ],
     "hydroDeepDive": {
       "laufkraftTrend": "Im Mittel 34,4 GWh pro Tag (≈ 1 435 MW). Zweite gegenüber erster Wochenhälfte: +3 % – weitgehend stabil.",
       "pumpspeicherStatus": "Turbinenbetrieb 111,2 GWh, Pumpbetrieb 46,5 GWh. Die Preisspanne von 406,00 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
       "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung.",
       "projektUpdates": [
-        "Stromimport nähert sich Wert von 2025 (Elektrobranche, 07.10.2026)",
-        "Führungskräfte unter strom (Forbes Austria, 07.10.2026)",
-        "EAG-Bericht 2026: Die Energiewende gerät ins Stocken (Elektrobranche, 07.10.2026)"
+        "Strom wird knapp: diese Batteriespeicher machen Österreichs Firmen unabhängig (Wirtschaftsnachrichten Süd, 06.10.2026)",
+        "Flaute bei Wasserkraft: Österreichs Stromimporte legen stark zu (Kleine Zeitung, 02.10.2026)",
+        "Das Erneuerbaren-Ausbau-Beschleunigungsgesetz (EABG) (WKO.at, 01.10.2026)"
       ]
     },
     "strategicTips": [
@@ -47,7 +47,7 @@
     "periodStart": "2026-10-01",
     "periodEnd": "2026-10-07",
     "dataAsOf": "2026-10-08T04:45:00.000Z",
-    "generatedAt": "2026-10-08T07:21:58.569Z",
+    "generatedAt": "2026-10-08T07:25:22.866Z",
     "generatedBy": "data",
     "keyFigures": [
       {

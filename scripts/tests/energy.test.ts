@@ -156,6 +156,21 @@ test('cross-border: GW are converted, sign flipped to export-positive, null tail
   assert.equal(cb.neighbors.some(n => n.country === 'sum'), false);
 });
 
+test('cross-border: hours padded with 0 instead of null are not treated as data', () => {
+  // Real Energy-Charts behaviour: unpublished hours come as 0, sometimes with one border already filled.
+  const raw = crossBorderFixture();
+  const lastReal = raw.unix_seconds.filter(t => t <= NOW - 2 * 3600).length - 1;
+  raw.countries = raw.countries.map(c => ({
+    ...c,
+    data: c.data.map((v, i) => (i > lastReal && raw.unix_seconds[i] <= NOW ? (c.name === 'Germany' ? -0.063 : 0) : v)),
+  }));
+  const cb = transformCrossBorder(raw, NOW);
+  assert.equal(cb.timestamp, raw.unix_seconds[lastReal]);
+  assert.equal(cb.netExportMW, 1500);
+  const daily = aggregateNetExportDaily(raw, NOW);
+  assert.equal(daily.get('2026-10-07'), 36);
+});
+
 test('cross-border: MW input is left as is', () => {
   const raw = crossBorderFixture();
   raw.countries = raw.countries.map(c => ({ ...c, data: c.data.map(v => (v === null ? null : v * 1000)) }));

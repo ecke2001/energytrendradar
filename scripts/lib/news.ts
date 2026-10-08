@@ -82,7 +82,8 @@ export function parseRssItems(xml: string, category: NewsCategory): NewsItem[] {
     // Google News appends " - <Quelle>" to every title.
     const suffix = ` - ${source}`;
     if (title.endsWith(suffix)) title = title.slice(0, -suffix.length).trim();
-    if (!title) continue;
+    // Some feed entries carry only the publisher name as title.
+    if (!title || title.toLowerCase() === source.toLowerCase()) continue;
 
     items.push({
       title,
