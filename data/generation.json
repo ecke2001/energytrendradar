@@ -1,33 +1,21 @@
 {
   "resolutionMinutes": 15,
   "latestSnapshot": {
-    "timestamp": 1791434700,
-    "date": "2026-10-08T04:45:00.000Z",
-    "laufkraftMW": 1520,
-    "speicherMW": 1499,
+    "timestamp": 1791438300,
+    "date": "2026-10-08T05:45:00.000Z",
+    "laufkraftMW": 1539,
+    "speicherMW": 1728,
     "pumpspeicherPumpenMW": 0,
-    "totalHydroMW": 3020,
-    "loadMW": 7652,
-    "hydroSharePercent": 39,
+    "totalHydroMW": 3267,
+    "loadMW": 8078,
+    "hydroSharePercent": 40,
     "renewableSharePercent": 72,
-    "pvMW": 16,
-    "windMW": 1428,
+    "pvMW": 148,
+    "windMW": 1312,
     "biomasseMW": 188,
-    "totalGenerationMW": 6111
+    "totalGenerationMW": 6390
   },
   "series": [
-    {
-      "timestamp": 1791262800,
-      "label": "06.10. 07:00",
-      "laufkraft": 1622,
-      "speicher": 2145,
-      "pumpspeicherPumpen": 0,
-      "pv": 122,
-      "wind": 40,
-      "biomasse": 181,
-      "gas": 1532,
-      "load": 7519
-    },
     {
       "timestamp": 1791266400,
       "label": "06.10. 08:00",
@@ -559,38 +547,50 @@
     {
       "timestamp": 1791424800,
       "label": "08.10. 04:00",
-      "laufkraft": 1413,
+      "laufkraft": 1411,
       "speicher": 46,
       "pumpspeicherPumpen": 231,
       "pv": 0,
       "wind": 1620,
       "biomasse": 192,
-      "gas": 717,
+      "gas": 716,
       "load": 5696
     },
     {
       "timestamp": 1791428400,
       "label": "08.10. 05:00",
-      "laufkraft": 1492,
-      "speicher": 56,
+      "laufkraft": 1456,
+      "speicher": 55,
       "pumpspeicherPumpen": 323,
       "pv": 0,
-      "wind": 1504,
+      "wind": 1506,
       "biomasse": 192,
-      "gas": 828,
+      "gas": 810,
       "load": 6308
     },
     {
       "timestamp": 1791432000,
       "label": "08.10. 06:00",
-      "laufkraft": 1463,
-      "speicher": 1256,
+      "laufkraft": 1480,
+      "speicher": 1269,
       "pumpspeicherPumpen": 0,
       "pv": 8,
       "wind": 1398,
       "biomasse": 190,
-      "gas": 1276,
+      "gas": 1291,
       "load": 7337
+    },
+    {
+      "timestamp": 1791435600,
+      "label": "08.10. 07:00",
+      "laufkraft": 1536,
+      "speicher": 1785,
+      "pumpspeicherPumpen": 0,
+      "pv": 69,
+      "wind": 1357,
+      "biomasse": 188,
+      "gas": 1352,
+      "load": 7976
     }
   ]
 }
