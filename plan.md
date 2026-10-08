@@ -103,7 +103,16 @@ Frontend (Static Export):
 
 ---
 
-## 5. Betrieb & Monitoring
+## 5. Verifikation (08.10.2026)
+
+- 28 Unit-Tests (Transformationen, News-Bereinigung, Berichte, Validierung), Build & Typprüfung grün.
+- Pipeline zweimal per `workflow_dispatch` auf dem Feature-Branch gegen die **Live-APIs** gelaufen: alle Quellen OK, Daten-Push (vorher 403) erfolgreich, Aktualitätsprüfung bestanden. Deploy ist bewusst nur auf `main` aktiv.
+- Live-Daten bestätigen die Cross-Border-Konvention (GW, positiv = Import): Wochen-Nettoimport 243,7 GWh ≈ Erzeugung − Last − Pumpen.
+- Live-Lauf deckte auf, dass Energy-Charts unveröffentlichte Stunden mit `0` statt `null` füllt → behoben und mit Regressionstest abgesichert.
+
+---
+
+## 6. Betrieb & Monitoring
 
 - **Wo sehe ich, ob alles läuft?** Navbar-Badge (grün/gelb/rot), `status.json` im Space, GitHub-Issue „Energy Radar: automatisches Update fehlgeschlagen“.
 - **Lokal testen**: `npm run fetch-data && npm run generate-report && npm run validate-data && npm test && npm run build`
