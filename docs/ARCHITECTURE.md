@@ -17,7 +17,7 @@ Stand: Oktober 2026 (v3). Für Betrieb/Fehlersuche siehe [OPERATIONS.md](OPERATI
 │  → scripts/validate-data.ts --schema      (bricht ab, wenn Dateien ungültig sind)                  │
 │  → next build (Static Export, liest data/*.json zur Build-Zeit) ──► out/                           │
 │  → scripts/deploy_hf.py  (nur main) ──► Hugging Face Static Space + Verifikation via status.json  │
-│  → git commit data/ + push  (über den neuesten Branch-Stand gelegt, "chore(data): … [skip ci]")    │
+│  → git commit + push der von diesem Lauf geänderten data/-Dateien ("chore(data): … [skip ci]")      │
 │  → scripts/validate-data.ts --freshness   (rot, wenn Daten/Bericht veraltet)                       │
 │  → bei Fehlschlag (nur Schedule): GitHub-Issue öffnen/kommentieren; bei Erfolg: Issue schließen    │
 └────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -114,7 +114,7 @@ Alle Dateien werden ausschließlich von der Pipeline geschrieben (temp-Datei + r
 | `prices.json` | `SpotPriceData` | `currentPrice` = Preis der Viertelstunde zur Laufzeit (`currentSlotStart`), 24-h-Statistik nach Zeitstempeln (`windowHours` = tatsächlich abgedeckte Stunden, < 24 nach Fallback ohne Zeitraum), `negativePriceHours24h` in Stunden, `nextDayAvg`, `series` (letzte 24 h + Day-Ahead bis +36 h, `isFuture`). Der Browser bestimmt aktuellen Preis/„jetzt“/„Morgen Ø“ selbst aus `series` (`lib/priceNow.ts`); die gespeicherten Werte sind nur Fallback |
 | `cross-border.json` | `CrossBorderData` | Neuester veröffentlichter Zeitpunkt; `flowMW` je Nachbar (**positiv = Export**, intern aus GW umgerechnet und Vorzeichen gedreht), `netExportMW`, `sourceUnit` |
 | `renewable-share.json` | `RenewableShareData` | `currentPercent`, `trend`/`daily` (Tageswerte der Wochenstatistik) |
-| `weekly-stats.json` | `WeeklyStats \| null` | 7-Tage-Fenster (Wiener Kalendertage): endet **gestern, sobald gestern vollständig veröffentlicht ist** (alle Viertelstunden von Laufkraft und Last, Tageslänge inkl. 23/25-h-DST-Tage), sonst vorgestern. Im Fenster zählen Tage mit ≥ 90 % Abdeckung (mind. 3 Tage, sonst Fehler). Netto-Export je Tag nur bei ≥ 98 % Abdeckung der Grenzflüsse. Inhalt: GWh je Technologie, Last, Erneuerbaren-Anteil, Preis Ø/Min/Max, Negativpreis-Stunden, Netto-Export (GWh) + `totals` |
+| `weekly-stats.json` | `WeeklyStats \| null` | 7-Tage-Fenster (Wiener Kalendertage): endet **gestern, sobald die Veröffentlichung das Ende von gestern erreicht hat** (es gibt einen gültigen Wert von Laufkraft **und** Last nach dem letzten Slot von gestern) und gestern ≥ 90 % abgedeckt ist (Tageslänge inkl. 23/25-h-DST-Tage), sonst vorgestern. Im Fenster zählen Tage mit ≥ 90 % Abdeckung (mind. 3 Tage, sonst Fehler). Netto-Export je Tag nur bei ≥ 98 % Abdeckung der Grenzflüsse. Inhalt: GWh je Technologie, Last, Erneuerbaren-Anteil, Preis Ø/Min/Max, Negativpreis-Stunden, Netto-Export (GWh) + `totals` |
 | `news.json` | `NewsItem[]` | Bereinigte Meldungen inkl. `category` |
 | `reports.json` | `WeeklyReport[]` | Berichtsarchiv, neueste zuerst, max. 52 |
 | `meta.json` | `AppMetadata` | `lastUpdated` (Pipeline-Lauf), `dataAsOf` (neueste Messung), `sourceStatus` je Quelle (`ok`, `lastAttempt`, `lastSuccess`, `dataUntil`, `error`), `warnings` |
@@ -192,9 +192,9 @@ Code: `scripts/lib/report.ts`, `scripts/generate-report.ts`.
 | Kennzahlen nie vom LLM | Keine halluzinierten Zahlen; Bericht funktioniert ohne Key identisch |
 | Wochen-Label = ISO-Woche des Periodenendes | Montags entsteht automatisch der exakte Mo–So-Abschluss der Vorwoche |
 | Squash-Merge von PRs | Ein Commit pro Änderung → einfacher Revert/Rollback |
-| Daten-Commit legt `data/` über den neuesten Branch-Stand (statt Rebase) | `data/` wird pro Lauf komplett neu erzeugt; ein in der Warteschlange gestarteter Lauf von einem älteren Commit würde sonst immer an Konflikten in `meta.json` scheitern |
+| Checkout des neuesten Branch-Stands beim Job-Start (`ref: github.ref_name`); Daten-Commit legt nur die von diesem Lauf geänderten `data/`-Dateien über den neuesten Branch-Stand (statt Rebase) | Ein wartender Lauf startet so vom aktuellen Stand; was während des Laufs gemergt wurde (Code, neue Platzhalter, andere Datendateien), bleibt erhalten; `meta.json`-Konflikte wie beim Rebase entstehen nicht. Die Dateien, die der Lauf geschrieben hat, sind die neuesten Messdaten und gewinnen |
 | Zeitabhängige Preisanzeige im Browser | Der Static Export ist bis zu 6 h alt; „jetzt“ und „Morgen Ø“ werden aus der mitgelieferten Preisreihe für die Uhrzeit des Besuchers bestimmt |
-| Wochenfenster wartet auf vollständig veröffentlichten Vortag | Energy-Charts hinkt 2–3 h hinterher; sonst würde der 00:17-Lauf die Woche mit einem unvollständigen Sonntag abschließen |
+| Wochenfenster wartet, bis die Veröffentlichung das Ende des Vortags erreicht hat | Energy-Charts hinkt 2–3 h hinterher; sonst würde der 00:17-Lauf die Woche mit einem unvollständigen Sonntag abschließen. Eine einzelne nie veröffentlichte Viertelstunde blockiert den Wochenabschluss dagegen nicht (≥ 90 % genügen) |
 
 ## 9. Historie
 

@@ -40,7 +40,7 @@ Zeitplan: **00:17, 06:17, 12:17, 18:17 UTC** (MESZ +2 h, MEZ +1 h). GitHub kann 
 | `validate-data --schema` | ungültige Dateien | Kein Build, kein Deploy, kein Commit |
 | `build` | Typ-/Buildfehler | Kein Deploy, kein Commit |
 | Deploy (nur `main`) | fehlendes/ungültiges `HF_TOKEN`, Uploadfehler, Verifikation, Space-Status `*_ERROR` | Lauf rot, Issue |
-| Commit & Push `data/` | Push nach 3 Versuchen gescheitert | Lauf rot, Issue. Der Schritt holt den neuesten Branch-Stand und legt die frisch erzeugten `data/` darüber (kein Rebase, keine Konflikte) |
+| Commit & Push `data/` | Push nach 3 Versuchen gescheitert (inkl. `git fetch`-Fehler, werden wiederholt) | Lauf rot, Issue. Nur die Dateien, die dieser Lauf neu geschrieben/geändert hat, werden über den neuesten Branch-Stand gelegt; alles andere (Code, neue Platzhalter, andere Daten) bleibt unverändert |
 | `validate-data --freshness` | Daten > 36 h, Bericht > 8 Tage | Lauf rot, Issue (Website zeigt Hinweis) |
 
 ## 4. Häufige Aufgaben
@@ -53,16 +53,20 @@ Schritts „Deploy to Hugging Face Space“ endet mit `✅ Deployment verifizier
 Branch pushen, dann *Run workflow* auf diesem Branch. Deploy wird übersprungen (nur `main`), die Daten werden auf
 den Branch committet. Danach lokal `git pull`.
 
-**Vor dem Merge Daten auf `main`-Stand bringen:** `main` bekommt parallel bis zu 4 Daten-Commits pro Tag, daher hat
-der PR sonst Konflikte in `data/`. Die Branch-Daten sind Wegwerfdaten:
+**Vor dem Merge Daten auf `main`-Stand bringen:** Die Branch-Daten sind Wegwerfdaten; `main` bekommt parallel bis zu
+4 Daten-Commits pro Tag (sonst Konflikte in `data/`). Erst prüfen, dass auf dem Branch kein Workflow-Lauf mehr läuft
+oder wartet (*Actions*-Tab), dann – funktioniert mit und ohne Konflikt:
 ```bash
-git fetch origin && git merge origin/main      # bei Konflikten in data/:
-git checkout origin/main -- data/ && git add data/ && git commit --no-edit
+git fetch origin
+git merge origin/main -m "Merge main" || true     # Konflikte in data/ werden im nächsten Schritt aufgelöst
+git checkout origin/main -- data/
+git add data/
+git commit -m "chore: data/ auf main-Stand"       # meldet git "nothing to commit": data/ ist schon auf main-Stand
 git push
 ```
-Der letzte Commit im PR darf kein `chore(data) … [skip ci]`-Commit sein, sonst läuft `ci.yml` für den PR nicht
-(der Merge-Commit oben löst CI wieder aus). Die Concurrency-Gruppe gilt branchübergreifend: Ein Branch-Lauf wartet
-hinter einem laufenden `main`-Lauf; ist bereits ein Lauf wartend, ersetzt der neue ihn.
+Der letzte Commit im PR darf kein `chore(data) … [skip ci]`-Commit sein, sonst läuft `ci.yml` für den PR nicht;
+der Commit oben ist ein normaler Commit und löst CI aus. Die Concurrency-Gruppe gilt branchübergreifend: Ein
+Branch-Lauf wartet hinter einem laufenden `main`-Lauf; ist bereits ein Lauf wartend, ersetzt der neue ihn.
 
 ### Manuelles Deployment vom eigenen Rechner (Notfall)
 Normalerweise reicht *Run workflow* auf `main`. Nur falls GitHub Actions nicht verfügbar ist (aus dem Repo-Root):
@@ -126,7 +130,7 @@ nach grünem CI mergen; #7 (`@types/node` 26) passt nicht zur Laufzeit Node 22 �
 | Gemini: `HTTP 404` für alle Modelle | Modelle abgekündigt | Variable `GEMINI_MODEL` auf aktuelles Modell setzen |
 | Gemini: `HTTP 400/403` | Key ungültig/gesperrt | Neuen Key in AI Studio, Secret ersetzen |
 | Bericht wird nicht neu erzeugt | Daten > 36 h alt; mit Gemini-Key: unveränderte Wochensummen und Bericht < 20 h; oder neues Fenster endet früher als der gespeicherte Wochenbericht | Gewollt; erzwingen siehe §4 „Bericht sofort neu erzeugen“ |
-| Montags früh steht noch die Vorwoche ohne Sonntag im Bericht | Sonntag ist um 00:17 UTC noch nicht vollständig veröffentlicht | Gewollt; ab dem 06:17-UTC-Lauf entsteht der Mo–So-Abschluss |
+| Montags früh steht noch die Vorwoche ohne Sonntag im Bericht | Die Veröffentlichung hat um 00:17 UTC das Ende des Sonntags noch nicht erreicht | Gewollt; ab dem 06:17-UTC-Lauf entsteht der Mo–So-Abschluss |
 | Deploy-Schritt: `Space meldet CONFIG_ERROR` (o. ä.) | README-Front-Matter kaputt oder Space-Fehler | `README.md`-Kopf (`sdk: static` …) prüfen, Logs im Space ansehen |
 | Freshness-Schritt rot, sonst grün | Energy-Charts liefert seit > 36 h keine neuen Daten | Quelle prüfen (`meta.json`); Website zeigt Warnung |
 | Geplante Läufe kommen gar nicht | GitHub deaktiviert Schedules nach 60 Tagen ohne Repo-Aktivität (öffentliche Repos) | In *Actions* Workflow wieder aktivieren; Daten-Commits verhindern das normalerweise |

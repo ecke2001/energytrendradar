@@ -382,7 +382,11 @@ export function transformCrossBorder(raw: EcCrossBorder, nowSec: number): CrossB
 // Daily / weekly aggregation (calendar days in Europe/Vienna)
 // ---------------------------------------------------------------------------
 
-type GenDaily = Omit<DailyEnergyStats, 'date' | 'priceAvg' | 'priceMin' | 'priceMax' | 'negativePriceHours' | 'netExportGWh'> & { coverage: number };
+type GenDaily = Omit<DailyEnergyStats, 'date' | 'priceAvg' | 'priceMin' | 'priceMax' | 'negativePriceHours' | 'netExportGWh'> & {
+  coverage: number;
+  /** Publication has reached the end of this day (a newer valid slot exists). */
+  published: boolean;
+};
 
 /**
  * Number of slots per Vienna calendar day as delivered by the API. The API
@@ -405,10 +409,17 @@ export function aggregateGenerationDaily(raw: EcPublicPower, nowSec: number): Ma
   const keySeries = [s.laufkraft, s.load].filter((x): x is Array<number | null> => Array.isArray(x));
   const hours = detectResolutionMinutes(ts) / 60;
   const expected = slotsPerDay(ts);
+  const lastSlotOfDay = new Map<string, number>();
+  ts.forEach(t => {
+    const key = viennaDateKey(t);
+    lastSlotOfDay.set(key, Math.max(lastSlotOfDay.get(key) ?? t, t));
+  });
 
+  let newestValid = -Infinity;
   const acc = new Map<string, { e: PointValues; n: number }>();
   for (let i = 0; i < ts.length; i++) {
     if (ts[i] > nowSec || keySeries.length === 0 || !keySeries.every(k => isFiniteNumber(k[i]))) continue;
+    newestValid = Math.max(newestValid, ts[i]);
     const key = viennaDateKey(ts[i]);
     const p = pointAt(types, s, i);
     const day = acc.get(key);
@@ -436,6 +447,7 @@ export function aggregateGenerationDaily(raw: EcPublicPower, nowSec: number): Ma
       totalGenerationGWh: gwh(e.totalGeneration),
       renewableSharePercent: e.totalGeneration > 0 ? Math.round((e.renewable / e.totalGeneration) * 100) : 0,
       coverage: n / (expected.get(key) || n),
+      published: newestValid >= (lastSlotOfDay.get(key) ?? Infinity),
     });
   });
   return out;
@@ -495,11 +507,12 @@ export function aggregateNetExportDaily(raw: EcCrossBorder, nowSec: number): Map
 /**
  * Statistics for a 7-day window of calendar days (Europe/Vienna).
  *
- * The window ends yesterday only once yesterday is completely published
- * (Energy-Charts lags 2-3 h, so the first run after midnight usually sees an
- * incomplete day); otherwise it ends the day before. This keeps the report
- * frame from moving forward on partial data. Older days with small gaps
- * (>= 90 % coverage) are kept; the number of included days is in `days.length`.
+ * The window ends yesterday only once publication has reached the end of
+ * yesterday (Energy-Charts lags 2-3 h, so the first run after midnight usually
+ * sees an unfinished day); otherwise it ends the day before. This keeps the
+ * report frame from moving forward on partial data, while a single slot that
+ * is never published does not block the week (>= 90 % coverage suffices).
+ * The number of included days is in `days.length`.
  * Daily net export is only used for days whose cross-border data is complete.
  */
 export function buildWeeklyStats(
@@ -510,14 +523,14 @@ export function buildWeeklyStats(
   generatedAt: string,
 ): WeeklyStats {
   const yesterday = gen.get(addDays(todayKey, -1));
-  const endKey = yesterday && yesterday.coverage >= 1 ? addDays(todayKey, -1) : addDays(todayKey, -2);
+  const endKey = yesterday && yesterday.published && yesterday.coverage >= 0.9 ? addDays(todayKey, -1) : addDays(todayKey, -2);
   const days: DailyEnergyStats[] = [];
   for (let offset = 6; offset >= 0; offset--) {
     const key = addDays(endKey, -offset);
     const g = gen.get(key);
     if (!g || g.coverage < 0.9) continue;
     const pr = price?.get(key);
-    const { coverage: _coverage, ...energy } = g;
+    const { coverage: _coverage, published: _published, ...energy } = g;
     days.push({
       date: key,
       ...energy,

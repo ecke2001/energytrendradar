@@ -75,8 +75,9 @@ Tests anpassen.
 3. Platzhalterdatei in `data/` committen (Format, das die UI verträgt, z. B. `null` oder `[]`), Import + Typ in
    `lib/dataLoader.ts`, Dateiname in `FILES` in `scripts/validate-data.ts` (sonst sieht `checkSchema` die Datei
    nicht) und Schema-Regel in `checkSchema` (`scripts/lib/validate.ts`).
-4. Antwort der neuen URL in `scripts/dev/mock-fetch.mjs` nachbilden (unbekannte URLs werfen dort einen Fehler; die
-   Quelle würde im Offline-E2E still als fehlgeschlagen markiert) und `npm run e2e:offline` laufen lassen.
+4. Antwort der neuen URL in `scripts/dev/mock-fetch.mjs` nachbilden (unbekannte URLs werfen dort einen Fehler →
+   die Quelle schlägt fehl, ihre Datei fehlt im Temp-Ordner und `validate-data` bricht das Offline-E2E ab) und
+   `npm run e2e:offline` laufen lassen.
 5. Externe Texte/Links immer mit `toPlainText`/`safeHttpUrl` bereinigen.
 
 ### Berichtsinhalt ändern

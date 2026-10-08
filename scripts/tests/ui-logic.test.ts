@@ -20,9 +20,13 @@ test('current slot is found for the viewer time, not the pipeline time', () => {
 });
 
 test('outside the published series the stored values are used, never a stale slot', () => {
-  const later = START + 192 * 900 + 3600; // beyond the last published slot
+  const later = START + 192 * 900 + 3600; // beyond the last published slot (11.10. Vienna)
   assert.equal(priceSlotAt(series, later), null);
-  assert.deepEqual(computePriceNow(data, later), { price: 77, slotStart: START + 10 * 900, nextDayAvg: 99, live: false });
+  // The stored "tomorrow" (09.10.) is not the viewer's tomorrow any more → hidden.
+  assert.deepEqual(computePriceNow(data, later), { price: 77, slotStart: START + 10 * 900, nextDayAvg: null, live: false });
+  // Same day as stored, but before the series starts → stored tomorrow still valid.
+  const sameDay = { ...data, series: series.slice(100) };
+  assert.equal(computePriceNow(sameDay, START + 20 * 900).nextDayAvg, 99);
 });
 
 test("tomorrow's average needs (almost) a full day of prices", () => {

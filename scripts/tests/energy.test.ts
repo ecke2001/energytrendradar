@@ -226,7 +226,17 @@ test('first run after midnight: an incompletely published yesterday is not used 
   assert.equal(next.days[6].laufkraftGWh, 48);
 });
 
-test('DST end (25-hour day) is only complete with all 100 quarter-hours', () => {
+test('a single never-published slot does not block the week once publication has passed the day', () => {
+  const raw = powerFixture();
+  // One permanent gap on 2026-10-07 12:00 Vienna in the run-of-river series.
+  const gap = raw.unix_seconds.indexOf(Date.UTC(2026, 9, 7, 10, 0) / 1000);
+  raw.production_types[0].data[gap] = null;
+  const stats = buildWeeklyStats(aggregateGenerationDaily(raw, NOW), null, null, '2026-10-08', 'x');
+  assert.equal(stats.periodEnd, '2026-10-07');
+  assert.equal(stats.days.length, 7);
+});
+
+test('DST end (25-hour day) counts once all 100 quarter-hours are published', () => {
   const start = Date.UTC(2026, 9, 20, 22, 0) / 1000; // 2026-10-21 00:00 CEST
   const end = Date.UTC(2026, 9, 26, 23, 0) / 1000; // 2026-10-27 00:00 CET
   // 00:30 CET on 26.10.: load (lag 1 h) ends at 23:30 CET – 25.10. still misses its last slots.

@@ -27,6 +27,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Newest branch state at job start (not the SHA from when the run was queued),
+          # so data/ and the report archive start from the latest commit.
+          ref: ${{ github.ref_name }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -80,24 +84,31 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # data/ is regenerated completely by this run. Instead of rebasing (which
-          # conflicts when a queued run started from an older commit), lay this
-          # run's data/ over the newest branch state and commit only that.
+          # Only the files this run created or changed are carried over. They are laid
+          # over the newest branch state, so commits that landed while the run was going
+          # (code, new data placeholders, other data files) are kept and nothing conflicts.
+          git add -A data
+          changed=$(git diff --cached --name-only --diff-filter=AM -- data)
+          if [ -z "$changed" ]; then
+            echo "Keine Datenänderungen."
+            exit 0
+          fi
           snapshot="$RUNNER_TEMP/data-snapshot"
-          rm -rf "$snapshot" && cp -r data "$snapshot"
+          rm -rf "$snapshot"
+          for f in $changed; do mkdir -p "$snapshot/$(dirname "$f")" && cp "$f" "$snapshot/$f"; done
           for attempt in 1 2 3; do
-            git fetch --quiet --depth=1 origin "$GITHUB_REF_NAME"
-            git reset --quiet --hard FETCH_HEAD
-            rm -rf data && cp -r "$snapshot" data
-            git add -A data
-            if git diff --cached --quiet; then
-              echo "Keine Datenänderungen."
-              exit 0
-            fi
-            git commit --quiet -m "chore(data): automatisches Energiedaten-Update $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
-            if git push --quiet origin "HEAD:$GITHUB_REF_NAME"; then
-              echo "Daten nach $GITHUB_REF_NAME gepusht."
-              exit 0
+            if git fetch --quiet --depth=1 origin "$GITHUB_REF_NAME" && git reset --quiet --hard FETCH_HEAD; then
+              for f in $changed; do mkdir -p "$(dirname "$f")" && cp "$snapshot/$f" "$f"; done
+              git add -- $changed
+              if git diff --cached --quiet; then
+                echo "Keine Datenänderungen."
+                exit 0
+              fi
+              git commit --quiet -m "chore(data): automatisches Energiedaten-Update $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+              if git push --quiet origin "HEAD:$GITHUB_REF_NAME"; then
+                echo "Daten nach $GITHUB_REF_NAME gepusht: $(echo $changed | tr '\n' ' ')"
+                exit 0
+              fi
             fi
             sleep $((attempt * 10))
           done

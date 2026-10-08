@@ -41,16 +41,25 @@ export function storedPriceNow(data: SpotPriceData | null | undefined): PriceNow
   };
 }
 
-/** Values for the viewer's time; falls back to the stored values if the series does not cover now. */
+/**
+ * Values for the viewer's time; falls back to the stored values if the series
+ * does not cover now. The stored "tomorrow" average is only kept while the
+ * viewer's tomorrow is the same day it was computed for.
+ */
 export function computePriceNow(data: SpotPriceData | null | undefined, nowSec: number): PriceNow {
   const series = data?.series || [];
   const resolution = data?.resolutionMinutes || 15;
+  const tomorrow = addDays(viennaDateKey(nowSec), 1);
   const slot = priceSlotAt(series, nowSec, resolution);
-  if (!slot) return storedPriceNow(data);
+  if (!slot) {
+    const stored = storedPriceNow(data);
+    const storedTomorrow = data?.currentSlotStart ? addDays(viennaDateKey(data.currentSlotStart), 1) : null;
+    return { ...stored, nextDayAvg: storedTomorrow === tomorrow ? stored.nextDayAvg : null };
+  }
   return {
     price: slot.price,
     slotStart: slot.timestamp,
-    nextDayAvg: dayAverage(series, addDays(viennaDateKey(nowSec), 1), resolution),
+    nextDayAvg: dayAverage(series, tomorrow, resolution),
     live: true,
   };
 }

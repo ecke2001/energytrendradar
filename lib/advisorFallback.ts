@@ -5,8 +5,9 @@
 import { generationData, spotPriceData, crossBorderData, getLastUpdatedText } from './dataLoader';
 import { computePriceNow, priceWindowLabel } from './priceNow';
 
-/** Spot price of the current slot for the time of the question (falls back to the stored value). */
-const livePrice = () => computePriceNow(spotPriceData, Math.floor(Date.now() / 1000)).price ?? undefined;
+/** Spot price values for the time of the question (fall back to the stored values). */
+const priceNow = () => computePriceNow(spotPriceData, Math.floor(Date.now() / 1000));
+const livePrice = () => priceNow().price ?? undefined;
 
 const mw = (v: number | undefined) => (typeof v === 'number' ? `${v.toLocaleString('de-AT')} MW` : '–');
 const eur = (v: number | undefined) => (typeof v === 'number' ? `${v.toFixed(2)} €/MWh` : '–');
@@ -50,7 +51,7 @@ export function buildAdvisorAnswer(question: string): string {
 - **Durchschnitt (${priceWindowLabel(p)}):** ${eur(p?.avg24h)}
 - **Minimum / Maximum (${priceWindowLabel(p)}):** ${eur(p?.min24h)} / ${eur(p?.max24h)}
 - **Stunden mit Negativpreisen (${priceWindowLabel(p)}):** ${p?.negativePriceHours24h ?? '–'}
-${typeof p?.nextDayAvg === 'number' ? `- **Morgen (Ø Day-Ahead):** ${eur(p.nextDayAvg)}\n` : ''}
+${typeof priceNow().nextDayAvg === 'number' ? `- **Morgen (Ø Day-Ahead):** ${eur(priceNow().nextDayAvg as number)}\n` : ''}
 Flexible Erzeuger und Speicher profitieren von der Spreizung zwischen PV-Mittag und Abendspitze.`;
   }
 
