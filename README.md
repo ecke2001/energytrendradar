@@ -39,6 +39,18 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
 
 ---
 
+## 📚 Dokumentation (für Weiterentwicklung & Betrieb)
+
+| Dokument | Inhalt |
+| :--- | :--- |
+| [CLAUDE.md](https://github.com/ecke2001/energytrendradar/blob/main/CLAUDE.md) | Kurzfassung für Claude Code: Befehle, Architektur, Regeln, API-Eigenheiten |
+| [docs/ARCHITECTURE.md](https://github.com/ecke2001/energytrendradar/blob/main/docs/ARCHITECTURE.md) | Datenfluss, Datendateien, Datenquellen, Berichtslogik, Sicherheitsmodell, Entscheidungen |
+| [docs/OPERATIONS.md](https://github.com/ecke2001/energytrendradar/blob/main/docs/OPERATIONS.md) | Runbook: Secrets, Deploy, Rollback, Monitoring, Fehlersuche |
+| [docs/DEVELOPMENT.md](https://github.com/ecke2001/energytrendradar/blob/main/docs/DEVELOPMENT.md) | Setup, Tests (inkl. Offline-E2E), Konventionen, Erweiterungs-Rezepte, bekannte Einschränkungen |
+| [plan.md](https://github.com/ecke2001/energytrendradar/blob/main/plan.md) | Diagnose & Plan v3, Sicherheitsprüfung, Roadmap |
+
+---
+
 ## 🛠️ Tech-Stack & Architektur
 
 | Komponente | Technologie | Beschreibung |
@@ -72,9 +84,12 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
 │   ├── validate-data.ts          # Schema- & Aktualitätsprüfung (CI-Gate)
 │   ├── deploy_hf.py              # Upload out/ → HF Space inkl. Verifikation
 │   ├── lib/                      # Reine, getestete Transformationen
-│   └── tests/                    # Unit-Tests (node:test)
+│   ├── tests/                    # Unit-Tests (node:test)
+│   └── dev/                      # Mock-APIs + Offline-E2E (npm run e2e:offline)
 ├── .github/workflows/            # daily-update.yml (Pipeline), ci.yml (Tests & Build)
-└── plan.md                       # Plan, Diagnose & Sicherheitsprüfung
+├── docs/                         # ARCHITECTURE.md, OPERATIONS.md, DEVELOPMENT.md
+├── CLAUDE.md                     # Kontext für Claude Code
+└── plan.md                       # Plan, Diagnose, Sicherheitsprüfung & Roadmap
 ```
 
 ---
@@ -100,6 +115,7 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
    npm run generate-report   # Wochenbericht erzeugen (optional mit GEMINI_API_KEY)
    npm run validate-data     # Schema & Aktualität prüfen
    npm test                  # Unit-Tests
+   npm run e2e:offline       # Pipeline gegen Mock-APIs (ohne Netzwerk, data/ bleibt unberührt)
    npm run build             # Static Export nach out/
    ```
 
@@ -109,7 +125,7 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
 
 | Plattform | Account | URL / Target | Status |
 | :--- | :--- | :--- | :--- |
-| **Hugging Face Space** | `ecke1985` | [https://huggingface.co/spaces/ecke1985/energy-trend-radar-agent](https://huggingface.co/spaces/ecke1985/energy-trend-radar-agent) | **Privater Space (Aktiv)** |
+| **Hugging Face Space** | `ecke1985` | [https://huggingface.co/spaces/ecke1985/energy-trend-radar-agent](https://huggingface.co/spaces/ecke1985/energy-trend-radar-agent) | **Privater Space – automatisch 4× täglich aktualisiert** |
 | **GitHub Repo** | `ecke2001` | [https://github.com/ecke2001/energytrendradar](https://github.com/ecke2001/energytrendradar) | Branches `main` & `energy_trend_monitor_agent` |
 | **LLM Engine** | Gemini API (optional) | `gemini-2.5-flash` (Free Tier / 0 €) | Fallback: datenbasierte Berichte |
 

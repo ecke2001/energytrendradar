@@ -10,7 +10,8 @@
     "fetch-data": "tsx scripts/fetch-data.ts",
     "generate-report": "tsx scripts/generate-report.ts",
     "validate-data": "tsx scripts/validate-data.ts",
-    "test": "tsx --test scripts/tests/*.test.ts"
+    "test": "tsx --test scripts/tests/*.test.ts",
+    "e2e:offline": "bash scripts/dev/offline-e2e.sh"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
