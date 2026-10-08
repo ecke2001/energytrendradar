@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { crossBorderData } from '@/lib/dataLoader';
+import { crossBorderData, formatDataTime } from '@/lib/dataLoader';
 import { ArrowUpRight, ArrowDownLeft, Globe, Zap } from 'lucide-react';
 
 export default function CrossBorderWidget() {
@@ -27,7 +27,7 @@ export default function CrossBorderWidget() {
             <Globe className="w-5 h-5 text-cyan-400" />
             Cross-Border Stromflüsse Österreich (MW)
           </h3>
-          <p className="text-xs text-slate-400">Physikalische Grenzflüsse zu allen 6 Nachbarländern</p>
+          <p className="text-xs text-slate-400">Physikalische Grenzflüsse zu den Nachbarländern · Stand {formatDataTime(crossBorderData?.timestamp)}</p>
         </div>
         <div className={`px-3 py-1 rounded-full text-xs font-bold border ${isNetExporter ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-amber-500/10 border-amber-500/30 text-amber-400'}`}>
           Saldo: {isNetExporter ? '+' : ''}{netExportMW.toLocaleString('de-AT')} MW {isNetExporter ? '(Export)' : '(Import)'}

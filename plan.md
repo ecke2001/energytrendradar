@@ -1,182 +1,110 @@
-# Überarbeitungsplan v2 – Energy Trend Radar Agent
+# Überarbeitungsplan v3 – Zuverlässige Aktualität & Sicherheit
 
-> **Ziel**: Die bestehende App von statischen Mock-Daten auf **echte, täglich aktualisierte Datenquellen** umstellen und auf Hugging Face Spaces (Static, kostenlos) mit einem **GitHub Actions Cron-Pipeline** für tägliche Auto-Refreshes deployen.
-
----
-
-## 1. Getroffene Architektur-Entscheidungen
-
-| Entscheidung | Ergebnis |
-| :--- | :--- |
-| **Architektur** | Next.js SSR-fähig (Docker) → bleibt Static Export + externer GitHub Actions Aggregator |
-| **Datenquellen** | Alle 4 echten, kostenlosen APIs: Energy-Charts, ENTSO-E, APG Transparency, News-Feeds |
-| **Aktualisierung** | GitHub Actions Cron (täglich 06:00 UTC) → API-Abruf → Build → Auto-Deploy auf HF Spaces |
-| **Deployment** | Hugging Face Static Space (kostenlos, `ecke1985/energy-trend-radar-agent`) |
-| **LLM** | Google Gemini 1.5 Flash (Free Tier) via GitHub Secret `GEMINI_API_KEY` |
-| **Dashboard-Daten** | Erzeugung (Hydro, PV, Wind), Spotpreise, Erneuerbare-Quote, Cross-Border, Speicherfüllstände, News |
-| **Sprache** | Deutsch (durchgängig) |
+> **Ziel**: Der Hugging Face Space zeigt **immer aktuelle Daten** und **aktuelle, automatisch erzeugte Wochenberichte**.
+> Fehler in der Pipeline werden **sichtbar** statt stillschweigend ignoriert.
+> (v2-Plan: siehe Git-Historie, Commit `cfec16b`.)
 
 ---
 
-## 2. Echte Datenquellen im Detail
+## 1. Diagnose (Stand 08.10.2026)
 
-### 2.1 Energy-Charts API (Fraunhofer ISE)
-- **URL**: `https://api.energy-charts.info`
-- **Kosten**: Kostenlos (CC BY 4.0), kein API-Key nötig
-- **Rate Limit**: ~2 Requests/Minute
-- **Endpunkte**:
-  - `/public_power?country=at` → Stromerzeugung nach Typ (Hydro Run-of-River, Hydro Pumped Storage, PV, Wind, Biomass)
-  - `/price?country=at&bzn=AT` → Day-Ahead Spotmarktpreise AT
-  - `/ren_share?country=at` → Erneuerbaren-Anteil (%)
-- **Datenformat**: JSON
-- **Nutzen**: Hauptquelle für Dashboard KPIs, Charts und Erzeugungsmix
-
-### 2.2 ENTSO-E Transparency Platform API
-- **URL**: `https://web-api.tp.entsoe.eu/api`
-- **Kosten**: Kostenlos (Token nach E-Mail-Registrierung)
-- **Bidding Zone AT**: `10YAT-APG------L`
-- **Endpunkte**:
-  - Actual Generation per Type (A75)
-  - Cross-Border Physical Flows (A11)
-  - Hydro Reservoir Filling Rate (A72)
-- **Datenformat**: XML (wird serverseitig zu JSON transformiert)
-- **Nutzen**: Cross-Border-Flüsse, Speicherfüllstände, offizielle EU-Daten
-
-### 2.3 APG Transparency (Austrian Power Grid)
-- **URL**: `https://transparency.apg.at/api/v1/`
-- **Kosten**: Kostenlos, kein Token nötig
-- **Endpunkte**:
-  - Generation per type
-  - Grid load & demand
-  - Hydro reservoir levels
-- **Datenformat**: JSON
-- **Nutzen**: Ergänzende/redundante Echtzeit-AT-Daten direkt vom Netzbetreiber
-
-### 2.4 News & Regulierungs-Feeds
-- **BMK (Klimaschutzministerium)**: RSS/Atom Feed von `bmk.gv.at`
-- **E-Control Austria**: News-Seite `e-control.at/news` (HTML Scraping oder RSS)
-- **IEA (International Energy Agency)**: RSS Feed für Renewable Energy News
-- **Nutzen**: Aktuelle Meldungen zu EAG-Förderungen, Netzausbau, EU-Regulierung
+| # | Befund | Auswirkung |
+| :- | :--- | :--- |
+| 1 | **Alle 13 geplanten Workflow-Läufe seit 25.09. fehlgeschlagen**: `git push` → `403 Permission denied to github-actions[bot]`. Der Workflow hatte keine `permissions: contents: write`. | Neue Daten wurden nie ins Repo übernommen, `data/` steht auf 24.09. |
+| 2 | **`HF_TOKEN`-Secret nicht gesetzt** → Deploy-Schritt gibt nur eine Warnung aus und beendet sich mit Exit 0. | Der Space wurde **nie** automatisch aktualisiert, ohne dass es auffiel. |
+| 3 | **Wochenberichte sind statische Mock-Daten** (`MOCK_WEEKLY_REPORTS`, KW 33, August 2026). Der Button „Neuen KI-Report generieren“ ruft `/api/agent/generate-report` auf – API-Routen existieren im Static Export auf HF **nicht**. | Berichte sind nie aktuell, Button schlägt still fehl. |
+| 4 | **`gemini-1.5-flash` ist abgekündigt**, `GEMINI_API_KEY` ist ebenfalls nicht gesetzt. | KI-Funktionen laufen ausschließlich im Fallback. |
+| 5 | **Datenfehler im Aggregator**: <br>• Cross-Border: letzter Zeitstempel enthält `null`, bzw. Werte kommen in GW und werden zu `0` gerundet → alle Flüsse `0 MW`.<br>• Erneuerbaren-Quote: Trend nur `null`.<br>• „Aktueller“ Spotpreis = letzter Wert des Tages (23:45), nicht der aktuelle Viertelstundenpreis.<br>• „24h“-Statistiken über 24 Viertelstunden (= 6 h).<br>• „48 Stunden“-Chart zeigt 48 Viertelstunden (= 12 h).<br>• Zeitlabels in UTC (CI-Runner) statt Europe/Vienna.<br>• News nach Relevanz statt Aktualität (Meldungen bis Mai 2026). | Falsche bzw. irreführende Kennzahlen. |
+| 6 | Cron um `06:00 UTC` (Stoßzeit) → Läufe starteten erst 5–7 h verspätet; nur 1 Lauf/Tag. | Geringe Aktualität, kein Puffer bei Ausfällen. |
+| 7 | UI zeigt „Live Echtdaten“ dauerhaft grün – auch wenn Daten Wochen alt sind. | Veraltete Daten nicht erkennbar. |
 
 ---
 
-## 3. Schritt-für-Schritt Umsetzungsplan
-
-### Phase 1: Daten-Aggregator Skript erstellen
-- [ ] **`scripts/fetch-data.ts`** erstellen: Node.js Skript das alle 4 APIs abruft
-  - [ ] Energy-Charts: Erzeugung nach Typ (Hydro Lauf, Hydro Speicher, PV, Wind) der letzten 30 Tage
-  - [ ] Energy-Charts: Day-Ahead Spotpreise AT der letzten 30 Tage
-  - [ ] Energy-Charts: Erneuerbare-Quote AT
-  - [ ] ENTSO-E: Cross-Border-Flüsse AT ↔ Nachbarländer (DE, IT, CH, CZ, HU, SI)
-  - [ ] ENTSO-E/APG: Speicherfüllstände alpine Pumpspeicher
-  - [ ] News-Feeds: BMK, E-Control, IEA aggregieren
-- [ ] Alle Ergebnisse als JSON-Dateien in `data/` Verzeichnis schreiben
-  - `data/generation.json` – Erzeugung nach Typ
-  - `data/prices.json` – Spotmarktpreise
-  - `data/renewable-share.json` – Erneuerbare-Quote
-  - `data/cross-border.json` – Import/Export-Flüsse
-  - `data/hydro-storage.json` – Speicherfüllstände
-  - `data/news.json` – Aggregierte News-Meldungen
-  - `data/meta.json` – Zeitstempel des letzten Updates
-- [ ] Error-Handling & Fallback: Bei API-Ausfall werden vorhandene JSON-Dateien beibehalten
-
-### Phase 2: GitHub Actions CI/CD Pipeline
-- [ ] **`.github/workflows/daily-update.yml`** erstellen
-  - [ ] Cron: `0 6 * * *` (täglich 06:00 UTC / 08:00 MESZ)
-  - [ ] Job 1: `npm ci` → `npx tsx scripts/fetch-data.ts` (Daten abrufen)
-  - [ ] Job 2: `npm run build` (Static Export mit frischen Daten)
-  - [ ] Job 3: Upload `out/` Verzeichnis auf HF Space via `huggingface_hub`
-  - [ ] Secrets: `HF_TOKEN`, `GEMINI_API_KEY`, optional `ENTSOE_TOKEN`
-- [ ] Manueller Trigger (`workflow_dispatch`) für Ad-hoc Updates
-
-### Phase 3: Datenmodelle & Typen aktualisieren
-- [ ] `lib/types.ts` erweitern um neue Interfaces:
-  - `RealGenerationData` – Echtzeit-Erzeugungswerte pro Typ & Stunde
-  - `SpotPriceData` – Day-Ahead Preise mit Timestamps
-  - `CrossBorderFlow` – Import/Export pro Nachbarland
-  - `HydroStorageLevel` – Pumpspeicher-Füllstände in %
-  - `NewsItem` – Aggregierte News-Meldungen mit Quelle & Datum
-- [ ] `lib/mockData.ts` durch `lib/dataLoader.ts` ersetzen → liest aus `data/*.json`
-
-### Phase 4: Dashboard UI überarbeiten
-- [ ] **KPI Header Row**: 4 große Kennzahlen-Karten
-  - Aktuelle Wasserkraft-Erzeugung (GWh heute) – Echte Daten
-  - Erneuerbare-Quote (%) – Echte Daten
-  - Day-Ahead Spotpreis (€/MWh aktuell) – Echte Daten
-  - Netto-Stromexport AT (GWh) – Echte Daten
-- [ ] **Erzeugungsmix Chart** (Recharts): Echte Stunden-/Tagesdaten der letzten 7–30 Tage
-- [ ] **Preis-Chart**: Day-Ahead Spotmarktpreise AT der letzten 30 Tage
-- [ ] **Cross-Border Widget**: Import/Export-Flüsse als Balkendarstellung (DE, IT, CH, CZ, HU, SI)
-- [ ] **Speicherfüllstands-Gauge**: Alpine Pumpspeicher Füllstand in % mit historischem Verlauf
-- [ ] **Live News Feed**: Echte Meldungen von BMK, E-Control, IEA mit Datum & Quellen-Link
-- [ ] **Letztes Update Badge**: Anzeige wann die Daten zuletzt aktualisiert wurden (aus `data/meta.json`)
-
-### Phase 5: Reports & AI Advisor mit echten Daten verbinden
-- [ ] **Report-Generator**: Gemini-Prompt erhält echte Daten aus `data/*.json` als Kontext
-  - Echte Erzeugungswerte, Preise, Speicherfüllstände werden dem Prompt mitgegeben
-  - Ergebnis: Wochenberichte basieren auf **realen Marktdaten**
-- [ ] **AI Strategy Advisor**: Chatbot-Prompt wird mit aktuellen Echtdaten angereichert
-  - Aktuelle Preise, Erzeugung und News werden als Kontext in jede Anfrage eingebettet
-  - Ergebnis: Strategische Antworten sind datenbasiert und aktuell
-
-### Phase 6: Architektur-Anpassungen (Static → Docker-Ready)
-- [ ] `next.config.js`: `output: 'export'` beibehalten für HF Static, aber
-  Docker-Alternative vorbereiten (`output: 'standalone'`) falls PRO-Upgrade gewünscht
-- [ ] `Dockerfile` aktualisiert halten für zukünftiges Docker-Deployment
-- [ ] `.env.example` erstellen mit allen benötigten Umgebungsvariablen
-
-### Phase 7: Funktionstests & Deployment
-- [ ] Daten-Aggregator lokal testen (`npx tsx scripts/fetch-data.ts`)
-- [ ] Build mit echten Daten testen (`npm run build`)
-- [ ] GitHub Actions Workflow testen (manueller Trigger)
-- [ ] Lokale Abnahme durch den User (`npx next dev -p 7860`)
-- [ ] Hugging Face Space mit echten Daten aktualisieren
-- [ ] Dokumentation (README.md, plan.md) finalisieren
-
----
-
-## 4. Kostenübersicht
-
-| Komponente | Kosten |
-| :--- | :--- |
-| Energy-Charts API | **0 €** (kostenlos, CC BY 4.0) |
-| ENTSO-E API | **0 €** (kostenlos, Token per E-Mail) |
-| APG Transparency | **0 €** (öffentlich) |
-| Gemini 1.5 Flash | **0 €** (Free Tier: 15 RPM, 1M TPM) |
-| GitHub Actions Cron | **0 €** (2.000 Min/Monat im Free Tier) |
-| Hugging Face Static Space | **0 €** (kostenlos) |
-| **Gesamt** | **0 € / Monat** |
-
----
-
-## 5. Ablaufdiagramm der täglichen Pipeline
+## 2. Ziel-Architektur
 
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│  GitHub Actions Cron (täglich 06:00 UTC)                        │
-│                                                                 │
-│  1. npm ci                                                      │
-│  2. npx tsx scripts/fetch-data.ts                               │
-│     ├── Energy-Charts API → data/generation.json                │
-│     ├── Energy-Charts API → data/prices.json                    │
-│     ├── Energy-Charts API → data/renewable-share.json           │
-│     ├── ENTSO-E API       → data/cross-border.json              │
-│     ├── ENTSO-E/APG API   → data/hydro-storage.json             │
-│     ├── News Feeds        → data/news.json                      │
-│     └── Timestamp         → data/meta.json                      │
-│  3. npm run build         → out/                                │
-│  4. huggingface_hub upload out/ → HF Static Space               │
-└─────────────────────────────────────────────────────────────────┘
+GitHub Actions (4×/Tag, :17 UTC, + manuell)
+ 1. npm ci                       (Lockfile-Integrität)
+ 2. fetch-data                   Energy-Charts (Erzeugung 8 Tage, Preise inkl. Day-Ahead, Cross-Border) + Google-News-RSS
+                                 → robuste Transformation, Plausibilitätsprüfung, last-known-good je Quelle
+                                 → data/*.json + data/weekly-stats.json + data/meta.json (Quellenstatus)
+ 3. generate-report              Wochenbericht KW n (rollierende 7 Tage) → data/reports.json (Archiv, 52 Wochen)
+                                 Gemini (falls Key) mit Schema-Validierung, sonst datenbasierte Synthese
+ 4. validate-data --schema       Bricht ab, wenn Dateien ungültig sind (nichts Kaputtes deployen)
+ 5. npm test + npm run build     Unit-Tests der Transformationen, Static Export
+ 6. Commit & Push data/          mit contents:write, Rebase-Retry
+ 7. Deploy HF (nur main)         scripts/deploy_hf.py: Upload out/ + README, alte Chunks löschen,
+                                 status.json herunterladen & verifizieren; fehlt HF_TOKEN → Fehler
+ 8. validate-data --freshness    Workflow wird rot, wenn Daten > 36 h alt oder Bericht veraltet
+ 9. Bei Fehler (Schedule)        GitHub-Issue anlegen/kommentieren; bei Erfolg automatisch schließen
 ```
+
+Frontend (Static Export):
+- Freshness-Banner + Status-Badge berechnen das Datenalter **im Browser** (gelb > 30 h, rot > 72 h).
+- Berichte-Seite liest `data/reports.json` (keine Mock-Berichte, kein toter API-Button).
+- Signal-Feed zeigt echte, aktuelle Meldungen; kuratierte Analysen klar als statisch gekennzeichnet.
+- AI Advisor: ohne Backend (HF Static) datenbasierter Offline-Modus statt stiller Fehler.
 
 ---
 
-## 6. Vorgehens-Checkliste
+## 3. Umsetzungsschritte
 
-- [x] Phase 1: Daten-Aggregator Skript (`scripts/fetch-data.ts`) – Echte APIs (Energy-Charts, APG, News)
-- [x] Phase 2: GitHub Actions Pipeline (`.github/workflows/daily-update.yml`) – Täglicher Cron um 06:00 UTC
-- [x] Phase 3: Datenmodelle & DataLoader (`lib/types.ts`, `lib/dataLoader.ts`) – Saubere Typisierung & JSON-Loader
-- [x] Phase 4: Dashboard UI Überarbeitung – 4 neue Top-KPIs, Spotpreis-Chart, Cross-Border Flüsse, Live-News
-- [x] Phase 5: Reports & AI Advisor mit echten Daten verbinden – Daten-Kontext in Prompts & Fallback
-- [x] Phase 6: Architektur-Konfiguration & Docker-Ready – `.env.example`, Standalone-Option
-- [x] Phase 7: Funktionstests, lokale Abnahme (`http://localhost:7860`) & Deployment (GitHub + HF Spaces)
+### Phase A – Pipeline reparieren & absichern
+- [x] `permissions` minimal: global `contents: read`, Job `contents: write` + `issues: write`
+- [x] `concurrency`-Gruppe, `timeout-minutes`, Cron `17 */6 * * *` (4×/Tag, außerhalb der Stoßzeit)
+- [x] `npm ci` ohne `|| npm install`-Fallback; `huggingface_hub==1.33.0` gepinnt
+- [x] Secrets nur in den Schritten, die sie brauchen (`GEMINI_API_KEY` nur im Report-Schritt)
+- [x] Deploy nur von `main`; Space-ID per Repo-Variable `HF_SPACE_ID` (Default `ecke1985/energy-trend-radar-agent`)
+- [x] Deploy-Verifikation über `status.json`; fehlendes `HF_TOKEN` = Fehler statt Warnung
+- [x] Fehler → GitHub-Issue; Dependabot für Actions & npm
+
+### Phase B – Datenqualität
+- [x] `scripts/lib/energy.ts`: reine, getestete Transformationen (letzter gültiger Index, Zeitfenster per Zeitstempel, Europe/Vienna, GW→MW-Erkennung, Plausibilitätsgrenzen)
+- [x] Wochenstatistik (GWh je Technologie, Preise, Negativpreis-Stunden, Netto-Export) für 7 Tage
+- [x] News: mehrere Abfragen mit `when:14d`, nach Datum sortiert, HTML/Entities bereinigt, nur `http(s)`-Links, Längenlimits
+- [x] `meta.json`: Status je Quelle (`ok`, `lastSuccess`, `dataUntil`, Fehler), `dataAsOf`, Warnungen
+- [x] last-known-good: fällt eine Quelle aus, bleibt die letzte gültige Datei erhalten und wird als veraltet markiert
+
+### Phase C – Aktuelle Berichte
+- [x] `scripts/generate-report.ts`: KW nach ISO-8601 (Europe/Vienna), Berichtszeitraum explizit, Kennzahlen immer aus echten Daten berechnet
+- [x] Gemini via REST (Modell per `GEMINI_MODEL`, Fallback-Kette), JSON-Ausgabe wird validiert & gekürzt
+- [x] Fallback ohne Key: datenbasierte Synthese **ohne erfundene Fakten** (internationale Punkte & Projekte nur aus echten Schlagzeilen)
+- [x] Archiv `data/reports.json` (max. 52 Berichte), tägliche Aktualisierung des laufenden Wochenberichts
+
+### Phase D – Frontend
+- [x] Freshness-Banner, Status-Badge in der Navbar, „Stand“-Angaben je Widget
+- [x] Berichte-Seite: echte Berichte, Kennzahlen, Quellenliste, Markdown-Export mit korrektem Jahr
+- [x] Dashboard/Feed: echte News; Mock-Trends als „kuratierte Hintergrund-Analysen (statisch)“ gekennzeichnet
+- [x] Advisor: Offline-Fallback; `/api/agent/generate-report` entfernt; Chat-API mit Eingabevalidierung
+
+### Phase E – Manuelle Schritte (Repo-Owner)
+- [ ] **`HF_TOKEN`** als GitHub-Secret anlegen: *Fine-grained Token* auf huggingface.co mit **Schreibrecht nur für den Space** `ecke1985/energy-trend-radar-agent`
+- [ ] Optional **`GEMINI_API_KEY`** als Secret (Google AI Studio), optional Repo-Variable **`GEMINI_MODEL`**
+- [ ] Optional Repo-Variable **`HF_SPACE_ID`**, falls der Space anders heißt
+- [ ] Workflow einmal manuell starten (*Actions → Energy Radar Update → Run workflow*) und Space prüfen
+- [ ] Dependabot-PRs regelmäßig mergen
+
+---
+
+## 4. Sicherheitsprüfung
+
+| Bereich | Risiko | Maßnahme |
+| :--- | :--- | :--- |
+| `GITHUB_TOKEN` | Zu breite Rechte | Global `contents: read`; nur der Update-Job bekommt `contents: write` + `issues: write` |
+| `HF_TOKEN` | Missbrauch bei Leak | Fine-grained, nur Schreibrecht auf den einen Space; nur im Deploy-Schritt als Env; nie geloggt; README-Beispiel ohne Token im Befehl |
+| `GEMINI_API_KEY` | Exposition im Client/Build | Nur im Report-Schritt; kein `NEXT_PUBLIC_`-Präfix; nie im Bundle (Build läuft ohne Key) |
+| Supply Chain | Manipulierte Pakete | `npm ci` mit Lockfile, gepinntes `huggingface_hub`, Dependabot; Empfehlung: Actions auf Commit-SHA pinnen |
+| RSS-Inhalte (untrusted) | XSS über Links/Titel | Bereinigung beim Import (Tags, Entities, Steuerzeichen, Länge), nur `http(s)`-URLs, React escaped Text, kein `dangerouslySetInnerHTML` |
+| LLM / Prompt Injection | Schlagzeilen manipulieren den Bericht | Schlagzeilen als markierte, nicht vertrauenswürdige Daten; JSON-Schema-Validierung, Längenlimits, Enum-Prüfung; Kennzahlen kommen nie vom LLM; Ausgabe nur als Text gerendert |
+| API-Routen (nur Docker-Betrieb) | Quota-Missbrauch, Fehlerdetails | Report-Route entfernt; Chat: Typ-/Längenprüfung, generische Fehlermeldungen. Für Docker-Betrieb zusätzlich Rate-Limiting nötig |
+| Docker | `.env` im Image | `.env*` in `.dockerignore` |
+| Next.js 14.2.35 | `npm audit`: mehrere Advisories (u. a. SSRF, Cache-Poisoning, Server Actions) | Betreffen den **Server**; im Static Export auf HF nicht ausnutzbar. Vor einem Docker/Server-Betrieb Upgrade auf Next 15/16 zwingend |
+| Workflow-Injection | Untrusted Event-Daten in `run:` | Keine `${{ github.event.* }}`-Ausdrücke in Skripten; Werte über Env-Variablen |
+
+---
+
+## 5. Betrieb & Monitoring
+
+- **Wo sehe ich, ob alles läuft?** Navbar-Badge (grün/gelb/rot), `status.json` im Space, GitHub-Issue „Energy Radar: automatisches Update fehlgeschlagen“.
+- **Lokal testen**: `npm run fetch-data && npm run generate-report && npm run validate-data && npm test && npm run build`
+- **Schwellenwerte**: `MAX_DATA_AGE_HOURS` (Default 36), `MAX_REPORT_AGE_DAYS` (Default 8), `REPORT_REFRESH_HOURS` (Default 20).

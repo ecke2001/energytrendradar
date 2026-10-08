@@ -20,7 +20,7 @@ export default function EnergyMixChart() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
         <div>
           <h3 className="text-lg font-bold text-white">Reale Stromerzeugung Österreich (MW)</h3>
-          <p className="text-xs text-slate-400">Stundenauflösung der letzten 48 Stunden (Quelle: Energy-Charts / Fraunhofer ISE)</p>
+          <p className="text-xs text-slate-400">Stundenmittelwerte der letzten 48 Stunden (Quelle: Energy-Charts / Fraunhofer ISE)</p>
         </div>
         <div className="flex items-center gap-2">
           <span className="text-[11px] px-2.5 py-1 rounded bg-slate-800/80 border border-slate-700 text-slate-300">

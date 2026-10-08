@@ -1,21 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { askAIStrategyAdvisor } from '@/lib/geminiAgent';
+import { askAIStrategyAdvisor, MAX_QUESTION_LENGTH } from '@/lib/geminiAgent';
 
+// Only active when the app runs with a Node server (e.g. Docker). Note: there is
+// no rate limiting here – add it before exposing this endpoint publicly.
 export async function POST(req: NextRequest) {
-  try {
-    const body = await req.json();
-    const { question, history } = body;
+  const body = await req.json().catch(() => null);
+  const question = typeof body?.question === 'string' ? body.question.trim() : '';
 
-    if (!question) {
-      return NextResponse.json({ success: false, error: 'Keine Frage angegeben' }, { status: 400 });
-    }
-
-    const answer = await askAIStrategyAdvisor(question, history || []);
-    return NextResponse.json({ success: true, answer });
-  } catch (error: any) {
+  if (!question || question.length > MAX_QUESTION_LENGTH) {
     return NextResponse.json(
-      { success: false, error: error.message || 'Fehler beim AI Advisor Chat' },
-      { status: 500 }
+      { success: false, error: `Bitte eine Frage mit 1–${MAX_QUESTION_LENGTH} Zeichen angeben.` },
+      { status: 400 },
     );
+  }
+
+  try {
+    const answer = await askAIStrategyAdvisor(question);
+    return NextResponse.json({ success: true, answer });
+  } catch {
+    return NextResponse.json({ success: false, error: 'Interner Fehler beim AI Advisor.' }, { status: 500 });
   }
 }

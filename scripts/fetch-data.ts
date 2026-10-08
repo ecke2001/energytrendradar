@@ -1,281 +1,222 @@
+// Data aggregator: fetches Energy-Charts (Fraunhofer ISE) and Google News RSS,
+// validates and transforms the data and writes data/*.json.
+//
+// Every source is handled independently. If a source fails, its previous file
+// is kept untouched (last known good) and the failure is recorded in
+// data/meta.json so the UI and the freshness check can flag it.
+
 import fs from 'fs';
 import path from 'path';
+import type { AppMetadata, GenerationData, SourceStatus } from '../lib/types';
+import { addDays, viennaDateKey, viennaDateTime } from '../lib/time';
+import { describeError, fetchJson, fetchText, sleep } from './lib/http';
+import {
+  aggregateGenerationDaily,
+  aggregateNetExportDaily,
+  aggregatePriceDaily,
+  assertCrossBorder,
+  assertPrice,
+  assertPublicPower,
+  buildWeeklyStats,
+  crossBorderBalanceWarning,
+  transformCrossBorder,
+  transformGeneration,
+  transformPrices,
+} from './lib/energy';
+import { NEWS_QUERIES, mergeNews, newsFeedUrl, parseRssItems } from './lib/news';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
+const EC_BASE = 'https://api.energy-charts.info';
+// Energy-Charts is rate limited; keep a gap between requests.
+const EC_REQUEST_GAP_MS = 3000;
 
-if (!fs.existsSync(DATA_DIR)) {
-  fs.mkdirSync(DATA_DIR, { recursive: true });
-}
-
-// Helper to safely fetch JSON
-async function fetchJson(url: string, retries = 2): Promise<any> {
-  for (let i = 0; i <= retries; i++) {
-    try {
-      const res = await fetch(url, {
-        headers: {
-          'User-Agent': 'EnergyTrendRadarAgent/2.0 (Austria; Renewable Energy Monitor)'
-        }
-      });
-      if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
-      return await res.json();
-    } catch (err: any) {
-      if (i === retries) {
-        console.warn(`Failed fetching ${url}: ${err.message}`);
-        return null;
-      }
-      await new Promise(r => setTimeout(r, 1500));
-    }
+function readJson<T>(file: string): T | null {
+  try {
+    return JSON.parse(fs.readFileSync(path.join(DATA_DIR, file), 'utf8')) as T;
+  } catch {
+    return null;
   }
 }
 
-// Simple XML parser for RSS items
-function parseRssItems(xmlText: string): Array<{ title: string; link: string; pubDate: string; source: string; summary: string }> {
-  const items: Array<{ title: string; link: string; pubDate: string; source: string; summary: string }> = [];
-  const itemMatches = xmlText.match(/<item>([\s\S]*?)<\/item>/g) || [];
+/** Write via temp file + rename so a crash never leaves a half-written file. */
+function writeJson(file: string, data: unknown): void {
+  const target = path.join(DATA_DIR, file);
+  const tmp = `${target}.tmp`;
+  fs.writeFileSync(tmp, `${JSON.stringify(data, null, 2)}\n`);
+  fs.renameSync(tmp, target);
+  console.log(`  ✅ data/${file}`);
+}
 
-  for (const itemXml of itemMatches.slice(0, 15)) {
-    const titleMatch = itemXml.match(/<title>([\s\S]*?)<\/title>/);
-    const linkMatch = itemXml.match(/<link>([\s\S]*?)<\/link>/);
-    const pubDateMatch = itemXml.match(/<pubDate>([\s\S]*?)<\/pubDate>/);
-    const sourceMatch = itemXml.match(/<source[^>]*>([\s\S]*?)<\/source>/);
-
-    let rawTitle = titleMatch ? titleMatch[1] : '';
-    // Strip CDATA if present
-    rawTitle = rawTitle.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').trim();
-
-    // Source often at end of title like "Title - Source"
-    let source = sourceMatch ? sourceMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').trim() : 'Energiemarkt';
-    if (!sourceMatch && rawTitle.includes(' - ')) {
-      const parts = rawTitle.split(' - ');
-      source = parts.pop() || 'Energiemarkt';
-      rawTitle = parts.join(' - ');
-    }
-
-    const link = linkMatch ? linkMatch[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').trim() : '';
-    const pubDate = pubDateMatch ? pubDateMatch[1].trim() : new Date().toISOString();
-
-    if (rawTitle) {
-      items.push({
-        title: rawTitle,
-        link,
-        pubDate: new Date(pubDate).toISOString().split('T')[0],
-        source,
-        summary: rawTitle
-      });
-    }
+/**
+ * Requests an Energy-Charts endpoint for an explicit date range. If the ranged
+ * request fails, retries once with the API default range (today), which is
+ * enough for the current snapshot but not for weekly statistics.
+ */
+async function fetchEnergyCharts<T>(
+  endpoint: string,
+  params: Record<string, string>,
+  range: { start: string; end: string },
+  validate: (raw: unknown) => T,
+): Promise<{ data: T; ranged: boolean }> {
+  const ranged = new URLSearchParams({ ...params, ...range });
+  try {
+    return { data: validate(await fetchJson(`${EC_BASE}/${endpoint}?${ranged}`)), ranged: true };
+  } catch (err) {
+    console.warn(`  ⚠️  ${endpoint} (Zeitraum) fehlgeschlagen: ${describeError(err)} – versuche Standardzeitraum`);
+    await sleep(EC_REQUEST_GAP_MS);
+    const fallback = new URLSearchParams(params);
+    return { data: validate(await fetchJson(`${EC_BASE}/${endpoint}?${fallback}`)), ranged: false };
   }
-
-  return items;
 }
 
 async function main() {
-  console.log('🔄 Starting data aggregation from real Austrian & international energy sources...');
   const now = new Date();
-  const timestamp = now.toISOString();
+  const nowIso = now.toISOString();
+  const nowSec = Math.floor(now.getTime() / 1000);
+  const today = viennaDateKey(nowSec);
 
-  // 1. Fetch public power (Generation by production type for Austria)
-  console.log('📊 Fetching Austria generation data from Energy-Charts API...');
-  const powerData = await fetchJson('https://api.energy-charts.info/public_power?country=at');
-  
-  let formattedGeneration: any = null;
-  if (powerData && powerData.production_types && powerData.unix_seconds) {
-    const timestamps = powerData.unix_seconds;
-    // Map production types
-    const typesMap: Record<string, number[]> = {};
-    for (const pt of powerData.production_types) {
-      typesMap[pt.name] = pt.data;
+  const previousMeta = readJson<AppMetadata>('meta.json');
+  const sourceStatus: Record<string, SourceStatus> = {};
+  const warnings: string[] = [];
+
+  async function runSource(key: string, task: () => Promise<string | null>): Promise<void> {
+    const previous = previousMeta?.sourceStatus?.[key];
+    try {
+      const dataUntil = await task();
+      sourceStatus[key] = { ok: true, lastAttempt: nowIso, lastSuccess: nowIso, dataUntil };
+    } catch (err) {
+      const reason = describeError(err);
+      console.error(`  ❌ ${key}: ${reason}`);
+      warnings.push(`${key}: ${reason} – letzte gültige Daten bleiben erhalten`);
+      sourceStatus[key] = {
+        ok: false,
+        lastAttempt: nowIso,
+        lastSuccess: previous?.lastSuccess ?? null,
+        dataUntil: previous?.dataUntil ?? null,
+        error: reason,
+      };
     }
+  }
 
-    // Take last 48 data points (or daily aggregates)
-    const pointsCount = Math.min(48, timestamps.length);
-    const startIndex = timestamps.length - pointsCount;
+  console.log(`🔄 Energy Trend Radar Datenaktualisierung – ${viennaDateTime(now)} (Europe/Vienna)`);
 
-    const series = [];
-    for (let i = startIndex; i < timestamps.length; i++) {
-      const date = new Date(timestamps[i] * 1000);
-      const hourStr = date.toLocaleTimeString('de-AT', { hour: '2-digit', minute: '2-digit' });
-      const dayStr = date.toLocaleDateString('de-AT', { day: '2-digit', month: '2-digit' });
-
-      series.push({
-        timestamp: timestamps[i],
-        label: `${dayStr} ${hourStr}`,
-        laufkraft: Math.round(typesMap['Hydro Run-of-River']?.[i] || 0),
-        speicher: Math.round((typesMap['Hydro water reservoir']?.[i] || 0) + (typesMap['Hydro pumped storage']?.[i] || 0)),
-        pumpspeicherPumpen: Math.round(Math.abs(typesMap['Hydro pumped storage consumption']?.[i] || 0)),
-        pv: Math.round(typesMap['Solar']?.[i] || 0),
-        wind: Math.round(typesMap['Wind onshore']?.[i] || 0),
-        biomasse: Math.round(typesMap['Biomass']?.[i] || 0),
-        gas: Math.round(typesMap['Fossil gas']?.[i] || 0),
-        load: Math.round(typesMap['Load']?.[i] || 0),
-      });
+  // --- Raw downloads -------------------------------------------------------
+  console.log('📥 Lade Energy-Charts Daten (Erzeugung, Preise, Grenzflüsse)...');
+  const download = async <T>(fn: () => Promise<T>): Promise<T | Error> => {
+    try {
+      return await fn();
+    } catch (err) {
+      return err instanceof Error ? err : new Error(String(err));
     }
-
-    // Calculate current snapshot summary
-    const latestIndex = timestamps.length - 1;
-    const currentLaufkraft = typesMap['Hydro Run-of-River']?.[latestIndex] || 0;
-    const currentSpeicher = (typesMap['Hydro water reservoir']?.[latestIndex] || 0) + (typesMap['Hydro pumped storage']?.[latestIndex] || 0);
-    const currentPumpspeicherVerbrauch = Math.abs(typesMap['Hydro pumped storage consumption']?.[latestIndex] || 0);
-    const currentTotalHydro = currentLaufkraft + currentSpeicher;
-    const currentLoad = typesMap['Load']?.[latestIndex] || 1;
-    const currentHydroShare = Math.round((currentTotalHydro / currentLoad) * 100);
-
-    formattedGeneration = {
-      latestSnapshot: {
-        timestamp: timestamps[latestIndex],
-        date: new Date(timestamps[latestIndex] * 1000).toISOString(),
-        laufkraftMW: Math.round(currentLaufkraft),
-        speicherMW: Math.round(currentSpeicher),
-        pumpspeicherPumpenMW: Math.round(currentPumpspeicherVerbrauch),
-        totalHydroMW: Math.round(currentTotalHydro),
-        loadMW: Math.round(currentLoad),
-        hydroSharePercent: Math.min(100, currentHydroShare),
-        renewableSharePercent: Math.round(((currentTotalHydro + (typesMap['Solar']?.[latestIndex] || 0) + (typesMap['Wind onshore']?.[latestIndex] || 0) + (typesMap['Biomass']?.[latestIndex] || 0)) / currentLoad) * 100)
-      },
-      series
-    };
-  }
-
-  // 2. Fetch Day-Ahead Spot Market Prices for Austria
-  console.log('💶 Fetching Austria Day-Ahead spot market prices from Energy-Charts...');
-  const priceData = await fetchJson('https://api.energy-charts.info/price?country=at&bzn=AT');
-  let formattedPrices: any = null;
-
-  if (priceData && priceData.price && priceData.unix_seconds) {
-    const timestamps = priceData.unix_seconds;
-    const prices = priceData.price;
-    const pointsCount = Math.min(72, timestamps.length);
-    const startIndex = timestamps.length - pointsCount;
-
-    const series = [];
-    for (let i = startIndex; i < timestamps.length; i++) {
-      const date = new Date(timestamps[i] * 1000);
-      series.push({
-        timestamp: timestamps[i],
-        time: date.toLocaleDateString('de-AT', { day: '2-digit', month: '2-digit' }) + ' ' + date.toLocaleTimeString('de-AT', { hour: '2-digit', minute: '2-digit' }),
-        price: Number(prices[i]?.toFixed(2) || 0)
-      });
-    }
-
-    const latestPrice = prices[prices.length - 1] || 0;
-    const avgPrice = prices.slice(-24).reduce((a: number, b: number) => a + b, 0) / Math.min(24, prices.length);
-    const minPrice = Math.min(...prices.slice(-24));
-    const maxPrice = Math.max(...prices.slice(-24));
-
-    formattedPrices = {
-      unit: 'EUR/MWh',
-      currentPrice: Number(latestPrice.toFixed(2)),
-      avg24h: Number(avgPrice.toFixed(2)),
-      min24h: Number(minPrice.toFixed(2)),
-      max24h: Number(maxPrice.toFixed(2)),
-      negativePriceHours24h: prices.slice(-24).filter((p: number) => p < 0).length,
-      series
-    };
-  }
-
-  // 3. Fetch Cross-Border Physical Flows (AT ↔ DE, IT, CH, CZ, HU, SI)
-  console.log('⚡ Fetching Austria Cross-Border physical power flows...');
-  const cbData = await fetchJson('https://api.energy-charts.info/cbpf?country=at');
-  let formattedCrossBorder: any = null;
-
-  if (cbData && cbData.countries && cbData.unix_seconds) {
-    const latestIndex = cbData.unix_seconds.length - 1;
-    const neighborFlows: Array<{ country: string; flowMW: number; isExport: boolean }> = [];
-    let netExportMW = 0;
-
-    for (const c of cbData.countries) {
-      if (c.name === 'sum') {
-        netExportMW = Math.round(c.data[latestIndex] || 0);
-      } else {
-        const flow = Math.round(c.data[latestIndex] || 0);
-        neighborFlows.push({
-          country: c.name,
-          flowMW: flow,
-          isExport: flow > 0
-        });
-      }
-    }
-
-    formattedCrossBorder = {
-      timestamp: cbData.unix_seconds[latestIndex],
-      date: new Date(cbData.unix_seconds[latestIndex] * 1000).toISOString(),
-      netExportMW,
-      isNetExporter: netExportMW >= 0,
-      neighbors: neighborFlows
-    };
-  }
-
-  // 4. Fetch Renewable Share History
-  console.log('🌱 Fetching Renewable Share metrics for Austria...');
-  const renData = await fetchJson('https://api.energy-charts.info/ren_share?country=at');
-  let formattedRenShare: any = null;
-  if (Array.isArray(renData) && renData.length > 0) {
-    const shareValues = renData[0]?.data || [];
-    const latestShare = shareValues[shareValues.length - 1] || 0;
-    formattedRenShare = {
-      currentPercent: latestShare,
-      trend: shareValues.slice(-12)
-    };
-  }
-
-  // 5. Fetch News Feeds (Google News RSS: Austria Energy & Hydro)
-  console.log('📰 Fetching real Austrian Energy News Feeds...');
-  let newsItems: any[] = [];
-  try {
-    const rssRes = await fetch('https://news.google.com/rss/search?q=Energie+%C3%96sterreich+Wasserkraft+OR+E-Control+OR+APG&hl=de&gl=AT&ceid=AT:de', {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; EnergyRadar/2.0)' }
-    });
-    if (rssRes.ok) {
-      const xml = await rssRes.text();
-      newsItems = parseRssItems(xml);
-    }
-  } catch (err: any) {
-    console.warn('News RSS fetch warning:', err.message);
-  }
-
-  // 6. Write output files
-  if (formattedGeneration) {
-    fs.writeFileSync(path.join(DATA_DIR, 'generation.json'), JSON.stringify(formattedGeneration, null, 2));
-    console.log('✅ Wrote data/generation.json');
-  }
-
-  if (formattedPrices) {
-    fs.writeFileSync(path.join(DATA_DIR, 'prices.json'), JSON.stringify(formattedPrices, null, 2));
-    console.log('✅ Wrote data/prices.json');
-  }
-
-  if (formattedCrossBorder) {
-    fs.writeFileSync(path.join(DATA_DIR, 'cross-border.json'), JSON.stringify(formattedCrossBorder, null, 2));
-    console.log('✅ Wrote data/cross-border.json');
-  }
-
-  if (formattedRenShare) {
-    fs.writeFileSync(path.join(DATA_DIR, 'renewable-share.json'), JSON.stringify(formattedRenShare, null, 2));
-    console.log('✅ Wrote data/renewable-share.json');
-  }
-
-  if (newsItems.length > 0) {
-    fs.writeFileSync(path.join(DATA_DIR, 'news.json'), JSON.stringify(newsItems, null, 2));
-    console.log(`✅ Wrote data/news.json (${newsItems.length} news items)`);
-  }
-
-  // Write Metadata
-  const metadata = {
-    lastUpdated: timestamp,
-    lastUpdatedFormatted: now.toLocaleString('de-AT', { timeZone: 'Europe/Vienna' }),
-    version: '2.0.0',
-    sources: [
-      { name: 'Energy-Charts (Fraunhofer ISE)', url: 'https://energy-charts.info', license: 'CC BY 4.0' },
-      { name: 'Austrian Power Grid (APG) / ENTSO-E', url: 'https://transparency.apg.at' },
-      { name: 'E-Control Austria / BMK News Feed', url: 'https://www.e-control.at' }
-    ]
   };
 
-  fs.writeFileSync(path.join(DATA_DIR, 'meta.json'), JSON.stringify(metadata, null, 2));
-  console.log('✅ Wrote data/meta.json');
-  console.log('🎉 Data aggregation completed successfully!');
+  const power = await download(() =>
+    fetchEnergyCharts('public_power', { country: 'at' }, { start: addDays(today, -8), end: addDays(today, 1) }, assertPublicPower));
+  await sleep(EC_REQUEST_GAP_MS);
+  const price = await download(() =>
+    fetchEnergyCharts('price', { bzn: 'AT' }, { start: addDays(today, -8), end: addDays(today, 2) }, assertPrice));
+  await sleep(EC_REQUEST_GAP_MS);
+  const cbpf = await download(() =>
+    fetchEnergyCharts('cbpf', { country: 'at' }, { start: addDays(today, -8), end: addDays(today, 1) }, assertCrossBorder));
+
+  if (!(power instanceof Error)) {
+    console.log(`  ℹ️  Produktionsarten: ${power.data.production_types.map(t => t.name).join(', ')}`);
+  }
+
+  // --- Transformations (each writes its file only on success) ---------------
+  console.log('🧮 Verarbeite Daten...');
+  let generation: GenerationData | null = null;
+
+  await runSource('generation', async () => {
+    if (power instanceof Error) throw power;
+    const result = transformGeneration(power.data, nowSec);
+    warnings.push(...result.warnings);
+    generation = result.data;
+    writeJson('generation.json', result.data);
+    return result.data.latestSnapshot.date;
+  });
+
+  await runSource('prices', async () => {
+    if (price instanceof Error) throw price;
+    const data = transformPrices(price.data, nowSec);
+    writeJson('prices.json', data);
+    return new Date((data.currentSlotStart ?? 0) * 1000).toISOString();
+  });
+
+  await runSource('crossBorder', async () => {
+    if (cbpf instanceof Error) throw cbpf;
+    const data = transformCrossBorder(cbpf.data, nowSec);
+    const g = generation as GenerationData | null;
+    if (g) {
+      const warning = crossBorderBalanceWarning(g.latestSnapshot, data);
+      if (warning) warnings.push(warning);
+    }
+    writeJson('cross-border.json', data);
+    return data.date;
+  });
+
+  await runSource('weeklyStats', async () => {
+    if (power instanceof Error) throw power;
+    if (!power.ranged) throw new Error('public_power ohne Zeitraum – keine Wochenstatistik möglich');
+    const priceDaily = !(price instanceof Error) && price.ranged ? aggregatePriceDaily(price.data) : null;
+    const exportDaily = !(cbpf instanceof Error) && cbpf.ranged ? aggregateNetExportDaily(cbpf.data, nowSec) : null;
+    const stats = buildWeeklyStats(aggregateGenerationDaily(power.data, nowSec), priceDaily, exportDaily, today, nowIso);
+    writeJson('weekly-stats.json', stats);
+    writeJson('renewable-share.json', {
+      currentPercent: (generation as GenerationData | null)?.latestSnapshot.renewableSharePercent
+        ?? stats.days[stats.days.length - 1].renewableSharePercent,
+      trend: stats.days.map(d => d.renewableSharePercent),
+      daily: stats.days.map(d => ({ date: d.date, percent: d.renewableSharePercent })),
+    });
+    return stats.periodEnd;
+  });
+
+  console.log('📰 Lade aktuelle Meldungen (Google News RSS)...');
+  await runSource('news', async () => {
+    const lists = [];
+    for (const { category, query } of NEWS_QUERIES) {
+      try {
+        const xml = await fetchText(newsFeedUrl(query), { retries: 2, maxBytes: 5 * 1024 * 1024 });
+        lists.push(parseRssItems(xml, category));
+      } catch (err) {
+        console.warn(`  ⚠️  News-Abfrage "${category}" fehlgeschlagen: ${describeError(err)}`);
+      }
+      await sleep(1000);
+    }
+    const items = mergeNews(lists, now);
+    if (items.length === 0) throw new Error('keine aktuellen Meldungen erhalten');
+    writeJson('news.json', items);
+    return items[0].pubDate;
+  });
+
+  // --- Metadata --------------------------------------------------------------
+  const dataAsOf = sourceStatus.generation?.ok
+    ? sourceStatus.generation.dataUntil
+    : previousMeta?.dataAsOf ?? previousMeta?.sourceStatus?.generation?.dataUntil ?? null;
+
+  const meta: AppMetadata = {
+    lastUpdated: nowIso,
+    lastUpdatedFormatted: viennaDateTime(now),
+    dataAsOf,
+    version: '3.0.0',
+    sources: [
+      { name: 'Energy-Charts (Fraunhofer ISE)', url: 'https://energy-charts.info', license: 'CC BY 4.0' },
+      { name: 'ENTSO-E Transparency (via Energy-Charts)', url: 'https://transparency.entsoe.eu' },
+      { name: 'Google News (Schlagzeilen & Links)', url: 'https://news.google.com' },
+    ],
+    sourceStatus,
+    warnings,
+  };
+  writeJson('meta.json', meta);
+
+  const failed = Object.entries(sourceStatus).filter(([, s]) => !s.ok).map(([k]) => k);
+  if (warnings.length) warnings.forEach(w => console.warn(`::warning::${w}`));
+  console.log(failed.length === 0
+    ? '🎉 Alle Quellen erfolgreich aktualisiert.'
+    : `⚠️  Fehlgeschlagene Quellen: ${failed.join(', ')} (letzte gültige Daten beibehalten)`);
 }
 
 main().catch(err => {
-  console.error('Fatal data aggregation error:', err);
+  console.error('Fatal data aggregation error:', describeError(err));
   process.exit(1);
 });

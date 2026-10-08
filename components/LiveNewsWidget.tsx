@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { realNewsItems } from '@/lib/dataLoader';
+import { safeExternalUrl } from '@/lib/safeUrl';
+import { formatDateKey } from '@/lib/time';
 import { Newspaper, ExternalLink, Calendar, Sparkles } from 'lucide-react';
 
 export default function LiveNewsWidget() {
@@ -13,9 +15,9 @@ export default function LiveNewsWidget() {
         <div>
           <h3 className="text-lg font-bold text-white flex items-center gap-2">
             <Newspaper className="w-5 h-5 text-cyan-400" />
-            Echtzeit News & Regulierung (Österreich)
+            Aktuelle Meldungen & Regulierung
           </h3>
-          <p className="text-xs text-slate-400">Tagesaktuelle Meldungen zu Wasserkraft, EAG, E-Control & APG</p>
+          <p className="text-xs text-slate-400">Neueste Meldungen der letzten Wochen zu Wasserkraft, Strommarkt, E-Control & APG (Google News)</p>
         </div>
         <span className="text-xs px-2.5 py-1 rounded bg-cyan-500/15 border border-cyan-500/30 text-cyan-300 font-mono">
           {news.length} Meldungen
@@ -32,7 +34,7 @@ export default function LiveNewsWidget() {
                 </span>
                 <span className="flex items-center gap-1">
                   <Calendar className="w-3 h-3" />
-                  {item.pubDate}
+                  {/^\d{4}-\d{2}-\d{2}$/.test(item.pubDate) ? formatDateKey(item.pubDate) : item.pubDate}
                 </span>
               </div>
               <h4 className="text-sm font-semibold text-slate-100 group-hover:text-[#00f2fe] transition-colors leading-snug mb-3">
@@ -40,17 +42,19 @@ export default function LiveNewsWidget() {
               </h4>
             </div>
 
-            <div className="pt-2 border-t border-slate-800/80 flex items-center justify-end">
-              <a
-                href={item.link?.startsWith('http://') || item.link?.startsWith('https://') ? item.link : '#'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
-              >
-                <span>Artikel lesen</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </div>
+            {safeExternalUrl(item.link) && (
+              <div className="pt-2 border-t border-slate-800/80 flex items-center justify-end">
+                <a
+                  href={safeExternalUrl(item.link) as string}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-cyan-400 hover:text-cyan-300 flex items-center gap-1"
+                >
+                  <span>Artikel lesen</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            )}
           </div>
         ))}
       </div>

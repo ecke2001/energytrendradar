@@ -2,7 +2,9 @@ Dockerfile
 .dockerignore
 node_modules
 .next
+out
 .git
 .gitignore
+.env*
 plan.md
 README.md

@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from '@/lib/types';
+import { buildAdvisorAnswer } from '@/lib/advisorFallback';
 import { Bot, User, Send, Sparkles, HelpCircle, ShieldCheck, Zap } from 'lucide-react';
 
 const SUGGESTED_PROMPTS = [
@@ -16,7 +17,7 @@ export default function AdvisorPage() {
     {
       id: 'msg-welcome',
       sender: 'agent',
-      text: 'Grüß Gott! Ich bin dein **Energy Strategy Advisor AI Agent**. Ich analysiere kontinuierlich Daten aus dem österreichischen Energiesektor (E-Control, APG, Verbund, BMK) sowie EU-Trends.\n\nWie kann ich dir bei deiner Unternehmens- oder Investitionsstrategie im Bereich Erneuerbare & Wasserkraft helfen?',
+      text: 'Grüß Gott! Ich bin dein **Energy Strategy Advisor**. Meine Antworten stützen sich auf die aktuellen Messdaten des Dashboards (Erzeugung, Spotpreise, Grenzflüsse).\n\nWie kann ich dir bei deiner Strategie im Bereich Erneuerbare & Wasserkraft helfen?',
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ]);
@@ -44,31 +45,28 @@ export default function AdvisorPage() {
     if (!questionToSend) setInputQuestion('');
     setIsLoading(true);
 
+    // The static Hugging Face Space has no API routes; fall back to answers built
+    // from the bundled data instead of failing silently.
+    let answer: string | null = null;
     try {
       const res = await fetch('/api/agent/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          question: query,
-          history: messages
-        })
+        body: JSON.stringify({ question: query })
       });
-
-      const data = await res.json();
-      if (data.success && data.answer) {
-        const agentMsg: ChatMessage = {
-          id: `agent-${Date.now()}`,
-          sender: 'agent',
-          text: data.answer,
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        };
-        setMessages(prev => [...prev, agentMsg]);
-      }
-    } catch (e) {
-      console.error('Chat error:', e);
-    } finally {
-      setIsLoading(false);
+      const data = res.ok ? await res.json() : null;
+      if (data?.success && typeof data.answer === 'string') answer = data.answer;
+    } catch {
+      // network error or no backend – handled below
     }
+    const agentMsg: ChatMessage = {
+      id: `agent-${Date.now()}`,
+      sender: 'agent',
+      text: answer ?? `${buildAdvisorAnswer(query)}\n\n_(Offline-Modus: kein KI-Backend verfügbar – Antwort aus den aktuellen Messdaten.)_`,
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+    };
+    setMessages(prev => [...prev, agentMsg]);
+    setIsLoading(false);
   };
 
   return (
@@ -160,6 +158,7 @@ export default function AdvisorPage() {
             onKeyDown={(e) => e.key === 'Enter' && handleSend()}
             placeholder="Frage zu Wasserkraft, EAG-Förderungen, APG-Netz oder Preisprognosen eingeben..."
             disabled={isLoading}
+            maxLength={1000}
             className="flex-1 bg-slate-900/90 border border-slate-700/80 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#00f2fe] transition-colors"
           />
           <button

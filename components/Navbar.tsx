@@ -4,7 +4,8 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Activity, FileText, Bot, Newspaper, Zap, Clock } from 'lucide-react';
-import { appMetadata } from '@/lib/dataLoader';
+import { getLastUpdatedText } from '@/lib/dataLoader';
+import DataStatusBadge from './DataStatusBadge';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -16,7 +17,7 @@ export default function Navbar() {
     { href: '/feed', label: 'Signal Feed', icon: Newspaper },
   ];
 
-  const updateTime = appMetadata?.lastUpdatedFormatted || 'Heute';
+  const updateTime = getLastUpdatedText();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[var(--border-glass)] bg-[#060b18]/85 backdrop-blur-md">
@@ -68,13 +69,10 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <div className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-[11px] text-slate-300 font-mono">
             <Clock className="w-3.5 h-3.5 text-cyan-400" />
-            <span>Update: {updateTime}</span>
+            <span>Datenstand: {updateTime}</span>
           </div>
 
-          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span className="hidden sm:inline">Live Echtdaten</span>
-          </div>
+          <DataStatusBadge />
         </div>
 
       </div>

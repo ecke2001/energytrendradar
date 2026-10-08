@@ -7,7 +7,10 @@
     "build": "next build",
     "start": "next start -p 7860",
     "lint": "next lint",
-    "fetch-data": "tsx scripts/fetch-data.ts"
+    "fetch-data": "tsx scripts/fetch-data.ts",
+    "generate-report": "tsx scripts/generate-report.ts",
+    "validate-data": "tsx scripts/validate-data.ts",
+    "test": "tsx --test scripts/tests/*.test.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",

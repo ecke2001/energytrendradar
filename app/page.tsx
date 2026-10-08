@@ -8,8 +8,9 @@ import SpotPriceChart from '@/components/SpotPriceChart';
 import CrossBorderWidget from '@/components/CrossBorderWidget';
 import LiveNewsWidget from '@/components/LiveNewsWidget';
 import TrendCard from '@/components/TrendCard';
-import { MOCK_TRENDS, MOCK_WEEKLY_REPORTS } from '@/lib/mockData';
-import { generationData, spotPriceData, crossBorderData, renewableShareData, getLastUpdatedText } from '@/lib/dataLoader';
+import { MOCK_TRENDS } from '@/lib/mockData';
+import { generationData, spotPriceData, crossBorderData, latestReport, getLastUpdatedText, formatDataTime, formatShortTime } from '@/lib/dataLoader';
+import { formatDateKey } from '@/lib/time';
 import { Region, Sector } from '@/lib/types';
 import {
   Activity,
@@ -30,11 +31,9 @@ export default function DashboardPage() {
   const [selectedRegion, setSelectedRegion] = useState<Region | 'All'>('All');
   const [selectedSector, setSelectedSector] = useState<Sector | 'All'>('All');
 
-  const latestReport = MOCK_WEEKLY_REPORTS[0];
   const snapshot = generationData.latestSnapshot;
   const spotPrice = spotPriceData;
   const cb = crossBorderData;
-  const renShare = renewableShareData;
   const lastUpdated = getLastUpdatedText();
 
   const filteredTrends = MOCK_TRENDS.filter(item => {
@@ -55,7 +54,7 @@ export default function DashboardPage() {
             <span className="badge badge-austria">Österreich & International</span>
             <span className="badge badge-hydro">Wasserkraft Fokus</span>
             <span className="badge badge-emerald flex items-center gap-1">
-              <Sparkles className="w-3 h-3" /> Echte Datenquellen (Energy-Charts, APG, ENTSO-E)
+              <Sparkles className="w-3 h-3" /> Echte Datenquellen (Energy-Charts / ENTSO-E)
             </span>
           </div>
 
@@ -64,14 +63,14 @@ export default function DashboardPage() {
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-            Tagesaktuelle Markt- und Erzeugungsdaten von Energy-Charts (Fraunhofer ISE), Austrian Power Grid (APG) und E-Control. 
-            Wöchentliche KI-Berichte und strategische Handlungsempfehlungen mit Fokus auf Wasserkraft.
+            Mehrmals täglich automatisch aktualisierte Erzeugungs-, Preis- und Grenzflussdaten von Energy-Charts (Fraunhofer ISE, Basis ENTSO-E)
+            sowie automatisch erstellte Wochenberichte mit Fokus auf Wasserkraft.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <Link href="/reports" className="btn-primary">
               <FileText className="w-4 h-4" />
-              <span>Wochenbericht KW {latestReport.weekNumber} lesen</span>
+              <span>{latestReport ? `Wochenbericht KW ${latestReport.weekNumber} lesen` : 'Wochenberichte'}</span>
             </Link>
             <Link href="/advisor" className="btn-secondary">
               <Bot className="w-4 h-4 text-cyan-400" />
@@ -79,7 +78,7 @@ export default function DashboardPage() {
             </Link>
             <span className="text-xs text-slate-400 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-900/60 border border-slate-800">
               <Clock className="w-3.5 h-3.5 text-cyan-400" />
-              Stand: {lastUpdated}
+              Messdaten bis: {lastUpdated}
             </span>
           </div>
         </div>
@@ -94,7 +93,7 @@ export default function DashboardPage() {
               <Waves className="w-4 h-4 text-cyan-400" />
               Wasserkraft Erzeugung
             </span>
-            <span className="badge badge-hydro text-[10px]">Echtzeit</span>
+            <span className="badge badge-hydro text-[10px]">{formatShortTime(snapshot?.timestamp)}</span>
           </div>
           <div className="text-2xl sm:text-3xl font-extrabold text-white font-heading">
             {snapshot?.totalHydroMW?.toLocaleString('de-AT') || '---'} <span className="text-sm font-normal text-cyan-300">MW</span>
@@ -111,7 +110,7 @@ export default function DashboardPage() {
               <Euro className="w-4 h-4 text-amber-400" />
               Day-Ahead Spotpreis
             </span>
-            <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-mono">Strombörse</span>
+            <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-mono">{formatShortTime(spotPrice?.currentSlotStart)}</span>
           </div>
           <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 font-heading">
             {spotPrice?.currentPrice?.toFixed(2) || '---'} <span className="text-sm font-normal text-amber-200">€/MWh</span>
@@ -128,13 +127,13 @@ export default function DashboardPage() {
               <Sparkles className="w-4 h-4 text-emerald-400" />
               Erneuerbaren-Quote AT
             </span>
-            <span className="badge badge-emerald text-[10px]">Aktuell</span>
+            <span className="badge badge-emerald text-[10px]">{formatShortTime(snapshot?.timestamp)}</span>
           </div>
           <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400 font-heading">
-            {snapshot?.renewableSharePercent || renShare?.currentPercent || 85}%
+            {snapshot?.renewableSharePercent ?? '---'}%
           </div>
           <div className="text-xs text-slate-400 mt-1">
-            Hydro + Solar + Wind + Biomasse
+            Anteil an der Stromerzeugung
           </div>
         </div>
 
@@ -153,7 +152,7 @@ export default function DashboardPage() {
             {cb?.isNetExporter ? '+' : ''}{cb?.netExportMW?.toLocaleString('de-AT') || '0'} <span className="text-sm font-normal text-slate-300">MW</span>
           </div>
           <div className="text-xs text-slate-400 mt-1">
-            Austrian Power Grid Verbundnetz
+            Physikalische Grenzflüsse · {formatShortTime(cb?.timestamp)}
           </div>
         </div>
       </div>
@@ -173,37 +172,52 @@ export default function DashboardPage() {
           <CrossBorderWidget />
         </div>
 
-        {/* Latest Executive Weekly Report Snapshot Card */}
+        {/* Latest automatically generated weekly report */}
         <div className="glass-card p-6 flex flex-col justify-between border-cyan-500/20">
-          <div>
-            <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-800">
-              <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+          {latestReport ? (
+            <div>
+              <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-800">
+                <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
+                  <FileText className="w-4 h-4" />
+                  Wochenbericht
+                </span>
+                <span className="text-[11px] text-slate-400">KW {latestReport.weekNumber}/{latestReport.year}</span>
+              </div>
+
+              <h3 className="text-base font-bold text-white mb-1 leading-snug">
+                {latestReport.title}
+              </h3>
+              {latestReport.periodStart && latestReport.periodEnd && (
+                <p className="text-[11px] text-slate-500 mb-2">
+                  Zeitraum {formatDateKey(latestReport.periodStart)} – {formatDateKey(latestReport.periodEnd)} · erstellt {formatDataTime(latestReport.generatedAt ?? latestReport.dateGenerated)}
+                </p>
+              )}
+
+              <p className="text-xs text-slate-300 line-clamp-4 leading-relaxed mb-4">
+                {latestReport.executiveSummary}
+              </p>
+
+              <div className="space-y-2 mb-4">
+                {latestReport.austriaHighlights.slice(0, 2).map((highlight, idx) => (
+                  <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <span>{highlight}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="text-sm text-slate-400 space-y-2">
+              <div className="text-xs font-bold text-cyan-400 uppercase tracking-wider flex items-center gap-1.5">
                 <FileText className="w-4 h-4" />
                 Wochenbericht
-              </span>
-              <span className="text-[11px] text-slate-400">KW {latestReport.weekNumber}/{latestReport.year}</span>
+              </div>
+              <p>Noch kein automatisch erzeugter Bericht vorhanden. Er wird beim nächsten erfolgreichen Daten-Update erstellt.</p>
             </div>
-
-            <h3 className="text-base font-bold text-white mb-2 leading-snug">
-              {latestReport.title}
-            </h3>
-
-            <p className="text-xs text-slate-300 line-clamp-4 leading-relaxed mb-4">
-              {latestReport.executiveSummary}
-            </p>
-
-            <div className="space-y-2 mb-4">
-              {latestReport.austriaHighlights.slice(0, 2).map((highlight, idx) => (
-                <div key={idx} className="flex items-start gap-2 text-xs text-slate-300">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
-                  <span>{highlight}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          )}
 
           <Link href="/reports" className="w-full btn-secondary text-center justify-center text-xs mt-2">
-            <span>Vollständigen Bericht & PDF Export</span>
+            <span>Berichtsarchiv & Export</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -218,7 +232,10 @@ export default function DashboardPage() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 pb-3 border-b border-slate-800">
           <div className="flex items-center gap-2">
             <Activity className="w-5 h-5 text-[#00f2fe]" />
-            <h2 className="text-xl font-bold text-white font-heading">Strategische Trend-Signale & Markt-Analysen</h2>
+            <div>
+              <h2 className="text-xl font-bold text-white font-heading">Kuratierte Hintergrund-Analysen</h2>
+              <p className="text-xs text-slate-500">Redaktionelle Einordnungen (statisch, Stand Sommer 2026) – aktuelle Meldungen siehe oben und im Signal Feed.</p>
+            </div>
           </div>
 
           {/* Filter Pills */}
