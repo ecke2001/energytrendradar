@@ -1,33 +1,16 @@
 {
   "unit": "EUR / MWh",
-  "currentPrice": 171.73,
-  "currentSlotStart": 1791445500,
+  "currentPrice": 162.28,
+  "currentSlotStart": 1791448200,
   "resolutionMinutes": 15,
-  "avg24h": 183.94,
+  "windowHours": 24,
+  "avg24h": 183.56,
   "min24h": 98.46,
   "max24h": 274.51,
   "negativePriceHours24h": 0,
   "nextDayAvg": null,
   "dataUntil": 1791495900,
   "series": [
-    {
-      "timestamp": 1791360000,
-      "time": "07.10. 10:00",
-      "price": 212.01,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1791360900,
-      "time": "07.10. 10:15",
-      "price": 171.71,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1791361800,
-      "time": "07.10. 10:30",
-      "price": 157.37,
-      "isFuture": false
-    },
     {
       "timestamp": 1791362700,
       "time": "07.10. 10:45",
@@ -590,19 +573,19 @@
       "timestamp": 1791446400,
       "time": "08.10. 10:00",
       "price": 162.19,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1791447300,
       "time": "08.10. 10:15",
       "price": 180.53,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1791448200,
       "time": "08.10. 10:30",
       "price": 162.28,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1791449100,
