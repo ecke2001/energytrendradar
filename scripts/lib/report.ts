@@ -48,6 +48,8 @@ const eur = (n: number) => n.toLocaleString('de-AT', { minimumFractionDigits: 2,
 const pct = (a: number, b: number) => (b !== 0 ? Math.round(((a - b) / Math.abs(b)) * 100) : 0);
 const signed = (n: number) => `${n > 0 ? '+' : ''}${num(n, 0)}`;
 const headline = (n: NewsItem) => `${n.title} (${n.source}, ${formatDateKey(n.pubDate)})`;
+/** "24 h", or the shorter span actually covered by the price statistics. */
+const priceWindow = (p: SpotPriceData | null) => (p && p.windowHours && p.windowHours < 23 ? `${p.windowHours} h` : '24 h');
 
 /**
  * The report is labelled with the ISO week of the last day it covers. The run
@@ -64,10 +66,11 @@ export function reportFrame(input: Pick<ReportInput, 'today' | 'weekly'>): Repor
 export function computeKeyFigures(input: ReportInput): Array<{ label: string; value: string }> {
   const figures: Array<{ label: string; value: string }> = [];
   const t = input.weekly?.totals;
+  const n = input.weekly?.days.length ?? 7;
   const s = input.generation.latestSnapshot;
   if (t) {
     figures.push(
-      { label: 'Wasserkraft gesamt (7 Tage)', value: `${num(t.laufkraftGWh + t.speicherGWh)} GWh` },
+      { label: `Wasserkraft gesamt (${n} Tage)`, value: `${num(t.laufkraftGWh + t.speicherGWh)} GWh` },
       { label: 'Laufwasserkraft', value: `${num(t.laufkraftGWh)} GWh` },
       { label: 'Speicher- & Pumpspeicherturbinen', value: `${num(t.speicherGWh)} GWh` },
       { label: 'Pumpenergie (Speicherung)', value: `${num(t.pumpenGWh)} GWh` },
@@ -79,7 +82,7 @@ export function computeKeyFigures(input: ReportInput): Array<{ label: string; va
     }
     if (t.negativePriceHours !== null) figures.push({ label: 'Stunden mit Negativpreisen', value: `${num(t.negativePriceHours, 2)} h` });
     if (t.netExportGWh !== null) {
-      figures.push({ label: t.netExportGWh >= 0 ? 'Netto-Export (7 Tage)' : 'Netto-Import (7 Tage)', value: `${num(Math.abs(t.netExportGWh))} GWh` });
+      figures.push({ label: `${t.netExportGWh >= 0 ? 'Netto-Export' : 'Netto-Import'} (${n} Tage)`, value: `${num(Math.abs(t.netExportGWh))} GWh` });
     }
   }
   figures.push({ label: 'Momentaufnahme Wasserkraft', value: `${num(s.totalHydroMW, 0)} MW (${s.hydroSharePercent} % der Last)` });
@@ -107,10 +110,14 @@ export function buildDataReport(input: ReportInput): WeeklyReport {
   const cb = input.crossBorder;
   const t = input.weekly?.totals ?? null;
   const days = input.weekly?.days ?? [];
+  const dayCount = Math.max(days.length, 1);
   const prevTotals = input.previous?.id !== frame.id ? input.previous?.totals : undefined;
-  const period = frame.periodStart === frame.periodEnd
+  // Older reports did not store their day count; they always covered 7 days.
+  const prevDays = input.previous?.totalsDays ?? 7;
+  const period = (frame.periodStart === frame.periodEnd
     ? formatDateKey(frame.periodEnd)
-    : `${formatDateKey(frame.periodStart)}–${formatDateKey(frame.periodEnd)}`;
+    : `${formatDateKey(frame.periodStart)}–${formatDateKey(frame.periodEnd)}`)
+    + (t && days.length < 7 ? ` (${days.length} Tage mit vollständigen Daten)` : '');
 
   const hydroGWh = t ? t.laufkraftGWh + t.speicherGWh : 0;
   const spread = t && t.priceMax !== null && t.priceMin !== null ? t.priceMax - t.priceMin : p ? p.max24h - p.min24h : 0;
@@ -133,14 +140,15 @@ export function buildDataReport(input: ReportInput): WeeklyReport {
       summary.push(`Österreich war in Summe Netto-${t.netExportGWh >= 0 ? 'Exporteur' : 'Importeur'} (${num(Math.abs(t.netExportGWh))} GWh).`);
     }
     if (prevTotals) {
+      // Compare per-day averages so that windows with a missing day stay comparable.
       const prevHydro = prevTotals.laufkraftGWh + prevTotals.speicherGWh;
-      const parts = [`Wasserkraft ${signed(pct(hydroGWh, prevHydro))} %`];
+      const parts = [`Wasserkraft ${signed(pct(hydroGWh / dayCount, prevHydro / prevDays))} % je Tag`];
       if (t.priceAvg !== null && prevTotals.priceAvg !== null) parts.push(`Spotpreis-Durchschnitt ${signed(pct(t.priceAvg, prevTotals.priceAvg))} %`);
       summary.push(`Gegenüber dem Vorbericht: ${parts.join(', ')}.`);
     }
   } else {
     summary.push(`Momentaufnahme vom ${formatDateKey(frame.periodEnd)}: Die Wasserkraft liefert ${num(s.totalHydroMW, 0)} MW und deckt ${s.hydroSharePercent} % der Netzlast von ${num(s.loadMW, 0)} MW; der Erneuerbaren-Anteil an der Erzeugung liegt bei ${s.renewableSharePercent} %.`);
-    if (p) summary.push(`Der Day-Ahead-Preis liegt bei ${eur(p.currentPrice)} €/MWh (24-h-Schnitt ${eur(p.avg24h)} €/MWh).`);
+    if (p) summary.push(`Der Day-Ahead-Preis liegt bei ${eur(p.currentPrice)} €/MWh (Schnitt der letzten ${priceWindow(p)}: ${eur(p.avg24h)} €/MWh).`);
     summary.push('Für diesen Bericht lagen keine vollständigen Wochenwerte vor.');
   }
 
@@ -161,7 +169,7 @@ export function buildDataReport(input: ReportInput): WeeklyReport {
     austria.push(`Photovoltaik lieferte ${num(t!.pvGWh)} GWh, Windkraft ${num(t!.windGWh)} GWh, Gaskraftwerke ${num(t!.gasGWh)} GWh bei einem Verbrauch von ${num(t!.loadGWh)} GWh.`);
   } else {
     austria.push(`Laufwasserkraft aktuell ${num(s.laufkraftMW, 0)} MW, Speicher- und Pumpspeicherturbinen ${num(s.speicherMW, 0)} MW, Pumpbetrieb ${num(s.pumpspeicherPumpenMW, 0)} MW.`);
-    if (p) austria.push(`Spotmarkt (24 h): ${eur(p.min24h)} bis ${eur(p.max24h)} €/MWh, Ø ${eur(p.avg24h)} €/MWh.`);
+    if (p) austria.push(`Spotmarkt (letzte ${priceWindow(p)}): ${eur(p.min24h)} bis ${eur(p.max24h)} €/MWh, Ø ${eur(p.avg24h)} €/MWh.`);
   }
   if (cb) {
     const flow = biggestFlow ? `; größter Einzelfluss: ${COUNTRY_DE[biggestFlow.country] || biggestFlow.country} ${signed(biggestFlow.flowMW)} MW (${biggestFlow.isExport ? 'Export' : 'Import'})` : '';
@@ -185,10 +193,12 @@ export function buildDataReport(input: ReportInput): WeeklyReport {
 
   const pumpspeicherStatus = t
     ? `Turbinenbetrieb ${num(t.speicherGWh)} GWh, Pumpbetrieb ${num(t.pumpenGWh)} GWh. Die Preisspanne von ${eur(spread)} €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.`
-    : `Turbinen aktuell ${num(s.speicherMW, 0)} MW, Pumpen ${num(s.pumpspeicherPumpenMW, 0)} MW; 24-h-Preisspanne ${eur(spread)} €/MWh.`;
+    : `Turbinen aktuell ${num(s.speicherMW, 0)} MW, Pumpen ${num(s.pumpspeicherPumpenMW, 0)} MW; Preisspanne der letzten ${priceWindow(p)}: ${eur(spread)} €/MWh.`;
 
   const prevLauf = prevTotals ? prevTotals.laufkraftGWh : null;
-  const pegelstandAnalyse = `Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung${t && prevLauf !== null ? `: ${num(t.laufkraftGWh)} GWh gegenüber ${num(prevLauf)} GWh im Vorbericht (${signed(pct(t.laufkraftGWh, prevLauf))} %).` : '.'}`;
+  const pegelstandAnalyse = `Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung${t && prevLauf !== null
+    ? `: Ø ${num(t.laufkraftGWh / dayCount)} GWh pro Tag gegenüber ${num(prevLauf / prevDays)} GWh pro Tag im Vorbericht (${signed(pct(t.laufkraftGWh / dayCount, prevLauf / prevDays))} %).`
+    : '.'}`;
 
   const projectNews = newsFor(input, ['Wasserkraft', 'Österreich', 'Markt', 'EU']).filter(n => PROJECT_PATTERN.test(n.title)).slice(0, 3);
   const projektUpdates = projectNews.length > 0
@@ -241,6 +251,7 @@ export function buildDataReport(input: ReportInput): WeeklyReport {
     generatedBy: 'data',
     keyFigures: computeKeyFigures(input),
     totals: t ?? undefined,
+    totalsDays: t ? days.length : undefined,
     newsSources: selectNewsSources(input),
   };
 }
@@ -396,11 +407,22 @@ export function upsertReport(archive: WeeklyReport[], report: WeeklyReport, max 
     .slice(0, max);
 }
 
-/** Whether the stored report for this frame should be regenerated. */
-export function needsRefresh(existing: WeeklyReport | undefined, frame: ReportFrame, now: Date, refreshHours: number, aiAvailable: boolean): boolean {
+/**
+ * Whether the stored report for this ID should be replaced by `candidate`
+ * (the freshly built data report).
+ * - A weekly report is never replaced by one that ends earlier (protects the
+ *   finished Mon–Sun report if the data window ever moves back).
+ * - Data-only reports are cheap and always rebuilt, so they reflect the current data.
+ * - AI reports are rebuilt when the period or the weekly totals changed, when the
+ *   stored one is not AI-written yet, or after `refreshHours`.
+ */
+export function needsRefresh(existing: WeeklyReport | undefined, candidate: WeeklyReport, now: Date, refreshHours: number, aiAvailable: boolean): boolean {
   if (!existing) return true;
-  if (existing.periodEnd !== frame.periodEnd) return true;
-  if (aiAvailable && existing.generatedBy !== 'gemini') return true;
+  if (existing.totals && (candidate.periodEnd ?? '') < (existing.periodEnd ?? '')) return false;
+  if (!aiAvailable) return true;
+  if (existing.periodEnd !== candidate.periodEnd) return true;
+  if (JSON.stringify(existing.totals ?? null) !== JSON.stringify(candidate.totals ?? null)) return true;
+  if (existing.generatedBy !== 'gemini') return true;
   const generated = existing.generatedAt ? new Date(existing.generatedAt).getTime() : 0;
   return now.getTime() - generated > refreshHours * 3600000;
 }

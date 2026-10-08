@@ -40,8 +40,11 @@ export function toPlainText(input: string, maxLength: number): string {
   let s = input.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1');
   // Decode first so that encoded tags (&lt;script&gt;) are stripped as well.
   s = decodeEntities(s);
-  s = s.replace(/<[^>]*>/g, ' ');
-  s = s.replace(/[\u0000-\u001f\u007f-\u009f​-‏‪-‮⁦-⁩]/g, ' ');
+  // Strip comments and tag-like sequences only ("<b>", "</p>", "<img …>"), so
+  // comparison signs in prose ("< 0 €/MWh … > 300") are kept.
+  s = s.replace(/<!--[\s\S]*?(-->|$)/g, ' ');
+  s = s.replace(/<\/?[a-zA-Z][^<>]*>/g, ' ');
+  s = s.replace(/[\u0000-\u001f\u007f-\u009f\u200b-\u200f\u202a-\u202e\u2066-\u2069]/g, ' ');
   s = s.replace(/\s+/g, ' ').trim();
   return s.length > maxLength ? `${s.slice(0, maxLength - 1).trimEnd()}…` : s;
 }

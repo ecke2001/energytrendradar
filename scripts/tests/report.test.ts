@@ -87,7 +87,7 @@ test('without matching news no international facts are invented', () => {
 test('week-over-week comparison uses the previous report totals', () => {
   const previous = { ...buildDataReport(input()), id: 'report-2026-kw40', totals: { ...weekly.totals, laufkraftGWh: 280.5, speicherGWh: 140 } };
   const report = buildDataReport(input({ previous }));
-  assert.match(report.executiveSummary, /Gegenüber dem Vorbericht: Wasserkraft \+10 %/);
+  assert.match(report.executiveSummary, /Gegenüber dem Vorbericht: Wasserkraft \+10 % je Tag/);
 });
 
 test('prompt marks headlines as untrusted and contains the measured data', () => {
@@ -142,15 +142,44 @@ test('archive keeps one report per week, newest first, capped', () => {
   assert.equal(upsertReport(archive, r('report-2026-kw42', '2026-10-15'), 2).length, 2);
 });
 
-test('reports are refreshed daily, when AI becomes available, or when missing', () => {
-  const frame = reportFrame({ today: '2026-10-12', weekly });
+test('refresh rules: data reports always rebuilt, AI reports on change, never backwards', () => {
   const now = new Date('2026-10-12T06:20:00Z');
-  const existing = { ...buildDataReport(input()), generatedAt: '2026-10-12T00:20:00Z' };
-  assert.equal(needsRefresh(undefined, frame, now, 20, false), true);
-  assert.equal(needsRefresh(existing, frame, now, 20, false), false);
-  assert.equal(needsRefresh(existing, frame, now, 20, true), true);
-  assert.equal(needsRefresh({ ...existing, periodEnd: '2026-10-10' }, frame, now, 20, false), true);
-  assert.equal(needsRefresh(existing, frame, new Date('2026-10-13T00:00:00Z'), 20, false), true);
+  const candidate = buildDataReport(input());
+  const existing = { ...candidate, generatedAt: '2026-10-12T00:20:00Z' };
+  const ai = { ...existing, generatedBy: 'gemini' as const };
+
+  assert.equal(needsRefresh(undefined, candidate, now, 20, false), true);
+  assert.equal(needsRefresh(existing, candidate, now, 20, false), true, 'data-only reports reflect the latest data');
+  assert.equal(needsRefresh(ai, candidate, now, 20, true), false, 'unchanged AI report is kept');
+  assert.equal(needsRefresh(existing, candidate, now, 20, true), true, 'data report is upgraded once AI is available');
+  assert.equal(needsRefresh(ai, { ...candidate, totals: { ...candidate.totals!, laufkraftGWh: 1 } }, now, 20, true), true, 'totals changed');
+  assert.equal(needsRefresh(ai, candidate, new Date('2026-10-13T03:00:00Z'), 20, true), true, 'older than refreshHours');
+  assert.equal(needsRefresh(existing, { ...candidate, periodEnd: '2026-10-10' }, now, 20, false), false, 'finished week is not overwritten by an earlier window');
+  assert.equal(needsRefresh({ ...existing, totals: undefined, periodEnd: '2026-10-12' }, candidate, now, 20, false), true, 'snapshot report may be replaced');
+});
+
+test('labels and comparisons use the real number of days', () => {
+  const six: WeeklyStats = {
+    ...weekly,
+    periodStart: '2026-10-06',
+    days: weekly.days.slice(1),
+    totals: { ...weekly.totals, laufkraftGWh: 276, speicherGWh: 120, netExportGWh: 30 },
+  };
+  const previous = { ...buildDataReport(input()), id: 'report-2026-kw40', totals: weekly.totals, totalsDays: 7 };
+  const report = buildDataReport(input({ weekly: six, previous }));
+  assert.ok(report.keyFigures!.some(k => k.label === 'Wasserkraft gesamt (6 Tage)'));
+  assert.ok(report.keyFigures!.some(k => k.label === 'Netto-Export (6 Tage)'));
+  assert.match(report.executiveSummary, /\(6 Tage mit vollständigen Daten\)/);
+  // Same output per day (66 GWh) – no artificial drop because a day is missing.
+  assert.match(report.executiveSummary, /Wasserkraft 0 % je Tag/);
+  assert.equal(report.totalsDays, 6);
+});
+
+test('snapshot-only reports name the span the price statistics cover', () => {
+  const prices = { unit: 'EUR/MWh', currentPrice: 90, avg24h: 85, min24h: 80, max24h: 95, negativePriceHours24h: 0, windowHours: 6, series: [] };
+  const report = buildDataReport(input({ today: '2026-10-13', weekly: null, prices }));
+  assert.match(report.executiveSummary, /Schnitt der letzten 6 h/);
+  assert.ok(report.austriaHighlights.some(h => h.startsWith('Spotmarkt (letzte 6 h)')));
 });
 
 test('schema check rejects unsafe links and broken files; freshness check flags stale data', () => {

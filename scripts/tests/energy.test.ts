@@ -34,23 +34,23 @@ function series(ts: number[], fn: (t: number) => number, now = NOW): Array<numbe
   return ts.map(t => (t <= now ? fn(t) : null));
 }
 
-function powerFixture(): EcPublicPower {
-  const ts = quarterHours(START, END);
+function powerFixture(now = NOW, loadLag = 3600, start = START, end = END): EcPublicPower {
+  const ts = quarterHours(start, end);
   const hourOfDay = (t: number) => (t / 3600) % 24;
   const solar = (t: number) => Math.max(0, 2000 * Math.sin(((hourOfDay(t) - 5) / 14) * Math.PI));
   return {
     unix_seconds: ts,
     production_types: [
-      { name: 'Hydro Run-of-River', data: series(ts, () => 2000) },
-      { name: 'Hydro water reservoir', data: series(ts, () => 600) },
-      { name: 'Hydro pumped storage', data: series(ts, () => 400) },
-      { name: 'Hydro pumped storage consumption', data: series(ts, () => -300) },
-      { name: 'Solar', data: series(ts, solar) },
-      { name: 'Wind onshore', data: series(ts, () => 1000) },
-      { name: 'Biomass', data: series(ts, () => 200) },
-      { name: 'Fossil gas', data: series(ts, () => 800) },
+      { name: 'Hydro Run-of-River', data: series(ts, () => 2000, now) },
+      { name: 'Hydro water reservoir', data: series(ts, () => 600, now) },
+      { name: 'Hydro pumped storage', data: series(ts, () => 400, now) },
+      { name: 'Hydro pumped storage consumption', data: series(ts, () => -300, now) },
+      { name: 'Solar', data: series(ts, solar, now) },
+      { name: 'Wind onshore', data: series(ts, () => 1000, now) },
+      { name: 'Biomass', data: series(ts, () => 200, now) },
+      { name: 'Fossil gas', data: series(ts, () => 800, now) },
       // Load lags one hour behind generation, as it often does in practice.
-      { name: 'Load', data: series(ts, () => 6500, NOW - 3600) },
+      { name: 'Load', data: series(ts, () => 6500, now - loadLag) },
     ],
   };
 }
@@ -168,7 +168,7 @@ test('cross-border: hours padded with 0 instead of null are not treated as data'
   assert.equal(cb.timestamp, raw.unix_seconds[lastReal]);
   assert.equal(cb.netExportMW, 1500);
   const daily = aggregateNetExportDaily(raw, NOW);
-  assert.equal(daily.get('2026-10-07'), 36);
+  assert.deepEqual(daily.get('2026-10-07'), { gwh: 36, coverage: 1 });
 });
 
 test('cross-border: MW input is left as is', () => {
@@ -208,6 +208,56 @@ test('weekly stats cover the 7 complete days before today', () => {
   assert.equal(stats.totals.negativePriceHours, 14);
   assert.equal(stats.days[0].netExportGWh, 36);
   assert.ok(stats.totals.renewableSharePercent > 50);
+});
+
+test('first run after midnight: an incompletely published yesterday is not used yet', () => {
+  // 00:17 UTC = 02:17 Vienna; load lags 3 h, so the last quarter-hours of yesterday are missing.
+  const early = Date.UTC(2026, 9, 8, 0, 17) / 1000;
+  const stats = buildWeeklyStats(aggregateGenerationDaily(powerFixture(early, 3 * 3600), early), null, null, '2026-10-08', 'x');
+  assert.equal(stats.periodEnd, '2026-10-06');
+  assert.equal(stats.periodStart, '2026-09-30');
+  assert.equal(stats.days.length, 7);
+  assert.equal(stats.days[6].laufkraftGWh, 48);
+
+  // Six hours later the day is complete and the window moves on.
+  const later = Date.UTC(2026, 9, 8, 6, 17) / 1000;
+  const next = buildWeeklyStats(aggregateGenerationDaily(powerFixture(later, 3 * 3600), later), null, null, '2026-10-08', 'x');
+  assert.equal(next.periodEnd, '2026-10-07');
+  assert.equal(next.days[6].laufkraftGWh, 48);
+});
+
+test('DST end (25-hour day) is only complete with all 100 quarter-hours', () => {
+  const start = Date.UTC(2026, 9, 20, 22, 0) / 1000; // 2026-10-21 00:00 CEST
+  const end = Date.UTC(2026, 9, 26, 23, 0) / 1000; // 2026-10-27 00:00 CET
+  // 00:30 CET on 26.10.: load (lag 1 h) ends at 23:30 CET – 25.10. still misses its last slots.
+  const early = Date.UTC(2026, 9, 25, 23, 30) / 1000;
+  const partial = buildWeeklyStats(aggregateGenerationDaily(powerFixture(early, 3600, start, end), early), null, null, '2026-10-26', 'x');
+  assert.equal(partial.periodEnd, '2026-10-24');
+
+  const later = Date.UTC(2026, 9, 26, 6, 17) / 1000;
+  const full = buildWeeklyStats(aggregateGenerationDaily(powerFixture(later, 3600, start, end), later), null, null, '2026-10-26', 'x');
+  assert.equal(full.periodEnd, '2026-10-25');
+  // 2000 MW run-of-river for 25 hours.
+  assert.equal(full.days.find(d => d.date === '2026-10-25')?.laufkraftGWh, 50);
+});
+
+test('net export of a day is only used once its cross-border data is complete', () => {
+  const gen = aggregateGenerationDaily(powerFixture(), NOW);
+  const exports = new Map([['2026-10-06', { gwh: 30, coverage: 1 }], ['2026-10-07', { gwh: 12, coverage: 0.5 }]]);
+  const stats = buildWeeklyStats(gen, null, exports, '2026-10-08', 'x');
+  assert.equal(stats.days.find(d => d.date === '2026-10-06')?.netExportGWh, 30);
+  assert.equal(stats.days.find(d => d.date === '2026-10-07')?.netExportGWh, null);
+  assert.equal(stats.totals.netExportGWh, null);
+});
+
+test('price statistics report the hours they actually cover', () => {
+  assert.equal(transformPrices(priceFixture(), NOW).windowHours, 24);
+  // Fallback without a date range: only today's prices (from 00:00 Vienna = 22:00 UTC).
+  const raw = priceFixture();
+  const todayStart = Date.UTC(2026, 9, 7, 22, 0) / 1000;
+  const keep = raw.unix_seconds.map(t => t >= todayStart);
+  const todayOnly = { ...raw, unix_seconds: raw.unix_seconds.filter((_, i) => keep[i]), price: raw.price.filter((_, i) => keep[i]) };
+  assert.equal(transformPrices(todayOnly, NOW).windowHours, 14);
 });
 
 test('weekly stats refuse to report on too little data', () => {

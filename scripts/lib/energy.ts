@@ -271,8 +271,12 @@ export function transformPrices(raw: EcPrice, nowSec: number): SpotPriceData {
   // Last 24 hours by timestamp (not by element count – data is quarter-hourly).
   const windowStart = ts[cur] - 24 * 3600;
   const window: number[] = [];
+  let firstInWindow = ts[cur];
   for (let i = 0; i <= cur; i++) {
-    if (ts[i] > windowStart && isFiniteNumber(prices[i])) window.push(prices[i] as number);
+    if (ts[i] > windowStart && isFiniteNumber(prices[i])) {
+      window.push(prices[i] as number);
+      firstInWindow = Math.min(firstInWindow, ts[i]);
+    }
   }
   const avg = window.reduce((a, b) => a + b, 0) / window.length;
   const negativeSlots = window.filter(v => v < 0).length;
@@ -298,6 +302,8 @@ export function transformPrices(raw: EcPrice, nowSec: number): SpotPriceData {
     currentPrice: round2(current),
     currentSlotStart: ts[cur],
     resolutionMinutes: resolution,
+    // Hours actually covered by the "24 h" statistics (less if only today's data was available).
+    windowHours: Math.round((ts[cur] + resolution * 60 - firstInWindow) / 3600),
     avg24h: round2(avg),
     min24h: round2(Math.min(...window)),
     max24h: round2(Math.max(...window)),
@@ -321,6 +327,11 @@ export function crossBorderFactor(raw: EcCrossBorder): { factor: number; unit: '
 }
 
 const isSum = (name: string) => /^sum$/i.test(name.trim());
+
+function exportOf(netExport: Map<string, { gwh: number; coverage: number }> | null, key: string): number | null {
+  const day = netExport?.get(key);
+  return day && day.coverage >= 0.98 ? day.gwh : null;
+}
 
 /**
  * Energy-Charts pads hours that are not yet published with 0 instead of null.
@@ -373,14 +384,27 @@ export function transformCrossBorder(raw: EcCrossBorder, nowSec: number): CrossB
 
 type GenDaily = Omit<DailyEnergyStats, 'date' | 'priceAvg' | 'priceMin' | 'priceMax' | 'negativePriceHours' | 'netExportGWh'> & { coverage: number };
 
+/**
+ * Number of slots per Vienna calendar day as delivered by the API. The API
+ * returns whole days (future slots padded), so this is the real day length,
+ * including 23- and 25-hour DST days.
+ */
+function slotsPerDay(ts: number[]): Map<string, number> {
+  const counts = new Map<string, number>();
+  ts.forEach(t => {
+    const key = viennaDateKey(t);
+    counts.set(key, (counts.get(key) || 0) + 1);
+  });
+  return counts;
+}
+
 export function aggregateGenerationDaily(raw: EcPublicPower, nowSec: number): Map<string, GenDaily> {
   const ts = raw.unix_seconds;
   const types = raw.production_types;
   const s = pickSeries(types);
   const keySeries = [s.laufkraft, s.load].filter((x): x is Array<number | null> => Array.isArray(x));
-  const resolution = detectResolutionMinutes(ts);
-  const hours = resolution / 60;
-  const slotsPerDay = (24 * 60) / resolution;
+  const hours = detectResolutionMinutes(ts) / 60;
+  const expected = slotsPerDay(ts);
 
   const acc = new Map<string, { e: PointValues; n: number }>();
   for (let i = 0; i < ts.length; i++) {
@@ -411,7 +435,7 @@ export function aggregateGenerationDaily(raw: EcPublicPower, nowSec: number): Ma
       renewableGWh: gwh(e.renewable),
       totalGenerationGWh: gwh(e.totalGeneration),
       renewableSharePercent: e.totalGeneration > 0 ? Math.round((e.renewable / e.totalGeneration) * 100) : 0,
-      coverage: n / slotsPerDay,
+      coverage: n / (expected.get(key) || n),
     });
   });
   return out;
@@ -443,13 +467,14 @@ export function aggregatePriceDaily(raw: EcPrice): Map<string, PriceDaily> {
   return out;
 }
 
-export function aggregateNetExportDaily(raw: EcCrossBorder, nowSec: number): Map<string, number> {
+export function aggregateNetExportDaily(raw: EcCrossBorder, nowSec: number): Map<string, { gwh: number; coverage: number }> {
   const ts = raw.unix_seconds;
   const { factor } = crossBorderFactor(raw);
   const hours = detectResolutionMinutes(ts) / 60;
+  const expected = slotsPerDay(ts);
   const neighbors = raw.countries.filter(c => !isSum(c.name));
   const sum = raw.countries.find(c => isSum(c.name));
-  const out = new Map<string, number>();
+  const acc = new Map<string, { mwh: number; n: number }>();
   for (let i = 0; i < ts.length; i++) {
     if (ts[i] > nowSec || !isPublishedSlot(neighbors, i)) continue;
     let net: number | null = null;
@@ -457,23 +482,38 @@ export function aggregateNetExportDaily(raw: EcCrossBorder, nowSec: number): Map
     else if (neighbors.every(c => isFiniteNumber(c.data[i]))) net = neighbors.reduce((a, c) => a - (c.data[i] as number) * factor, 0);
     if (net === null) continue;
     const key = viennaDateKey(ts[i]);
-    out.set(key, (out.get(key) || 0) + (net * hours) / 1000);
+    const day = acc.get(key) || { mwh: 0, n: 0 };
+    day.mwh += net * hours;
+    day.n += 1;
+    acc.set(key, day);
   }
-  out.forEach((v, k) => out.set(k, round1(v)));
+  const out = new Map<string, { gwh: number; coverage: number }>();
+  acc.forEach(({ mwh, n }, key) => out.set(key, { gwh: round1(mwh / 1000), coverage: n / (expected.get(key) || n) }));
   return out;
 }
 
-/** Statistics for the 7 complete calendar days before `todayKey`. */
+/**
+ * Statistics for a 7-day window of calendar days (Europe/Vienna).
+ *
+ * The window ends yesterday only once yesterday is completely published
+ * (Energy-Charts lags 2-3 h, so the first run after midnight usually sees an
+ * incomplete day); otherwise it ends the day before. This keeps the report
+ * frame from moving forward on partial data. Older days with small gaps
+ * (>= 90 % coverage) are kept; the number of included days is in `days.length`.
+ * Daily net export is only used for days whose cross-border data is complete.
+ */
 export function buildWeeklyStats(
   gen: Map<string, GenDaily>,
   price: Map<string, PriceDaily> | null,
-  netExport: Map<string, number> | null,
+  netExport: Map<string, { gwh: number; coverage: number }> | null,
   todayKey: string,
   generatedAt: string,
 ): WeeklyStats {
+  const yesterday = gen.get(addDays(todayKey, -1));
+  const endKey = yesterday && yesterday.coverage >= 1 ? addDays(todayKey, -1) : addDays(todayKey, -2);
   const days: DailyEnergyStats[] = [];
-  for (let offset = 7; offset >= 1; offset--) {
-    const key = addDays(todayKey, -offset);
+  for (let offset = 6; offset >= 0; offset--) {
+    const key = addDays(endKey, -offset);
     const g = gen.get(key);
     if (!g || g.coverage < 0.9) continue;
     const pr = price?.get(key);
@@ -485,7 +525,7 @@ export function buildWeeklyStats(
       priceMin: pr ? pr.priceMin : null,
       priceMax: pr ? pr.priceMax : null,
       negativePriceHours: pr ? pr.negativePriceHours : null,
-      netExportGWh: netExport && netExport.has(key) ? netExport.get(key) as number : null,
+      netExportGWh: exportOf(netExport, key),
     });
   }
   if (days.length < 3) throw new Error(`weekly stats: only ${days.length} complete days available`);

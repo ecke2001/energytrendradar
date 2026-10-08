@@ -80,18 +80,25 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/
-          if git diff --cached --quiet; then
-            echo "Keine Datenänderungen."
-            exit 0
-          fi
-          git commit --quiet -m "chore(data): automatisches Energiedaten-Update $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+          # data/ is regenerated completely by this run. Instead of rebasing (which
+          # conflicts when a queued run started from an older commit), lay this
+          # run's data/ over the newest branch state and commit only that.
+          snapshot="$RUNNER_TEMP/data-snapshot"
+          rm -rf "$snapshot" && cp -r data "$snapshot"
           for attempt in 1 2 3; do
-            if git pull --rebase --quiet origin "$GITHUB_REF_NAME" && git push --quiet origin "HEAD:$GITHUB_REF_NAME"; then
+            git fetch --quiet --depth=1 origin "$GITHUB_REF_NAME"
+            git reset --quiet --hard FETCH_HEAD
+            rm -rf data && cp -r "$snapshot" data
+            git add -A data
+            if git diff --cached --quiet; then
+              echo "Keine Datenänderungen."
+              exit 0
+            fi
+            git commit --quiet -m "chore(data): automatisches Energiedaten-Update $(date -u +'%Y-%m-%d %H:%M UTC') [skip ci]"
+            if git push --quiet origin "HEAD:$GITHUB_REF_NAME"; then
               echo "Daten nach $GITHUB_REF_NAME gepusht."
               exit 0
             fi
-            git rebase --abort 2>/dev/null || true
             sleep $((attempt * 10))
           done
           echo "::error::Push der aktualisierten Daten fehlgeschlagen."
