@@ -60,7 +60,7 @@ jobs:
       # so a problem in one of them never silently blocks the other.
       - name: Setup Python
         if: ${{ !cancelled() && steps.build.outcome == 'success' && github.ref == 'refs/heads/main' }}
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
