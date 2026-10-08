@@ -1,7 +1,7 @@
 {
-  "timestamp": 1790254800,
-  "date": "2026-09-24T13:00:00.000Z",
-  "netExportMW": 0,
+  "timestamp": 1791432000,
+  "date": "2026-10-08T04:00:00.000Z",
+  "netExportMW": 63,
   "isNetExporter": true,
   "neighbors": [
     {
@@ -11,8 +11,8 @@
     },
     {
       "country": "Germany",
-      "flowMW": 0,
-      "isExport": false
+      "flowMW": 63,
+      "isExport": true
     },
     {
       "country": "Hungary",
@@ -34,5 +34,6 @@
       "flowMW": 0,
       "isExport": false
     }
-  ]
+  ],
+  "sourceUnit": "GW"
 }

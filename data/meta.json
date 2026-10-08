@@ -1,7 +1,8 @@
 {
-  "lastUpdated": "2026-09-24T17:35:30.575Z",
-  "lastUpdatedFormatted": "24.9.2026, 19:35:30",
-  "version": "2.0.0",
+  "lastUpdated": "2026-10-08T07:21:44.425Z",
+  "lastUpdatedFormatted": "08.10.2026, 09:21",
+  "dataAsOf": "2026-10-08T04:45:00.000Z",
+  "version": "3.0.0",
   "sources": [
     {
       "name": "Energy-Charts (Fraunhofer ISE)",
@@ -9,12 +10,45 @@
       "license": "CC BY 4.0"
     },
     {
-      "name": "Austrian Power Grid (APG) / ENTSO-E",
-      "url": "https://transparency.apg.at"
+      "name": "ENTSO-E Transparency (via Energy-Charts)",
+      "url": "https://transparency.entsoe.eu"
     },
     {
-      "name": "E-Control Austria / BMK News Feed",
-      "url": "https://www.e-control.at"
+      "name": "Google News (Schlagzeilen & Links)",
+      "url": "https://news.google.com"
     }
-  ]
+  ],
+  "sourceStatus": {
+    "generation": {
+      "ok": true,
+      "lastAttempt": "2026-10-08T07:21:44.425Z",
+      "lastSuccess": "2026-10-08T07:21:44.425Z",
+      "dataUntil": "2026-10-08T04:45:00.000Z"
+    },
+    "prices": {
+      "ok": true,
+      "lastAttempt": "2026-10-08T07:21:44.425Z",
+      "lastSuccess": "2026-10-08T07:21:44.425Z",
+      "dataUntil": "2026-10-08T07:15:00.000Z"
+    },
+    "crossBorder": {
+      "ok": true,
+      "lastAttempt": "2026-10-08T07:21:44.425Z",
+      "lastSuccess": "2026-10-08T07:21:44.425Z",
+      "dataUntil": "2026-10-08T04:00:00.000Z"
+    },
+    "weeklyStats": {
+      "ok": true,
+      "lastAttempt": "2026-10-08T07:21:44.425Z",
+      "lastSuccess": "2026-10-08T07:21:44.425Z",
+      "dataUntil": "2026-10-07"
+    },
+    "news": {
+      "ok": true,
+      "lastAttempt": "2026-10-08T07:21:44.425Z",
+      "lastSuccess": "2026-10-08T07:21:44.425Z",
+      "dataUntil": "2026-10-07"
+    }
+  },
+  "warnings": []
 }
