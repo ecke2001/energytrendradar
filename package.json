@@ -11,6 +11,7 @@
     "generate-report": "tsx scripts/generate-report.ts",
     "validate-data": "tsx scripts/validate-data.ts",
     "test": "tsx --test scripts/tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
     "e2e:offline": "bash scripts/dev/offline-e2e.sh"
   },
   "dependencies": {

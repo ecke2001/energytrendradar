@@ -17,8 +17,8 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
 ## 🌟 Projekt-Übersicht & Features
 
 ### 1. Modern Hydro-Energy Dashboard (`/`)
-- **Wasserkraft Radar Österreich Widget**: Live-KPIs zu Laufwasserkraft (GWh), Pumpspeichern (GWh), Netto-Stromexporten und dem hydrologischen Pegelstand-Index.
-- **Erzeugungsmix Chart**: Interaktives Recharts-Diagramm zur österreichischen Erzeugung der letzten Wochen (Erneuerbaren-Anteil > 88%).
+- **Wasserkraft Radar Österreich Widget**: KPIs (MW) zu Laufwasserkraft, Speicher-/Pumpspeicherturbinen, Pumpbetrieb, Netto-Grenzfluss und Hydro-Anteil an der Last. Pegel-/Füllstandsdaten sind (noch) nicht angebunden.
+- **Erzeugungsmix Chart**: Stundenmittel der österreichischen Erzeugung der letzten 48 h; Spotpreis-Chart mit „jetzt“-Marker und Day-Ahead-Preisen.
 - **Trend-Radar Grid**: Dynamische, filterbare Trend-Karten nach Region (*Österreich*, *EU*, *International*) und Sparte (*Wasserkraft*, *Politik & Recht*, *Markt & Preise*).
 
 ### 2. Automatische Wochenberichte & Archiv (`/reports`)
@@ -96,28 +96,18 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
 
 ## 🚀 Lokale Entwicklung & Starten
 
-1. **Abhängigkeiten installieren**:
-   ```bash
-   npm install
-   ```
+```bash
+npm ci                    # Abhängigkeiten exakt nach package-lock.json
+npm run dev               # http://localhost:3000  (oder: npx next dev -p 7860 → http://localhost:7860)
+npm test                  # Unit-Tests
+npm run typecheck         # vollständige Typprüfung
+npm run e2e:offline       # Pipeline gegen Mock-APIs (ohne Netzwerk, data/ bleibt unberührt)
+npm run build             # Static Export nach out/
+```
 
-2. **Lokalen Entwicklungs-Server starten**:
-   ```bash
-   npm run dev
-   # Oder auf Port 7860:
-   npx next dev -p 7860
-   ```
-   Öffne danach **`http://localhost:7860`** im Browser.
-
-3. **Daten & Bericht lokal aktualisieren, prüfen und bauen**:
-   ```bash
-   npm run fetch-data        # Energy-Charts & News abrufen
-   npm run generate-report   # Wochenbericht erzeugen (optional mit GEMINI_API_KEY)
-   npm run validate-data     # Schema & Aktualität prüfen
-   npm test                  # Unit-Tests
-   npm run e2e:offline       # Pipeline gegen Mock-APIs (ohne Netzwerk, data/ bleibt unberührt)
-   npm run build             # Static Export nach out/
-   ```
+Live-Daten lokal (`npm run fetch-data`, `npm run generate-report`) **überschreiben `data/`** – nur zum Testen,
+danach `git checkout -- data/`; in Claude-Code-Cloud-Sessions ist die Energy-Charts-API gesperrt.
+Details: [docs/DEVELOPMENT.md](https://github.com/ecke2001/energytrendradar/blob/main/docs/DEVELOPMENT.md).
 
 ---
 
@@ -126,7 +116,7 @@ Ein KI-gestütztes Dashboard und Monitoring-Agent für den Energiesektor mit bes
 | Plattform | Account | URL / Target | Status |
 | :--- | :--- | :--- | :--- |
 | **Hugging Face Space** | `ecke1985` | [https://huggingface.co/spaces/ecke1985/energy-trend-radar-agent](https://huggingface.co/spaces/ecke1985/energy-trend-radar-agent) | **Privater Space – automatisch 4× täglich aktualisiert** |
-| **GitHub Repo** | `ecke2001` | [https://github.com/ecke2001/energytrendradar](https://github.com/ecke2001/energytrendradar) | Branches `main` & `energy_trend_monitor_agent` |
+| **GitHub Repo** | `ecke2001` | [https://github.com/ecke2001/energytrendradar](https://github.com/ecke2001/energytrendradar) | Branch `main` (`energy_trend_monitor_agent` = veralteter v2-Stand, nicht verwenden) |
 | **LLM Engine** | Gemini API (optional) | `gemini-2.5-flash` (Free Tier / 0 €) | Fallback: datenbasierte Berichte |
 
 ### Automatische Aktualisierung (GitHub Actions)
@@ -142,12 +132,9 @@ Schlägt ein geplanter Lauf fehl, wird automatisch ein GitHub-Issue geöffnet (u
 | `GEMINI_MODEL` – Default `gemini-2.5-flash` | Variable | nein |
 
 ### Manuelles Deployment
-Token nie direkt in Befehle schreiben (Shell-History) – als Umgebungsvariable setzen:
-```bash
-npm run build
-read -rs HF_TOKEN && export HF_TOKEN
-HF_SPACE_ID=ecke1985/energy-trend-radar-agent python3 scripts/deploy_hf.py
-```
+Normalerweise: *Actions → Energy Radar Update → Run workflow* auf `main`. Notfall-Deployment vom eigenen Rechner
+(aktueller `main`-Checkout, `huggingface_hub==1.33.0` in einer venv, Token nur als Umgebungsvariable):
+siehe [docs/OPERATIONS.md §4](https://github.com/ecke2001/energytrendradar/blob/main/docs/OPERATIONS.md).
 
 ---
 

@@ -5,7 +5,8 @@
 > (v2-Plan: siehe Git-Historie, Commit `cfec16b`.)
 >
 > **Status 08.10.2026:** v3 umgesetzt (PR #1, Squash-Commit `6d01b6d`), erstes erfolgreiches HF-Deployment am
-> 08.10.2026 verifiziert. Dokumentation: `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/OPERATIONS.md`,
+> 08.10.2026 verifiziert. Danach v3.1: Review-Fixes (vollständiger Vortag/DST, Berichts-Refresh, Live-Preis,
+> Daten-Commit ohne Rebase) und Dokumentation `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/OPERATIONS.md`,
 > `docs/DEVELOPMENT.md`. Nächste Schritte: Abschnitt 7 (Roadmap).
 
 ---
@@ -25,6 +26,9 @@
 ---
 
 ## 2. Ziel-Architektur
+
+> Plan-Stand. Die umgesetzte Reihenfolge (Tests zuerst, Deploy vor Daten-Commit, beide unabhängig nach dem Build)
+> steht in `docs/ARCHITECTURE.md` §1.
 
 ```
 GitHub Actions (4×/Tag, :17 UTC, + manuell)
@@ -120,7 +124,8 @@ Frontend (Static Export):
 ## 6. Betrieb & Monitoring
 
 - **Wo sehe ich, ob alles läuft?** Navbar-Badge (grün/gelb/rot), `status.json` im Space, GitHub-Issue „Energy Radar: automatisches Update fehlgeschlagen“.
-- **Lokal testen**: `npm run fetch-data && npm run generate-report && npm run validate-data && npm test && npm run build`
+- **Lokal testen** (ohne Netzwerk): `npm test && npm run typecheck && npm run e2e:offline && npm run build`.
+  Live-Abruf (`npm run fetch-data` …) überschreibt `data/` und ist in Claude-Cloud-Sessions gesperrt – siehe `docs/DEVELOPMENT.md`.
 - **Schwellenwerte**: `MAX_DATA_AGE_HOURS` (Default 36), `MAX_REPORT_AGE_DAYS` (Default 8), `REPORT_REFRESH_HOURS` (Default 20).
 
 ---
@@ -129,7 +134,8 @@ Frontend (Static Export):
 
 | Priorität | Thema | Details |
 | :--- | :--- | :--- |
-| Hoch (vor Server-Betrieb) | Next.js 14 → 15/16 | `npm audit`: Server-Advisories ohne 14.x-Fix; im Static Export nicht ausnutzbar |
+| Hoch (vor Server-Betrieb) | Next.js 14 → 15/16 (+ React 19, TypeScript 7) | `npm audit`: Server-Advisories ohne 14.x-Fix; im Static Export nicht ausnutzbar. Dependabot-PRs #6, #8, #9 sind rot und gehören hierher |
+| Hoch | Offene Dependabot-PRs abarbeiten | #2–#4 (Actions, beheben Node-20-Warnungen) und #5 (minor/patch) nach grünem CI mergen; #7 (`@types/node` 26 ≠ Laufzeit Node 22) schließen |
 | Mittel | Gemini-Key hinterlegen | Bessere Berichtstexte; Zahlen bleiben datenbasiert |
 | Mittel | Pegel/Speicherfüllstände | ENTSO-E Transparency (Token) oder eHYD als neue Quelle (Rezept in `docs/DEVELOPMENT.md`) |
 | Mittel | Actions auf Commit-SHAs pinnen | Supply-Chain-Härtung; Dependabot übernimmt Updates |

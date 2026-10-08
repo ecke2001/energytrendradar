@@ -17,7 +17,7 @@ Stand: Oktober 2026 (v3). Für Betrieb/Fehlersuche siehe [OPERATIONS.md](OPERATI
 │  → scripts/validate-data.ts --schema      (bricht ab, wenn Dateien ungültig sind)                  │
 │  → next build (Static Export, liest data/*.json zur Build-Zeit) ──► out/                           │
 │  → scripts/deploy_hf.py  (nur main) ──► Hugging Face Static Space + Verifikation via status.json  │
-│  → git commit data/ + push  ("chore(data): … [skip ci]")                                           │
+│  → git commit data/ + push  (über den neuesten Branch-Stand gelegt, "chore(data): … [skip ci]")    │
 │  → scripts/validate-data.ts --freshness   (rot, wenn Daten/Bericht veraltet)                       │
 │  → bei Fehlschlag (nur Schedule): GitHub-Issue öffnen/kommentieren; bei Erfolg: Issue schließen    │
 └────────────────────────────────────────────────────────────────────────────────────────────────────┘
@@ -40,6 +40,8 @@ Browser-seitigen Aktualitätshinweis sichtbar.
 | `components/` | Widgets (Charts, KPIs, News, Trend-Karten), `DataStatusBadge`, `DataFreshnessBanner`, `Navbar` |
 | `lib/types.ts` | Alle Typen der Datendateien und Berichte |
 | `lib/dataLoader.ts` | Importiert `data/*.json` typisiert; Helfer `getLastUpdatedText`, `formatDataTime`, `formatShortTime` |
+| `lib/priceNow.ts`, `lib/usePriceNow.ts` | Aktueller Spotpreis, „jetzt“-Marker und „Morgen Ø“ für die Uhrzeit des Besuchers (aus der gebündelten Preisreihe); `priceWindowLabel` |
+| `lib/simpleMarkdown.ts`, `components/SimpleMarkdown.tsx` | Kleines Markdown-Subset (Überschriften, Listen, fett/kursiv) für Advisor-Antworten – als React-Elemente, kein HTML |
 | `lib/time.ts` | Zeit-Helfer fest auf `Europe/Vienna`, ISO-Kalenderwoche, Freshness-Stufen |
 | `lib/useDataFreshness.ts` | React-Hook: Datenalter im Browser (nach Hydration) |
 | `lib/safeUrl.ts` | `safeExternalUrl()` – nur absolute http(s)-URLs ohne Credentials |
@@ -49,7 +51,7 @@ Browser-seitigen Aktualitätshinweis sichtbar.
 | `scripts/fetch-data.ts` | Orchestriert Abruf, Transformation, Schreiben, `meta.json` |
 | `scripts/generate-report.ts` | Erzeugt/aktualisiert den Wochenbericht, Gemini-Aufruf |
 | `scripts/validate-data.ts` | CLI für Schema- und Aktualitätsprüfung |
-| `scripts/deploy_hf.py` | Upload `out/` → HF Space, `status.json`-Verifikation |
+| `scripts/deploy_hf.py` | Upload `out/` **und `README.md`** (dessen Front-Matter ist die Space-Konfiguration) → HF Space; löscht dort nur `_next/**`, `*.html`, `*.txt`, `status.json` (andere Dateitypen bleiben liegen → `delete_patterns` erweitern, wenn z. B. `public/` dazukommt); prüft `status.json` im neuen Commit und den Space-Status |
 | `scripts/lib/*.ts` | Reine Logik: `energy.ts`, `news.ts`, `report.ts`, `validate.ts`, `http.ts` |
 | `scripts/tests/*.test.ts` | Unit-Tests (node:test) |
 | `scripts/dev/` | `mock-fetch.mjs` + `offline-e2e.sh` – Pipeline ohne Netzwerk testen |
@@ -109,30 +111,45 @@ Alle Dateien werden ausschließlich von der Pipeline geschrieben (temp-Datei + r
 | Datei | Typ | Inhalt |
 | :--- | :--- | :--- |
 | `generation.json` | `GenerationData` | `latestSnapshot` (neuester Zeitpunkt, an dem Laufkraft **und** Last vorliegen: MW je Technologie, Last, Hydro-Anteil an der Last, Erneuerbaren-Anteil an der Erzeugung, Gesamterzeugung) + `series` (Stundenmittel der letzten 48 h, Labels in Wiener Zeit) |
-| `prices.json` | `SpotPriceData` | `currentPrice` = Preis der aktuellen Viertelstunde (`currentSlotStart`), 24-h-Statistik nach Zeitstempeln, `negativePriceHours24h` in Stunden, `nextDayAvg` (sobald veröffentlicht), `series` (letzte 24 h + Day-Ahead bis +36 h, `isFuture`) |
+| `prices.json` | `SpotPriceData` | `currentPrice` = Preis der Viertelstunde zur Laufzeit (`currentSlotStart`), 24-h-Statistik nach Zeitstempeln (`windowHours` = tatsächlich abgedeckte Stunden, < 24 nach Fallback ohne Zeitraum), `negativePriceHours24h` in Stunden, `nextDayAvg`, `series` (letzte 24 h + Day-Ahead bis +36 h, `isFuture`). Der Browser bestimmt aktuellen Preis/„jetzt“/„Morgen Ø“ selbst aus `series` (`lib/priceNow.ts`); die gespeicherten Werte sind nur Fallback |
 | `cross-border.json` | `CrossBorderData` | Neuester veröffentlichter Zeitpunkt; `flowMW` je Nachbar (**positiv = Export**, intern aus GW umgerechnet und Vorzeichen gedreht), `netExportMW`, `sourceUnit` |
 | `renewable-share.json` | `RenewableShareData` | `currentPercent`, `trend`/`daily` (Tageswerte der Wochenstatistik) |
-| `weekly-stats.json` | `WeeklyStats \| null` | Die 7 **vollständigen** Kalendertage vor heute (Wiener Zeit, Abdeckung ≥ 90 %): GWh je Technologie, Last, Erneuerbaren-Anteil, Preis Ø/Min/Max, Negativpreis-Stunden, Netto-Export (GWh) + `totals` |
+| `weekly-stats.json` | `WeeklyStats \| null` | 7-Tage-Fenster (Wiener Kalendertage): endet **gestern, sobald gestern vollständig veröffentlicht ist** (alle Viertelstunden von Laufkraft und Last, Tageslänge inkl. 23/25-h-DST-Tage), sonst vorgestern. Im Fenster zählen Tage mit ≥ 90 % Abdeckung (mind. 3 Tage, sonst Fehler). Netto-Export je Tag nur bei ≥ 98 % Abdeckung der Grenzflüsse. Inhalt: GWh je Technologie, Last, Erneuerbaren-Anteil, Preis Ø/Min/Max, Negativpreis-Stunden, Netto-Export (GWh) + `totals` |
 | `news.json` | `NewsItem[]` | Bereinigte Meldungen inkl. `category` |
 | `reports.json` | `WeeklyReport[]` | Berichtsarchiv, neueste zuerst, max. 52 |
 | `meta.json` | `AppMetadata` | `lastUpdated` (Pipeline-Lauf), `dataAsOf` (neueste Messung), `sourceStatus` je Quelle (`ok`, `lastAttempt`, `lastSuccess`, `dataUntil`, `error`), `warnings` |
 
-**Last-known-good:** Jede Quelle (`generation`, `prices`, `crossBorder`, `weeklyStats`, `news`) wird unabhängig
-verarbeitet. Schlägt sie fehl, bleibt ihre Datei unverändert, `sourceStatus.<quelle>.ok = false` mit Fehlertext
-und letztem Erfolg. `dataAsOf` bleibt dann auf dem alten Stand → UI und Freshness-Prüfung zeigen das Alter.
+**Last-known-good:** Jede Quelle wird unabhängig verarbeitet. Schlägt sie fehl, bleibt ihre Datei unverändert,
+`sourceStatus.<quelle>.ok = false` mit Fehlertext und letztem Erfolg.
+
+| `sourceStatus`-Schlüssel | schreibt |
+| :--- | :--- |
+| `generation` | `generation.json` (bestimmt `meta.dataAsOf` → Badge, Banner, Freshness, Bericht-Sperre) |
+| `prices` | `prices.json` (Alter separat über `currentSlotStart` geprüft) |
+| `crossBorder` | `cross-border.json` |
+| `weeklyStats` | `weekly-stats.json` **und** `renewable-share.json` |
+| `news` | `news.json` |
+
+`dataAsOf` folgt also nur `generation`: Fällt z. B. nur `weeklyStats` aus, bleiben Wochenwerte und
+Erneuerbaren-Trend alt, ohne dass das Badge gelb wird – sichtbar in `meta.json` und als Warnung im Workflow-Log.
 
 ## 5. Wochenberichte
 
 Code: `scripts/lib/report.ts`, `scripts/generate-report.ts`.
 
-- **Zeitraum & Label:** Basis sind die 7 vollständigen Tage vor heute (`weekly-stats.json`). Die Kalenderwoche
-  (ISO 8601) ergibt sich aus dem **letzten** Tag des Zeitraums. Folge: Der Montagslauf erzeugt die finale Version
-  der Vorwoche (exakt Mo–So); an den übrigen Tagen ist der Bericht der laufenden Woche ein rollierender 7-Tage-Bericht.
-  ID: `report-<jahr>-kw<ww>`.
+- **Zeitraum & Label:** Basis ist das 7-Tage-Fenster aus `weekly-stats.json` (siehe §4). Die Kalenderwoche
+  (ISO 8601) ergibt sich aus dem **letzten** Tag des Zeitraums. Folge: Sobald der Sonntag vollständig vorliegt
+  (in der Regel ab dem 06:17-UTC-Lauf am Montag), entsteht die finale Version der Vorwoche (exakt Mo–So); an den
+  übrigen Tagen ist der Bericht der laufenden Woche ein rollierender 7-Tage-Bericht. ID: `report-<jahr>-kw<ww>`.
+  Fehlen Tage, nennt der Bericht die tatsächliche Zahl („6 Tage mit vollständigen Daten“, „Wasserkraft gesamt
+  (6 Tage)“) und vergleicht mit dem Vorbericht über **Tagesmittel** (`totalsDays`).
 - **Ohne aktuelle Wochenwerte** (älter als 2 Tage oder fehlend): Bericht als „Momentaufnahme" von heute.
-- **Aktualisierung:** neu erzeugt, wenn kein Bericht für die ID existiert, sich `periodEnd` geändert hat, ein
-  Gemini-Key vorhanden ist aber der Bericht datenbasiert war, oder er älter als `REPORT_REFRESH_HOURS` (20 h) ist.
-  Sind die Erzeugungsdaten älter als `MAX_DATA_AGE_HOURS` (36 h), wird **kein** Bericht erzeugt.
+- **Aktualisierung (`needsRefresh`):**
+  - Ein Wochenbericht wird nie durch einen mit früherem `periodEnd` ersetzt (schützt den fertigen Mo–So-Bericht).
+  - Ohne Gemini-Key: der datenbasierte Bericht wird bei **jedem Lauf** neu erstellt (immer aktuelle Zahlen).
+  - Mit Gemini-Key: neu, wenn `periodEnd` oder die Wochensummen (`totals`) sich geändert haben, der gespeicherte
+    Bericht noch nicht von Gemini stammt oder älter als `REPORT_REFRESH_HOURS` (20 h) ist.
+  - Sind die Erzeugungsdaten älter als `MAX_DATA_AGE_HOURS` (36 h), wird **kein** Bericht erzeugt.
 - **Inhalt:** `keyFigures` und `totals` immer aus Messdaten; Vergleich mit dem Vorbericht über dessen `totals`.
   Internationale Punkte und Projekt-Updates nur aus echten Schlagzeilen des Zeitraums (Projekte: Stichwortfilter
   `PROJECT_PATTERN`); sonst ausdrücklicher Hinweis „keine Meldungen". Handlungsempfehlungen regelbasiert aus den
@@ -148,7 +165,7 @@ Code: `scripts/lib/report.ts`, `scripts/generate-report.ts`.
 | :--- | :--- | :--- |
 | Browser | grün ≤ 30 h, gelb ≤ 72 h, rot > 72 h seit `dataAsOf`; Banner ab gelb | `lib/time.ts` `freshnessLevel`, `useDataFreshness` |
 | Pipeline | Erzeugungsdaten und Spotpreis ≤ `MAX_DATA_AGE_HOURS` (36 h); neuester Bericht ≤ `MAX_REPORT_AGE_DAYS` (8) Tage | `scripts/lib/validate.ts` `checkFreshness` |
-| Deploy | `status.json` im Space muss dem eben hochgeladenen entsprechen | `scripts/deploy_hf.py` |
+| Deploy | `status.json` im neuen Space-Commit muss dem eben hochgeladenen entsprechen; Space-Status `BUILD_ERROR`/`RUNTIME_ERROR`/`CONFIG_ERROR`/`NO_APP_FILE` → Fehler, `PAUSED`/`STOPPED` → Warnung | `scripts/deploy_hf.py` |
 | Alarm | Fehlgeschlagener geplanter Lauf → Issue „Energy Radar: automatisches Update fehlgeschlagen" | Workflow |
 
 `status.json` im Space: `deployedAt`, `lastUpdated`, `dataAsOf`, `latestReport`, `commit`, `workflowRun`.
@@ -175,6 +192,9 @@ Code: `scripts/lib/report.ts`, `scripts/generate-report.ts`.
 | Kennzahlen nie vom LLM | Keine halluzinierten Zahlen; Bericht funktioniert ohne Key identisch |
 | Wochen-Label = ISO-Woche des Periodenendes | Montags entsteht automatisch der exakte Mo–So-Abschluss der Vorwoche |
 | Squash-Merge von PRs | Ein Commit pro Änderung → einfacher Revert/Rollback |
+| Daten-Commit legt `data/` über den neuesten Branch-Stand (statt Rebase) | `data/` wird pro Lauf komplett neu erzeugt; ein in der Warteschlange gestarteter Lauf von einem älteren Commit würde sonst immer an Konflikten in `meta.json` scheitern |
+| Zeitabhängige Preisanzeige im Browser | Der Static Export ist bis zu 6 h alt; „jetzt“ und „Morgen Ø“ werden aus der mitgelieferten Preisreihe für die Uhrzeit des Besuchers bestimmt |
+| Wochenfenster wartet auf vollständig veröffentlichten Vortag | Energy-Charts hinkt 2–3 h hinterher; sonst würde der 00:17-Lauf die Woche mit einem unvollständigen Sonntag abschließen |
 
 ## 9. Historie
 
@@ -183,3 +203,4 @@ Code: `scripts/lib/report.ts`, `scripts/generate-report.ts`.
 | v1 (Aug 2026) | Dashboard mit Mock-Daten, Mock-Wochenberichten, Gemini-Chat |
 | v2 (24.09.2026) | Echte Daten via Energy-Charts, täglicher Cron – **lief nie erfolgreich** (Push 403, `HF_TOKEN` fehlte, Fehler wurden verschluckt) |
 | v3 (08.10.2026, PR #1) | Robuste Pipeline, automatische Berichte, Verifikation, Monitoring, Security-Härtung; erstes erfolgreiches Deployment 08.10.2026 |
+| v3.1 (08.10.2026) | Review-Fixes: vollständiger Vortag/DST, Berichts-Refresh, Live-Preis im Browser, Markdown im Advisor, Daten-Commit ohne Rebase; Doku (`CLAUDE.md`, `docs/`), Offline-E2E |
