@@ -1,5 +1,170 @@
 [
   {
+    "id": "report-2026-kw42",
+    "weekNumber": 42,
+    "year": 2026,
+    "title": "Wochenbericht KW 42/2026: Wasserkraft 358 GWh, Spotpreis Ø 199,53 €/MWh",
+    "dateGenerated": "2026-10-13",
+    "executiveSummary": "Im Zeitraum 06.10.2026–12.10.2026 erzeugten Österreichs Wasserkraftwerke 357,6 GWh – davon 243,6 GWh aus Laufwasserkraft und 114 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 68 %. Der Day-Ahead-Preis lag im Schnitt bei 199,53 €/MWh (Spanne 14,87 bis 406,00 €/MWh). Österreich war in Summe Netto-Importeur (183,9 GWh). Gegenüber dem Vorbericht: Wasserkraft 0 %, Spotpreis-Durchschnitt +1 %.",
+    "austriaHighlights": [
+      "Laufwasserkraft: 243,6 GWh, Tageswerte zwischen 31,1 GWh (10.10.2026) und 36,2 GWh (07.10.2026).",
+      "Spotmarkt: teuerster Tag 12.10.2026 (Ø 217,70 €/MWh), günstigster Tag 11.10.2026 (Ø 174,77 €/MWh).",
+      "Photovoltaik lieferte 109,1 GWh, Windkraft 196 GWh, Gaskraftwerke 191,1 GWh bei einem Verbrauch von 1 086,9 GWh.",
+      "Grenzflüsse aktuell: Saldo -944 MW (Netto-Import); größter Einzelfluss: Tschechien -2 316 MW (Import)."
+    ],
+    "internationalHighlights": [
+      "Hammerl: „Heute hat Minister Totschnig wieder die Chance zu zeigen, was Stockers Herbst der Ergebnisse wert ist!“ (www.fpoe.at, 12.10.2026)",
+      "EEG-Novelle: Droht Deutschland eine Strompreisexplosion durch weniger erneuerbare Energien? (Ökonews, 11.10.2026)",
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 11.10.2026)"
+    ],
+    "hydroDeepDive": {
+      "laufkraftTrend": "Im Mittel 34,8 GWh pro Tag (≈ 1 450 MW). Zweite gegenüber erster Wochenhälfte: -7 % – sinkende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 114 GWh, Pumpbetrieb 40,5 GWh. Die Preisspanne von 391,13 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 243,6 GWh gegenüber 242,9 GWh im Vorbericht (0 %).",
+      "projektUpdates": [
+        "Innovative Wasserkraft aus Österreich (DW.com, 09.10.2026)",
+        "Axpo präsentiert White Paper zu Wasserkraftkonzessionen (energate messenger Schweiz, 09.10.2026)",
+        "Strom wird knapp – diese Speicher machen Österreichs Firmen unabhängig (Wirtschaftsnachrichten Süd, 06.10.2026)"
+      ]
+    },
+    "strategicTips": [
+      {
+        "topic": "Preisspitzen bedienen",
+        "recommendation": "Bei einer Preisspanne von 391,13 €/MWh (Minimum 14,87, Maximum 406,00 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "targetGroup": "Erzeuger"
+      },
+      {
+        "topic": "Wert von Flexibilität",
+        "recommendation": "Preisspanne 391,13 €/MWh und 40,5 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "targetGroup": "Investoren"
+      },
+      {
+        "topic": "Grenzkuppelstellen beobachten",
+        "recommendation": "Österreich war Netto-Importeur (183,9 GWh). Größter aktueller Fluss: Tschechien (-2 316 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "targetGroup": "Netzbetreiber"
+      }
+    ],
+    "periodStart": "2026-10-06",
+    "periodEnd": "2026-10-12",
+    "dataAsOf": "2026-10-12T22:45:00.000Z",
+    "generatedAt": "2026-10-13T00:42:47.043Z",
+    "generatedBy": "data",
+    "keyFigures": [
+      {
+        "label": "Wasserkraft gesamt (7 Tage)",
+        "value": "357,6 GWh"
+      },
+      {
+        "label": "Laufwasserkraft",
+        "value": "243,6 GWh"
+      },
+      {
+        "label": "Speicher- & Pumpspeicherturbinen",
+        "value": "114 GWh"
+      },
+      {
+        "label": "Pumpenergie (Speicherung)",
+        "value": "40,5 GWh"
+      },
+      {
+        "label": "Photovoltaik / Wind",
+        "value": "109,1 / 196 GWh"
+      },
+      {
+        "label": "Erneuerbaren-Anteil an der Erzeugung",
+        "value": "68 %"
+      },
+      {
+        "label": "Day-Ahead Ø (Min / Max)",
+        "value": "199,53 €/MWh (14,87 / 406,00)"
+      },
+      {
+        "label": "Stunden mit Negativpreisen",
+        "value": "0 h"
+      },
+      {
+        "label": "Netto-Import (7 Tage)",
+        "value": "183,9 GWh"
+      },
+      {
+        "label": "Momentaufnahme Wasserkraft",
+        "value": "1 501 MW (27 % der Last)"
+      },
+      {
+        "label": "Momentaufnahme Spotpreis",
+        "value": "177,99 €/MWh"
+      }
+    ],
+    "totals": {
+      "laufkraftGWh": 243.6,
+      "speicherGWh": 114,
+      "pumpenGWh": 40.5,
+      "pvGWh": 109.1,
+      "windGWh": 196,
+      "biomasseGWh": 32.2,
+      "gasGWh": 191.1,
+      "loadGWh": 1086.9,
+      "renewableGWh": 619.3,
+      "totalGenerationGWh": 906.7,
+      "renewableSharePercent": 68,
+      "priceAvg": 199.53,
+      "priceMin": 14.87,
+      "priceMax": 406,
+      "negativePriceHours": 0,
+      "netExportGWh": -183.9
+    },
+    "newsSources": [
+      {
+        "title": "Emissionshandel: Tag der Wahrheit für Minister Totschnig bei EU-Umweltrat",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMDVjbkdVVkUwX1BvNkgyNE5TUmVONWNXcnB2b3VrTHZGbDZla180cVMwbHM1LTkzck5KbEVRbjFvZEJXUmw3V0RKdnU4U09udm1RazNXMm5sXzhBX3RTZnc5UHQzTFZuQk5oeTBxOGZQMWdPV2hCWkhzVkhCeWkxajZtSi1kSk5IcWpabGJ0Y2FxRURpdWdxeVpfaFh0dm1UQ2NwZ18wRmk5RUpZdk1sYjllWndLQmJQazl6NmxtTDA?oc=5",
+        "source": "FPÖ",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "Emissionshandel-Kritik: FPÖ fordert Totschnig in Brüssel",
+        "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE83d0d5dFNNaHZwblRhN0MzWkpESFg3dk9MQnQzRXduQWNyVTJUSGJjYk1raEE5bVkyUXdEcXNWMHlVektUbmlPdw?oc=5",
+        "source": "Pressefeuer",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "Je flexibler, desto günstiger: Neue Regeln für Strombezug",
+        "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE96bmItbmZvaFpoUXNFNjdZSEMyeW5GRmNFUzYtc0U3WWx3VWpSUjZJbHBnRlV6QXV1RkVMOFluTE1iTUZNRkE?oc=5",
+        "source": "ORF",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "E-Control: Neue Regeln für die Energiewende",
+        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNU0tYLVQ4WlZkdEpmLXg1Q1RMSkVkQzVPd3hJd083NEhJSThrTVN0QXh1Vy1UdzN6Wl90QWVJR3lXTFkzaW9CU1JTaVMxRGhnWXRQdTNCOVhsNl9zZEpsTXF2My1oYlhSN2pycTVMQ3N3ZFZvSXhZUzhEQ2daTThsMEx5WjIzS0lpemdtb0lhODFKYWpzcU1yVDZCS21HMXdUbHc?oc=5",
+        "source": "OTS.at",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "Stromnetz-Reform ab 2027 – Neue Stromtarife fix! Wer künftig mehr zahlt, wer spart",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQNnVENUNiUXAzblI3bWJnUy1fRFRnU0N5bTRfVVFlb0Y5RVF6MHVTQ2FsYW9sa1ptNTd3YnlkT0FIWTgwWUQxY0hjMDRfZUw3dUZPTVJfalNpR0dVZkNqNGtmaXloM3J1VlBvekRXRTJhUE1POWtWZkRiN3FHNUFlVGxSUHREb2k4bWVYeFNTQ0c?oc=5",
+        "source": "Heute",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "Neue Stromnetztarife: Wer viel Strom auf einmal verbraucht, muss mehr bezahlen",
+        "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNMGFzaHVINks1Umx2V2UzeUdBclc0UFpmY1VaOWVoRzU3bC16V1hkODRNVGZiRGoxV0V0b1RNaEJJbFFOMkMycW1DMG5VeUZiM3JPNWFJVFkxUU1JbzVHbzROUzRKRTZ3Q01pVGhWV2hELWNWby1oNDBpX21UN3dIdjVFaFZIc2xubEY4eGRUSm5YMV96TGhGSXZEZkY5VU12cHVXdFZlWU5IdzVvT0NEamduSGhQckdOWVVsT1F2cFI?oc=5",
+        "source": "Der Standard",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "Neuordnung des Strom-Tarifsystems: Diese fünf Punkte ändern sich",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOMlZWUE9nUEdRWDZSQWZScEl1WVhjMmtjM1BQX29scFh6RGdCSFI5ZFJaYkpmc2xqcUxDTVdvbGVnb25PQ2dKTGJwdlJaNGhQakVmMVNvTGtfM0E1NVlIeFZQeDlZeGE1RThFdXZFbC10eWREN29JMGN1TGRLUGdNUUhEcUZYVTBHVjc1aGZLbVdvU1p0WmhmclRESEhYcnhUS2oyaDBUNzY?oc=5",
+        "source": "Kleine Zeitung",
+        "pubDate": "2026-10-12"
+      },
+      {
+        "title": "Strom-Kunden sollten ab 2027 auf ihr Nutzungsverhalten achten",
+        "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNSXFlczJRNWFxNHhvbV9iaEZfUVBOWndkSDBtMmJFNER2RjdWUkVsZVllSTFpWDUtTzQwMjhnTnRMWl9iS2UzSnZVMFNxbVVqU1JDR21rNnR5QTZnbGhHazlTT1Nva0NxSVJGME1SeE5XZGYtWmVhdWhUY3F3bXg0anFNM3p3eW5jam5XV1B2TzdhZw?oc=5",
+        "source": "HLK",
+        "pubDate": "2026-10-12"
+      }
+    ]
+  },
+  {
     "id": "report-2026-kw41",
     "weekNumber": 41,
     "year": 2026,
