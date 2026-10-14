@@ -1,6 +1,6 @@
 {
-  "lastUpdated": "2026-10-14T04:56:18.169Z",
-  "lastUpdatedFormatted": "14.10.2026, 06:56",
+  "lastUpdated": "2026-10-14T11:55:39.378Z",
+  "lastUpdatedFormatted": "14.10.2026, 13:55",
   "dataAsOf": "2026-10-14T03:00:00.000Z",
   "version": "3.0.0",
   "sources": [
@@ -20,35 +20,44 @@
   ],
   "sourceStatus": {
     "generation": {
-      "ok": true,
-      "lastAttempt": "2026-10-14T04:56:18.169Z",
+      "ok": false,
+      "lastAttempt": "2026-10-14T11:55:39.378Z",
       "lastSuccess": "2026-10-14T04:56:18.169Z",
-      "dataUntil": "2026-10-14T03:00:00.000Z"
+      "dataUntil": "2026-10-14T03:00:00.000Z",
+      "error": "HTTP 503"
     },
     "prices": {
-      "ok": true,
-      "lastAttempt": "2026-10-14T04:56:18.169Z",
+      "ok": false,
+      "lastAttempt": "2026-10-14T11:55:39.378Z",
       "lastSuccess": "2026-10-14T04:56:18.169Z",
-      "dataUntil": "2026-10-14T04:45:00.000Z"
+      "dataUntil": "2026-10-14T04:45:00.000Z",
+      "error": "HTTP 503"
     },
     "crossBorder": {
-      "ok": true,
-      "lastAttempt": "2026-10-14T04:56:18.169Z",
+      "ok": false,
+      "lastAttempt": "2026-10-14T11:55:39.378Z",
       "lastSuccess": "2026-10-14T04:56:18.169Z",
-      "dataUntil": "2026-10-14T01:15:00.000Z"
+      "dataUntil": "2026-10-14T01:15:00.000Z",
+      "error": "HTTP 503"
     },
     "weeklyStats": {
-      "ok": true,
-      "lastAttempt": "2026-10-14T04:56:18.169Z",
+      "ok": false,
+      "lastAttempt": "2026-10-14T11:55:39.378Z",
       "lastSuccess": "2026-10-14T04:56:18.169Z",
-      "dataUntil": "2026-10-13"
+      "dataUntil": "2026-10-13",
+      "error": "HTTP 503"
     },
     "news": {
       "ok": true,
-      "lastAttempt": "2026-10-14T04:56:18.169Z",
-      "lastSuccess": "2026-10-14T04:56:18.169Z",
-      "dataUntil": "2026-10-13"
+      "lastAttempt": "2026-10-14T11:55:39.378Z",
+      "lastSuccess": "2026-10-14T11:55:39.378Z",
+      "dataUntil": "2026-10-14"
     }
   },
-  "warnings": []
+  "warnings": [
+    "generation: HTTP 503 – letzte gültige Daten bleiben erhalten",
+    "prices: HTTP 503 – letzte gültige Daten bleiben erhalten",
+    "crossBorder: HTTP 503 – letzte gültige Daten bleiben erhalten",
+    "weeklyStats: HTTP 503 – letzte gültige Daten bleiben erhalten"
+  ]
 }
