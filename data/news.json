@@ -1,11 +1,27 @@
 [
   {
-    "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
+    "title": "Grünwelt Energie erklärt: Der Sommer 2026 zeigt die Dynamik und Chancen erneuerbarer Energien in Österreich",
+    "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9TMHQ0U2J0UUtqX3J5TnFnQ3BlWmhGc0QzSENMaXhQUkJJZlA3cWNVc3hWM2tlakRiU0dBTkMxUFVFRmJjRXZpcUdCLXJfb3lJa2NFVlhWRHhUdms2cjlLNlNzMA?oc=5",
     "pubDate": "2026-10-15",
-    "source": "DIE ZEIT",
-    "summary": "Energiemonitor: Schafft Deutschland die Energiewende?",
-    "category": "EU"
+    "source": "Presseportal.ch",
+    "summary": "Grünwelt Energie erklärt: Der Sommer 2026 zeigt die Dynamik und Chancen erneuerbarer Energien in Österreich",
+    "category": "Wasserkraft"
+  },
+  {
+    "title": "Erneuerbare Energien: Wir könnten – aber wir müssten halt auch tun",
+    "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNV0NwSjh3VmtqZjNpdjZGOWk0eXNGc3BUMFBqVzR1dVU0bC1WVzVzdUJ3MEFtSzl0ZXVySVpMekhFX0dEeTJ4aGNCLW1HWHJVQVRKenpqLVh6dTlKb2tMRlBqazVkazRpdGpTLUZ5NHE1UFZ2NHF2RTNPRmUtSXVjYnpPSVM4UQ?oc=5",
+    "pubDate": "2026-10-15",
+    "source": "DiePresse.com",
+    "summary": "Erneuerbare Energien: Wir könnten – aber wir müssten halt auch tun",
+    "category": "Wasserkraft"
+  },
+  {
+    "title": "Strom-Schock in Europa: Wien zählt zu den teuersten Hauptstädten",
+    "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaFZnUDRZOWJodUlDSEVoNlVFNkt1ZkEwZVNnT1hWYkp3dDVvUTR3RnJ3ZGQxMFNBZ2liMWZZc1kwR0RuRFVmc3JOOEhBRnQ4US02cmQyYU42bjdwZ19DdzRIRm90bUg3OHB4dHlKNXVFUjBoZDlyeE50ek82a2ozb3ZUdTdORmtZcWpSQzBQY3llN2hzbV9McmtR?oc=5",
+    "pubDate": "2026-10-15",
+    "source": "exxpress",
+    "summary": "Strom-Schock in Europa: Wien zählt zu den teuersten Hauptstädten",
+    "category": "Markt"
   },
   {
     "title": "Energiegemeinschaft Wulfenia: Fixpreise für Strom im Gailtal",
@@ -25,9 +41,9 @@
   },
   {
     "title": "Aus für Ardo-Werk: IHS und WIFO gegen Staatshilfen",
-    "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBncExmYnlOZ3A2WUI0S3N3WE5oY0NnT294el9fa0hFVEhyMWhydlhQNWE4MDJZTFY0REpTdG1CQmVYNm9HY3FWQ2Ffaw?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMFdyX3lSaDBoZDRtWUNndzJWU0tEOG9RUXZlalFJRWY3eUVHU0xYRWl1OHF6bDZ5Uzh1RW5OU01paEplSkxhdWtIUkpwVFprazhudUM2QWF5ZFVZbTFIQWh6YmlzLWFqOWNGM1pTbGdtT1Vsc0ZGV3ZaS3lrbmtEZWRDZDI4U3B4U3Bzd09naE1OendZU3N5X0RPemU3SjF3d2hMSE5sNDIwWGxkd1VaNG92Qk1Lb3c?oc=5",
     "pubDate": "2026-10-14",
-    "source": "noe.ORF.at",
+    "source": "NÖN.at - Niederösterreichische Nachrichten",
     "summary": "Aus für Ardo-Werk: IHS und WIFO gegen Staatshilfen",
     "category": "Markt"
   },
@@ -45,6 +61,22 @@
     "pubDate": "2026-10-13",
     "source": "Der Standard",
     "summary": "Revolution am Strommarkt: Kommen die Megaspeicher je nach Österreich?",
+    "category": "Österreich"
+  },
+  {
+    "title": "Netzentgelte 2027: Heimspeicher und Vehicle-to-Grid",
+    "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5PZFNTOGtfNDQya3I2Yk5LaHU0UXR5QlNtcngwNlIwUkRROTh3b2tKa1NqS2dPOWZvRUtnclB0ZjAwNzI1ZGpzRVZIOEliLV8teURvWXdkVkZOTlR2dVp3aVlMWEVsUWZEUVRFMzNkT2ZMSTVvSUVWZg?oc=5",
+    "pubDate": "2026-10-13",
+    "source": "i-Magazin",
+    "summary": "Netzentgelte 2027: Heimspeicher und Vehicle-to-Grid",
+    "category": "Österreich"
+  },
+  {
+    "title": "Entlastung der Netze - Neue Stromtarife: Was sich für Haushalte ändert",
+    "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5zSl93WWc4QlNYZFU0U0FQMjJOeElmLW01bExRSF9KS08tVHNucXZLRnQ5bTU4UVlGcENsTUVybExEdw?oc=5",
+    "pubDate": "2026-10-13",
+    "source": "Kronen Zeitung",
+    "summary": "Entlastung der Netze - Neue Stromtarife: Was sich für Haushalte ändert",
     "category": "Österreich"
   },
   {
@@ -152,11 +184,11 @@
     "category": "Markt"
   },
   {
-    "title": "Studie: Neue Photovoltaik- und Windkraftanlagen verursachen nur noch 400 Millionen Euro Förderbedarf jährlich",
-    "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPelMtNU9SSHU1YXJnYnd0ajJod1ItOW9oMVNiSk5jd2lNZkZxdjVfb3FrbjFWblpMb0ZBdlZpZUFkcURHTGRwanVOTXpCR0dnVU1OS1NVUEFRdzRyT2I4d05WVlhKZFVLV0piLWJ5N3l2NWRGZkdoenR1dXl4QmtBOGhBNW1EVS13d3FvRHFmallnU2VPNi1kaDJVNjZPLVNmZkIzbkZEaWx3T2JVOUl0UWNVNUdLX0o2THV3VFlNWnhwLThvcklIOER0MVZkY0s1ZGdKUmNZS0E4NEtmd1h0cEJR?oc=5",
+    "title": "Wie hart trifft die Energiekrise Deutschland? Aktuelle Energiepreise im Überblick",
+    "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQNGI2SzJPSUU5U2hzV3lrTk5NTkVEWHFsXzFEUkVZSEVRR3FGM2RzNGVXXzdhLXp2QkM0ZUMzZ252WmdQVFFNN1VYdXdHbDhsQ2ZneWFGcVh3TGFVMTNhalZYWGlhQW5iOThjQmdyWWZXcDVGRWsxSTB5OURicERYRTNNLUZCU2V6bXFxRFY1NmpXR1NnWXNrNkwwYXR5RFR6RkJOTGFR?oc=5",
     "pubDate": "2026-10-12",
-    "source": "pv magazine Deutschland",
-    "summary": "Studie: Neue Photovoltaik- und Windkraftanlagen verursachen nur noch 400 Millionen Euro Förderbedarf jährlich",
+    "source": "FAZ",
+    "summary": "Wie hart trifft die Energiekrise Deutschland? Aktuelle Energiepreise im Überblick",
     "category": "EU"
   },
   {
@@ -176,19 +208,19 @@
     "category": "Österreich"
   },
   {
-    "title": "Bonus läuft jetzt aus – Strom und Gas: Tausenden Haushalten droht Kosten-Schock",
-    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWVVMbzhmdG1WOFI5enJKUkpDbDhPQ1dzVDJsQU5JQlpPV29Ma2p0cmtZeGUtSjY0X0QwRXFsb1Z0QjR0N1phRk9USEZram9GQTVRVDJzdmpINF9EdlgtRHZCM3BnOFluT0dKNlFIWlhGbmtFMmtUMnRNeFJmRjJsT05HVTBmRjZuMFpITWU0OE8?oc=5",
-    "pubDate": "2026-10-11",
-    "source": "Heute",
-    "summary": "Bonus läuft jetzt aus – Strom und Gas: Tausenden Haushalten droht Kosten-Schock",
-    "category": "Markt"
-  },
-  {
     "title": "WERBUNG - Was sich für PV-Anlagen ab 2027 alles ändert",
     "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1WMFhULXFaeG9yVGJhNUJVQ1ZkS2pqckc0TW9KMmhlUG9fems0dHZ0R2J2aGNybU1xcW5vbm5GRV9CUQ?oc=5",
     "pubDate": "2026-10-11",
     "source": "Kronen Zeitung",
     "summary": "WERBUNG - Was sich für PV-Anlagen ab 2027 alles ändert",
+    "category": "Markt"
+  },
+  {
+    "title": "Bonus läuft jetzt aus – Strom und Gas: Tausenden Haushalten droht Kosten-Schock",
+    "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQWVVMbzhmdG1WOFI5enJKUkpDbDhPQ1dzVDJsQU5JQlpPV29Ma2p0cmtZeGUtSjY0X0QwRXFsb1Z0QjR0N1phRk9USEZram9GQTVRVDJzdmpINF9EdlgtRHZCM3BnOFluT0dKNlFIWlhGbmtFMmtUMnRNeFJmRjJsT05HVTBmRjZuMFpITWU0OE8?oc=5",
+    "pubDate": "2026-10-11",
+    "source": "Heute",
+    "summary": "Bonus läuft jetzt aus – Strom und Gas: Tausenden Haushalten droht Kosten-Schock",
     "category": "Markt"
   },
   {
@@ -240,14 +272,6 @@
     "category": "Wasserkraft"
   },
   {
-    "title": "Axpo präsentiert White Paper zu Wasserkraftkonzessionen",
-    "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQS0tPRkEzOWktSUhBaTlQVkdkMXhDNDlKWGZkcE43aVlMU2VQeDktaFVZemZLNmNzZmx0OXlFRmRPamszNERscWxjaWtVbkVsNXlCVjhwMlVBRmRwWk9hLXQyak9YaFU5VHgwTFlLazJkUEI4cnZwd3phdUJXWEJwVXU3U1RvVk5vLUstNktmWkNSNFlVX21ZQTNRU0FJNVl2Q3pOeA?oc=5",
-    "pubDate": "2026-10-09",
-    "source": "energate messenger Schweiz",
-    "summary": "Axpo präsentiert White Paper zu Wasserkraftkonzessionen",
-    "category": "Wasserkraft"
-  },
-  {
     "title": "Commerzbank-Österreich-Chef mahnt zur Vorsicht bei Zinserhöhungen",
     "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdjZWem5sQlRreTZkR09oLTc2VTVCUy1EOU5uLV93S2JFRTdaNnZIWHlrLWdySjc3cDNiTUZRR1djTVdmMmU5elJUVnI4cGZ3Z3FPRkZTeGVlbnZ0RDB4Qmt0dDc3NkkwdjZFY1JQWm5wem9IQ2hmNGthd05yanB6cE1PeGIwbklxWWRCbmZUeVAxWl8wT1VsRzdlNXNwZXFwMFZESVJGcVoyeWZrM0VGOENqZw?oc=5",
     "pubDate": "2026-10-09",
@@ -293,30 +317,6 @@
     "pubDate": "2026-10-08",
     "source": "Heute",
     "summary": "190.000 Energieverträge – Strom und Gas: Wer jetzt seinen Bonus verliert",
-    "category": "Markt"
-  },
-  {
-    "title": "Stromimport nähert sich Wert von 2025",
-    "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1waEpGWXZwdlZMTEMtU1JvRHpQd0t5SlFxREVUcng0RWQ5a0ZwZkZqV0pVUXZPemxFYXRkeUswbHZwTXFkbHBfdGpwR3hOajVROHpONUJpb1MzVmtFRlBNckxtNHFkc3I2NVdCSm4zNGQ5TFUwNm96b3NKZDZoUQ?oc=5",
-    "pubDate": "2026-10-07",
-    "source": "Elektrobranche",
-    "summary": "Stromimport nähert sich Wert von 2025",
-    "category": "Wasserkraft"
-  },
-  {
-    "title": "Führungskräfte unter strom",
-    "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5laTJkeFJfc2NtS2RjNUdFTUhMMW1hZnNHVlVWZjBCSHhUZDlvLWsyQkpTR3VhVndYd1E4YW1ybTN4LUxfVFlMbm5OZ19SRWtrMDlTY0RvQnozZTFDWi05SkR3NzVqeGxKQ2c?oc=5",
-    "pubDate": "2026-10-07",
-    "source": "Forbes Austria",
-    "summary": "Führungskräfte unter strom",
-    "category": "Wasserkraft"
-  },
-  {
-    "title": "Heizkostenvergleich Österreich 2026: Öl, Gas, Pellets und Wärmepumpe",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQMWRwN0NQdm1GYlBrRTFqTEU3bFJtR2xoRFJma0drcWVaU09MalA2TURvbVBBcndRWFVfcTROeDBkb3pZd3NzSFdhNGcwNFJSWFJKUTdiamluTWRpZ3ozS1FRcUduN3VGdzNPVDd3RE5UVE1seV95UTNzVUd2T3JMZ0ZpLTlLeEVUZnVtcFdZbDJHMFFydG1lcg?oc=5",
-    "pubDate": "2026-10-07",
-    "source": "Wohnnet.at",
-    "summary": "Heizkostenvergleich Österreich 2026: Öl, Gas, Pellets und Wärmepumpe",
     "category": "Markt"
   }
 ]
