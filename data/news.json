@@ -104,14 +104,6 @@
     "category": "Österreich"
   },
   {
-    "title": "Spar-Vorstand Kaser: „Mehrwertsteuersenkung ist eine Fehlkonstruktion“",
-    "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPVURHcTlGbjUtbDJjSnRHeXRYUXB6R01EZkNiS19HUGY0VjZZNzJCc0VsU2J4UzRsT3BhV2RYY3JRMTlUVDJKNnB5X0l1aWxwdVYyOS1vdjQ2REJkd1NNSkZSWUtLQ1VwckZtLUhiMVE5SWhjUmZhb2lGaWlWcTZOS0lzNzA1OFVBYXdCbERLSnNycXBGd201NEVmaTdocWlNM2NIWjU0c2NuMFEzbU5pdkR4NA?oc=5",
-    "pubDate": "2026-10-15",
-    "source": "Kleine Zeitung",
-    "summary": "Spar-Vorstand Kaser: „Mehrwertsteuersenkung ist eine Fehlkonstruktion“",
-    "category": "Markt"
-  },
-  {
     "title": "Strom-Schock in Europa: Wien zählt zu den teuersten Hauptstädten",
     "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaFZnUDRZOWJodUlDSEVoNlVFNkt1ZkEwZVNnT1hWYkp3dDVvUTR3RnJ3ZGQxMFNBZ2liMWZZc1kwR0RuRFVmc3JOOEhBRnQ4US02cmQyYU42bjdwZ19DdzRIRm90bUg3OHB4dHlKNXVFUjBoZDlyeE50ek82a2ozb3ZUdTdORmtZcWpSQzBQY3llN2hzbV9McmtR?oc=5",
     "pubDate": "2026-10-15",
@@ -158,6 +150,14 @@
     "source": "NÖN.at - Niederösterreichische Nachrichten",
     "summary": "Aus für Ardo-Werk: IHS und WIFO gegen Staatshilfen",
     "category": "Markt"
+  },
+  {
+    "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
+    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
+    "pubDate": "2026-10-14",
+    "source": "DIE ZEIT",
+    "summary": "Energiemonitor: Schafft Deutschland die Energiewende?",
+    "category": "EU"
   },
   {
     "title": "Tirol hat die Kraft zur Veränderung",
@@ -280,11 +280,27 @@
     "category": "Markt"
   },
   {
+    "title": "Vom Stromfresser zum Netzdiener: Wie E-Fahrzeuge das Netz entlasten können",
+    "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQeEtGaDNEekpEc2QyVG5WNzA0U2s2eVZkMjdjc0ZlM2RPc3FWZzBkU0NqcVpQaGw3YWZ1N0ZQM2JXeURpaUhMU0o4eWRVNE1hUkg2QUc5NkRsd1lsa1YzYW52UlBvYkZVcDFPbHUxdDRRZnIxTkNQTlNiRWc3THNZX1ZnLUcxX3ZCQlhTcXI1UHFtaVdPTC1POUI5NmMyM3E3TzlPVFlPRmsxaU43SWhhSGUtSktHMGhTWEFwY293?oc=5",
+    "pubDate": "2026-10-12",
+    "source": "derStandard.de",
+    "summary": "Vom Stromfresser zum Netzdiener: Wie E-Fahrzeuge das Netz entlasten können",
+    "category": "Markt"
+  },
+  {
     "title": "Wer günstigen Strom will, muss Abhängigkeit von Gas beenden",
     "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNWlZqbVhmS09haGVIMmhvMURRTk03UlgyR2hvY2c5V0hKNzhlSUpmUExGVTdhN1dYc2l4bVk2eVlITDFKVWllX1hodFBhdVczRi1DRnpNQUJuaEtVczBkaDU3RnNDZnpsYm9NUy1HbGpBM2dVMFFZT3M2ZkVSbnQ2YjJiQ1lOb29sQ2s5TE5Bczd2OFVpc3I4Zg?oc=5",
     "pubDate": "2026-10-11",
     "source": "Ökonews",
     "summary": "Wer günstigen Strom will, muss Abhängigkeit von Gas beenden",
+    "category": "Österreich"
+  },
+  {
+    "title": "WERBUNG - Was sich für PV-Anlagen ab 2027 alles ändert",
+    "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE1WMFhULXFaeG9yVGJhNUJVQ1ZkS2pqckc0TW9KMmhlUG9fems0dHZ0R2J2aGNybU1xcW5vbm5GRV9CUQ?oc=5",
+    "pubDate": "2026-10-11",
+    "source": "Kronen Zeitung",
+    "summary": "WERBUNG - Was sich für PV-Anlagen ab 2027 alles ändert",
     "category": "Markt"
   },
   {
@@ -302,21 +318,5 @@
     "source": "https://nachrichten.jetzt/",
     "summary": "FPÖ-Energiesprecher kritisiert Hattmannsdorfers Strompreis-Aussage",
     "category": "Markt"
-  },
-  {
-    "title": "EEG-Novelle: Droht Deutschland eine Strompreisexplosion durch weniger erneuerbare Energien?",
-    "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOMEFaWC1NSHdjZzdfT1M4cHZ4eHhDeC1vTjNaWGpaYjRSMjFqaTl3WDVXRzRoWEwzc3lyeWNCUGtSWnFxeV9WRjR2LWhDVUpQdEtjdnJMUGVoV0NhOWlwWVFhNV82cHp2X242TVBYa01yOFVjdmJTcloyZ3g4cHFOS3h0ZEl2YWlaOHg0Q29MNGUwMUVmSmlpZTZtekY2WEhfVnU1UVBqZ3RIME42OE5DUkJ0bzZlN25sX2FZSzJObw?oc=5",
-    "pubDate": "2026-10-11",
-    "source": "Ökonews",
-    "summary": "EEG-Novelle: Droht Deutschland eine Strompreisexplosion durch weniger erneuerbare Energien?",
-    "category": "EU"
-  },
-  {
-    "title": "„Wer Stromspitzen erzeugt, muss Beitrag leisten“",
-    "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTE5JdnN6cEZrVUlYNFRRd1k0UHQ0VXo3SHJ2Z3E4bXNnTTVaUUVNU2RkVnR6R1VoZ3k1a2l0dGpKbHNsZw?oc=5",
-    "pubDate": "2026-10-10",
-    "source": "Kronen Zeitung",
-    "summary": "„Wer Stromspitzen erzeugt, muss Beitrag leisten“",
-    "category": "Österreich"
   }
 ]
