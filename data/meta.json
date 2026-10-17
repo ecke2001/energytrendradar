@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-10-17T10:47:09.003Z",
-  "lastUpdatedFormatted": "17.10.2026, 12:47",
-  "dataAsOf": "2026-10-17T09:00:00.000Z",
+  "lastUpdated": "2026-10-17T15:37:25.869Z",
+  "lastUpdatedFormatted": "17.10.2026, 17:37",
+  "dataAsOf": "2026-10-17T13:30:00.000Z",
   "version": "3.0.0",
   "sources": [
     {
@@ -21,32 +21,32 @@
   "sourceStatus": {
     "generation": {
       "ok": true,
-      "lastAttempt": "2026-10-17T10:47:09.003Z",
-      "lastSuccess": "2026-10-17T10:47:09.003Z",
-      "dataUntil": "2026-10-17T09:00:00.000Z"
+      "lastAttempt": "2026-10-17T15:37:25.869Z",
+      "lastSuccess": "2026-10-17T15:37:25.869Z",
+      "dataUntil": "2026-10-17T13:30:00.000Z"
     },
     "prices": {
       "ok": true,
-      "lastAttempt": "2026-10-17T10:47:09.003Z",
-      "lastSuccess": "2026-10-17T10:47:09.003Z",
-      "dataUntil": "2026-10-17T10:45:00.000Z"
+      "lastAttempt": "2026-10-17T15:37:25.869Z",
+      "lastSuccess": "2026-10-17T15:37:25.869Z",
+      "dataUntil": "2026-10-17T15:30:00.000Z"
     },
     "crossBorder": {
       "ok": true,
-      "lastAttempt": "2026-10-17T10:47:09.003Z",
-      "lastSuccess": "2026-10-17T10:47:09.003Z",
-      "dataUntil": "2026-10-17T06:45:00.000Z"
+      "lastAttempt": "2026-10-17T15:37:25.869Z",
+      "lastSuccess": "2026-10-17T15:37:25.869Z",
+      "dataUntil": "2026-10-17T11:00:00.000Z"
     },
     "weeklyStats": {
       "ok": true,
-      "lastAttempt": "2026-10-17T10:47:09.003Z",
-      "lastSuccess": "2026-10-17T10:47:09.003Z",
+      "lastAttempt": "2026-10-17T15:37:25.869Z",
+      "lastSuccess": "2026-10-17T15:37:25.869Z",
       "dataUntil": "2026-10-16"
     },
     "news": {
       "ok": true,
-      "lastAttempt": "2026-10-17T10:47:09.003Z",
-      "lastSuccess": "2026-10-17T10:47:09.003Z",
+      "lastAttempt": "2026-10-17T15:37:25.869Z",
+      "lastSuccess": "2026-10-17T15:37:25.869Z",
       "dataUntil": "2026-10-17"
     }
   },
