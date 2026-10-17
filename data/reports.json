@@ -3,28 +3,28 @@
     "id": "report-2026-kw42",
     "weekNumber": 42,
     "year": 2026,
-    "title": "Wochenbericht KW 42/2026: Wasserkraft 375 GWh, Spotpreis Ø 208,15 €/MWh",
-    "dateGenerated": "2026-10-16",
-    "executiveSummary": "Im Zeitraum 09.10.2026–15.10.2026 erzeugten Österreichs Wasserkraftwerke 374,9 GWh – davon 255,2 GWh aus Laufwasserkraft und 119,7 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 63 %. Der Day-Ahead-Preis lag im Schnitt bei 208,15 €/MWh (Spanne 14,87 bis 343,00 €/MWh). Österreich war in Summe Netto-Importeur (224,8 GWh). Gegenüber dem Vorbericht: Wasserkraft +5 %, Spotpreis-Durchschnitt +6 %.",
+    "title": "Wochenbericht KW 42/2026: Wasserkraft 377 GWh, Spotpreis Ø 212,82 €/MWh",
+    "dateGenerated": "2026-10-17",
+    "executiveSummary": "Im Zeitraum 10.10.2026–16.10.2026 erzeugten Österreichs Wasserkraftwerke 376,8 GWh – davon 257,8 GWh aus Laufwasserkraft und 119 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 61 %. Der Day-Ahead-Preis lag im Schnitt bei 212,82 €/MWh (Spanne 14,87 bis 343,00 €/MWh). Österreich war in Summe Netto-Importeur (241,2 GWh). Gegenüber dem Vorbericht: Wasserkraft +5 %, Spotpreis-Durchschnitt +8 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 255,2 GWh, Tageswerte zwischen 31,1 GWh (10.10.2026) und 42,9 GWh (15.10.2026).",
-      "Spotmarkt: teuerster Tag 15.10.2026 (Ø 228,25 €/MWh), günstigster Tag 11.10.2026 (Ø 174,77 €/MWh).",
-      "Photovoltaik lieferte 99,5 GWh, Windkraft 116,5 GWh, Gaskraftwerke 218,1 GWh bei einem Verbrauch von 1 083,5 GWh.",
-      "Grenzflüsse aktuell: Saldo -2 317 MW (Netto-Import); größter Einzelfluss: Tschechien -2 342 MW (Import)."
+      "Laufwasserkraft: 257,8 GWh, Tageswerte zwischen 31,1 GWh (10.10.2026) und 42,6 GWh (15.10.2026).",
+      "Spotmarkt: teuerster Tag 16.10.2026 (Ø 229,20 €/MWh), günstigster Tag 11.10.2026 (Ø 174,77 €/MWh).",
+      "Photovoltaik lieferte 101,4 GWh, Windkraft 87,6 GWh, Gaskraftwerke 227,6 GWh bei einem Verbrauch von 1 079,1 GWh.",
+      "Grenzflüsse aktuell: Saldo -2 749 MW (Netto-Import); größter Einzelfluss: Tschechien -2 445 MW (Import)."
     ],
     "internationalHighlights": [
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 14.10.2026)",
-      "Wie hart trifft die Energiekrise Deutschland? Aktuelle Energiepreise im Überblick (FAZ, 13.10.2026)",
-      "Flexibles Energiesystem - Batteriespeicher: China führt, Europa holt auf (energiezukunft, 13.10.2026)"
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 17.10.2026)",
+      "Flexibles Energiesystem - Batteriespeicher: China führt, Europa holt auf (energiezukunft, 13.10.2026)",
+      "Stromnetze und Rechenzentren im Duett: Wo Microsoft Rechenzentren baut – und wie die EVN Stromnetze ausbaut (Small Microcap, 13.10.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 36,5 GWh pro Tag (≈ 1 519 MW). Zweite gegenüber erster Wochenhälfte: +16 % – steigende Wasserführung.",
-      "pumpspeicherStatus": "Turbinenbetrieb 119,7 GWh, Pumpbetrieb 45,6 GWh. Die Preisspanne von 328,13 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 255,2 GWh gegenüber 242,9 GWh im Vorbericht (+5 %).",
+      "laufkraftTrend": "Im Mittel 36,8 GWh pro Tag (≈ 1 535 MW). Zweite gegenüber erster Wochenhälfte: +19 % – steigende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 119 GWh, Pumpbetrieb 48,5 GWh. Die Preisspanne von 328,13 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 257,8 GWh gegenüber 242,9 GWh im Vorbericht (+6 %).",
       "projektUpdates": [
-        "Innovative Wasserkraft aus Österreich (DW.com, 09.10.2026)",
-        "Revolution am Strommarkt: Kommen die Megaspeicher je nach Österreich? (Der Standard, 13.10.2026)",
-        "Netzentgelte 2027: Heimspeicher und Vehicle-to-Grid (i-Magazin, 13.10.2026)"
+        "Modernisiertes Murkraftwerk Laufnitzdorf in Frohnleiten wieder eröffnet (Welt Stimme, 17.10.2026)",
+        "Modernisiertes Murkraftwerk Laufnitzdorf feierlich eröffnet (Land Steiermark News Portal, 16.10.2026)",
+        "Verbund revitalisierte um 65 Mio. Euro Mur-Laufkraftwerk (trend.at, 16.10.2026)"
       ]
     },
     "strategicTips": [
@@ -35,48 +35,48 @@
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 328,13 €/MWh und 45,6 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 328,13 €/MWh und 48,5 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (224,8 GWh). Größter aktueller Fluss: Tschechien (-2 342 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (241,2 GWh). Größter aktueller Fluss: Tschechien (-2 445 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-10-09",
-    "periodEnd": "2026-10-15",
-    "dataAsOf": "2026-10-16T02:15:00.000Z",
-    "generatedAt": "2026-10-16T04:34:59.900Z",
+    "periodStart": "2026-10-10",
+    "periodEnd": "2026-10-16",
+    "dataAsOf": "2026-10-17T02:15:00.000Z",
+    "generatedAt": "2026-10-17T04:29:36.095Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "374,9 GWh"
+        "value": "376,8 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "255,2 GWh"
+        "value": "257,8 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "119,7 GWh"
+        "value": "119 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "45,6 GWh"
+        "value": "48,5 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "99,5 / 116,5 GWh"
+        "value": "101,4 / 87,6 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "63 %"
+        "value": "61 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "208,15 €/MWh (14,87 / 343,00)"
+        "value": "212,82 €/MWh (14,87 / 343,00)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,83 +84,83 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "224,8 GWh"
+        "value": "241,2 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 405 MW (26 % der Last)"
+        "value": "1 360 MW (27 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "269,00 €/MWh"
+        "value": "250,00 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 255.2,
-      "speicherGWh": 119.7,
-      "pumpenGWh": 45.6,
-      "pvGWh": 99.5,
-      "windGWh": 116.5,
-      "biomasseGWh": 33.2,
-      "gasGWh": 218.1,
-      "loadGWh": 1083.5,
-      "renewableGWh": 543,
-      "totalGenerationGWh": 862.6,
-      "renewableSharePercent": 63,
-      "priceAvg": 208.15,
+      "laufkraftGWh": 257.8,
+      "speicherGWh": 119,
+      "pumpenGWh": 48.5,
+      "pvGWh": 101.4,
+      "windGWh": 87.6,
+      "biomasseGWh": 33.1,
+      "gasGWh": 227.6,
+      "loadGWh": 1079.1,
+      "renewableGWh": 520.1,
+      "totalGenerationGWh": 847.1,
+      "renewableSharePercent": 61,
+      "priceAvg": 212.82,
       "priceMin": 14.87,
       "priceMax": 343,
       "negativePriceHours": 0,
-      "netExportGWh": -224.8
+      "netExportGWh": -241.2
     },
     "newsSources": [
       {
-        "title": "Grünwelt Energie erklärt: Der Sommer 2026 zeigt die Dynamik und Chancen erneuerbarer Energien in Österreich",
-        "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE9TMHQ0U2J0UUtqX3J5TnFnQ3BlWmhGc0QzSENMaXhQUkJJZlA3cWNVc3hWM2tlakRiU0dBTkMxUFVFRmJjRXZpcUdCLXJfb3lJa2NFVlhWRHhUdms2cjlLNlNzMA?oc=5",
-        "source": "Presseportal.ch",
-        "pubDate": "2026-10-15"
+        "title": "Modernisiertes Murkraftwerk Laufnitzdorf in Frohnleiten wieder eröffnet",
+        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQc0EzbVdKVEdoV3QtX3lZcl9ibWFpQzVOdHAzM3lhcmNFS19ma2ozSzFwemhtTXpWeElfMXZtSGxyM1FZS1NRRVFqZ19qTkRJTXlJdExRNGFKUUk3M25GOWJ6bjFLSEpkQmY1RFNoeVg2MjZRaTY0cXRmYTZkZDlOekVTMFFXVXVMQURFWTJaTTd1TDd2aWUwWG9XMkVLdnp2bTlOck9OeG1GTW1qcUJyX3JkbFBoWDA?oc=5",
+        "source": "Welt Stimme",
+        "pubDate": "2026-10-17"
       },
       {
-        "title": "Erneuerbare Energien: Wir könnten – aber wir müssten halt auch tun",
-        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNV0NwSjh3VmtqZjNpdjZGOWk0eXNGc3BUMFBqVzR1dVU0bC1WVzVzdUJ3MEFtSzl0ZXVySVpMekhFX0dEeTJ4aGNCLW1HWHJVQVRKenpqLVh6dTlKb2tMRlBqazVkazRpdGpTLUZ5NHE1UFZ2NHF2RTNPRmUtSXVjYnpPSVM4UQ?oc=5",
-        "source": "DiePresse.com",
-        "pubDate": "2026-10-15"
+        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
+        "source": "DIE ZEIT",
+        "pubDate": "2026-10-17"
       },
       {
-        "title": "Erneuerbare Energie - CO2-Bilanz von Windkraftanlagen innerhalb eines Jahres ausgeglichen",
-        "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1tQXdncHI2cTM5bzdLdTh6c1hNQzFya1VPbnBTMUxGaFJSaWRTVVpicUF0OWhPRnF1Vnp6OC1sbVZWbHFnMXhHdGk0eG1TcnkzZzQ5cnlweFM0c0IwQVhnY0ZoTEg?oc=5",
-        "source": "dpa-factchecking.com",
-        "pubDate": "2026-10-15"
+        "title": "Modernisiertes Murkraftwerk Laufnitzdorf feierlich eröffnet",
+        "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1VWkdRRHlXQUJyTlNUZENzaDdNdW9WSEZhM3pCVmllblZWWVpRNEhxSXVKZWR4ZXh3dlEtTHlUenBVRmxoSkl3aW9vX0gxbWlPb0dUOTc0VHppTGJNMmpTUnByRE5oSFpJSkh3eGNJbw?oc=5",
+        "source": "Land Steiermark News Portal",
+        "pubDate": "2026-10-16"
       },
       {
-        "title": "Eine „verfassungswidrige Verordnung“ könnte Strom in Österreich teurer machen, als er sein müsste",
-        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQcnVITFIyaHlPVWZYTDlMcDZ5bHAtXzk1NTBhSVFOYVJOTTZnSDczclFfMlBldVNTaER1THBfZC01bFNWaXF6ZER5b193Y3J1Rkk3RzRSYTJXY1JqaThpdU43bWkzSng3clJ4YlNCLUNPYldmN3ZfLUlZeHcxdVpSZExYck9VTlc5V3JrVURucHpMSlcxVnhTSmJCTERUUlVDSGNTdXl5bFA?oc=5",
-        "source": "DiePresse.com",
-        "pubDate": "2026-10-15"
+        "title": "Verbund revitalisierte um 65 Mio. Euro Mur-Laufkraftwerk",
+        "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVUlmbktHTFNLbDk1RHNoaXRXV3pvMFJxVGdGV0hKcWhXN1lmRV9SeGVXQnJHcW9zNW80NVR2ZU1OdzktMmJoYUpIS2R3a3E1TkdERVhmV0stVkxHNGFXcmY2Rng0Mnlnb2RJNjBURDFWWVktWmhEcEl1RWkzMHZkdGhuNDFzeDZr?oc=5",
+        "source": "trend.at",
+        "pubDate": "2026-10-16"
       },
       {
-        "title": "Netzentgelte neu geregelt: So können Stromkunden ihre Rechnungen leicht drücken",
-        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPRXZZck15MUdUOXFyZG5qMzFUMFVVQzBsa2lzVThzZUVyQXBHdmNrMDZlNzRlT3RUWGxIZndhMDV1T19INnlTVFE0LWRlMzl5Y2ZfeTNhb2RUdDdxbUN1Wjk2Z1ltWUJoU2tGRDVST0p0S25ZSk1CSkY1OFc1ckVxamRKV2M1c0gyU21yRHpzZ2pUTG9aX052VUROQkdzMHdHR1ZJWQ?oc=5",
-        "source": "MeinBezirk.at",
-        "pubDate": "2026-10-15"
-      },
-      {
-        "title": "Erneuerbaren-Branche läuft Sturm gegen E-Control-Verordnung",
-        "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOU2tiZG1iTDBQMFJmUDZlWFY3RXQ4Z2x5YjhIYm9JN0llYnJSSDlkSXkyMWJyRDgyNmI2RXBLRFdGNGkwTTJ6dnNjY29GLXVrRkUtV1dZeTJ1TGZuMmh3ZWxZWTh6RmdWbjI4T2YxUnlyM0tPbklsTktTT3lsLUUyNDl2RHVpSVlNUk1iUEVDN2lwMnFSYzlrdEhjbldZQ3NtNHE4SzBwWk9VZw?oc=5",
+        "title": "Startschuss für das stärkste Wasserkraftwerk an der Mur",
+        "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPemtucXZPUzQyeFZ1eDBOb3AyQTQzdURBM1Y2ejZ6UHVUNGVOZ0RVMFdxZlo4Nk9kZEtEc0hHQmYyTWZUMHVWa0JackNaOFRPa0Z0UU1mM3NqN0kwdS1xZlZEMnFWcmdyT2hkVnZ1Si1lSkZ5SkllbXV1ZWNhTGEyZVU2R051YmVQNHBTWmRUTzJ4YUJQM0xfWC16dFpLRTgyNE94YjhR?oc=5",
         "source": "Kleine Zeitung",
-        "pubDate": "2026-10-15"
+        "pubDate": "2026-10-16"
       },
       {
-        "title": "Spar-Vorstand Kaser: „Mehrwertsteuersenkung ist eine Fehlkonstruktion“",
-        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPVURHcTlGbjUtbDJjSnRHeXRYUXB6R01EZkNiS19HUGY0VjZZNzJCc0VsU2J4UzRsT3BhV2RYY3JRMTlUVDJKNnB5X0l1aWxwdVYyOS1vdjQ2REJkd1NNSkZSWUtLQ1VwckZtLUhiMVE5SWhjUmZhb2lGaWlWcTZOS0lzNzA1OFVBYXdCbERLSnNycXBGd201NEVmaTdocWlNM2NIWjU0c2NuMFEzbU5pdkR4NA?oc=5",
-        "source": "Kleine Zeitung",
-        "pubDate": "2026-10-15"
+        "title": "Verbund-Aktie: Hoffnung auf Trendwende nach Dürre und Niedrigwasser",
+        "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQMm5sR2I2djNqUW9GU1VjaU00T2dycmFvUW01MXVNYXBQeWtGWkRYSXgwRlVzdE84bkU2UWw1OUppb2lGallMSzBZbGFXVzJzcVNRR1FwbkUzTkhBMTBRQXJLWWZPQzhzN1FjY0tFNFhtOWFjd2wwdm51RlVkdXdqWW1UNzhpTWN0OTJxZ21iaGtVY0FQQjhrS2lWWkpLU2t6U2ZfWUVwa1hJRTdzdFdjVDJSUHBzZDdsWFE?oc=5",
+        "source": "WirtschaftsWoche",
+        "pubDate": "2026-10-16"
       },
       {
-        "title": "Strom-Schock in Europa: Wien zählt zu den teuersten Hauptstädten",
-        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOaFZnUDRZOWJodUlDSEVoNlVFNkt1ZkEwZVNnT1hWYkp3dDVvUTR3RnJ3ZGQxMFNBZ2liMWZZc1kwR0RuRFVmc3JOOEhBRnQ4US02cmQyYU42bjdwZ19DdzRIRm90bUg3OHB4dHlKNXVFUjBoZDlyeE50ek82a2ozb3ZUdTdORmtZcWpSQzBQY3llN2hzbV9McmtR?oc=5",
-        "source": "exxpress",
-        "pubDate": "2026-10-15"
+        "title": "Macht die E-Control Strom teurer, als er sein muss?",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZG9wMXpNVjBoMHBFTlB1TzJKV3RISlFKcXhXVTluclBTdnBNRVhiazZyNXFVVVR3Qi1qY1BuYVdxTU1Mdjl2cVhMMFJjYmdKR2UtM09OYVFaSFczaDNvc2VuYzI3VUthcTd5VTZMMDZEakNYQTNRWlA1MnFkdXpxM2preHl4VDdDcVVrLW5yOTRZdjVOUXBCU0xmRQ?oc=5",
+        "source": "Energynewsmagazine",
+        "pubDate": "2026-10-16"
+      },
+      {
+        "title": "Österreich: Meilenstein für europäischen Strommarkt - Neue Berechnungsmethode verbessert ...",
+        "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQVzI2d0VtaGtUTlZUczlpd0Y5V2pCWHFUZEgyWVBYSjI0N0RlOFV6VTJ3eW0yd2FVdERtLW1yTWJPdVJlNzcwVmNSdFdsQlJQd0dHSm85c29kYWVGbFM2Qjl1THlaR05GNWRDU21tb2pXR1FZTnFvV2dtYk9yakhwZnNtSUZXTGxvaFlla1VKOVBDeWpKR0hFSXY4Y3BlM1Vma2c2SXdlVlhmVTQxQW5RRUZBQno2Y3d3bGpLcVB2cHloS0VJVEh3dGsxeElGbS1KSFVPUkpNdUFaeGlZb2pna0JqVERIT2xrS251bExJdlgzaEEtYUhtZy1BQU5IVmRseWxmaWtBMW1YSWxFeGfSAY4CQVVfeXFMUFcyNndFbWhrVE5WVHM5aXdGOVdqQlhxVGRIMllQWEoyNDdEZThVelUyd3ltMndhVXREbS1tck1iT3VSZTc3MFZjUnRXbEJSUHdHR0pvOXNvZGFlRmxTNkI5dUx5WkdORjVkQ1NtbW9qV0dRWU5xb1dnbWJPcmpIcGZzbUlGV0xsb2hZZWtVSjlQQ3lqSkdIRUl2OGNwZTNVZmtnNkl3ZVZYZlU0MUFuUUVGQUJ6NmN3d2xqS3FQdnB5aEtFSVRId3RrMXhJRm0tSkhVT1JKTXVBWnhpWW9qZ2tCalRESE9sa0tudWxMSXZYM2hBLWFIbWctQUFOSFZkbHlsZmlrQTFtWElsRXhn?oc=5",
+        "source": "Regionews.at",
+        "pubDate": "2026-10-16"
       }
     ]
   },
