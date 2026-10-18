@@ -3,28 +3,28 @@
     "id": "report-2026-kw42",
     "weekNumber": 42,
     "year": 2026,
-    "title": "Wochenbericht KW 42/2026: Wasserkraft 377 GWh, Spotpreis Ø 212,82 €/MWh",
-    "dateGenerated": "2026-10-17",
-    "executiveSummary": "Im Zeitraum 10.10.2026–16.10.2026 erzeugten Österreichs Wasserkraftwerke 376,8 GWh – davon 257,8 GWh aus Laufwasserkraft und 119 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 61 %. Der Day-Ahead-Preis lag im Schnitt bei 212,82 €/MWh (Spanne 14,87 bis 343,00 €/MWh). Österreich war in Summe Netto-Importeur (241,2 GWh). Gegenüber dem Vorbericht: Wasserkraft +5 %, Spotpreis-Durchschnitt +8 %.",
+    "title": "Wochenbericht KW 42/2026: Wasserkraft 377 GWh, Spotpreis Ø 215,77 €/MWh",
+    "dateGenerated": "2026-10-18",
+    "executiveSummary": "Im Zeitraum 11.10.2026–17.10.2026 erzeugten Österreichs Wasserkraftwerke 376,8 GWh – davon 264,5 GWh aus Laufwasserkraft und 112,3 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 62 %. Der Day-Ahead-Preis lag im Schnitt bei 215,77 €/MWh (Spanne 14,87 bis 343,00 €/MWh). Österreich war in Summe Netto-Importeur (249,4 GWh). Gegenüber dem Vorbericht: Wasserkraft +5 %, Spotpreis-Durchschnitt +10 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 257,8 GWh, Tageswerte zwischen 31,1 GWh (10.10.2026) und 42,6 GWh (15.10.2026).",
+      "Laufwasserkraft: 264,5 GWh, Tageswerte zwischen 33,9 GWh (11.10.2026) und 42,6 GWh (15.10.2026).",
       "Spotmarkt: teuerster Tag 16.10.2026 (Ø 229,20 €/MWh), günstigster Tag 11.10.2026 (Ø 174,77 €/MWh).",
-      "Photovoltaik lieferte 101,4 GWh, Windkraft 87,6 GWh, Gaskraftwerke 227,6 GWh bei einem Verbrauch von 1 079,1 GWh.",
-      "Grenzflüsse aktuell: Saldo -2 749 MW (Netto-Import); größter Einzelfluss: Tschechien -2 445 MW (Import)."
+      "Photovoltaik lieferte 106,2 GWh, Windkraft 82,9 GWh, Gaskraftwerke 226 GWh bei einem Verbrauch von 1 081,2 GWh.",
+      "Grenzflüsse aktuell: Saldo -2 095 MW (Netto-Import); größter Einzelfluss: Tschechien -2 274 MW (Import)."
     ],
     "internationalHighlights": [
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 17.10.2026)",
+      "Aktuelle Windverhältnisse und Stromproduktion, Windenergiemarkt in Belgien (Windbranche.de, 15.10.2026)",
       "Flexibles Energiesystem - Batteriespeicher: China führt, Europa holt auf (energiezukunft, 13.10.2026)",
       "Stromnetze und Rechenzentren im Duett: Wo Microsoft Rechenzentren baut – und wie die EVN Stromnetze ausbaut (Small Microcap, 13.10.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 36,8 GWh pro Tag (≈ 1 535 MW). Zweite gegenüber erster Wochenhälfte: +19 % – steigende Wasserführung.",
-      "pumpspeicherStatus": "Turbinenbetrieb 119 GWh, Pumpbetrieb 48,5 GWh. Die Preisspanne von 328,13 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 257,8 GWh gegenüber 242,9 GWh im Vorbericht (+6 %).",
+      "laufkraftTrend": "Im Mittel 37,8 GWh pro Tag (≈ 1 574 MW). Zweite gegenüber erster Wochenhälfte: +13 % – steigende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 112,3 GWh, Pumpbetrieb 50,7 GWh. Die Preisspanne von 328,13 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 264,5 GWh gegenüber 242,9 GWh im Vorbericht (+9 %).",
       "projektUpdates": [
+        "Strom für 40.000 Haushalte: 95 Jahre altes Murkraftwerk ist jetzt das stärkste an der Mur (5 Minuten, 17.10.2026)",
         "Modernisiertes Murkraftwerk Laufnitzdorf in Frohnleiten wieder eröffnet (Welt Stimme, 17.10.2026)",
-        "Modernisiertes Murkraftwerk Laufnitzdorf feierlich eröffnet (Land Steiermark News Portal, 16.10.2026)",
-        "Verbund revitalisierte um 65 Mio. Euro Mur-Laufkraftwerk (trend.at, 16.10.2026)"
+        "Modernisiertes Murkraftwerk Laufnitzdorf feierlich eröffnet (Land Steiermark News Portal, 16.10.2026)"
       ]
     },
     "strategicTips": [
@@ -35,19 +35,19 @@
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 328,13 €/MWh und 48,5 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 328,13 €/MWh und 50,7 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (241,2 GWh). Größter aktueller Fluss: Tschechien (-2 445 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (249,4 GWh). Größter aktueller Fluss: Tschechien (-2 274 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-10-10",
-    "periodEnd": "2026-10-16",
-    "dataAsOf": "2026-10-17T02:15:00.000Z",
-    "generatedAt": "2026-10-17T04:29:36.095Z",
+    "periodStart": "2026-10-11",
+    "periodEnd": "2026-10-17",
+    "dataAsOf": "2026-10-18T02:45:00.000Z",
+    "generatedAt": "2026-10-18T04:36:53.978Z",
     "generatedBy": "data",
     "keyFigures": [
       {
@@ -56,27 +56,27 @@
       },
       {
         "label": "Laufwasserkraft",
-        "value": "257,8 GWh"
+        "value": "264,5 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "119 GWh"
+        "value": "112,3 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "48,5 GWh"
+        "value": "50,7 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "101,4 / 87,6 GWh"
+        "value": "106,2 / 82,9 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "61 %"
+        "value": "62 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "212,82 €/MWh (14,87 / 343,00)"
+        "value": "215,77 €/MWh (14,87 / 343,00)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,46 +84,52 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "241,2 GWh"
+        "value": "249,4 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 360 MW (27 % der Last)"
+        "value": "1 110 MW (24 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "250,00 €/MWh"
+        "value": "225,08 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 257.8,
-      "speicherGWh": 119,
-      "pumpenGWh": 48.5,
-      "pvGWh": 101.4,
-      "windGWh": 87.6,
-      "biomasseGWh": 33.1,
-      "gasGWh": 227.6,
-      "loadGWh": 1079.1,
-      "renewableGWh": 520.1,
-      "totalGenerationGWh": 847.1,
-      "renewableSharePercent": 61,
-      "priceAvg": 212.82,
+      "laufkraftGWh": 264.5,
+      "speicherGWh": 112.3,
+      "pumpenGWh": 50.7,
+      "pvGWh": 106.2,
+      "windGWh": 82.9,
+      "biomasseGWh": 33.2,
+      "gasGWh": 226,
+      "loadGWh": 1081.2,
+      "renewableGWh": 526.4,
+      "totalGenerationGWh": 845.6,
+      "renewableSharePercent": 62,
+      "priceAvg": 215.77,
       "priceMin": 14.87,
       "priceMax": 343,
       "negativePriceHours": 0,
-      "netExportGWh": -241.2
+      "netExportGWh": -249.4
     },
     "newsSources": [
+      {
+        "title": "Strom für 40.000 Haushalte: 95 Jahre altes Murkraftwerk ist jetzt das stärkste an der Mur",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNUjZTaWd2T0xDMFFIWmlqSXFycmJyd3FfNF90NFRFLVB3SzNZTjM3VFJYT2szanFCSmlXaUt4S2pwMjVBRFh3akdtOFlTN0FSSkZfb0pTaGM2NzZkZHotY3k2am1CRnVyQU1Zc0hjZy1tQ2Y2T2hjaXB1R3Z1U1JyOWo5WGdhNUs3bTVkYTZHemRzeDdTUFVXQmdTMGx1X3ZCRmdNVVZnWnlhZUlDNEZiWkFGWlJYamE0c3hUd0NtREdBRE9xOElubFdB?oc=5",
+        "source": "5 Minuten",
+        "pubDate": "2026-10-17"
+      },
+      {
+        "title": "Verbund AG: Grünstromerzeugung 2025 und die Hoffnung auf Trendwende",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNaG04cXZtcmktRU9DTlM2c3l6bHBrcG90aGR1T090U0RLbHJCbm0zT2JJSnhOc09kUFVXS2ExVDBPcTNGeHlqd28zdko1TkxOM1lyWjhVZWNTbGdHd2d6MXI5Y3RjSDFYRlRIby0ybUwtanMxVlJoYlk5RnFwS0xRejMxV3JPamdPR3FSa094bTY4U1Vf?oc=5",
+        "source": "aktien.news",
+        "pubDate": "2026-10-17"
+      },
       {
         "title": "Modernisiertes Murkraftwerk Laufnitzdorf in Frohnleiten wieder eröffnet",
         "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQc0EzbVdKVEdoV3QtX3lZcl9ibWFpQzVOdHAzM3lhcmNFS19ma2ozSzFwemhtTXpWeElfMXZtSGxyM1FZS1NRRVFqZ19qTkRJTXlJdExRNGFKUUk3M25GOWJ6bjFLSEpkQmY1RFNoeVg2MjZRaTY0cXRmYTZkZDlOekVTMFFXVXVMQURFWTJaTTd1TDd2aWUwWG9XMkVLdnp2bTlOck9OeG1GTW1qcUJyX3JkbFBoWDA?oc=5",
         "source": "Welt Stimme",
-        "pubDate": "2026-10-17"
-      },
-      {
-        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
-        "source": "DIE ZEIT",
         "pubDate": "2026-10-17"
       },
       {
@@ -133,7 +139,7 @@
         "pubDate": "2026-10-16"
       },
       {
-        "title": "Verbund revitalisierte um 65 Mio. Euro Mur-Laufkraftwerk",
+        "title": "65 Mio. Euro für revitalisiertes Mur-Laufkraftwerk",
         "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOVUlmbktHTFNLbDk1RHNoaXRXV3pvMFJxVGdGV0hKcWhXN1lmRV9SeGVXQnJHcW9zNW80NVR2ZU1OdzktMmJoYUpIS2R3a3E1TkdERVhmV0stVkxHNGFXcmY2Rng0Mnlnb2RJNjBURDFWWVktWmhEcEl1RWkzMHZkdGhuNDFzeDZr?oc=5",
         "source": "trend.at",
         "pubDate": "2026-10-16"
@@ -154,12 +160,6 @@
         "title": "Macht die E-Control Strom teurer, als er sein muss?",
         "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQZG9wMXpNVjBoMHBFTlB1TzJKV3RISlFKcXhXVTluclBTdnBNRVhiazZyNXFVVVR3Qi1qY1BuYVdxTU1Mdjl2cVhMMFJjYmdKR2UtM09OYVFaSFczaDNvc2VuYzI3VUthcTd5VTZMMDZEakNYQTNRWlA1MnFkdXpxM2preHl4VDdDcVVrLW5yOTRZdjVOUXBCU0xmRQ?oc=5",
         "source": "Energynewsmagazine",
-        "pubDate": "2026-10-16"
-      },
-      {
-        "title": "Österreich: Meilenstein für europäischen Strommarkt - Neue Berechnungsmethode verbessert ...",
-        "link": "https://news.google.com/rss/articles/CBMijgJBVV95cUxQVzI2d0VtaGtUTlZUczlpd0Y5V2pCWHFUZEgyWVBYSjI0N0RlOFV6VTJ3eW0yd2FVdERtLW1yTWJPdVJlNzcwVmNSdFdsQlJQd0dHSm85c29kYWVGbFM2Qjl1THlaR05GNWRDU21tb2pXR1FZTnFvV2dtYk9yakhwZnNtSUZXTGxvaFlla1VKOVBDeWpKR0hFSXY4Y3BlM1Vma2c2SXdlVlhmVTQxQW5RRUZBQno2Y3d3bGpLcVB2cHloS0VJVEh3dGsxeElGbS1KSFVPUkpNdUFaeGlZb2pna0JqVERIT2xrS251bExJdlgzaEEtYUhtZy1BQU5IVmRseWxmaWtBMW1YSWxFeGfSAY4CQVVfeXFMUFcyNndFbWhrVE5WVHM5aXdGOVdqQlhxVGRIMllQWEoyNDdEZThVelUyd3ltMndhVXREbS1tck1iT3VSZTc3MFZjUnRXbEJSUHdHR0pvOXNvZGFlRmxTNkI5dUx5WkdORjVkQ1NtbW9qV0dRWU5xb1dnbWJPcmpIcGZzbUlGV0xsb2hZZWtVSjlQQ3lqSkdIRUl2OGNwZTNVZmtnNkl3ZVZYZlU0MUFuUUVGQUJ6NmN3d2xqS3FQdnB5aEtFSVRId3RrMXhJRm0tSkhVT1JKTXVBWnhpWW9qZ2tCalRESE9sa0tudWxMSXZYM2hBLWFIbWctQUFOSFZkbHlsZmlrQTFtWElsRXhn?oc=5",
-        "source": "Regionews.at",
         "pubDate": "2026-10-16"
       }
     ]
