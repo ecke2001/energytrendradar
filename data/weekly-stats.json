@@ -1,7 +1,7 @@
 {
   "periodStart": "2026-10-14",
   "periodEnd": "2026-10-20",
-  "generatedAt": "2026-10-21T11:52:04.610Z",
+  "generatedAt": "2026-10-21T17:14:35.370Z",
   "days": [
     {
       "date": "2026-10-14",
@@ -107,7 +107,7 @@
       "windGWh": 24,
       "biomasseGWh": 4.9,
       "gasGWh": 37.7,
-      "loadGWh": 161.8,
+      "loadGWh": 161.6,
       "renewableGWh": 86.1,
       "totalGenerationGWh": 135.8,
       "renewableSharePercent": 63,
@@ -145,7 +145,7 @@
     "windGWh": 104.5,
     "biomasseGWh": 33.7,
     "gasGWh": 246.1,
-    "loadGWh": 1088,
+    "loadGWh": 1087.8,
     "renewableGWh": 535.3,
     "totalGenerationGWh": 862.2,
     "renewableSharePercent": 62,
