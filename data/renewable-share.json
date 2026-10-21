@@ -1,19 +1,15 @@
 {
-  "currentPercent": 68,
+  "currentPercent": 71,
   "trend": [
-    60,
     56,
     57,
     59,
     58,
     82,
+    63,
     63
   ],
   "daily": [
-    {
-      "date": "2026-10-13",
-      "percent": 60
-    },
     {
       "date": "2026-10-14",
       "percent": 56
@@ -36,6 +32,10 @@
     },
     {
       "date": "2026-10-19",
+      "percent": 63
+    },
+    {
+      "date": "2026-10-20",
       "percent": 63
     }
   ]
