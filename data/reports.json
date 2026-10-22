@@ -3,80 +3,80 @@
     "id": "report-2026-kw43",
     "weekNumber": 43,
     "year": 2026,
-    "title": "Wochenbericht KW 43/2026: Wasserkraft 356 GWh, Spotpreis Ø 227,20 €/MWh",
-    "dateGenerated": "2026-10-21",
-    "executiveSummary": "Im Zeitraum 14.10.2026–20.10.2026 erzeugten Österreichs Wasserkraftwerke 355,8 GWh – davon 258,5 GWh aus Laufwasserkraft und 97,3 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 62 %. Der Day-Ahead-Preis lag im Schnitt bei 227,20 €/MWh (Spanne 155,25 bis 343,00 €/MWh). Österreich war in Summe Netto-Importeur (238,4 GWh). Gegenüber dem Vorbericht: Wasserkraft -3 %, Spotpreis-Durchschnitt +3 %.",
+    "title": "Wochenbericht KW 43/2026: Wasserkraft 346 GWh, Spotpreis Ø 228,97 €/MWh",
+    "dateGenerated": "2026-10-22",
+    "executiveSummary": "Im Zeitraum 15.10.2026–21.10.2026 erzeugten Österreichs Wasserkraftwerke 346,3 GWh – davon 253,4 GWh aus Laufwasserkraft und 92,9 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 64 %. Der Day-Ahead-Preis lag im Schnitt bei 228,97 €/MWh (Spanne 155,25 bis 312,68 €/MWh). Österreich war in Summe Netto-Importeur (203,2 GWh). Gegenüber dem Vorbericht: Wasserkraft -6 %, Spotpreis-Durchschnitt +4 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 258,5 GWh, Tageswerte zwischen 32,2 GWh (18.10.2026) und 42,6 GWh (15.10.2026).",
+      "Laufwasserkraft: 253,4 GWh, Tageswerte zwischen 32,2 GWh (18.10.2026) und 42,6 GWh (15.10.2026).",
       "Spotmarkt: teuerster Tag 20.10.2026 (Ø 242,74 €/MWh), günstigster Tag 18.10.2026 (Ø 202,21 €/MWh).",
-      "Photovoltaik lieferte 101,4 GWh, Windkraft 103,8 GWh, Gaskraftwerke 245,9 GWh bei einem Verbrauch von 1 086,6 GWh.",
-      "Grenzflüsse aktuell: Saldo -2 156 MW (Netto-Import); größter Einzelfluss: Tschechien -1 842 MW (Import)."
+      "Photovoltaik lieferte 100,7 GWh, Windkraft 153 GWh, Gaskraftwerke 244 GWh bei einem Verbrauch von 1 090,3 GWh.",
+      "Grenzflüsse aktuell: Saldo +193 MW (Netto-Export); größter Einzelfluss: Tschechien -1 398 MW (Import)."
     ],
     "internationalHighlights": [
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 21.10.2026)",
+      "Biomethan als Schlüssel zur Energieunabhängigkeit (energate messenger, 21.10.2026)",
       "Strompreis: Slowakei will EU-Mittel als „Ausgleich“ für Stromhandel (Table.Briefings, 20.10.2026)",
       "Kartellamt sieht wachsende Marktmacht bei RWE und LEAG (Denkstrom, 19.10.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 36,9 GWh pro Tag (≈ 1 539 MW). Zweite gegenüber erster Wochenhälfte: -16 % – sinkende Wasserführung.",
-      "pumpspeicherStatus": "Turbinenbetrieb 97,3 GWh, Pumpbetrieb 48,8 GWh. Die Preisspanne von 187,75 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 258,5 GWh gegenüber 260,3 GWh im Vorbericht (-1 %).",
+      "laufkraftTrend": "Im Mittel 36,2 GWh pro Tag (≈ 1 508 MW). Zweite gegenüber erster Wochenhälfte: -13 % – sinkende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 92,9 GWh, Pumpbetrieb 45,4 GWh. Die Preisspanne von 157,43 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 253,4 GWh gegenüber 260,3 GWh im Vorbericht (-3 %).",
       "projektUpdates": [
-        "Kleinwasserkraft im Klimawandel: Warum Modernisierung und Versorgungssicherheit wichtiger werden (Ökonews, 20.10.2026)",
-        "SOLID | Wasserkraft in Österreich: Wurtenspeicher in Kärnten wächst um 2,3 Milliarden Liter: Kelag und Strabag setzen 246 Bohrpfähle auf 1.700 Metern Seehöhe (SOLID, 19.10.2026)",
-        "Trotz Trockenheit: Weiterer Ausbau der Kleinwasserkraft (energate messenger, 19.10.2026)"
+        "Kraftwerk Laufnitzdorf: Mehr als 30 Prozent mehr Leistung (i-Magazin, 21.10.2026)",
+        "Wasserkraft in Österreich: Wurtenspeicher in Kärnten wächst um 2,3 Milliarden Liter: Kelag und Strabag setzen 246 Bohrpfähle auf 1.700 Metern Seehöhe (SOLID, 19.10.2026)",
+        "Strom für 40.000 Haushalte: 95 Jahre altes Murkraftwerk ist jetzt das stärkste an der Mur (5 Minuten, 17.10.2026)"
       ]
     },
     "strategicTips": [
       {
         "topic": "Preisspitzen bedienen",
-        "recommendation": "Bei einer Preisspanne von 187,75 €/MWh (Minimum 155,25, Maximum 343,00 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "recommendation": "Bei einer Preisspanne von 157,43 €/MWh (Minimum 155,25, Maximum 312,68 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
         "targetGroup": "Erzeuger"
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 187,75 €/MWh und 48,8 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 157,43 €/MWh und 45,4 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (238,4 GWh). Größter aktueller Fluss: Tschechien (-1 842 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (203,2 GWh). Größter aktueller Fluss: Tschechien (-1 398 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-10-14",
-    "periodEnd": "2026-10-20",
-    "dataAsOf": "2026-10-20T21:30:00.000Z",
-    "generatedAt": "2026-10-21T04:51:32.926Z",
+    "periodStart": "2026-10-15",
+    "periodEnd": "2026-10-21",
+    "dataAsOf": "2026-10-22T02:15:00.000Z",
+    "generatedAt": "2026-10-22T04:50:37.664Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "355,8 GWh"
+        "value": "346,3 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "258,5 GWh"
+        "value": "253,4 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "97,3 GWh"
+        "value": "92,9 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "48,8 GWh"
+        "value": "45,4 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "101,4 / 103,8 GWh"
+        "value": "100,7 / 153 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "62 %"
+        "value": "64 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "227,20 €/MWh (155,25 / 343,00)"
+        "value": "228,97 €/MWh (155,25 / 312,68)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,36 +84,48 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "238,4 GWh"
+        "value": "203,2 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 505 MW (26 % der Last)"
+        "value": "1 779 MW (32 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "275,81 €/MWh"
+        "value": "274,22 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 258.5,
-      "speicherGWh": 97.3,
-      "pumpenGWh": 48.8,
-      "pvGWh": 101.4,
-      "windGWh": 103.8,
-      "biomasseGWh": 33.6,
-      "gasGWh": 245.9,
-      "loadGWh": 1086.6,
-      "renewableGWh": 534.4,
-      "totalGenerationGWh": 861,
-      "renewableSharePercent": 62,
-      "priceAvg": 227.2,
+      "laufkraftGWh": 253.4,
+      "speicherGWh": 92.9,
+      "pumpenGWh": 45.4,
+      "pvGWh": 100.7,
+      "windGWh": 153,
+      "biomasseGWh": 33.8,
+      "gasGWh": 244,
+      "loadGWh": 1090.3,
+      "renewableGWh": 576.7,
+      "totalGenerationGWh": 898.2,
+      "renewableSharePercent": 64,
+      "priceAvg": 228.97,
       "priceMin": 155.25,
-      "priceMax": 343,
+      "priceMax": 312.68,
       "negativePriceHours": 0,
-      "netExportGWh": -238.4
+      "netExportGWh": -203.2
     },
     "newsSources": [
+      {
+        "title": "Kraftwerk Laufnitzdorf: Mehr als 30 Prozent mehr Leistung",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNQUM4ZEZZOTVqVTZtQUdoRmt3bFVzekMwY2dzdEFkVjU1YXl3ZjktajJtZkRlU1BPeUppNmpMZVhXUXFuNDJVLVlTLWcwaE1IazJUSm5idXRpSmVEQTgwRm9nQlNERUVhellNOWxyVlFEemNYYmxoVDdYb19idWd4Qlh6UmZYdw?oc=5",
+        "source": "i-Magazin",
+        "pubDate": "2026-10-21"
+      },
+      {
+        "title": "Alles fließt. Oder nicht? Über Wasserläufe und Pegelstände | SA | 19 12 2026 | 17:05",
+        "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPRkwzVk11ZDBvaGRQMktKVzNWdl9wS1dNU3JWc1ZEQThjdzdGTW8yZnlZQVhFajRlU1FoaFdvdWZ1OFlCZVhWMXZXOGRRVGt4ZnFJSDMza04wajhLakFJOGdtWEZzLXVmejNBSTFHN29iRFhlXzhHSGxzbWVzdXRuWDBpRm0tRnZlUUg5cE5sX3hsbEtweE80UGJLS2dFY2MxT0tHMklFQQ?oc=5",
+        "source": "oe1.ORF.at",
+        "pubDate": "2026-10-21"
+      },
       {
         "title": "Höhere Energiepreise: Mit diesen Heizkosten müssen Haushalte im Winter 2026 rechnen",
         "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQXzJzaEJudHVKQ2o5ZlVsLXF5Ti1xd0hobGRNdEJPYmpDc29HRVNLR2pPd1cxWFhjdWIxRjltMnRiSTBBTFZ4ZE9aT3BKT0VBQmFtVW1BMzNpa2ZMaHp0MkJrZTMwUHBhaHlKaDNUanRoSFJDbjBOZklpMHJ1M3FiZHhxd2ZnM2lKZXlId0J2bld4eFNqcjNFT3RUYXF5cWw3MDFsaENLRHFvR2dXZnNv?oc=5",
@@ -121,21 +133,21 @@
         "pubDate": "2026-10-21"
       },
       {
-        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
-        "source": "DIE ZEIT",
+        "title": "Hunderte neue Windräder, immer mehr Rechenzentren: Neuer Strompreis-Schock?",
+        "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOOE44c1NOYVZOd0NQLVFUTGY2QmU3ZklUMVJITHRWVnBMdkxiYXN0bUgyOWFqNXROV2xBVDc5dnBVUUc2bWhCbzQ2WlBISnZ3ZzA3bmNQb05YMHVKbzNPN19ZMDVhMzRuZ0lVVXgxLUFsN21vNFRmelRXeml3czdqbndqRlF0Qng4MlpUZGI2ZldyQkNmTVZMekRkT1k?oc=5",
+        "source": "Report24",
+        "pubDate": "2026-10-21"
+      },
+      {
+        "title": "Biomethan als Schlüssel zur Energieunabhängigkeit",
+        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOb1FtY0k4bGg4aGFvRVdFVEt2MHUtWG41cDB4bVZmT3hDaGZ2akhXWEhNLUV3RjJEeGFIc2FXcEV5cE5WeDVURmxzMlBBS28zZnIydllkUEd0NkYtY1dpUEEwUXpUOXJXWmlGR2pKeEJGZ0hVQWZMajlFOHpadXZtTlpPTUM1OEt2RldCbUFDM3BvcWs2X0gtX0lPT3I5dw?oc=5",
+        "source": "energate messenger",
         "pubDate": "2026-10-21"
       },
       {
         "title": "Europas wirtschaftliche Sicherheit wird auch in Österreich entschieden",
         "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNZG9fRG8zRFA1di1HLTVHTEZNM0tzOE90cHVXZEtRUFdSWDdSSG1WanpDME5RYUlkSzlwZjBYZEFHU3FMbVc5S2pyZ3pYRm1SdUZ0QndWLTY0OElKTk00bmpkX2l6YndPSzZxYVdEakVpejVyVzVVU2MyX2kwS080NlVCb3JDR2FXVzVDaDExdFpNWGVxNExrMGdabWtmQlpBMG80amZhRS1mdw?oc=5",
         "source": "DiePresse.com",
-        "pubDate": "2026-10-20"
-      },
-      {
-        "title": "Kleinwasserkraft im Klimawandel: Warum Modernisierung und Versorgungssicherheit wichtiger werden",
-        "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOU3kzTlVoQXVvaUUyRVN2RzdWSU5pdkh4R2plMEdaQTc1azUzWGdOTWkzeDRCY1BPeGNzS283ZFVtWC0zRTdGS2pId2wta0R3TFZUMEhPNDZPeTlhX3FZZUJwbnNFMFIwcjkyNnBONTI1ZzhvN1E4OV95YjJ2b1hDMjFyanZrejh1Tzhoblc5MzhHbGJmeTdRYUVJYkVsYXBvMWNOSHM3MnNXNEtqM3R2bUl6VlhIUlhac2JYMnQ2UmZ3eENQV2E0?oc=5",
-        "source": "Ökonews",
         "pubDate": "2026-10-20"
       },
       {
@@ -149,18 +161,6 @@
         "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaGFYMXdoX09ZTGUzYTM3bXFVT3oxLWJuUC1ZS2NCMVFfWjVCbmVzenhSaW54ZlR4WTNmeDBRcnZDSmQyN2pVMUdhUGw3ZzEzc2x4RmhNWnA1d0JUay01VjcyTWZSMzVib2NoYkdzQ2VtTnVKLUNzWHVqSkJ1em9LQVRZSTFSVDFuZmh4V3lfZHNrM29iWGpnREk2T2VoRFEtbjhnQzZ3?oc=5",
         "source": "Austrian Power Grid",
         "pubDate": "2026-10-20"
-      },
-      {
-        "title": "Strompreis: Slowakei will EU-Mittel als „Ausgleich“ für Stromhandel",
-        "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOajhjREZKTDFYZExHODlWY3RIVVVSU1ZHWTRzZElCSmRaMDNEU043dUJldktDSTNrN3ZRcUozLU5fUUg3XzdNbmtRelF4am0wekpHQjJTaGVOWXFJVnEtdWlyVVM3YjBoMERhU2lPZXhNRFhNWWJzU1BmbHV0aUxyLW9GTm9BNG5Wcm10WDVaWnFjTjhfNXBDLWFoOGdRQQ?oc=5",
-        "source": "Table.Briefings",
-        "pubDate": "2026-10-20"
-      },
-      {
-        "title": "SOLID | Wasserkraft in Österreich: Wurtenspeicher in Kärnten wächst um 2,3 Milliarden Liter: Kelag und Strabag setzen 246 Bohrpfähle auf 1.700 Metern Seehöhe",
-        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWEFzMFFueWtfUjA5M1E3R3lyQXpoMGpxbkVoRHU3NnhhZ05jLU9rZFNFcjViTUdTdmJnQ2NTcldaN0ZyRFdaOWE0Qmk1MmU4dXJZQ1hBOXVsSV9oamsycC1oNm9jY0JyTkhaWnF6dW1wMncwb2tLVnlOM2UxVmsydDdTbmJjTXdXTWZBSGJCQks2M2hQQjJFa2ExZmVORHRkbWc?oc=5",
-        "source": "SOLID",
-        "pubDate": "2026-10-19"
       }
     ]
   },
