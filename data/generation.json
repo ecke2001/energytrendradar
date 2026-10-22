@@ -1,57 +1,21 @@
 {
   "resolutionMinutes": 15,
   "latestSnapshot": {
-    "timestamp": 1792661400,
-    "date": "2026-10-22T09:30:00.000Z",
-    "laufkraftMW": 1872,
-    "speicherMW": 111,
-    "pumpspeicherPumpenMW": 863,
-    "totalHydroMW": 1983,
-    "loadMW": 7896,
-    "hydroSharePercent": 25,
-    "renewableSharePercent": 82,
-    "pvMW": 1760,
-    "windMW": 3704,
+    "timestamp": 1792669500,
+    "date": "2026-10-22T11:45:00.000Z",
+    "laufkraftMW": 1808,
+    "speicherMW": 69,
+    "pumpspeicherPumpenMW": 1062,
+    "totalHydroMW": 1877,
+    "loadMW": 7339,
+    "hydroSharePercent": 26,
+    "renewableSharePercent": 83,
+    "pvMW": 2096,
+    "windMW": 3736,
     "biomasseMW": 192,
-    "totalGenerationMW": 9333
+    "totalGenerationMW": 9567
   },
   "series": [
-    {
-      "timestamp": 1792486800,
-      "label": "20.10. 11:00",
-      "laufkraft": 1123,
-      "speicher": 323,
-      "pumpspeicherPumpen": 135,
-      "pv": 1900,
-      "wind": 1788,
-      "biomasse": 204,
-      "gas": 1590,
-      "load": 7234
-    },
-    {
-      "timestamp": 1792490400,
-      "label": "20.10. 12:00",
-      "laufkraft": 1156,
-      "speicher": 232,
-      "pumpspeicherPumpen": 0,
-      "pv": 2074,
-      "wind": 1862,
-      "biomasse": 204,
-      "gas": 1660,
-      "load": 6971
-    },
-    {
-      "timestamp": 1792494000,
-      "label": "20.10. 13:00",
-      "laufkraft": 1231,
-      "speicher": 238,
-      "pumpspeicherPumpen": 0,
-      "pv": 2206,
-      "wind": 1956,
-      "biomasse": 204,
-      "gas": 1836,
-      "load": 6753
-    },
     {
       "timestamp": 1792497600,
       "label": "20.10. 14:00",
@@ -559,25 +523,25 @@
     {
       "timestamp": 1792648800,
       "label": "22.10. 08:00",
-      "laufkraft": 2224,
-      "speicher": 408,
+      "laufkraft": 2152,
+      "speicher": 394,
       "pumpspeicherPumpen": 0,
-      "pv": 234,
+      "pv": 222,
       "wind": 3336,
       "biomasse": 192,
-      "gas": 1446,
+      "gas": 1399,
       "load": 8351
     },
     {
       "timestamp": 1792652400,
       "label": "22.10. 09:00",
-      "laufkraft": 2070,
-      "speicher": 351,
+      "laufkraft": 1937,
+      "speicher": 327,
       "pumpspeicherPumpen": 0,
-      "pv": 700,
-      "wind": 3454,
+      "pv": 654,
+      "wind": 3451,
       "biomasse": 192,
-      "gas": 1544,
+      "gas": 1444,
       "load": 8243
     },
     {
@@ -595,14 +559,38 @@
     {
       "timestamp": 1792659600,
       "label": "22.10. 11:00",
-      "laufkraft": 1804,
-      "speicher": 105,
-      "pumpspeicherPumpen": 802,
-      "pv": 1600,
-      "wind": 3699,
+      "laufkraft": 1693,
+      "speicher": 95,
+      "pumpspeicherPumpen": 799,
+      "pv": 1543,
+      "wind": 3696,
       "biomasse": 192,
-      "gas": 1520,
-      "load": 7985
+      "gas": 1426,
+      "load": 7930
+    },
+    {
+      "timestamp": 1792663200,
+      "label": "22.10. 12:00",
+      "laufkraft": 1661,
+      "speicher": 68,
+      "pumpspeicherPumpen": 923,
+      "pv": 1815,
+      "wind": 3743,
+      "biomasse": 192,
+      "gas": 1414,
+      "load": 7583
+    },
+    {
+      "timestamp": 1792666800,
+      "label": "22.10. 13:00",
+      "laufkraft": 1739,
+      "speicher": 67,
+      "pumpspeicherPumpen": 889,
+      "pv": 2018,
+      "wind": 3764,
+      "biomasse": 192,
+      "gas": 1479,
+      "load": 7376
     }
   ]
 }
