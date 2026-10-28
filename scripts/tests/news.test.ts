@@ -23,9 +23,18 @@ test('only absolute http(s) URLs without credentials are accepted', () => {
 test('markup, encoded markup and control characters are stripped', () => {
   assert.equal(toPlainText('<b>Strom</b> &amp; Gas', 100), 'Strom & Gas');
   assert.equal(toPlainText('&lt;script&gt;alert(1)&lt;/script&gt;Titel', 100), 'alert(1) Titel');
-  assert.equal(toPlainText('A\u0000B‮C\nD', 100), 'A B C D');
+  assert.equal(toPlainText('A\u0000B\u202eC\nD', 100), 'A B C D');
   assert.equal(toPlainText('Wasserkraft &#228;&#x00FC;', 100), 'Wasserkraft äü');
   assert.equal(toPlainText('x'.repeat(50), 10).length, 10);
+});
+
+test('comparison signs in prose survive, comments and tags do not', () => {
+  assert.equal(
+    toPlainText('Day-Ahead an 6 Stunden < 0 €/MWh, Abendspitzen > 300 €/MWh', 200),
+    'Day-Ahead an 6 Stunden < 0 €/MWh, Abendspitzen > 300 €/MWh',
+  );
+  assert.equal(toPlainText('Strompreis &lt;0 Euro: Netzbetreiber warnt &gt; Engpass', 200), 'Strompreis <0 Euro: Netzbetreiber warnt > Engpass');
+  assert.equal(toPlainText('<!-- versteckt -->Titel <img src=x onerror=alert(1)>Text', 200), 'Titel Text');
 });
 
 test('RSS items are parsed, cleaned and the source suffix removed', () => {

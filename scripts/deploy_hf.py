@@ -19,6 +19,7 @@ from datetime import datetime, timezone
 from huggingface_hub import HfApi, hf_hub_download
 
 OUT_DIR = "out"
+ERROR_STAGES = {"BUILD_ERROR", "RUNTIME_ERROR", "CONFIG_ERROR", "NO_APP_FILE"}
 
 
 def fail(message: str) -> None:
@@ -84,10 +85,20 @@ def main() -> None:
     if deployed.get("deployedAt") != status["deployedAt"]:
         fail("Verifikation fehlgeschlagen: status.json im Space stammt nicht aus diesem Deployment.")
 
+    # The commit check above proves the files landed; the runtime stage shows whether
+    # the Space can serve them (e.g. a broken README front matter gives CONFIG_ERROR).
     try:
-        print(f"Space-Status: {api.get_space_runtime(space_id).stage}")
-    except Exception as exc:  # informational only
+        raw_stage = api.get_space_runtime(space_id).stage
+        # SpaceStage is a str-Enum; str() would give "SpaceStage.RUNNING", .value gives "RUNNING".
+        stage = str(getattr(raw_stage, "value", raw_stage))
+    except Exception as exc:
         print(f"::warning::Space-Status nicht abrufbar ({type(exc).__name__})")
+        stage = "UNKNOWN"
+    print(f"Space-Status: {stage}")
+    if stage in ERROR_STAGES:
+        fail(f"Space meldet {stage} – Konfiguration (README-Header) und Space-Logs auf huggingface.co prüfen.")
+    if stage in ("PAUSED", "STOPPED", "SLEEPING"):
+        print(f"::warning::Space ist {stage} – Inhalte sind hochgeladen, werden aber erst nach dem Starten ausgeliefert.")
 
     print(f"✅ Deployment verifiziert: https://huggingface.co/spaces/{space_id} (Daten bis {status['dataAsOf']})")
 

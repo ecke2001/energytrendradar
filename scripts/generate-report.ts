@@ -96,11 +96,6 @@ async function main() {
   const existing = archive.find(r => r.id === frame.id);
   const apiKey = process.env.GEMINI_API_KEY?.trim() || '';
 
-  if (!needsRefresh(existing, frame, now, REPORT_REFRESH_HOURS, apiKey !== '')) {
-    console.log(`ℹ️  Bericht ${frame.id} ist aktuell (erstellt ${existing?.generatedAt}) – keine Änderung.`);
-    return;
-  }
-
   const input: ReportInput = {
     today,
     nowIso: now.toISOString(),
@@ -113,6 +108,11 @@ async function main() {
   };
 
   let report = buildDataReport(input);
+
+  if (!needsRefresh(existing, report, now, REPORT_REFRESH_HOURS, apiKey !== '')) {
+    console.log(`ℹ️  Bericht ${frame.id} bleibt unverändert (erstellt ${existing?.generatedAt}, Zeitraum bis ${existing?.periodEnd}).`);
+    return;
+  }
 
   if (apiKey) {
     console.log(`🤖 Erzeuge Berichtstext mit Gemini (${GEMINI_MODELS.join(' → ')})...`);

@@ -2,6 +2,9 @@
 
 import React from 'react';
 import { spotPriceData, formatDataTime } from '@/lib/dataLoader';
+import { usePriceNow } from '@/lib/usePriceNow';
+import { priceWindowLabel } from '@/lib/priceNow';
+import { viennaLabel } from '@/lib/time';
 import {
   ResponsiveContainer,
   LineChart,
@@ -15,13 +18,14 @@ import { Euro, TrendingUp, AlertTriangle } from 'lucide-react';
 
 export default function SpotPriceChart() {
   const data = spotPriceData?.series || [];
-  const currentPrice = spotPriceData?.currentPrice || 0;
+  // Current slot and tomorrow's average for the viewer's clock (not the pipeline run time).
+  const { price: nowPrice, slotStart, nextDayAvg } = usePriceNow();
+  const currentPrice = nowPrice ?? 0;
+  const span = priceWindowLabel(spotPriceData);
   const avg24h = spotPriceData?.avg24h || 0;
   const min24h = spotPriceData?.min24h || 0;
   const max24h = spotPriceData?.max24h || 0;
   const negHours = spotPriceData?.negativePriceHours24h || 0;
-  const nextDayAvg = spotPriceData?.nextDayAvg;
-  const nowLabel = data.find(p => p.timestamp === spotPriceData?.currentSlotStart)?.time;
 
   return (
     <div className="glass-card p-6 border-slate-800">
@@ -37,7 +41,7 @@ export default function SpotPriceChart() {
 
         <div className="flex items-center gap-3 flex-wrap">
           <div className="text-right">
-            <div className="text-xs text-slate-400">Spotpreis {formatDataTime(spotPriceData?.currentSlotStart)}</div>
+            <div className="text-xs text-slate-400">Spotpreis {formatDataTime(slotStart)}</div>
             <div className={`text-xl font-bold font-mono ${currentPrice < 0 ? 'text-rose-400' : 'text-amber-400'}`}>
               {currentPrice.toFixed(2)} €/MWh
             </div>
@@ -45,7 +49,7 @@ export default function SpotPriceChart() {
           {negHours > 0 && (
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs">
               <AlertTriangle className="w-3.5 h-3.5" />
-              <span>{negHours.toLocaleString('de-AT')} Std. Negativpreis (24h)</span>
+              <span>{negHours.toLocaleString('de-AT')} Std. Negativpreis ({span})</span>
             </div>
           )}
         </div>
@@ -54,15 +58,15 @@ export default function SpotPriceChart() {
       {/* Mini KPIs */}
       <div className={`grid gap-3 mb-4 ${typeof nextDayAvg === 'number' ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-3'}`}>
         <div className="p-2.5 rounded-lg bg-slate-900/50 border border-slate-800/80 text-center">
-          <div className="text-[10px] text-slate-400 uppercase">24h Ø Schnitt</div>
+          <div className="text-[10px] text-slate-400 uppercase">{span} Ø Schnitt</div>
           <div className="text-sm font-bold text-slate-200 font-mono">{avg24h.toFixed(2)} €</div>
         </div>
         <div className="p-2.5 rounded-lg bg-slate-900/50 border border-slate-800/80 text-center">
-          <div className="text-[10px] text-slate-400 uppercase">24h Minimum</div>
+          <div className="text-[10px] text-slate-400 uppercase">{span} Minimum</div>
           <div className="text-sm font-bold text-emerald-400 font-mono">{min24h.toFixed(2)} €</div>
         </div>
         <div className="p-2.5 rounded-lg bg-slate-900/50 border border-slate-800/80 text-center">
-          <div className="text-[10px] text-slate-400 uppercase">24h Maximum</div>
+          <div className="text-[10px] text-slate-400 uppercase">{span} Maximum</div>
           <div className="text-sm font-bold text-amber-400 font-mono">{max24h.toFixed(2)} €</div>
         </div>
         {typeof nextDayAvg === 'number' && (
@@ -77,10 +81,10 @@ export default function SpotPriceChart() {
       <div className="w-full h-[220px]">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
-            <XAxis dataKey="time" stroke="#64748b" fontSize={10} tickLine={false} interval={Math.floor(data.length / 5)} />
+            <XAxis dataKey="timestamp" stroke="#64748b" fontSize={10} tickLine={false} interval={Math.floor(data.length / 5)} tickFormatter={(ts) => viennaLabel(Number(ts))} />
             <YAxis stroke="#64748b" fontSize={11} tickLine={false} tickFormatter={(v) => `${v}€`} />
             <ReferenceLine y={0} stroke="#f43f5e" strokeDasharray="3 3" />
-            {nowLabel && <ReferenceLine x={nowLabel} stroke="#22d3ee" strokeDasharray="4 4" label={{ value: 'jetzt', fill: '#22d3ee', fontSize: 10, position: 'top' }} />}
+            {slotStart !== null && data.some(p => p.timestamp === slotStart) && <ReferenceLine x={slotStart} stroke="#22d3ee" strokeDasharray="4 4" label={{ value: 'jetzt', fill: '#22d3ee', fontSize: 10, position: 'top' }} />}
             <Tooltip
               contentStyle={{
                 backgroundColor: '#0d1830',
@@ -89,6 +93,7 @@ export default function SpotPriceChart() {
                 color: '#fff',
                 fontSize: '12px'
               }}
+              labelFormatter={(ts: any) => viennaLabel(Number(ts))}
               formatter={(value: any) => [`${Number(value).toFixed(2)} €/MWh`, 'Day-Ahead Preis']}
             />
             <Line
