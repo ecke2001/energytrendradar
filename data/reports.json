@@ -3,80 +3,80 @@
     "id": "report-2026-kw44",
     "weekNumber": 44,
     "year": 2026,
-    "title": "Wochenbericht KW 44/2026: Wasserkraft 384 GWh, Spotpreis Ø 237,72 €/MWh",
-    "dateGenerated": "2026-10-29",
-    "executiveSummary": "Im Zeitraum 22.10.2026–28.10.2026 erzeugten Österreichs Wasserkraftwerke 383,8 GWh – davon 294,9 GWh aus Laufwasserkraft und 88,9 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 63 %. Der Day-Ahead-Preis lag im Schnitt bei 237,72 €/MWh (Spanne 121,47 bis 350,97 €/MWh). Österreich war in Summe Netto-Importeur (77,3 GWh). Gegenüber dem Vorbericht: Wasserkraft +15 %, Spotpreis-Durchschnitt +3 %.",
+    "title": "Wochenbericht KW 44/2026: Wasserkraft 410 GWh, Spotpreis Ø 250,21 €/MWh",
+    "dateGenerated": "2026-10-30",
+    "executiveSummary": "Im Zeitraum 23.10.2026–29.10.2026 erzeugten Österreichs Wasserkraftwerke 410 GWh – davon 300,6 GWh aus Laufwasserkraft und 109,4 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 60 %. Der Day-Ahead-Preis lag im Schnitt bei 250,21 €/MWh (Spanne 121,47 bis 532,81 €/MWh). Österreich war in Summe Netto-Importeur (56,5 GWh). Gegenüber dem Vorbericht: Wasserkraft +23 %, Spotpreis-Durchschnitt +8 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 294,9 GWh, Tageswerte zwischen 36,3 GWh (25.10.2026) und 47,4 GWh (27.10.2026).",
-      "Spotmarkt: teuerster Tag 28.10.2026 (Ø 271,62 €/MWh), günstigster Tag 23.10.2026 (Ø 218,69 €/MWh).",
-      "Photovoltaik lieferte 65,4 GWh, Windkraft 221,2 GWh, Gaskraftwerke 303 GWh bei einem Verbrauch von 1 098,4 GWh.",
-      "Grenzflüsse aktuell: Saldo +347 MW (Netto-Export); größter Einzelfluss: Tschechien -1 482 MW (Import)."
+      "Laufwasserkraft: 300,6 GWh, Tageswerte zwischen 36,3 GWh (25.10.2026) und 47,9 GWh (28.10.2026).",
+      "Spotmarkt: teuerster Tag 29.10.2026 (Ø 310,42 €/MWh), günstigster Tag 23.10.2026 (Ø 218,69 €/MWh).",
+      "Photovoltaik lieferte 58,9 GWh, Windkraft 196,6 GWh, Gaskraftwerke 326,6 GWh bei einem Verbrauch von 1 100,4 GWh.",
+      "Grenzflüsse aktuell: Saldo +1 248 MW (Netto-Export); größter Einzelfluss: Tschechien -1 372 MW (Import)."
     ],
     "internationalHighlights": [
-      "Stromlieferverträge: Bestandsanlagen prägen Europas PPA-Markt (energiezukunft, 28.10.2026)",
-      "Strom-Abkommen mit der EU: Haushalte sollen ihren Anbieter frei wählen können – gegen Wechselgebühr (20 Minuten, 27.10.2026)",
-      "\"Das Bewusstsein für die zentrale Bedeutung der China-Beziehungen wächst endlich\" (klimareporter°, 26.10.2026)"
+      "Strompreisdeckel à la Meloni – zieht Österreich nach? (Energynewsmagazine, 29.10.2026)",
+      "Stromabkommen: Kommission will Gestaltungsspielraum ausschöpfen (ee-news.ch, 29.10.2026)",
+      "Stromlieferverträge: Bestandsanlagen prägen Europas PPA-Markt (energiezukunft, 28.10.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 42,1 GWh pro Tag (≈ 1 755 MW). Zweite gegenüber erster Wochenhälfte: +14 % – steigende Wasserführung.",
-      "pumpspeicherStatus": "Turbinenbetrieb 88,9 GWh, Pumpbetrieb 42,9 GWh. Die Preisspanne von 229,50 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 294,9 GWh gegenüber 265,2 GWh im Vorbericht (+11 %).",
+      "laufkraftTrend": "Im Mittel 42,9 GWh pro Tag (≈ 1 789 MW). Zweite gegenüber erster Wochenhälfte: +25 % – steigende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 109,4 GWh, Pumpbetrieb 31,8 GWh. Die Preisspanne von 411,34 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 300,6 GWh gegenüber 265,2 GWh im Vorbericht (+13 %).",
       "projektUpdates": [
         "Strom: PV federt schwache Wasserkraft ab (buildingtimes.at, 28.10.2026)",
-        "71 Prozent weniger Wasserkraft - Österreichs plötzliche Stromflaute trifft auch Deutschland (Yahoo Nachrichten, 22.10.2026)",
-        "Jahrzehnte-Projekt Salzburgleitung hat die Ziellinie erreicht (Austrian Power Grid, 27.10.2026)"
+        "FOCUS-online-Debatte zu Wasserkraftflaute - „Umso wichtiger wird der Ausbau der Heimatenergie“ (Yahoo Nachrichten, 23.10.2026)",
+        "Netzausbau im Umspannwerk Wien Südost (Elektrobranche, 29.10.2026)"
       ]
     },
     "strategicTips": [
       {
         "topic": "Preisspitzen bedienen",
-        "recommendation": "Bei einer Preisspanne von 229,50 €/MWh (Minimum 121,47, Maximum 350,97 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "recommendation": "Bei einer Preisspanne von 411,34 €/MWh (Minimum 121,47, Maximum 532,81 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
         "targetGroup": "Erzeuger"
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 229,50 €/MWh und 42,9 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 411,34 €/MWh und 31,8 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (77,3 GWh). Größter aktueller Fluss: Tschechien (-1 482 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (56,5 GWh). Größter aktueller Fluss: Tschechien (-1 372 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-10-22",
-    "periodEnd": "2026-10-28",
-    "dataAsOf": "2026-10-29T03:00:00.000Z",
-    "generatedAt": "2026-10-29T05:51:16.857Z",
+    "periodStart": "2026-10-23",
+    "periodEnd": "2026-10-29",
+    "dataAsOf": "2026-10-30T03:30:00.000Z",
+    "generatedAt": "2026-10-30T05:52:01.474Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "383,8 GWh"
+        "value": "410 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "294,9 GWh"
+        "value": "300,6 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "88,9 GWh"
+        "value": "109,4 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "42,9 GWh"
+        "value": "31,8 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "65,4 / 221,2 GWh"
+        "value": "58,9 / 196,6 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "63 %"
+        "value": "60 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "237,72 €/MWh (121,47 / 350,97)"
+        "value": "250,21 €/MWh (121,47 / 532,81)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,83 +84,83 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "77,3 GWh"
+        "value": "56,5 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 793 MW (32 % der Last)"
+        "value": "1 933 MW (32 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "340,72 €/MWh"
+        "value": "325,53 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 294.9,
-      "speicherGWh": 88.9,
-      "pumpenGWh": 42.9,
-      "pvGWh": 65.4,
-      "windGWh": 221.2,
-      "biomasseGWh": 34.6,
-      "gasGWh": 303,
-      "loadGWh": 1098.4,
-      "renewableGWh": 650.2,
-      "totalGenerationGWh": 1028.4,
-      "renewableSharePercent": 63,
-      "priceAvg": 237.72,
+      "laufkraftGWh": 300.6,
+      "speicherGWh": 109.4,
+      "pumpenGWh": 31.8,
+      "pvGWh": 58.9,
+      "windGWh": 196.6,
+      "biomasseGWh": 34.9,
+      "gasGWh": 326.6,
+      "loadGWh": 1100.4,
+      "renewableGWh": 629.1,
+      "totalGenerationGWh": 1047.6,
+      "renewableSharePercent": 60,
+      "priceAvg": 250.21,
       "priceMin": 121.47,
-      "priceMax": 350.97,
+      "priceMax": 532.81,
       "negativePriceHours": 0,
-      "netExportGWh": -77.3
+      "netExportGWh": -56.5
     },
     "newsSources": [
       {
-        "title": "Strom: PV federt schwache Wasserkraft ab",
-        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQblBsNU85ZExWei1RVU81bmRPLUt0M0NoQmJsZjFTTDhqT2kwcUtmem5TNE0yeExFTnhvUWpTRFdCV2c5NDFyUlNPeFVmb0lCMUd5ZGJKazVCRGVPSTFmemphTFRIRjNCQ3BFR0dYY1U1aFo1YUNXaVgzRkhaR0Q4SU9PQkNTUQ?oc=5",
-        "source": "buildingtimes.at",
-        "pubDate": "2026-10-28"
+        "title": "Energiewende endet wie die DDR: Ex-Greenpeace-Aktivist packt aus",
+        "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPR1AtQlFudlBDYzNOS2t5X3pwZzlNZWU0U3NIUkJfVWlNbWhOaE9Tek1ONFRaeHhlM1M4cV83RnJsazItNXFFVmxISmVBZGFDQjc1MzVJTXZvQ1ZXMXVEbVo1Z1N1aklSamdnVWdSeDN1cEhORUxYQUxmZnJtcGI2SjhILUlCNXJzejQ0YmVPS28yUEE?oc=5",
+        "source": "exxpress",
+        "pubDate": "2026-10-30"
       },
       {
-        "title": "APG Factbox: PV bleibt auch im September stark",
-        "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4zdkNFT191OHRMMDQzOFZvOHlWalFkZEFNWE1sN0I2RnJvYXZwWGVGeEYyVUc5QVM1S3lyVFFMSFJFRWdXZGdQUzllNHd5OEcyOExVdldjRFU2MXZfd3gxY0dDTEo1a1ZoX1dzRml1c2VQMm1Gei1TQ2hMMXI?oc=5",
-        "source": "Elektrobranche",
-        "pubDate": "2026-10-28"
+        "title": "Zertifikatehandel: Ökostrom aus der Trickkiste",
+        "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBSZUpmOXlmcnZIa05tcllBSkh3WTd3cFpHZHpsN3RHa2lGY3hSM3h6N01ubzl3d0plRW5VcV9pRFZaTDFMUnRkY2t1V2Z4d25QNUc2VUhSQQ?oc=5",
+        "source": "Konsument",
+        "pubDate": "2026-10-29"
       },
       {
-        "title": "Auswirkungen des Klimawandels auf das Stromsystem: Daten bis 2100",
-        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9BWHhNZU45YzNMWWlhaUJNUHZkaWh3UWJ4LTloU0ZIYmNERzJKRUNBdUxTVDhlVTFHRTAweTRoSHhxYnotdnlleVk1d3ZYTlMtQURUWGd0ZWdWbnIyT2JsSU13aU9nZWlVMTdpNndPck9YSzhnMXpJ?oc=5",
-        "source": "i-Magazin",
-        "pubDate": "2026-10-28"
-      },
-      {
-        "title": "Verbund baut in Schwarzach weiter aus: \"Es geht um Unabhängigkeit\"",
-        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPTXA0ZU1pNWtNZlZaaEJ1R2ZWck1IYVZtNlZXbFMyMXoyck8zRldxdTJBYWZqS0FtcnBiZGZyeEJvOGRwRTZheTBYbXpsUEJJcGNPLXg5MXU5N0RpV2RjQVlUb01Tc09wNFlqQ0plQzJpRHR4OWNKRU15RGo3YjdfTm02bmozNzZrSHFIOW94U1Rvc0xfWkhXTEdyU2tud0ZvYkVYbkVPbk5ObjVoajNQblhhOA?oc=5",
-        "source": "Salzburger Nachrichten",
-        "pubDate": "2026-10-28"
-      },
-      {
-        "title": "Sonnenenergie auf Wachstumskurs: Photovoltaik in Österreich",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPQ1o2ZmlwSjdNODd4cWIyTTZBQ0FYSlZCNDhuZEpkaVJTWWlCckVFN1Vpc3d0VzhUakQ1eXkxWTFnZW1YR3pET2IwcHZuaEQ2VmFFb01IVDJxamg3amctTFRZNUVaQVdRMHdjd2tTMnNQYmRNbGxidnByS0JzVER1T3lkajdVUFZ5WFU0LWQtSWp5a1FhUDVkQQ?oc=5",
+        "title": "Heizen mit Kamin in Österreich: Vorschriften & Umwelt",
+        "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9zMnpYQ2llb1E0NzNPSXpUR1dpa1FtYklWZDhwNnlGb1RUYl9KRGZSNkRBLUNESG5GdDJUZENLbkpHMWVXZWJwcA?oc=5",
         "source": "Pressefeuer",
-        "pubDate": "2026-10-28"
+        "pubDate": "2026-10-29"
       },
       {
-        "title": "APG: Weniger Erneuerbare, mehr Stromimporte",
-        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxObG4yR0xPdnRLVVFpMTQ0LU1sbW1lR0ZBb1ZlVG1qeV9OdE5yaGpsTVNmYkZnbVcwUFF1LTl4YXRCRW15aEdHSmhmb1d5VjlvSGRuRURXWkNyNUdTcGpMUVd3U08yYS1URmxwSGlRazhSbm5JU1JRdEpFbDlud1JIQWc1bzBlUFRwSWdfR3h0aFg?oc=5",
-        "source": "energate messenger",
-        "pubDate": "2026-10-28"
+        "title": "Netzentgelte für Strom sinken 2027 im Großteil Österreichs",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNXzIxQ3g5enQyTEFmLWVCZ08zUENIS1l6MkhaWVpHZG9ZRzc3WFEyTnFyMWdyVURiLS1EOEJ0YThMdHRxdjBZb21hWDBiSFpON0d4bERBZXZMNXhPM012dGcyaU5odW9zNERZUFdiRGYxenlab3ZqTUE3TmpHbUdXbkladzlRVHk3cFJMUVpVTDhMUVd4?oc=5",
+        "source": "News.at",
+        "pubDate": "2026-10-29"
       },
       {
-        "title": "Forchach diskutiert Potenzial von Windkraft für Tiroler Energieversorgung",
-        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxORVV3U2F6bFE5dll2U3h1UWRTRF9Ib2ZsZGo0QzlHV1hwV2tRV3pqT3A3cXFmXzR2LXN0Y2VSazdtUHFteXBmZmN6OHRyMjh0NjE5TTVuc2FGYXZFbEJfcldqSXdyVWItaHRLWUhWcWRrNzl4WEM5UFdHelpudjV5cThzeG9KdjYzTWtyaGJxaFdvS3NQeE9QcXMwTElianBEaFFIdVhZaS1aSUVGSzFTUnNHMA?oc=5",
-        "source": "Welt Stimme",
-        "pubDate": "2026-10-28"
+        "title": "Netzentgelte 2027 in Österreich: Leistungspreis kommt stufenweise",
+        "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVWpobFpGWE1ibTEtU28yblVnSi1RZEpwd3p2QlFxUFN1VjY1WUhfTGNNZVYwdXpBYkE2dVlTWnllZFZvZ0VRT1VjdW1sTEFyMjVBbW9FeHllakpXaU5uQ1VqVlJEbF9Vd1dwZzI0ajJjVU41UFplRjhSUzNDMmotSQ?oc=5",
+        "source": "i-Magazin",
+        "pubDate": "2026-10-29"
       },
       {
-        "title": "Stromlieferverträge: Bestandsanlagen prägen Europas PPA-Markt",
-        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNY1NURnBfdFZMVV82NE9DUnFDSno2WDIydk1MTHNqdl9MaVFZbDdSZ21nYWh4LXhqdW8tZGtBbzQ2NXdMRDdWdHpKT3d5cUxsYjQzMVVDSEJjdjdSTFBPYzNrMklULWZteTNUOGpUbS1Pd09mSUZHRnlLRUszSTJjN0dKeERmblV1TGc?oc=5",
-        "source": "energiezukunft",
-        "pubDate": "2026-10-28"
+        "title": "Netzausbau im Umspannwerk Wien Südost",
+        "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTFBmbEkxWDF5NTVrN0hkeE1UdGZvZGhKRktEQU5ST3Izd05yMmNqLW5iMWNOMVhmRVVMMzYxYmlFWDVTSGE0RjB4S2t4TmZLSlE5WURZemtVaHo4OHJzeTVGbEtKQVZaLXMyUFBUUS1RR3VPWVlQVTM3WUt6Qm04dw?oc=5",
+        "source": "Elektrobranche",
+        "pubDate": "2026-10-29"
+      },
+      {
+        "title": "Strom doppelt so teuer wie vor einem Jahr",
+        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxObGdKeDhFRzJYRk9VTTdtNEk0b0Vqa3VIaEpfMFFKS0E0bW5rYVphdlhCOWY5eUJhYmRuWkxIRnJ4RmVjelEtYmtMLTl6ODVHMjhEcFVtQ0d2VmJIMmhFYVdGbGwzQzFaSGM4ZWNfWmJmQWVUbm1WTHlQbDlmNmgxQ3JwVzF1QndSWGFMRDVaQ3ptZnpZ0gGaAUFVX3lxTE1GcjdkUzdPalNGU0wxMTRRZFRTVm5LcHNCbU1EeFQzdGFCMzNxLXBpWmthTEhjbk9SSzNYOEE4eTlXY1phc3d5ZFJNVEhjbFNVRUxraGswUUhGY2diMFlRTlVhUVRURmN3bFJjbHFiRFU2WWdibmJyeFVPM2JMNzJ0RDAyeXNpQnRLNzRpYzZYNGJfSGpGVzhZcmc?oc=5",
+        "source": "oe24",
+        "pubDate": "2026-10-29"
+      },
+      {
+        "title": "Kärntner Politik fordert einheitliche Netztarife in Österreich",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSTExakRwbjhmV0NWRGtHR01IRlBjaW1qLXh0WmFfbXhDZTVUd1RjTFdSVjAtMmExejVlZ2x6c1NtdmRmZ3JBVTlfdUxwQjNaQUFRVG83LU1UWmdhaWlYdS0yNGJLcUl3bnpJN3lMdzBreU1xZXB6SVVGVGE5OWhsRDFpOExHbWhJejM4U3NmVjNKSHowcHpUQjdXQlhKQTVyeGR0NUc5NmduSTVZaEQw?oc=5",
+        "source": "Kleine Zeitung",
+        "pubDate": "2026-10-29"
       }
     ]
   },
