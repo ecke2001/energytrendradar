@@ -1,7 +1,7 @@
 {
   "periodStart": "2026-10-24",
   "periodEnd": "2026-10-30",
-  "generatedAt": "2026-10-31T05:44:31.736Z",
+  "generatedAt": "2026-10-31T12:34:25.410Z",
   "days": [
     {
       "date": "2026-10-24",
@@ -20,7 +20,7 @@
       "priceMin": 190.97,
       "priceMax": 294.96,
       "negativePriceHours": 0,
-      "netExportGWh": -17.9
+      "netExportGWh": -17.8
     },
     {
       "date": "2026-10-25",
@@ -153,6 +153,6 @@
     "priceMin": 128.39,
     "priceMax": 532.81,
     "negativePriceHours": 0,
-    "netExportGWh": -14.5
+    "netExportGWh": -14.4
   }
 }
