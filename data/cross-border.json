@@ -1,32 +1,32 @@
 {
-  "timestamp": 1793586600,
-  "date": "2026-11-02T02:30:00.000Z",
-  "netExportMW": -1125,
-  "isNetExporter": false,
+  "timestamp": 1793613600,
+  "date": "2026-11-02T10:00:00.000Z",
+  "netExportMW": 1451,
+  "isNetExporter": true,
   "neighbors": [
     {
       "country": "Czech Republic",
-      "flowMW": -1256,
+      "flowMW": -848,
       "isExport": false
     },
     {
       "country": "Germany",
-      "flowMW": -1889,
-      "isExport": false
+      "flowMW": 215,
+      "isExport": true
     },
     {
       "country": "Hungary",
-      "flowMW": 1111,
+      "flowMW": 1083,
       "isExport": true
     },
     {
       "country": "Italy",
-      "flowMW": 22,
+      "flowMW": 42,
       "isExport": true
     },
     {
       "country": "Slovenia",
-      "flowMW": 887,
+      "flowMW": 960,
       "isExport": true
     },
     {
