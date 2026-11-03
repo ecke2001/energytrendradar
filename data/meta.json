@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-11-03T00:59:37.475Z",
-  "lastUpdatedFormatted": "03.11.2026, 01:59",
-  "dataAsOf": "2026-11-02T22:45:00.000Z",
+  "lastUpdated": "2026-11-03T14:18:13.671Z",
+  "lastUpdatedFormatted": "03.11.2026, 15:18",
+  "dataAsOf": "2026-11-03T12:30:00.000Z",
   "version": "3.0.0",
   "sources": [
     {
@@ -21,36 +21,34 @@
   "sourceStatus": {
     "generation": {
       "ok": true,
-      "lastAttempt": "2026-11-03T00:59:37.475Z",
-      "lastSuccess": "2026-11-03T00:59:37.475Z",
-      "dataUntil": "2026-11-02T22:45:00.000Z"
+      "lastAttempt": "2026-11-03T14:18:13.671Z",
+      "lastSuccess": "2026-11-03T14:18:13.671Z",
+      "dataUntil": "2026-11-03T12:30:00.000Z"
     },
     "prices": {
       "ok": true,
-      "lastAttempt": "2026-11-03T00:59:37.475Z",
-      "lastSuccess": "2026-11-03T00:59:37.475Z",
-      "dataUntil": "2026-11-03T00:45:00.000Z"
+      "lastAttempt": "2026-11-03T14:18:13.671Z",
+      "lastSuccess": "2026-11-03T14:18:13.671Z",
+      "dataUntil": "2026-11-03T14:15:00.000Z"
     },
     "crossBorder": {
       "ok": true,
-      "lastAttempt": "2026-11-03T00:59:37.475Z",
-      "lastSuccess": "2026-11-03T00:59:37.475Z",
-      "dataUntil": "2026-11-02T21:15:00.000Z"
+      "lastAttempt": "2026-11-03T14:18:13.671Z",
+      "lastSuccess": "2026-11-03T14:18:13.671Z",
+      "dataUntil": "2026-11-03T10:30:00.000Z"
     },
     "weeklyStats": {
       "ok": true,
-      "lastAttempt": "2026-11-03T00:59:37.475Z",
-      "lastSuccess": "2026-11-03T00:59:37.475Z",
+      "lastAttempt": "2026-11-03T14:18:13.671Z",
+      "lastSuccess": "2026-11-03T14:18:13.671Z",
       "dataUntil": "2026-11-02"
     },
     "news": {
       "ok": true,
-      "lastAttempt": "2026-11-03T00:59:37.475Z",
-      "lastSuccess": "2026-11-03T00:59:37.475Z",
-      "dataUntil": "2026-11-02"
+      "lastAttempt": "2026-11-03T14:18:13.671Z",
+      "lastSuccess": "2026-11-03T14:18:13.671Z",
+      "dataUntil": "2026-11-03"
     }
   },
-  "warnings": [
-    "cross-border: Vorzeichen widerspricht der Erzeugungsbilanz (Bilanz -1308 MW, Saldo 1021 MW) – Konvention prüfen"
-  ]
+  "warnings": []
 }
