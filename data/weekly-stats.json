@@ -1,27 +1,8 @@
 {
-  "periodStart": "2026-10-28",
-  "periodEnd": "2026-11-03",
-  "generatedAt": "2026-11-04T19:46:57.037Z",
+  "periodStart": "2026-10-29",
+  "periodEnd": "2026-11-04",
+  "generatedAt": "2026-11-05T06:50:19.531Z",
   "days": [
-    {
-      "date": "2026-10-28",
-      "laufkraftGWh": 47.9,
-      "speicherGWh": 24.9,
-      "pumpenGWh": 2.8,
-      "pvGWh": 6.6,
-      "windGWh": 11.4,
-      "biomasseGWh": 5.1,
-      "gasGWh": 48.5,
-      "loadGWh": 172.8,
-      "renewableGWh": 78.6,
-      "totalGenerationGWh": 147.3,
-      "renewableSharePercent": 53,
-      "priceAvg": 271.62,
-      "priceMin": 208.82,
-      "priceMax": 350.97,
-      "negativePriceHours": 0,
-      "netExportGWh": -26
-    },
     {
       "date": "2026-10-29",
       "laufkraftGWh": 50,
@@ -39,7 +20,7 @@
       "priceMin": 231.42,
       "priceMax": 532.81,
       "negativePriceHours": 0,
-      "netExportGWh": 9.7
+      "netExportGWh": 11.8
     },
     {
       "date": "2026-10-30",
@@ -135,24 +116,43 @@
       "priceMax": 345.42,
       "negativePriceHours": 0,
       "netExportGWh": -36.1
+    },
+    {
+      "date": "2026-11-04",
+      "laufkraftGWh": 41.6,
+      "speicherGWh": 24.9,
+      "pumpenGWh": 5,
+      "pvGWh": 6.2,
+      "windGWh": 7.6,
+      "biomasseGWh": 5,
+      "gasGWh": 53.4,
+      "loadGWh": 180.7,
+      "renewableGWh": 67,
+      "totalGenerationGWh": 141.7,
+      "renewableSharePercent": 47,
+      "priceAvg": 298.13,
+      "priceMin": 236.53,
+      "priceMax": 360.55,
+      "negativePriceHours": 0,
+      "netExportGWh": -33.1
     }
   ],
   "totals": {
-    "laufkraftGWh": 306,
+    "laufkraftGWh": 299.7,
     "speicherGWh": 133,
-    "pumpenGWh": 47.3,
-    "pvGWh": 41.8,
-    "windGWh": 228.6,
-    "biomasseGWh": 34.8,
-    "gasGWh": 335.4,
-    "loadGWh": 1153.8,
-    "renewableGWh": 652.2,
-    "totalGenerationGWh": 1100.3,
+    "pumpenGWh": 49.5,
+    "pvGWh": 41.4,
+    "windGWh": 224.8,
+    "biomasseGWh": 34.7,
+    "gasGWh": 340.3,
+    "loadGWh": 1161.7,
+    "renewableGWh": 640.6,
+    "totalGenerationGWh": 1094.7,
     "renewableSharePercent": 59,
-    "priceAvg": 280.59,
-    "priceMin": 208.82,
+    "priceAvg": 284.38,
+    "priceMin": 218.62,
     "priceMax": 532.81,
     "negativePriceHours": 0,
-    "netExportGWh": -82.8
+    "netExportGWh": -87.8
   }
 }
