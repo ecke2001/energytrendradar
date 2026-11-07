@@ -112,14 +112,6 @@
     "category": "EU"
   },
   {
-    "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-    "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
-    "pubDate": "2026-11-04",
-    "source": "DIE ZEIT",
-    "summary": "Energiemonitor: Schafft Deutschland die Energiewende?",
-    "category": "EU"
-  },
-  {
     "title": "WWF-Flüssereport",
     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBVOGp6WFhEcnlacFBGUWNtcVBZWVRRNHNoLV9MNkRwVG9rNFBSRkg4RVB5eTd5Ymd3N2ZHbF9ETmZRWU1HbS04aWJ5Z2JYVk1iandRZlVkWk5DZEt6ZnFqUS1vSXZQTjB1Ujgw?oc=5",
     "pubDate": "2026-11-03",
@@ -168,11 +160,11 @@
     "category": "Wasserkraft"
   },
   {
-    "title": "Staatsschulden Österreich steigen auf 482 Milliarden",
-    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWnhqMFkzUF9QV1pKcnN6clFiTXg3MktxWEdzQkhrWDd1YWxhanFrOEpHRGp0aVJReXhCTkZ6djdwcWpwUjUwY0s0VGdWOFdPTjMwS0pWcDY0RU9nVXlXN3lHQjg4NWtVS3VnQ0IxUGJBbHRGLTJrOWwxbzdHM3V4Q3Vvd0pkZmJ4WHRvODFrWFlYTkk4UTJ2VDRIWndyeG5XNGc?oc=5",
+    "title": "Verbund-CEO : Ein Déjà-vu und die bitteren Folgen",
+    "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdHlwUDN0RXBueXdROUttVU84OVZEQlVTT24xT21QOEh4RWF2UnVMRXBLR19jTGxXR05vWTFZZGNfM3NpQkIza3pvaUUySnk4NWNjNXM2NldiV3RpVmd2VWR2Y3ZEYkNqbTdma2llWUpEbjJzdDF0SFlxdEZLd0s2N1JB?oc=5",
     "pubDate": "2026-11-03",
-    "source": "Wirtschaftsjournal",
-    "summary": "Staatsschulden Österreich steigen auf 482 Milliarden",
+    "source": "Börsianer",
+    "summary": "Verbund-CEO : Ein Déjà-vu und die bitteren Folgen",
     "category": "Markt"
   },
   {
@@ -181,6 +173,14 @@
     "pubDate": "2026-11-03",
     "source": "Ökonews",
     "summary": "Strom statt Gas: Europas Energiebranche fordert faire Strompreise und mehr Elektrifizierung",
+    "category": "EU"
+  },
+  {
+    "title": "Gaspreis: Von der Leyen prüft Preisdeckel",
+    "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQekpPVUVucjZoOW4zQThfWlN2T0ZSbmp6ZE53cXNONktkLVdEeVMxTHJQcnU1Ukl0OHNySFAxMno1Y3BsME5taFJhOW5YTHVEamF2ZVBiS0hnMGVvTUIzb1N4aGNJRXRkMmhEZUd2RFIzWHNYNDMxLXVJSWo3eHFNZ05UNDF3SHc?oc=5",
+    "pubDate": "2026-11-03",
+    "source": "ZFK – Zeitung für kommunale Wirtschaft",
+    "summary": "Gaspreis: Von der Leyen prüft Preisdeckel",
     "category": "EU"
   },
   {
@@ -203,7 +203,7 @@
     "title": "Energiebilanz 2025: Trotz Solar-Boom muss Österreich wieder Strom importieren",
     "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMm9jQXg3emVBSk9yel9kVGFkcGpZSnV6bUYxalN3UUZsMmJwblAyWUM2czZRNUFMNnR4eFpYd01IMzQ0cmVhOTN3TjlZSzJ6ZUZBNW8xX2pSVDhQaGVMM1JNcUtLbzJxeDdLbHkyelpVWDd4d0Y3bF8za1pDbTdvY1JpcVkzSDZCTDJyUWtWcXlQQXROdlVRZG9Fa0lOMTRRY3dYZWxn?oc=5",
     "pubDate": "2026-11-02",
-    "source": "Exxpress",
+    "source": "exxpress",
     "summary": "Energiebilanz 2025: Trotz Solar-Boom muss Österreich wieder Strom importieren",
     "category": "Wasserkraft"
   },
@@ -240,6 +240,14 @@
     "category": "Österreich"
   },
   {
+    "title": "Gewinner und Verlierer der neuen Stromnetzentgelte: Nicht alle Haushalte sparen",
+    "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMEdEN1V4cDdJcU8wendaa1pVUzhXZjlDZ0wxTmpWZlE1TEtkT3l3cUM1Vkt1UnFFNGFkTWNzMGd0RDl5UHdwbE03OUtSeDMyNTlBU1lMM3RSalBlajZnRVFWa1JGWGs3OFliQndPMnFSY0ZuaXhpWUdMRC1rT0MyN3NmMTZCWTNKVkhlUkNIQ2JENDNVNzBGMWV0SFk?oc=5",
+    "pubDate": "2026-10-30",
+    "source": "Der Standard",
+    "summary": "Gewinner und Verlierer der neuen Stromnetzentgelte: Nicht alle Haushalte sparen",
+    "category": "Österreich"
+  },
+  {
     "title": "Fehlende Windkraft verwehrt Strompreis-Entlastung",
     "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPMzlxT2xKb3B1ZGh2ZnQtcUloSThXNm5fUVNtQWNOb2F6RXJlczUwcDNsRFBUb25IRExNY2dabDlLamJUbmpVbGFrS09nakZjRkJzYjVvNHJwaHFEYTZuT2NlRS0yR3RPWDhpV3BTVlMtMW1YVWQ3d2stN2ltWVF2bVFQdWtId0NZTTdHbEhzR2IzZHFoendoMktxOA?oc=5",
     "pubDate": "2026-10-30",
@@ -265,9 +273,9 @@
   },
   {
     "title": "Netzentgelte für Strom sinken 2027 im Großteil Österreichs",
-    "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNXzIxQ3g5enQyTEFmLWVCZ08zUENIS1l6MkhaWVpHZG9ZRzc3WFEyTnFyMWdyVURiLS1EOEJ0YThMdHRxdjBZb21hWDBiSFpON0d4bERBZXZMNXhPM012dGcyaU5odW9zNERZUFdiRGYxenlab3ZqTUE3TmpHbUdXbkladzlRVHk3cFJMUVpVTDhMUVd4?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPNUdYa1pEa0tWYzVPcUU4aWk2WTJVcWVfMTZtOHpvOHNxMjVrQU1sTms4MEYzMkc2YzBoRy1XRnVPOS1rNE40MjZDUEFSOHU5UWhPVkZDMlJhRUNJQmhla01QRml3YVpOVzNFQWk1RG5hTEs0eUJWVzd2blQ4eW5Eb09JZXdUTWFoanp1bmc3WTRRVWFTQ2pVcDVmTmFaWm5aN0VTYUQ2aXA4b09SZ3I3Tg?oc=5",
     "pubDate": "2026-10-29",
-    "source": "News.at",
+    "source": "Der Standard",
     "summary": "Netzentgelte für Strom sinken 2027 im Großteil Österreichs",
     "category": "Österreich"
   },
@@ -277,14 +285,6 @@
     "pubDate": "2026-10-29",
     "source": "oe24",
     "summary": "Strom doppelt so teuer wie vor einem Jahr",
-    "category": "Markt"
-  },
-  {
-    "title": "Strompreisdeckel à la Meloni – zieht Österreich nach?",
-    "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUFd3ZFdXNGZIVFh5VzNkdW9mc1hvYU0zcXNXYV9uY3lHTDRrTHk5Ulp0WjJuQnVFbDZ3UkpSdmNtWXByMkpRMVFRNm51TTVnX1RERzRNT3ZhSjBYRHpOckxHbnBFT25JQjVjYnpQMVluRmQ1UmRrSGlkNzl4Mk1xS2g4OHlTYUxZdkE4M1lDOE1ka2xYem1tOHVPMTZWdw?oc=5",
-    "pubDate": "2026-10-29",
-    "source": "Energynewsmagazine",
-    "summary": "Strompreisdeckel à la Meloni – zieht Österreich nach?",
     "category": "Markt"
   },
   {
@@ -313,7 +313,7 @@
   },
   {
     "title": "Gas kostet Familie 320 Euro mehr im Jahr",
-    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9CTXk2WmdOTXVCWmNBbHZMOXRUam1WMkpTeU1IZk9PdDNyNG5uYU5nVEFiU09MQnpyaWpZR0U5cUlzbW5aSTk4ZzRydEVQM0d0ZzdmTUU0Qi1kX0R5dGdzcTlrZ0dBZU54SGZQTWRITdIBdEFVX3lxTE80OVUzNGR0ODBueHNRVV80T1ZBa1V5RjBXQzd2SllETDBXSTdSR3c5M0ZIMnhQSjFIOVJTZWxkOXhmRnZjcFl5ZGluX2ltS2tndUZRemJ6RkxyM3dYb1VycUxSb09FUlA1dk4tUmNReXJIaTJh?oc=5",
+    "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9CTXk2WmdOTXVCWmNBbHZMOXRUam1WMkpTeU1IZk9PdDNyNG5uYU5nVEFiU09MQnpyaWpZR0U5cUlzbW5aSTk4ZzRydEVQM0d0ZzdmTUU0Qi1kX0R5dGdzcTlrZ0dBZU54SGZQTWRITQ?oc=5",
     "pubDate": "2026-10-27",
     "source": "oe24",
     "summary": "Gas kostet Familie 320 Euro mehr im Jahr",
