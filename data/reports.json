@@ -3,28 +3,28 @@
     "id": "report-2026-kw45",
     "weekNumber": 45,
     "year": 2026,
-    "title": "Wochenbericht KW 45/2026: Wasserkraft 420 GWh, Spotpreis Ø 287,40 €/MWh",
-    "dateGenerated": "2026-11-07",
-    "executiveSummary": "Im Zeitraum 31.10.2026–06.11.2026 erzeugten Österreichs Wasserkraftwerke 420,2 GWh – davon 284,6 GWh aus Laufwasserkraft und 135,6 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 55 %. Der Day-Ahead-Preis lag im Schnitt bei 287,40 €/MWh (Spanne 218,62 bis 386,70 €/MWh). Österreich war in Summe Netto-Importeur (185,9 GWh). Gegenüber dem Vorbericht: Wasserkraft -3 %, Spotpreis-Durchschnitt +8 %.",
+    "title": "Wochenbericht KW 45/2026: Wasserkraft 416 GWh, Spotpreis Ø 288,26 €/MWh",
+    "dateGenerated": "2026-11-08",
+    "executiveSummary": "Im Zeitraum 01.11.2026–07.11.2026 erzeugten Österreichs Wasserkraftwerke 416,3 GWh – davon 278,6 GWh aus Laufwasserkraft und 137,7 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 54 %. Der Day-Ahead-Preis lag im Schnitt bei 288,26 €/MWh (Spanne 218,62 bis 386,70 €/MWh). Österreich war in Summe Netto-Importeur (213 GWh). Gegenüber dem Vorbericht: Wasserkraft -4 %, Spotpreis-Durchschnitt +8 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 284,6 GWh, Tageswerte zwischen 38,5 GWh (01.11.2026) und 42,7 GWh (05.11.2026).",
-      "Spotmarkt: teuerster Tag 05.11.2026 (Ø 307,66 €/MWh), günstigster Tag 31.10.2026 (Ø 256,99 €/MWh).",
-      "Photovoltaik lieferte 45,3 GWh, Windkraft 154,2 GWh, Gaskraftwerke 336,9 GWh bei einem Verbrauch von 1 181,9 GWh.",
-      "Grenzflüsse aktuell: Saldo -933 MW (Netto-Import); größter Einzelfluss: Tschechien -1 422 MW (Import)."
+      "Laufwasserkraft: 278,6 GWh, Tageswerte zwischen 36,3 GWh (07.11.2026) und 42,7 GWh (05.11.2026).",
+      "Spotmarkt: teuerster Tag 05.11.2026 (Ø 307,66 €/MWh), günstigster Tag 01.11.2026 (Ø 258,52 €/MWh).",
+      "Photovoltaik lieferte 47,1 GWh, Windkraft 135,1 GWh, Gaskraftwerke 345 GWh bei einem Verbrauch von 1 187,3 GWh.",
+      "Grenzflüsse aktuell: Saldo -966 MW (Netto-Import); größter Einzelfluss: Tschechien -1 808 MW (Import)."
     ],
     "internationalHighlights": [
-      "Gasspeicher nur zu 75 Prozent gefüllt: Wird Europas Winter teuer? (Euronews.com, 06.11.2026)",
-      "Herbert Diess: E-Autos als Stromspeicher und Chance für die Industrie (Tuningblog, 05.11.2026)",
-      "Wozu beschließt man in Brüssel Energiegesetze, wenn man sie zu Hause nicht umsetzt? (DiePresse.com, 04.11.2026)"
+      "PowerShareHome: Pilotprojekt erprobt Innovationen für Energiegemeinschaften (Ökonews, 07.11.2026)",
+      "Fünf EU-Staaten fordern eine Beschleunigung des Energieabkommens mit Großbritannien vor dem Gipfel am 20. November (Informat.ro, 07.11.2026)",
+      "Gasspeicher nur zu 75 Prozent gefüllt: Wird Europas Winter teuer? (Euronews.com, 06.11.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 40,7 GWh pro Tag (≈ 1 694 MW). Zweite gegenüber erster Wochenhälfte: +3 % – weitgehend stabil.",
-      "pumpspeicherStatus": "Turbinenbetrieb 135,6 GWh, Pumpbetrieb 46 GWh. Die Preisspanne von 168,08 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 284,6 GWh gegenüber 317,2 GWh im Vorbericht (-10 %).",
+      "laufkraftTrend": "Im Mittel 39,8 GWh pro Tag (≈ 1 658 MW). Zweite gegenüber erster Wochenhälfte: +1 % – weitgehend stabil.",
+      "pumpspeicherStatus": "Turbinenbetrieb 137,7 GWh, Pumpbetrieb 54,3 GWh. Die Preisspanne von 168,08 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 278,6 GWh gegenüber 317,2 GWh im Vorbericht (-12 %).",
       "projektUpdates": [
-        "Die EU ist führend bei Turbinen für die Wasserkraft – und doch von China abhängig. Wie kommt's? (derStandard.de, 06.11.2026)",
-        "SmartCity Baumgarten - ein Pionierprojekt (buildingtimes.at, 06.11.2026)",
-        "Energieversorgung: Wettbewerb: Wasserkraft aus Salzburg für ganz Österreich (Wirtschaftsnachrichten Süd, 04.11.2026)"
+        "Die EU ist führend bei Turbinen für die Wasserkraft – und doch von China abhängig. Wie kommt's? (Der Standard, 06.11.2026)",
+        "Energieversorgung: Wettbewerb: Wasserkraft aus Salzburg für ganz Österreich (Wirtschaftsnachrichten Süd, 04.11.2026)",
+        "Gesellschaft - Wasserkraft im Fokus (der Vinschger, 03.11.2026)"
       ]
     },
     "strategicTips": [
@@ -35,48 +35,48 @@
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 168,08 €/MWh und 46 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 168,08 €/MWh und 54,3 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (185,9 GWh). Größter aktueller Fluss: Tschechien (-1 422 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (213 GWh). Größter aktueller Fluss: Tschechien (-1 808 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-10-31",
-    "periodEnd": "2026-11-06",
-    "dataAsOf": "2026-11-07T04:15:00.000Z",
-    "generatedAt": "2026-11-07T06:00:22.108Z",
+    "periodStart": "2026-11-01",
+    "periodEnd": "2026-11-07",
+    "dataAsOf": "2026-11-08T04:00:00.000Z",
+    "generatedAt": "2026-11-08T06:04:20.509Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "420,2 GWh"
+        "value": "416,3 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "284,6 GWh"
+        "value": "278,6 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "135,6 GWh"
+        "value": "137,7 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "46 GWh"
+        "value": "54,3 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "45,3 / 154,2 GWh"
+        "value": "47,1 / 135,1 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "55 %"
+        "value": "54 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "287,40 €/MWh (218,62 / 386,70)"
+        "value": "288,26 €/MWh (218,62 / 386,70)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,52 +84,58 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "185,9 GWh"
+        "value": "213 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 414 MW (24 % der Last)"
+        "value": "1 373 MW (26 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "245,81 €/MWh"
+        "value": "229,50 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 284.6,
-      "speicherGWh": 135.6,
-      "pumpenGWh": 46,
-      "pvGWh": 45.3,
-      "windGWh": 154.2,
-      "biomasseGWh": 34.6,
-      "gasGWh": 336.9,
-      "loadGWh": 1181.9,
-      "renewableGWh": 558.3,
-      "totalGenerationGWh": 1011.7,
-      "renewableSharePercent": 55,
-      "priceAvg": 287.4,
+      "laufkraftGWh": 278.6,
+      "speicherGWh": 137.7,
+      "pumpenGWh": 54.3,
+      "pvGWh": 47.1,
+      "windGWh": 135.1,
+      "biomasseGWh": 34.9,
+      "gasGWh": 345,
+      "loadGWh": 1187.3,
+      "renewableGWh": 534.5,
+      "totalGenerationGWh": 998.8,
+      "renewableSharePercent": 54,
+      "priceAvg": 288.26,
       "priceMin": 218.62,
       "priceMax": 386.7,
       "negativePriceHours": 0,
-      "netExportGWh": -185.9
+      "netExportGWh": -213
     },
     "newsSources": [
       {
+        "title": "Auch Anbieterwechsel-Rekord: Mehr Strom- und Gasverbrauch im September verzeichnet",
+        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNdkkyV3RjOU9POUp5Z3o3UFBTUTlXbVhLTXlmc2ZwV3RxOUlKaVRWMmRYUXZTcjg0ZHlEUEw3MTlmVnBCQlZLdnZyUHdUS2ljam9nWnhKQkpYakl0aU5COENNOTlZUFdLa0lVaUFYSjlwWDBKNmlMM1VsaVVDUjNmTTY2OWJCTGtJY3RpTUJwODNZOFlSWWRZd1dUWjJ2ODNHckE?oc=5",
+        "source": "MeinBezirk.at",
+        "pubDate": "2026-11-07"
+      },
+      {
+        "title": "PowerShareHome: Pilotprojekt erprobt Innovationen für Energiegemeinschaften",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNOFdPMUhrbmNiYUE1ZDB2bllweF84bmRDTWdxUGpMODkzcW45Sk1sR3pZVjVVRnhYb1hJZk0xNlY3bVFmWWFjSzRSaXpEclViRWItdGo3dlJhN0tmV1VjXy12aVc3ZUM3a1c0aTktekdWYWRGUDVPZ1BYMTFzS2Z0TVJFVmVSUmdaVWNwQnlZeFg4ZHFpOE91a1pDakJsT2xfWmZJdFB3VjNxaG5p?oc=5",
+        "source": "Ökonews",
+        "pubDate": "2026-11-07"
+      },
+      {
+        "title": "Fünf EU-Staaten fordern eine Beschleunigung des Energieabkommens mit Großbritannien vor dem Gipfel am 20. November",
+        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSDdGb2VtYVF2cEZYX0ZYREZSdUpXdVlDUjdCbTlRa3dLaURGdVI0blhxSHBDYXVwRy1KTXRSQ2ZWM2NCVjVyaGIwUFlpaUktci1kZmxKUkxjTjI0RWZvUEhIaWRnYWY0MkhZOGQtWTZENndmXzl5R2FVTmxtTkZxVzBIWUJKLUMwLW0xaUphU1BFUGhha1RWeFBBbmNlLVpnUUt1MkpnZFhsTHFEcnIyWTdPcDlYX3lD?oc=5",
+        "source": "Informat.ro",
+        "pubDate": "2026-11-07"
+      },
+      {
         "title": "Die EU ist führend bei Turbinen für die Wasserkraft – und doch von China abhängig. Wie kommt's?",
-        "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNVTU2QU1nS3FDU3EtTVdVdEItVmpfdHVSdTRlVDB6NFYza1RPRWlWcWU0MVJlMGhYaWVhQ3oyN0NXcG1HUEVZTWFBNHBwSmlHM202a2dHV1lfcER1SnMzOVhXci1JMmk4VXRGMnUtWW96a29uVFFkUUdXRWpMdERJVHZSMFBVX1htTGRKWENUVnBHaUllX3JiUzROOEljbTJ2MHozZGpfUEZqbmFnV2t0ekpxLTRXSV92aGZZa0JCUHBkSnZKWkV2VHJJVGRwaEtRaC0wY3VoOA?oc=5",
-        "source": "derStandard.de",
-        "pubDate": "2026-11-06"
-      },
-      {
-        "title": "SmartCity Baumgarten - ein Pionierprojekt",
-        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOQ3l6SUhBS2ZZME0xTTN0WXl4UTMteU9WNmFicWJWa0JuNTBEQVZRdWJETlZCbEh0ajMyZm5vMGtTejI1TVA0Umw3cUpOSUM0WnVJM0xvZm85YzdaSjhfSk1YZjkyQXplY0ZmU2pSOUhMMXNpQUJmX1Q2NWRITE9SRlRrSlRkZw?oc=5",
-        "source": "buildingtimes.at",
-        "pubDate": "2026-11-06"
-      },
-      {
-        "title": "Netzentgelte 2027: Bis zu 10 % weniger oder 21 % mehr",
-        "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPNGpSeFhQdnFHdmxkMzY5U3h2WGxYdHlLbWJtc0NNS2UydXlZVUFjYjc1WVZ1dy15bHVuQW9UOTNpM3hoQTRxUHVBT0syQlFlMXNkXy05NTZqX2NOcUVsV3BRUnRXZHMwWnExTzJNY0hKcW1Zb0JjaXZpcm9hbFRrX3JLTGliTmFwZGZJeQ?oc=5",
-        "source": "Wirtschaftsjournal",
+        "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPbXVLZmVCQVVCNjRHR1ZQODhtdjE2NDZfdjZYY2Q3MjM4N0oyaXNJenAwN0tiNTZ4WDlDeml2SHlLVXUzdXhxdjUxNERLYTRTZXZJdVRvc1cwS2FGUFZNWnBXeTRNOF9FSzNKbHZpWXVEREZaXzNLdzhDUXBFQWtPN0c2Q2dkRmd1QlNpM2RNdmFVUl9XOWx5elNYelhncUc5OU1ZZ05sOXFSY3JXUEhxWGVNYloxNTE3MTM0R0h0QmFyMlVQcmJnR2dWM2hhSmhrLTUyR25tUQ?oc=5",
+        "source": "Der Standard",
         "pubDate": "2026-11-06"
       },
       {
@@ -145,22 +151,16 @@
         "pubDate": "2026-11-06"
       },
       {
-        "title": "Fehlender Elektrifizierungskurs",
-        "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1INjYxTEdMLTNFNTFKZ0xiMWd4WC1aSTRRM3FoYk04WWRMblc2Qi1qU2MtejdfYTNIU2VSZlJJZkctT3V1TzNldTNxWHUyS3hKN2VremljMHVkQk5IWVl3aG1uZFBQRy1qMXJtV1lzTFV4ZlZKdDJQaEJBYw?oc=5",
-        "source": "buildingtimes.at",
-        "pubDate": "2026-11-05"
-      },
-      {
         "title": "Historische Trockenheit lässt Verbund-Gewinn einbrechen",
         "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNa3Jaem9xaWQ2Q18tczZHNDFEOUp4Y053eGRwSl9yZ3BxNGhOVmJ0ZGQzMWdfMTIxWEtkdGt3T0FlelctSUxBajBuUGF5WGVrVkd1ZHlocUdHR2JiemhuZ3FVUG5tY1pBbVhVUVdpVUpxWi1HY1FmSkg4Z3dlSlJfSTA3UnJHN1BqSXZYT3c4WDY1TkozRUl1VmIwYzhERV95QjVQSXBB?oc=5",
         "source": "Der Standard",
         "pubDate": "2026-11-05"
       },
       {
-        "title": "Herbert Diess: E-Autos als Stromspeicher und Chance für die Industrie",
-        "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQWlF4djZOcE0taTluMjQ5S2kwX3ZkYk51cUEzQTBCS2tjTUpfZmNNZjhEUXVCWGlrTzhvOFE4akZHNDNmTnFxcV9kSEZRYXVVb3U5aWVkNXBjUFVBRDBydjBNOEp3bHdpNWRUd29ZV25IZkFkaTJNNEcweU1CUk9mdEhGNnFwT01Ld09CaWRuSTVXR0QwY0N4MkxoVnY?oc=5",
-        "source": "Tuningblog",
-        "pubDate": "2026-11-05"
+        "title": "Energieversorgung: Wettbewerb: Wasserkraft aus Salzburg für ganz Österreich",
+        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQWkpkcWs1TGtjR2VlRFFYMGtBMklrUWNuZzNPZ1hqLV9Ba0tDMVAwcTNOREloTlNVcDRNVkRXN3dfUXlNckoxekliSXNCWTdKR1NRVkhTdzdFc1BEbmptZXYwd2lha0pFZTZuUFQ4bGFOWGlVbXZnckNiWmxyb2FPQW94bXJ4cXpmZlhZeVZlZXBtY3FBXzBtYm5GMkhhVTlxeGc?oc=5",
+        "source": "Wirtschaftsnachrichten Süd",
+        "pubDate": "2026-11-04"
       }
     ]
   },
