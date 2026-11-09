@@ -1,5 +1,13 @@
 [
   {
+    "title": "Ausbau der Stromnetze: Wettlauf um knappe Netzkapazitäten",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUXRvQW9sYV9GSE8zaGpYTy1xdTVSY0EyWnk4dnVoQUlOTDE1OWEzMWlmSUlsZTJldzVLR1M3VUZGdi1CaTcyZWZtbUFSZmFfODV1c2dxZlQyMVpDY1VfM2k3RnJxWXlrOEtrQ2hwTWc0VTRzZC1SaUswSGdRaDNhQjJtQjdJUmFkYzJjUkk5V1RBSG5VV2FZMVBYMS1zNEdlTkxYUHptRQ?oc=5",
+    "pubDate": "2026-11-09",
+    "source": "Der Standard",
+    "summary": "Ausbau der Stromnetze: Wettlauf um knappe Netzkapazitäten",
+    "category": "Österreich"
+  },
+  {
     "title": "Wasserkraft: Pumpspeicherkraftwerke lieferten 18 Prozent weniger Strom",
     "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5velFjYVlJU3pGRnYzYmdYRzBaY0VmNGszNXpPa3VITFdFV2VIdmdWZ3RSVzlKeVJaRlp1Y0x2X2gyWnhOd2V4WUFwQnk3Znls?oc=5",
     "pubDate": "2026-11-08",
@@ -37,14 +45,6 @@
     "pubDate": "2026-11-07",
     "source": "Ökonews",
     "summary": "PowerShareHome: Pilotprojekt erprobt Innovationen für Energiegemeinschaften",
-    "category": "EU"
-  },
-  {
-    "title": "Fünf EU-Staaten fordern eine Beschleunigung des Energieabkommens mit Großbritannien vor dem Gipfel am 20. November",
-    "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSDdGb2VtYVF2cEZYX0ZYREZSdUpXdVlDUjdCbTlRa3dLaURGdVI0blhxSHBDYXVwRy1KTXRSQ2ZWM2NCVjVyaGIwUFlpaUktci1kZmxKUkxjTjI0RWZvUEhIaWRnYWY0MkhZOGQtWTZENndmXzl5R2FVTmxtTkZxVzBIWUJKLUMwLW0xaUphU1BFUGhha1RWeFBBbmNlLVpnUUt1MkpnZFhsTHFEcnIyWTdPcDlYX3lD?oc=5",
-    "pubDate": "2026-11-07",
-    "source": "Informat.ro",
-    "summary": "Fünf EU-Staaten fordern eine Beschleunigung des Energieabkommens mit Großbritannien vor dem Gipfel am 20. November",
     "category": "EU"
   },
   {
@@ -168,6 +168,14 @@
     "category": "Österreich"
   },
   {
+    "title": "Wozu beschließt man in Brüssel Energiegesetze, wenn man sie zu Hause nicht umsetzt?",
+    "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNaXNzNjA2aUlLMmNob0hKaDdwbnVHazRSUjhtWGgwbFV6cmJPbzhfUWhBX1oyRWZlRl9hWTdOZGdncDJOeTllVy1YVm9iVURVM3BPeWdJVWpNT2RpSERZaVZkclVCU3NPNFFBQnJ2bGowVGhLbE1jSWREMzNjRS04dlp3enFnMXhtSnVUci1JcFl1a0N1MGFKbDdsYU5MTzRWZ2xOOHEyWQ?oc=5",
+    "pubDate": "2026-11-04",
+    "source": "DiePresse.com",
+    "summary": "Wozu beschließt man in Brüssel Energiegesetze, wenn man sie zu Hause nicht umsetzt?",
+    "category": "EU"
+  },
+  {
     "title": "WWF-Flüssereport",
     "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBVOGp6WFhEcnlacFBGUWNtcVBZWVRRNHNoLV9MNkRwVG9rNFBSRkg4RVB5eTd5Ymd3N2ZHbF9ETmZRWU1HbS04aWJ5Z2JYVk1iandRZlVkWk5DZEt6ZnFqUS1vSXZQTjB1Ujgw?oc=5",
     "pubDate": "2026-11-03",
@@ -214,6 +222,14 @@
     "source": "Wirtschaftsjournal",
     "summary": "Strompreis im Winter: Entwarnung von Experte Baminger",
     "category": "Wasserkraft"
+  },
+  {
+    "title": "Staatsschulden Österreich steigen auf 482 Milliarden",
+    "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPWnhqMFkzUF9QV1pKcnN6clFiTXg3MktxWEdzQkhrWDd1YWxhanFrOEpHRGp0aVJReXhCTkZ6djdwcWpwUjUwY0s0VGdWOFdPTjMwS0pWcDY0RU9nVXlXN3lHQjg4NWtVS3VnQ0IxUGJBbHRGLTJrOWwxbzdHM3V4Q3Vvd0pkZmJ4WHRvODFrWFlYTkk4UTJ2VDRIWndyeG5XNGc?oc=5",
+    "pubDate": "2026-11-03",
+    "source": "Wirtschaftsjournal",
+    "summary": "Staatsschulden Österreich steigen auf 482 Milliarden",
+    "category": "Markt"
   },
   {
     "title": "Strom statt Gas: Europas Energiebranche fordert faire Strompreise und mehr Elektrifizierung",
@@ -296,27 +312,11 @@
     "category": "Österreich"
   },
   {
-    "title": "Bulgarien wird Europas Batteriehub: 15 GWh Großspeicher im Strommarkt",
-    "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVGlyUlZYN1NtYUJsYnpGT1hiRFBSOW15UDRrUWFKY0gxblA3T05LZ29JbE0tWUFJQ29Td3JrMnlTMEV4M1hoU0d4a3plZy1fMHQ0UEFDckFJdGNuTElrcm1BYlFlV2hmSUFzZl9DcGpKX01vbHI1MUF3V0I4NTBFck5DY3h1R3poZlU3YnppQzFlRXFzazczN1V1RFFBeUhXYW5EU2ZXRnktbnpiVEx2bm5mNVNUMVhRLXc?oc=5",
+    "title": "Fehlende Windkraft verwehrt Strompreis-Entlastung",
+    "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPMzlxT2xKb3B1ZGh2ZnQtcUloSThXNm5fUVNtQWNOb2F6RXJlczUwcDNsRFBUb25IRExNY2dabDlLamJUbmpVbGFrS09nakZjRkJzYjVvNHJwaHFEYTZuT2NlRS0yR3RPWDhpV3BTVlMtMW1YVWQ3d2stN2ltWVF2bVFQdWtId0NZTTdHbEhzR2IzZHFoendoMktxOA?oc=5",
     "pubDate": "2026-10-30",
-    "source": "VDI nachrichten",
-    "summary": "Bulgarien wird Europas Batteriehub: 15 GWh Großspeicher im Strommarkt",
-    "category": "EU"
-  },
-  {
-    "title": "Zertifikatehandel: Ökostrom aus der Trickkiste",
-    "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBSZUpmOXlmcnZIa05tcllBSkh3WTd3cFpHZHpsN3RHa2lGY3hSM3h6N01ubzl3d0plRW5VcV9pRFZaTDFMUnRkY2t1V2Z4d25QNUc2VUhSQQ?oc=5",
-    "pubDate": "2026-10-29",
-    "source": "Konsument",
-    "summary": "Zertifikatehandel: Ökostrom aus der Trickkiste",
-    "category": "Wasserkraft"
-  },
-  {
-    "title": "Netzentgelte 2027 in Österreich: Leistungspreis kommt stufenweise",
-    "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVWpobFpGWE1ibTEtU28yblVnSi1RZEpwd3p2QlFxUFN1VjY1WUhfTGNNZVYwdXpBYkE2dVlTWnllZFZvZ0VRT1VjdW1sTEFyMjVBbW9FeHllakpXaU5uQ1VqVlJEbF9Vd1dwZzI0ajJjVU41UFplRjhSUzNDMmotSQ?oc=5",
-    "pubDate": "2026-10-29",
-    "source": "i-Magazin",
-    "summary": "Netzentgelte 2027 in Österreich: Leistungspreis kommt stufenweise",
-    "category": "Österreich"
+    "source": "energate messenger",
+    "summary": "Fehlende Windkraft verwehrt Strompreis-Entlastung",
+    "category": "Markt"
   }
 ]
