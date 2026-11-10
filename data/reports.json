@@ -1,5 +1,170 @@
 [
   {
+    "id": "report-2026-kw46",
+    "weekNumber": 46,
+    "year": 2026,
+    "title": "Wochenbericht KW 46/2026: Wasserkraft 422 GWh, Spotpreis Ø 295,74 €/MWh",
+    "dateGenerated": "2026-11-10",
+    "executiveSummary": "Im Zeitraum 03.11.2026–09.11.2026 erzeugten Österreichs Wasserkraftwerke 422,3 GWh – davon 268 GWh aus Laufwasserkraft und 154,3 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 50 %. Der Day-Ahead-Preis lag im Schnitt bei 295,74 €/MWh (Spanne 206,09 bis 632,10 €/MWh). Österreich war in Summe Netto-Importeur (226,6 GWh). Gegenüber dem Vorbericht: Wasserkraft +3 %, Spotpreis-Durchschnitt +3 %.",
+    "austriaHighlights": [
+      "Laufwasserkraft: 268 GWh, Tageswerte zwischen 31,4 GWh (08.11.2026) und 42,7 GWh (05.11.2026).",
+      "Spotmarkt: teuerster Tag 09.11.2026 (Ø 358,05 €/MWh), günstigster Tag 08.11.2026 (Ø 246,51 €/MWh).",
+      "Photovoltaik lieferte 56,5 GWh, Windkraft 106,3 GWh, Gaskraftwerke 363,4 GWh bei einem Verbrauch von 1 198,2 GWh.",
+      "Grenzflüsse aktuell: Saldo -1 403 MW (Netto-Import); größter Einzelfluss: Schweiz -1 810 MW (Import)."
+    ],
+    "internationalHighlights": [
+      "EnBW prüft neuen Strommarkt – EVN-Tochter E.GON betreut bereits rund 500 Energiegemeinschaften (Small Microcap, 08.11.2026)",
+      "PowerShareHome: Pilotprojekt erprobt Innovationen für Energiegemeinschaften (Ökonews, 07.11.2026)",
+      "Gasspeicher nur zu 75 Prozent gefüllt: Wird Europas Winter teuer? (Euronews.com, 06.11.2026)"
+    ],
+    "hydroDeepDive": {
+      "laufkraftTrend": "Im Mittel 38,3 GWh pro Tag (≈ 1 595 MW). Zweite gegenüber erster Wochenhälfte: -15 % – sinkende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 154,3 GWh, Pumpbetrieb 59,8 GWh. Die Preisspanne von 426,01 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 268 GWh gegenüber 271,8 GWh im Vorbericht (-1 %).",
+      "projektUpdates": [
+        "Streitkultur: Welche Zukunft hat die Wasserkraft in Kärnten? (ORF ON, 09.11.2026)",
+        "Pumpspeicherkraftwerke: 18 Prozent weniger Strom (science.ORF.at, 08.11.2026)",
+        "Die EU ist führend bei Turbinen für die Wasserkraft – und doch von China abhängig. Wie kommt's? (Der Standard, 06.11.2026)"
+      ]
+    },
+    "strategicTips": [
+      {
+        "topic": "Preisspitzen bedienen",
+        "recommendation": "Bei einer Preisspanne von 426,01 €/MWh (Minimum 206,09, Maximum 632,10 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "targetGroup": "Erzeuger"
+      },
+      {
+        "topic": "Wert von Flexibilität",
+        "recommendation": "Preisspanne 426,01 €/MWh und 59,8 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "targetGroup": "Investoren"
+      },
+      {
+        "topic": "Grenzkuppelstellen beobachten",
+        "recommendation": "Österreich war Netto-Importeur (226,6 GWh). Größter aktueller Fluss: Schweiz (-1 810 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "targetGroup": "Netzbetreiber"
+      }
+    ],
+    "periodStart": "2026-11-03",
+    "periodEnd": "2026-11-09",
+    "dataAsOf": "2026-11-10T05:15:00.000Z",
+    "generatedAt": "2026-11-10T07:21:14.762Z",
+    "generatedBy": "data",
+    "keyFigures": [
+      {
+        "label": "Wasserkraft gesamt (7 Tage)",
+        "value": "422,3 GWh"
+      },
+      {
+        "label": "Laufwasserkraft",
+        "value": "268 GWh"
+      },
+      {
+        "label": "Speicher- & Pumpspeicherturbinen",
+        "value": "154,3 GWh"
+      },
+      {
+        "label": "Pumpenergie (Speicherung)",
+        "value": "59,8 GWh"
+      },
+      {
+        "label": "Photovoltaik / Wind",
+        "value": "56,5 / 106,3 GWh"
+      },
+      {
+        "label": "Erneuerbaren-Anteil an der Erzeugung",
+        "value": "50 %"
+      },
+      {
+        "label": "Day-Ahead Ø (Min / Max)",
+        "value": "295,74 €/MWh (206,09 / 632,10)"
+      },
+      {
+        "label": "Stunden mit Negativpreisen",
+        "value": "0 h"
+      },
+      {
+        "label": "Netto-Import (7 Tage)",
+        "value": "226,6 GWh"
+      },
+      {
+        "label": "Momentaufnahme Wasserkraft",
+        "value": "4 487 MW (58 % der Last)"
+      },
+      {
+        "label": "Momentaufnahme Spotpreis",
+        "value": "487,86 €/MWh"
+      }
+    ],
+    "totals": {
+      "laufkraftGWh": 268,
+      "speicherGWh": 154.3,
+      "pumpenGWh": 59.8,
+      "pvGWh": 56.5,
+      "windGWh": 106.3,
+      "biomasseGWh": 35.2,
+      "gasGWh": 363.4,
+      "loadGWh": 1198.2,
+      "renewableGWh": 506.5,
+      "totalGenerationGWh": 1004.2,
+      "renewableSharePercent": 50,
+      "priceAvg": 295.74,
+      "priceMin": 206.09,
+      "priceMax": 632.1,
+      "negativePriceHours": 0,
+      "netExportGWh": -226.6
+    },
+    "newsSources": [
+      {
+        "title": "Wie günstig der neue Stromtarif von Post und Verbund wirklich ist",
+        "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQdFRrU1lGOV9Jbk8zNTU4N0pLZjZDbkNkUjJGNllCOHlLdGFmdUJkUHhUUWwzUUEtXzQ1UHBTV2dPTGtmY2tfX3pFZzZGUWxXUmdsajNRRWlHVTd6ei1VUVhQWWw5Slo2amIzb09kc21VbnZOQ0R1YmVZS2kteGY3YnNMWDJSVy1pYWF4UG00bllDLWVZaHlOTG1nY0xRYVY4UFJzS1NfMEFHSzNuT3k2ZXdmUQ?oc=5",
+        "source": "Der Standard",
+        "pubDate": "2026-11-10"
+      },
+      {
+        "title": "Streitkultur: Welche Zukunft hat die Wasserkraft in Kärnten?",
+        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQREZjRW5NZTRLY2pFYWhHVXBLYlBRZHV1MnVEYlBuMDZXWHFYSElYbTBORVp2aWZEd2NVaFpTY3VHQlB1c2Zxa3FZZHRJRmc2dFhmdVZwckpDS0sxWTVibXlpNFZrelVOaHRJa215MUcxdWNDUnFYVHFwV2xGODBNcXR1SDZJbUc5TUNhU3Y1MGhKZTV5WmJz?oc=5",
+        "source": "ORF ON",
+        "pubDate": "2026-11-09"
+      },
+      {
+        "title": "Arbeiterkammer Kärnten: Das bieten die AK-Bibliotheken in Kärnten",
+        "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU0xXaWEybEUxNVhpRy05V1NiaHZJUjJXTmk0NVZEaTBwVGVncXdHRW5aTEloZ2h4NFBNTzlKb3RkYk1KLS1nM0NLTnVkZHpOQnpoQU5uM3NLMFNuSUUyaDd2cVdIQjh2RDJjUW50VU5IN1lHTV9DV0RoVkFxZnd1VlFzd2JmUnBxek5aWnlOZkhCTGxFYldCUncxd2I3XzlE?oc=5",
+        "source": "ORF ON",
+        "pubDate": "2026-11-09"
+      },
+      {
+        "title": "Nordex Group erschließt albanischen Markt mit 84-MW-Auftrag von Verbund",
+        "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1XemM4Tkw3U3ZURFJZa2FHUGJDNm1TSjZsNHpieVl2aU5Na1lfSlpuZW8yNnNyUHZpYzdCU3ZpaUo1Q2VQU0k2bWhaYW1WMFd3MlBoTlg4M09HLUV0b0JDVHhR?oc=5",
+        "source": "TradingView",
+        "pubDate": "2026-11-09"
+      },
+      {
+        "title": "POST ENERGIE POWERED BY VERBUND: Neues Strom- und Gasangebot für Österreich",
+        "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPQS1MR0puRnlXZjlqRFRDODFmQ0pMSWVDQ09uWE5hUUJSR1hpcEc1ckltNmhTbVJCdWRXS2QtVG1WaXRyZVRhUXhlLTFEOVRKU2VtWnJHVjJYemtFZ3VaNDNhdkZndXJJQWFXN2FkUlBmZUpOb1U5bmRoNDhFakQteFJZZlFpUGlYRHptQlRtZjNSWGRaRFprUlV3eURTZnZobjMxbVhMNGNKUWFWaVFmQVdITzB2ZEVGOFZUdjdBODJSQlFQcVNDWmxrNng?oc=5",
+        "source": "OTS.at",
+        "pubDate": "2026-11-09"
+      },
+      {
+        "title": "Was er kosten soll - Post bietet jetzt eigenen Strom- und Gastarif an",
+        "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBxZlowcWFPNDAxbldVWDd6ZXE0ZnNhTG5pb2tWcjY1el9aMll5anEwaU8yZW9WSkstS2ltQ1JDS0o5dw?oc=5",
+        "source": "Kronen Zeitung",
+        "pubDate": "2026-11-09"
+      },
+      {
+        "title": "Post vertreibt nun Strom und Gas vom Verbund",
+        "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNRnM5TXA3bEFwNGJHVlpyR2Zsc0F5N0NKVDJRQlVBc0UzUGVFYS1YZ3dYUjc3eUpKS0J4Y2pBUXZvdkw3QXFJUFBvNDFsNk5QZGFDcXZGdW51NTZDMVItYUJDdDRuYU1fV1MxS1FhNFlDV3JVUmVSRXl4d3VkNWJpRnIyWmFEODAwSU14dGUyTGh5cFRnWGRZLVdTbVU?oc=5",
+        "source": "Salzburger Nachrichten",
+        "pubDate": "2026-11-09"
+      },
+      {
+        "title": "Strom und Gas am Postschalter: Das neue Post-Angebot",
+        "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNNnpBc0dtWGNsb0d1TzlPWG9pRnE3Vm04ZEp6dkdSM1RYdVFLb196ellDOFFZN3BZZUltajFKclgxMkMwek1ITlc0QVZSNkpvYkx3X2UwY3p5Ny1wQlNOSWx3WlI1TnRPSVc0TU44LVR3Slk1ZFBzejBYdTZYTk9tS1ZpcFBMRDFmRjhnVlVqdXRoMGZmX3FzcjBXTEprTmM?oc=5",
+        "source": "5 Minuten",
+        "pubDate": "2026-11-09"
+      }
+    ]
+  },
+  {
     "id": "report-2026-kw45",
     "weekNumber": 45,
     "year": 2026,
