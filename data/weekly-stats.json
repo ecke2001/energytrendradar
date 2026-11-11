@@ -1,7 +1,7 @@
 {
   "periodStart": "2026-11-04",
   "periodEnd": "2026-11-10",
-  "generatedAt": "2026-11-11T06:25:55.102Z",
+  "generatedAt": "2026-11-11T19:37:44.021Z",
   "days": [
     {
       "date": "2026-11-04",
@@ -20,7 +20,7 @@
       "priceMin": 236.53,
       "priceMax": 360.55,
       "negativePriceHours": 0,
-      "netExportGWh": -34.7
+      "netExportGWh": -34.6
     },
     {
       "date": "2026-11-05",
@@ -107,7 +107,7 @@
       "windGWh": 18.4,
       "biomasseGWh": 5.2,
       "gasGWh": 51.4,
-      "loadGWh": 183.4,
+      "loadGWh": 183.5,
       "renewableGWh": 86,
       "totalGenerationGWh": 177.1,
       "renewableSharePercent": 49,
@@ -119,17 +119,17 @@
     },
     {
       "date": "2026-11-10",
-      "laufkraftGWh": 314,
-      "speicherGWh": 441.9,
-      "pumpenGWh": 4.6,
-      "pvGWh": 71.2,
+      "laufkraftGWh": 46,
+      "speicherGWh": 46,
+      "pumpenGWh": 4.8,
+      "pvGWh": 2.2,
       "windGWh": 20.2,
       "biomasseGWh": 5.3,
-      "gasGWh": 401,
+      "gasGWh": 52.1,
       "loadGWh": 188.9,
-      "renewableGWh": 523.5,
-      "totalGenerationGWh": 1256.6,
-      "renewableSharePercent": 42,
+      "renewableGWh": 87,
+      "totalGenerationGWh": 174.7,
+      "renewableSharePercent": 50,
       "priceAvg": 378.15,
       "priceMin": 211.75,
       "priceMax": 521.45,
@@ -138,21 +138,21 @@
     }
   ],
   "totals": {
-    "laufkraftGWh": 546.3,
-    "speicherGWh": 577.9,
-    "pumpenGWh": 58.9,
-    "pvGWh": 125.1,
+    "laufkraftGWh": 278.3,
+    "speicherGWh": 182,
+    "pumpenGWh": 59.1,
+    "pvGWh": 56.1,
     "windGWh": 99.1,
     "biomasseGWh": 35.4,
-    "gasGWh": 715.8,
-    "loadGWh": 1211.5,
-    "renewableGWh": 957.2,
-    "totalGenerationGWh": 2120.1,
-    "renewableSharePercent": 45,
+    "gasGWh": 366.9,
+    "loadGWh": 1211.6,
+    "renewableGWh": 520.7,
+    "totalGenerationGWh": 1038.2,
+    "renewableSharePercent": 50,
     "priceAvg": 307.23,
     "priceMin": 206.09,
     "priceMax": 632.1,
     "negativePriceHours": 0,
-    "netExportGWh": -212.8
+    "netExportGWh": -212.7
   }
 }
