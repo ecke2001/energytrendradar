@@ -1,267 +1,15 @@
 {
   "unit": "EUR / MWh",
-  "currentPrice": 301.99,
-  "currentSlotStart": 1794339900,
+  "currentPrice": 356.17,
+  "currentSlotStart": 1794377700,
   "resolutionMinutes": 15,
-  "avg24h": 383.01,
-  "min24h": 230,
+  "avg24h": 372.59,
+  "min24h": 211.75,
   "max24h": 521.45,
   "negativePriceHours24h": 0,
-  "nextDayAvg": 347.6,
+  "nextDayAvg": null,
   "dataUntil": 1794437100,
   "series": [
-    {
-      "timestamp": 1794254400,
-      "time": "09.11. 21:00",
-      "price": 355.66,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794255300,
-      "time": "09.11. 21:15",
-      "price": 340.64,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794256200,
-      "time": "09.11. 21:30",
-      "price": 327.91,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794257100,
-      "time": "09.11. 21:45",
-      "price": 295.55,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794258000,
-      "time": "09.11. 22:00",
-      "price": 331.11,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794258900,
-      "time": "09.11. 22:15",
-      "price": 315.64,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794259800,
-      "time": "09.11. 22:30",
-      "price": 300,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794260700,
-      "time": "09.11. 22:45",
-      "price": 284.1,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794261600,
-      "time": "09.11. 23:00",
-      "price": 280.3,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794262500,
-      "time": "09.11. 23:15",
-      "price": 259.97,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794263400,
-      "time": "09.11. 23:30",
-      "price": 246.55,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794264300,
-      "time": "09.11. 23:45",
-      "price": 230,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794265200,
-      "time": "10.11. 00:00",
-      "price": 296.93,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794266100,
-      "time": "10.11. 00:15",
-      "price": 294.16,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794267000,
-      "time": "10.11. 00:30",
-      "price": 294.54,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794267900,
-      "time": "10.11. 00:45",
-      "price": 284.7,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794268800,
-      "time": "10.11. 01:00",
-      "price": 301.97,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794269700,
-      "time": "10.11. 01:15",
-      "price": 292.65,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794270600,
-      "time": "10.11. 01:30",
-      "price": 284.98,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794271500,
-      "time": "10.11. 01:45",
-      "price": 289.78,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794272400,
-      "time": "10.11. 02:00",
-      "price": 293.18,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794273300,
-      "time": "10.11. 02:15",
-      "price": 291.94,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794274200,
-      "time": "10.11. 02:30",
-      "price": 294.1,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794275100,
-      "time": "10.11. 02:45",
-      "price": 291.55,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794276000,
-      "time": "10.11. 03:00",
-      "price": 284.99,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794276900,
-      "time": "10.11. 03:15",
-      "price": 291.05,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794277800,
-      "time": "10.11. 03:30",
-      "price": 290.32,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794278700,
-      "time": "10.11. 03:45",
-      "price": 292.51,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794279600,
-      "time": "10.11. 04:00",
-      "price": 310.47,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794280500,
-      "time": "10.11. 04:15",
-      "price": 313.87,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794281400,
-      "time": "10.11. 04:30",
-      "price": 305.18,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794282300,
-      "time": "10.11. 04:45",
-      "price": 312.1,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794283200,
-      "time": "10.11. 05:00",
-      "price": 292.33,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794284100,
-      "time": "10.11. 05:15",
-      "price": 295.35,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794285000,
-      "time": "10.11. 05:30",
-      "price": 308.89,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794285900,
-      "time": "10.11. 05:45",
-      "price": 315.19,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794286800,
-      "time": "10.11. 06:00",
-      "price": 301.24,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794287700,
-      "time": "10.11. 06:15",
-      "price": 336.95,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794288600,
-      "time": "10.11. 06:30",
-      "price": 372.15,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794289500,
-      "time": "10.11. 06:45",
-      "price": 396.76,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794290400,
-      "time": "10.11. 07:00",
-      "price": 418.24,
-      "isFuture": false
-    },
-    {
-      "timestamp": 1794291300,
-      "time": "10.11. 07:15",
-      "price": 448.62,
-      "isFuture": false
-    },
     {
       "timestamp": 1794292200,
       "time": "10.11. 07:30",
@@ -590,253 +338,253 @@
       "timestamp": 1794340800,
       "time": "10.11. 21:00",
       "price": 321.13,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794341700,
       "time": "10.11. 21:15",
       "price": 301.98,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794342600,
       "time": "10.11. 21:30",
       "price": 279.04,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794343500,
       "time": "10.11. 21:45",
       "price": 253.54,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794344400,
       "time": "10.11. 22:00",
       "price": 276.24,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794345300,
       "time": "10.11. 22:15",
       "price": 255,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794346200,
       "time": "10.11. 22:30",
       "price": 250,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794347100,
       "time": "10.11. 22:45",
       "price": 236.9,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794348000,
       "time": "10.11. 23:00",
       "price": 257.98,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794348900,
       "time": "10.11. 23:15",
       "price": 231.57,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794349800,
       "time": "10.11. 23:30",
       "price": 226.11,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794350700,
       "time": "10.11. 23:45",
       "price": 211.75,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794351600,
       "time": "11.11. 00:00",
       "price": 235.32,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794352500,
       "time": "11.11. 00:15",
       "price": 276.44,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794353400,
       "time": "11.11. 00:30",
       "price": 274.83,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794354300,
       "time": "11.11. 00:45",
       "price": 293.42,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794355200,
       "time": "11.11. 01:00",
       "price": 268.34,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794356100,
       "time": "11.11. 01:15",
       "price": 289.46,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794357000,
       "time": "11.11. 01:30",
       "price": 298.97,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794357900,
       "time": "11.11. 01:45",
       "price": 298.93,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794358800,
       "time": "11.11. 02:00",
       "price": 298.95,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794359700,
       "time": "11.11. 02:15",
       "price": 298.93,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794360600,
       "time": "11.11. 02:30",
       "price": 298.93,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794361500,
       "time": "11.11. 02:45",
       "price": 294.59,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794362400,
       "time": "11.11. 03:00",
       "price": 298.9,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794363300,
       "time": "11.11. 03:15",
       "price": 289.57,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794364200,
       "time": "11.11. 03:30",
       "price": 290.7,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794365100,
       "time": "11.11. 03:45",
       "price": 276.51,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794366000,
       "time": "11.11. 04:00",
       "price": 276.34,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794366900,
       "time": "11.11. 04:15",
       "price": 275.3,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794367800,
       "time": "11.11. 04:30",
       "price": 264.2,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794368700,
       "time": "11.11. 04:45",
       "price": 283.82,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794369600,
       "time": "11.11. 05:00",
       "price": 298.17,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794370500,
       "time": "11.11. 05:15",
       "price": 296.34,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794371400,
       "time": "11.11. 05:30",
       "price": 313.43,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794372300,
       "time": "11.11. 05:45",
       "price": 331.52,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794373200,
       "time": "11.11. 06:00",
       "price": 265.74,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794374100,
       "time": "11.11. 06:15",
       "price": 328.9,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794375000,
       "time": "11.11. 06:30",
       "price": 329.92,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794375900,
       "time": "11.11. 06:45",
       "price": 329.99,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794376800,
       "time": "11.11. 07:00",
       "price": 329.98,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794377700,
       "time": "11.11. 07:15",
       "price": 356.17,
-      "isFuture": true
+      "isFuture": false
     },
     {
       "timestamp": 1794378600,
