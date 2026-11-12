@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChatMessage } from '@/lib/types';
 import { buildAdvisorAnswer } from '@/lib/advisorFallback';
+import SimpleMarkdown from '@/components/SimpleMarkdown';
 import { Bot, User, Send, Sparkles, HelpCircle, ShieldCheck, Zap } from 'lucide-react';
 
 const SUGGESTED_PROMPTS = [
@@ -18,7 +19,7 @@ export default function AdvisorPage() {
       id: 'msg-welcome',
       sender: 'agent',
       text: 'Grüß Gott! Ich bin dein **Energy Strategy Advisor**. Meine Antworten stützen sich auf die aktuellen Messdaten des Dashboards (Erzeugung, Spotpreise, Grenzflüsse).\n\nWie kann ich dir bei deiner Strategie im Bereich Erneuerbare & Wasserkraft helfen?',
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      timestamp: '' // no build-time clock value in the static HTML (hydration)
     }
   ]);
   const [inputQuestion, setInputQuestion] = useState('');
@@ -129,11 +130,11 @@ export default function AdvisorPage() {
                   className={`max-w-[82%] p-4 rounded-2xl text-xs sm:text-sm leading-relaxed ${
                     isUser
                       ? 'bg-cyan-500/20 border border-cyan-500/30 text-white rounded-tr-none'
-                      : 'bg-slate-900/80 border border-slate-800 text-slate-200 rounded-tl-none whitespace-pre-wrap'
+                      : 'bg-slate-900/80 border border-slate-800 text-slate-200 rounded-tl-none'
                   }`}
                 >
-                  <div>{msg.text}</div>
-                  <div className="text-[10px] opacity-40 text-right mt-1.5">{msg.timestamp}</div>
+                  {isUser ? <div className="whitespace-pre-wrap">{msg.text}</div> : <SimpleMarkdown text={msg.text} />}
+                  {msg.timestamp && <div className="text-[10px] opacity-40 text-right mt-1.5">{msg.timestamp}</div>}
                 </div>
               </div>
             );

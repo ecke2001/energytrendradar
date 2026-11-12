@@ -11,6 +11,8 @@ import TrendCard from '@/components/TrendCard';
 import { MOCK_TRENDS } from '@/lib/mockData';
 import { generationData, spotPriceData, crossBorderData, latestReport, getLastUpdatedText, formatDataTime, formatShortTime } from '@/lib/dataLoader';
 import { formatDateKey } from '@/lib/time';
+import { usePriceNow } from '@/lib/usePriceNow';
+import { priceWindowLabel } from '@/lib/priceNow';
 import { Region, Sector } from '@/lib/types';
 import {
   Activity,
@@ -33,6 +35,7 @@ export default function DashboardPage() {
 
   const snapshot = generationData.latestSnapshot;
   const spotPrice = spotPriceData;
+  const priceNow = usePriceNow();
   const cb = crossBorderData;
   const lastUpdated = getLastUpdatedText();
 
@@ -110,13 +113,13 @@ export default function DashboardPage() {
               <Euro className="w-4 h-4 text-amber-400" />
               Day-Ahead Spotpreis
             </span>
-            <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-mono">{formatShortTime(spotPrice?.currentSlotStart)}</span>
+            <span className="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded font-mono">{formatShortTime(priceNow.slotStart)}</span>
           </div>
           <div className="text-2xl sm:text-3xl font-extrabold text-amber-400 font-heading">
-            {spotPrice?.currentPrice?.toFixed(2) || '---'} <span className="text-sm font-normal text-amber-200">€/MWh</span>
+            {priceNow.price !== null ? priceNow.price.toFixed(2) : '---'} <span className="text-sm font-normal text-amber-200">€/MWh</span>
           </div>
           <div className="text-xs text-slate-400 mt-1">
-            24h Ø Schnitt: {spotPrice?.avg24h?.toFixed(2) || '---'} €/MWh
+            {priceWindowLabel(spotPrice)} Ø Schnitt: {spotPrice?.avg24h?.toFixed(2) || '---'} €/MWh
           </div>
         </div>
 
