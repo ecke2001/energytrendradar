@@ -1,5 +1,168 @@
 [
   {
+    "id": "report-2026-kw47",
+    "weekNumber": 47,
+    "year": 2026,
+    "title": "Wochenbericht KW 47/2026: Wasserkraft 429 GWh, Spotpreis Ø 264,05 €/MWh",
+    "dateGenerated": "2026-11-17",
+    "executiveSummary": "Im Zeitraum 10.11.2026–16.11.2026 erzeugten Österreichs Wasserkraftwerke 428,5 GWh – davon 304,7 GWh aus Laufwasserkraft und 123,8 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 63 %. Der Day-Ahead-Preis lag im Schnitt bei 264,05 €/MWh (Spanne 113,91 bis 521,45 €/MWh). Österreich war in Summe Netto-Importeur (254,7 GWh). Gegenüber dem Vorbericht: Wasserkraft -8 %, Spotpreis-Durchschnitt -6 %.",
+    "austriaHighlights": [
+      "Laufwasserkraft: 304,7 GWh, Tageswerte zwischen 34,5 GWh (15.11.2026) und 49 GWh (13.11.2026).",
+      "Spotmarkt: teuerster Tag 10.11.2026 (Ø 378,15 €/MWh), günstigster Tag 15.11.2026 (Ø 175,03 €/MWh).",
+      "Photovoltaik lieferte 32,8 GWh, Windkraft 228,7 GWh, Gaskraftwerke 275,1 GWh bei einem Verbrauch von 1 231,9 GWh.",
+      "Grenzflüsse aktuell: Saldo -1 432 MW (Netto-Import); größter Einzelfluss: Tschechien -1 952 MW (Import)."
+    ],
+    "internationalHighlights": [
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 17.11.2026)",
+      "EU-Winterausblick 2026/27: Was der Strombericht für Deutschland sagt (Netz Trends, 16.11.2026)",
+      "Warum Strom in Deutschland schmutzig und teuer ist – alle Zahlen, täglich aktualisiert (Neue Zürcher Zeitung, 13.11.2026)"
+    ],
+    "hydroDeepDive": {
+      "laufkraftTrend": "Im Mittel 43,5 GWh pro Tag (≈ 1 814 MW). Zweite gegenüber erster Wochenhälfte: -13 % – sinkende Wasserführung.",
+      "pumpspeicherStatus": "Turbinenbetrieb 123,8 GWh, Pumpbetrieb 75,5 GWh. Die Preisspanne von 407,54 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 304,7 GWh gegenüber 302,9 GWh im Vorbericht (+1 %).",
+      "projektUpdates": [
+        "Keine neuen Projektmeldungen in den Nachrichten des Berichtszeitraums."
+      ]
+    },
+    "strategicTips": [
+      {
+        "topic": "Preisspitzen bedienen",
+        "recommendation": "Bei einer Preisspanne von 407,54 €/MWh (Minimum 113,91, Maximum 521,45 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "targetGroup": "Erzeuger"
+      },
+      {
+        "topic": "Wert von Flexibilität",
+        "recommendation": "Preisspanne 407,54 €/MWh und 75,5 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "targetGroup": "Investoren"
+      },
+      {
+        "topic": "Grenzkuppelstellen beobachten",
+        "recommendation": "Österreich war Netto-Importeur (254,7 GWh). Größter aktueller Fluss: Tschechien (-1 952 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "targetGroup": "Netzbetreiber"
+      }
+    ],
+    "periodStart": "2026-11-10",
+    "periodEnd": "2026-11-16",
+    "dataAsOf": "2026-11-17T05:45:00.000Z",
+    "generatedAt": "2026-11-17T07:57:14.774Z",
+    "generatedBy": "data",
+    "keyFigures": [
+      {
+        "label": "Wasserkraft gesamt (7 Tage)",
+        "value": "428,5 GWh"
+      },
+      {
+        "label": "Laufwasserkraft",
+        "value": "304,7 GWh"
+      },
+      {
+        "label": "Speicher- & Pumpspeicherturbinen",
+        "value": "123,8 GWh"
+      },
+      {
+        "label": "Pumpenergie (Speicherung)",
+        "value": "75,5 GWh"
+      },
+      {
+        "label": "Photovoltaik / Wind",
+        "value": "32,8 / 228,7 GWh"
+      },
+      {
+        "label": "Erneuerbaren-Anteil an der Erzeugung",
+        "value": "63 %"
+      },
+      {
+        "label": "Day-Ahead Ø (Min / Max)",
+        "value": "264,05 €/MWh (113,91 / 521,45)"
+      },
+      {
+        "label": "Stunden mit Negativpreisen",
+        "value": "0 h"
+      },
+      {
+        "label": "Netto-Import (7 Tage)",
+        "value": "254,7 GWh"
+      },
+      {
+        "label": "Momentaufnahme Wasserkraft",
+        "value": "1 958 MW (24 % der Last)"
+      },
+      {
+        "label": "Momentaufnahme Spotpreis",
+        "value": "272,64 €/MWh"
+      }
+    ],
+    "totals": {
+      "laufkraftGWh": 304.7,
+      "speicherGWh": 123.8,
+      "pumpenGWh": 75.5,
+      "pvGWh": 32.8,
+      "windGWh": 228.7,
+      "biomasseGWh": 40.3,
+      "gasGWh": 275.1,
+      "loadGWh": 1231.9,
+      "renewableGWh": 647.4,
+      "totalGenerationGWh": 1025.7,
+      "renewableSharePercent": 63,
+      "priceAvg": 264.05,
+      "priceMin": 113.91,
+      "priceMax": 521.45,
+      "negativePriceHours": 0,
+      "netExportGWh": -254.7
+    },
+    "newsSources": [
+      {
+        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
+        "source": "DIE ZEIT",
+        "pubDate": "2026-11-17"
+      },
+      {
+        "title": "Strom statt Öl und Gas: Türkei prescht bei Klimakonferenz vor",
+        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOeWNpLWVuUlFLQmZ0SlA3X2VGNmluZUk5dnlpN1ppVkVGZ0YwTE5nT3Vza1ZicnpZZWRMNy0xanZOS2JEWFEtQlJXa2huOWRRU2hfYlZjWUgtZGZfVjVYaGo2WjNjV1Bsb0dQcVdkVkdQQVRIQXBIWl9xRldoT3UwT2pqdXV6YUZLQzhMemo2bWF6R3BtMmtZYm5CbjlKalBENlJvZm9WZmRNcEJG?oc=5",
+        "source": "Energynewsmagazine",
+        "pubDate": "2026-11-16"
+      },
+      {
+        "title": "VERBUND AG: VERBUND platziert zweiten European Green Bond 2026 über 600 Millionen Euro",
+        "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9ZbHFoOE5maTducnZUWUVicEdPUVFCcy1pUG5TY2VlaWxlZ2N5MUxQekJzenVSaFJ3V3dwaVNBTDJjNDViOTdJRVNCQm1nR2FnUTZqSzljVUVwYlA2RGQtTXp3?oc=5",
+        "source": "TradingView",
+        "pubDate": "2026-11-16"
+      },
+      {
+        "title": "Überhöhter Regelstrom-Preis: Behörde E-Control verhängt Strafen",
+        "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbUlEZDVCTmdKcHFfb19FMHl0Y2pyN2xiZEcyWXd2TE9QM2h4d0o3a3VSM0hBMFBFc3RTODFBRHV0MDh0N2Zwclpad2o1UTBNU2p0c2NSOTV6c0lTS1FTMUlMd3JXclcyYjlWbUp2cHRTMFdOeTFXalNQcjViNGl2dmNLWHV0RkxBWnJyU0dkeWF0TWpDMFNCWlJOWWFSdVB0OThINkR0ckR0NlBLcER0Ty1R?oc=5",
+        "source": "Kleine Zeitung",
+        "pubDate": "2026-11-16"
+      },
+      {
+        "title": "Der Kommunismus hat Esten beim Strompreis flexibler gemacht",
+        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPdF9iWFh1UTRRYWVCWXlCRHRrejAxVFBBYjV2ZTdWNkx4WFppaEpQTnItQ1AtaHhoVTlTX0N1ZXlKYkUzdHMzSTlKZ2pzWklqODBGNzhRbFhBbUpHR1lSeEtSdDFCSU9RX05rejR1SE05cWFFUVFQV1N0R0R0T2tWeTZuY0tUeDlsVnMzVEZEWl9UaFB2MXBmVEhvUGVqVTRGbTN3?oc=5",
+        "source": "Kurier",
+        "pubDate": "2026-11-16"
+      },
+      {
+        "title": "EU-Winterausblick 2026/27: Was der Strombericht für Deutschland sagt",
+        "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOckNUZGZ4OXNTekxPZWhYYlEtd1lUVXBrTGFibXFySkJVMllMLXhreTExa211aVlkVjNtZFktcDdpZ3k5d3JCQ3p4dGU1SVljdnNXTkpEOFdnalBpSWFMT05mVDlxYnA4aUJOaU9SblZ1MURrWVVHdHo3MUgyQ3owdEp0V3YtMVpJblFmY05xRWJrY0x2ZFNTWFVBbnE?oc=5",
+        "source": "Netz Trends",
+        "pubDate": "2026-11-16"
+      },
+      {
+        "title": "Elektrifizierung: Österreichs „enormer Vorteil“",
+        "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTE9COHJ3bjUzS3l5RnFjaHA4REYzd2o5MDM5U3hTTUdscTB2OExLV3FCSlA3N1dpWjIwQW93ekw2eGpMcUhMZVE?oc=5",
+        "source": "ORF",
+        "pubDate": "2026-11-14"
+      },
+      {
+        "title": "ZIB Magazin Klima",
+        "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9zNjM5a2piRWtFeERDNTBhTkpPN3pSQmRoaDIzeFFDX1NMcWNqeU9oX0I5WG9kTG1Rdk9LVEY5b016bDJ0eEJtLXA1d18xOWdNSGlhcDNjQmJzSlhTMkVJ?oc=5",
+        "source": "ORF ON",
+        "pubDate": "2026-11-14"
+      }
+    ]
+  },
+  {
     "id": "report-2026-kw46",
     "weekNumber": 46,
     "year": 2026,
