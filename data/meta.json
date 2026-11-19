@@ -1,7 +1,7 @@
 {
-  "lastUpdated": "2026-11-18T20:33:40.272Z",
-  "lastUpdatedFormatted": "18.11.2026, 21:33",
-  "dataAsOf": "2026-11-18T18:45:00.000Z",
+  "lastUpdated": "2026-11-19T07:28:37.639Z",
+  "lastUpdatedFormatted": "19.11.2026, 08:28",
+  "dataAsOf": "2026-11-19T05:00:00.000Z",
   "version": "3.0.0",
   "sources": [
     {
@@ -21,33 +21,33 @@
   "sourceStatus": {
     "generation": {
       "ok": true,
-      "lastAttempt": "2026-11-18T20:33:40.272Z",
-      "lastSuccess": "2026-11-18T20:33:40.272Z",
-      "dataUntil": "2026-11-18T18:45:00.000Z"
+      "lastAttempt": "2026-11-19T07:28:37.639Z",
+      "lastSuccess": "2026-11-19T07:28:37.639Z",
+      "dataUntil": "2026-11-19T05:00:00.000Z"
     },
     "prices": {
       "ok": true,
-      "lastAttempt": "2026-11-18T20:33:40.272Z",
-      "lastSuccess": "2026-11-18T20:33:40.272Z",
-      "dataUntil": "2026-11-18T20:30:00.000Z"
+      "lastAttempt": "2026-11-19T07:28:37.639Z",
+      "lastSuccess": "2026-11-19T07:28:37.639Z",
+      "dataUntil": "2026-11-19T07:15:00.000Z"
     },
     "crossBorder": {
       "ok": true,
-      "lastAttempt": "2026-11-18T20:33:40.272Z",
-      "lastSuccess": "2026-11-18T20:33:40.272Z",
-      "dataUntil": "2026-11-18T17:45:00.000Z"
+      "lastAttempt": "2026-11-19T07:28:37.639Z",
+      "lastSuccess": "2026-11-19T07:28:37.639Z",
+      "dataUntil": "2026-11-19T05:00:00.000Z"
     },
     "weeklyStats": {
       "ok": true,
-      "lastAttempt": "2026-11-18T20:33:40.272Z",
-      "lastSuccess": "2026-11-18T20:33:40.272Z",
-      "dataUntil": "2026-11-17"
+      "lastAttempt": "2026-11-19T07:28:37.639Z",
+      "lastSuccess": "2026-11-19T07:28:37.639Z",
+      "dataUntil": "2026-11-18"
     },
     "news": {
       "ok": true,
-      "lastAttempt": "2026-11-18T20:33:40.272Z",
-      "lastSuccess": "2026-11-18T20:33:40.272Z",
-      "dataUntil": "2026-11-18"
+      "lastAttempt": "2026-11-19T07:28:37.639Z",
+      "lastSuccess": "2026-11-19T07:28:37.639Z",
+      "dataUntil": "2026-11-19"
     }
   },
   "warnings": []
