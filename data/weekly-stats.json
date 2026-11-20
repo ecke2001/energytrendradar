@@ -1,7 +1,7 @@
 {
   "periodStart": "2026-11-13",
   "periodEnd": "2026-11-19",
-  "generatedAt": "2026-11-20T07:18:55.282Z",
+  "generatedAt": "2026-11-20T20:23:36.781Z",
   "days": [
     {
       "date": "2026-11-13",
@@ -20,7 +20,7 @@
       "priceMin": 138.28,
       "priceMax": 266.22,
       "negativePriceHours": 0,
-      "netExportGWh": -23.2
+      "netExportGWh": -23.1
     },
     {
       "date": "2026-11-14",
@@ -107,7 +107,7 @@
       "windGWh": 48.9,
       "biomasseGWh": 6.4,
       "gasGWh": 39.3,
-      "loadGWh": 184.9,
+      "loadGWh": 185.4,
       "renewableGWh": 107.3,
       "totalGenerationGWh": 151.6,
       "renewableSharePercent": 71,
@@ -119,17 +119,17 @@
     },
     {
       "date": "2026-11-19",
-      "laufkraftGWh": 38.5,
-      "speicherGWh": 7.4,
-      "pumpenGWh": 7.1,
-      "pvGWh": 1.2,
+      "laufkraftGWh": 39.3,
+      "speicherGWh": 8.9,
+      "pumpenGWh": 7.3,
+      "pvGWh": 1.1,
       "windGWh": 44,
       "biomasseGWh": 6.5,
-      "gasGWh": 46.9,
+      "gasGWh": 45.3,
       "loadGWh": 187.6,
-      "renewableGWh": 92.3,
-      "totalGenerationGWh": 147.5,
-      "renewableSharePercent": 63,
+      "renewableGWh": 94.3,
+      "totalGenerationGWh": 148.1,
+      "renewableSharePercent": 64,
       "priceAvg": 234.27,
       "priceMin": 169.48,
       "priceMax": 284.59,
@@ -138,21 +138,21 @@
     }
   ],
   "totals": {
-    "laufkraftGWh": 288.6,
-    "speicherGWh": 46.8,
-    "pumpenGWh": 79.7,
-    "pvGWh": 33.8,
+    "laufkraftGWh": 289.4,
+    "speicherGWh": 48.3,
+    "pumpenGWh": 79.9,
+    "pvGWh": 33.7,
     "windGWh": 301.8,
     "biomasseGWh": 43.7,
-    "gasGWh": 257.8,
-    "loadGWh": 1233.2,
-    "renewableGWh": 687.9,
-    "totalGenerationGWh": 992.8,
+    "gasGWh": 256.2,
+    "loadGWh": 1233.7,
+    "renewableGWh": 689.9,
+    "totalGenerationGWh": 993.4,
     "renewableSharePercent": 69,
     "priceAvg": 221.19,
     "priceMin": 113.91,
     "priceMax": 294.95,
     "negativePriceHours": 0,
-    "netExportGWh": -279
+    "netExportGWh": -278.9
   }
 }
