@@ -3,28 +3,28 @@
     "id": "report-2026-kw47",
     "weekNumber": 47,
     "year": 2026,
-    "title": "Wochenbericht KW 47/2026: Wasserkraft 335 GWh, Spotpreis Ø 221,19 €/MWh",
-    "dateGenerated": "2026-11-20",
-    "executiveSummary": "Im Zeitraum 13.11.2026–19.11.2026 erzeugten Österreichs Wasserkraftwerke 335,4 GWh – davon 288,6 GWh aus Laufwasserkraft und 46,8 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 69 %. Der Day-Ahead-Preis lag im Schnitt bei 221,19 €/MWh (Spanne 113,91 bis 294,95 €/MWh). Österreich war in Summe Netto-Importeur (279 GWh). Gegenüber dem Vorbericht: Wasserkraft -28 %, Spotpreis-Durchschnitt -21 %.",
+    "title": "Wochenbericht KW 47/2026: Wasserkraft 332 GWh, Spotpreis Ø 220,76 €/MWh",
+    "dateGenerated": "2026-11-21",
+    "executiveSummary": "Im Zeitraum 14.11.2026–20.11.2026 erzeugten Österreichs Wasserkraftwerke 331,5 GWh – davon 281,5 GWh aus Laufwasserkraft und 50 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 68 %. Der Day-Ahead-Preis lag im Schnitt bei 220,76 €/MWh (Spanne 113,91 bis 294,95 €/MWh). Österreich war in Summe Netto-Importeur (275,1 GWh). Gegenüber dem Vorbericht: Wasserkraft -29 %, Spotpreis-Durchschnitt -21 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 288,6 GWh, Tageswerte zwischen 34,5 GWh (15.11.2026) und 49 GWh (13.11.2026).",
+      "Laufwasserkraft: 281,5 GWh, Tageswerte zwischen 34,5 GWh (15.11.2026) und 43,3 GWh (14.11.2026).",
       "Spotmarkt: teuerster Tag 16.11.2026 (Ø 247,04 €/MWh), günstigster Tag 15.11.2026 (Ø 175,03 €/MWh).",
-      "Photovoltaik lieferte 33,8 GWh, Windkraft 301,8 GWh, Gaskraftwerke 257,8 GWh bei einem Verbrauch von 1 233,2 GWh.",
-      "Grenzflüsse aktuell: Saldo -1 347 MW (Netto-Import); größter Einzelfluss: Tschechien -902 MW (Import)."
+      "Photovoltaik lieferte 36,3 GWh, Windkraft 287,4 GWh, Gaskraftwerke 267,6 GWh bei einem Verbrauch von 1 229,7 GWh.",
+      "Grenzflüsse aktuell: Saldo -1 858 MW (Netto-Import); größter Einzelfluss: Tschechien -1 565 MW (Import)."
     ],
     "internationalHighlights": [
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 19.11.2026)",
       "Kundenanlagen: Industrie und Energiewirtschaft wittern neue Perspektive (energate messenger, 19.11.2026)",
-      "EU-Strommarkt: SPD verlangt fairen Beitrag Großbritanniens (ad-hoc-news.de, 19.11.2026)",
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 18.11.2026)"
+      "EU-Strommarkt: SPD verlangt fairen Beitrag Großbritanniens (ad-hoc-news.de, 19.11.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 41,2 GWh pro Tag (≈ 1 718 MW). Zweite gegenüber erster Wochenhälfte: -5 % – weitgehend stabil.",
-      "pumpspeicherStatus": "Turbinenbetrieb 46,8 GWh, Pumpbetrieb 79,7 GWh. Die Preisspanne von 181,04 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 288,6 GWh gegenüber 302,9 GWh im Vorbericht (-5 %).",
+      "laufkraftTrend": "Im Mittel 40,2 GWh pro Tag (≈ 1 676 MW). Zweite gegenüber erster Wochenhälfte: +2 % – weitgehend stabil.",
+      "pumpspeicherStatus": "Turbinenbetrieb 50 GWh, Pumpbetrieb 69,9 GWh. Die Preisspanne von 181,04 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 281,5 GWh gegenüber 302,9 GWh im Vorbericht (-7 %).",
       "projektUpdates": [
-        "Schwarze Sulm: WWF kritisiert geplante Millionenförderung für Kraftwerk im Schutzgebiet (WWF Österreich, 19.11.2026)",
-        "Wasserkraftfinanzierung wird anspruchsvoller (energate messenger, 18.11.2026)",
-        "EU einigt sich auf schnelleren Ausbau der Stromnetze (https://brandaktuell.at/, 18.11.2026)"
+        "Kraftwerk an der Schwarzen Sulm könnte doch gebaut werden (Salzburger Nachrichten, 20.11.2026)",
+        "\"Bis zum letzten Tropfen - Tirol & die Wasserkraft\" Filmvorführung & Podiumsdiskussion (MeinBezirk.at, 20.11.2026)",
+        "Schwarze Sulm: WWF kritisiert geplante Millionenförderung für Kraftwerk im Schutzgebiet (WWF Österreich, 19.11.2026)"
       ]
     },
     "strategicTips": [
@@ -35,48 +35,48 @@
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 181,04 €/MWh und 79,7 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 181,04 €/MWh und 69,9 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (279 GWh). Größter aktueller Fluss: Tschechien (-902 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (275,1 GWh). Größter aktueller Fluss: Tschechien (-1 565 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-11-13",
-    "periodEnd": "2026-11-19",
-    "dataAsOf": "2026-11-20T03:45:00.000Z",
-    "generatedAt": "2026-11-20T07:19:09.837Z",
+    "periodStart": "2026-11-14",
+    "periodEnd": "2026-11-20",
+    "dataAsOf": "2026-11-21T03:45:00.000Z",
+    "generatedAt": "2026-11-21T07:12:01.276Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "335,4 GWh"
+        "value": "331,5 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "288,6 GWh"
+        "value": "281,5 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "46,8 GWh"
+        "value": "50 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "79,7 GWh"
+        "value": "69,9 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "33,8 / 301,8 GWh"
+        "value": "36,3 / 287,4 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "69 %"
+        "value": "68 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "221,19 €/MWh (113,91 / 294,95)"
+        "value": "220,76 €/MWh (113,91 / 294,95)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,36 +84,54 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "279 GWh"
+        "value": "275,1 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 421 MW (25 % der Last)"
+        "value": "1 410 MW (23 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "248,79 €/MWh"
+        "value": "205,68 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 288.6,
-      "speicherGWh": 46.8,
-      "pumpenGWh": 79.7,
-      "pvGWh": 33.8,
-      "windGWh": 301.8,
-      "biomasseGWh": 43.7,
-      "gasGWh": 257.8,
-      "loadGWh": 1233.2,
-      "renewableGWh": 687.9,
-      "totalGenerationGWh": 992.8,
-      "renewableSharePercent": 69,
-      "priceAvg": 221.19,
+      "laufkraftGWh": 281.5,
+      "speicherGWh": 50,
+      "pumpenGWh": 69.9,
+      "pvGWh": 36.3,
+      "windGWh": 287.4,
+      "biomasseGWh": 44.8,
+      "gasGWh": 267.6,
+      "loadGWh": 1229.7,
+      "renewableGWh": 671.2,
+      "totalGenerationGWh": 988,
+      "renewableSharePercent": 68,
+      "priceAvg": 220.76,
       "priceMin": 113.91,
       "priceMax": 294.95,
       "negativePriceHours": 0,
-      "netExportGWh": -279
+      "netExportGWh": -275.1
     },
     "newsSources": [
+      {
+        "title": "Kraftwerk an der Schwarzen Sulm könnte doch gebaut werden",
+        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMXdGNnFiLVFPcF80ZzdKOHhYXzI4TDdCMmpCek1Oemd6Xzg3blhkZkcxZVZ1eTdJUzJXbnp6VzlvcnhmT2lDRUFYdTdLanBNR25EYlVxTVg2YnQyS2IwYktNX1hmbWMtU1hpVmVjU0J5VkJTVVhqQkIyUlJrNEtwSXdXMXR6WUtxc0ttTENDb01OeW1uZnBQQ1I3VmxjYjQ5VHBSSUczeWx1aXAybDhF?oc=5",
+        "source": "Salzburger Nachrichten",
+        "pubDate": "2026-11-20"
+      },
+      {
+        "title": "Klimaneutral bis 2040: Wie gelingt die Energiewende?",
+        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZzRlcThtb2dmcDEyeG1YQjJWWFBUbWl3cklZY05VYWFWRmtTS2dLN1gzWTh0NlJvdGhkVWtTZk1oeUJvem05ZTNQakRhNFc4TmQ3UXNPZE54dkhRYUlOVWtCSURWeHpySnFBck1nUEpadU9LRUVmUEhTd0tNZTlHZGZQXzZidllOWWJ3NWNjSWk?oc=5",
+        "source": "DiePresse.com",
+        "pubDate": "2026-11-20"
+      },
+      {
+        "title": "\"Bis zum letzten Tropfen - Tirol & die Wasserkraft\" Filmvorführung & Podiumsdiskussion",
+        "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPSnItRG5IUkZuSmJlWEpyaV9Mek1SaEpka3JwVV93TFY3THpsMzN3M2xqWFRMWEtHWWZfS3FzTzNlX21KNUlPRzR0V0JLNTJLR3Y2TkpIS3V5X1BJcllSNXNYdGJKYTFpdUNnTjB6V1M1Q2haUW00c3oxWEpGNDBackQ5SkVZYjM5cHpta1p6eWJCLUtOVzlPeW1zSzd1aHdEdHd5TWxFUTZzOFhRdkJqeWJTUkhYTm9MeDZULWVhWnhxdkpsR1pacS1QU0w0Q3VMNzVvQ0g4enZtdHpFekcwamlIRm5SLTBSNS1rR084SUhtZw?oc=5",
+        "source": "MeinBezirk.at",
+        "pubDate": "2026-11-20"
+      },
       {
         "title": "Schwarze Sulm: WWF kritisiert geplante Millionenförderung für Kraftwerk im Schutzgebiet",
         "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONzZyREhpZFpvZGZUQ2VMSlhTYndMeTJNdUh4Y012eGdTeml0c2hyM1c4b243ZkZUZW1sZTVLM2pOTEtJQWtiNVRpWGNWUnpqdXprZkpRTU9nX0JWX0F4RDFMaHVYZnRraFFMZ0g1N2tpOHZiREFacWVPMmVwdmg2SzF3Nm5lQzZCRzdSOHlGRFZGUVNiZEFObWJwLVBjQXlrRmU0S0lmSWRNQV8x?oc=5",
@@ -127,6 +145,12 @@
         "pubDate": "2026-11-19"
       },
       {
+        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
+        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
+        "source": "DIE ZEIT",
+        "pubDate": "2026-11-19"
+      },
+      {
         "title": "Kundenanlagen: Industrie und Energiewirtschaft wittern neue Perspektive",
         "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQWW5VbS1peXNNYjRsOWNTOEtFdjJ6REhscEhTM2t0UlVJbUtEUzVCWHZOLV9rb2J4RDVtQ0hzMno0NlVqc1hMU0JuWDZac1dRcTBrNUZvWERwakhiTWZRUmN3TXM5Y2NidmpfT25VdnlaVnVIYllVWDlhb09VUHRRUzd1VUFSUmZvX290SFNkQl92N2FBcDQtaS0zMnRJZ1hUYTBIaGRnWEhVdExHVGVubzZfVXpNbk0?oc=5",
         "source": "energate messenger",
@@ -137,30 +161,6 @@
         "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZUU4aDV5SlVpMFY0clRIaWRUUW5iWmRKZmg4b2JRWWRCN1JLWEVvb01WRXp4RDRpMWR5Q2JHellycHFYYmFESnM0ZXRrbHp2WEVnSFNVOE9TbTFjY09hdm1zdzJVVVlFU3cwc2pFdUs5dFBlLUNZLTJ3dzZTX3pQZE1neGozcTBPc0FPeW40V1dzMDd6dUtrd0ZHQ3ZuSmF6Wm5Gdw?oc=5",
         "source": "ad-hoc-news.de",
         "pubDate": "2026-11-19"
-      },
-      {
-        "title": "Wasserkraftfinanzierung wird anspruchsvoller",
-        "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQc3pSWVNHMldYQmgzU0pZeXNXTWl4SXkyTzA4aWlhd19hZGRDUkc0NnBpMkVqMmZIYlExS0prb3RTeDlQaC1ONGVkbmZybHRYdHR3QkdmYmJ0ODhkNUJsSXZuTlAzczdmSzdVMFh6ZTFmSFFReEVxbFhKOFNOWnNNeGZBbFYyekhfX3BGUEJBcXVDWEdB?oc=5",
-        "source": "energate messenger",
-        "pubDate": "2026-11-18"
-      },
-      {
-        "title": "Irankrieg, Cyberattacken, China-Spionage: So (un)sicher ist Österreichs Energieversorgung",
-        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZWVQUW9ESHZPTjNoS1RLeEhsb3JwelI4cTJGN2c5cDdnb2xoQXE3ZkVRYzRUNE1tOGpmbDY4SGZjbVJIamt6VUtvYXEtRkU5bzRnRzlkSHNfc2FaXzU5N3pwdWdZbjJVNWhrT3hhX0ZoN0JvUU4zckVLQXVjS3Z5X21obHJmZHFxMGZSa0p1bkx5MWE4Mmt4anhEMFIxbE5hNEtqaQ?oc=5",
-        "source": "DiePresse.com",
-        "pubDate": "2026-11-18"
-      },
-      {
-        "title": "Neue Strom-Regeln: An diesem Tag wird deine Rechnung umgestellt",
-        "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPcmM1cVY1NUlxaFJXVTEyeUhGU212R1l0aHVJYmFXa1I0cFlDbm9JaXlSTDhUSjRhTDFhOTJ4RC1kc0llYkZLSDRqQi1FdVlPMDZHNGNtWHpkY2pzVi00akxTbDJLWE9NQ2FQZkZjbndscmNoaTBzUDVlMk1zWnpOY2R4VWlSRXNURU1EWTYzZlJyaUEyaHdHZUZn0gGfAUFVX3lxTFBIRFBiZ1BtWV9fV0JfbWdSSkU0RVd6aWowTTFLRXZvREFja3Z2Z3A5VlVKanpxREVSUFZlbVk4bGVvV2hOSDFmUGtrb3E2STBGSTNEcmU0VU5WNzR4dW5vV0Jud1VtZGtoa3VFVHdNYzBvM21XZkllTWREREdrMlBBaTY5dUR0ZHhKd2tha2I2MjhiOEZIeVpPZ2xCekRsdw?oc=5",
-        "source": "oe24",
-        "pubDate": "2026-11-18"
-      },
-      {
-        "title": "E-Control nennt vier Termine – An diesem Tag schlägt Netzentgelt-Hammer bei Dir ein",
-        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOY20wUUJnQTVhSlBENGp3elhmNUViUUtTZmxhbzVvT0dNNkk3OU5SbnpvTVpqcWZ5NHNMZVJ5dHZMVmVjQUtwTGd4amFWaXY3TEF2Q1NCaVdfQnZOS2RmaTFLeW1ZdTZ5QktHVmJxZnV3SFBURkVuN3FZNDlCTGpKMEVBRVNOWkZfc1E?oc=5",
-        "source": "Heute",
-        "pubDate": "2026-11-18"
       }
     ]
   },
