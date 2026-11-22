@@ -3,28 +3,28 @@
     "id": "report-2026-kw47",
     "weekNumber": 47,
     "year": 2026,
-    "title": "Wochenbericht KW 47/2026: Wasserkraft 332 GWh, Spotpreis Ø 220,76 €/MWh",
-    "dateGenerated": "2026-11-21",
-    "executiveSummary": "Im Zeitraum 14.11.2026–20.11.2026 erzeugten Österreichs Wasserkraftwerke 331,5 GWh – davon 281,5 GWh aus Laufwasserkraft und 50 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 68 %. Der Day-Ahead-Preis lag im Schnitt bei 220,76 €/MWh (Spanne 113,91 bis 294,95 €/MWh). Österreich war in Summe Netto-Importeur (275,1 GWh). Gegenüber dem Vorbericht: Wasserkraft -29 %, Spotpreis-Durchschnitt -21 %.",
+    "title": "Wochenbericht KW 47/2026: Wasserkraft 330 GWh, Spotpreis Ø 217,32 €/MWh",
+    "dateGenerated": "2026-11-22",
+    "executiveSummary": "Im Zeitraum 15.11.2026–21.11.2026 erzeugten Österreichs Wasserkraftwerke 330,4 GWh – davon 279,5 GWh aus Laufwasserkraft und 50,9 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 69 %. Der Day-Ahead-Preis lag im Schnitt bei 217,32 €/MWh (Spanne 113,91 bis 294,95 €/MWh). Österreich war in Summe Netto-Importeur (266,5 GWh). Gegenüber dem Vorbericht: Wasserkraft -29 %, Spotpreis-Durchschnitt -22 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 281,5 GWh, Tageswerte zwischen 34,5 GWh (15.11.2026) und 43,3 GWh (14.11.2026).",
+      "Laufwasserkraft: 279,5 GWh, Tageswerte zwischen 34,5 GWh (15.11.2026) und 41,7 GWh (16.11.2026).",
       "Spotmarkt: teuerster Tag 16.11.2026 (Ø 247,04 €/MWh), günstigster Tag 15.11.2026 (Ø 175,03 €/MWh).",
-      "Photovoltaik lieferte 36,3 GWh, Windkraft 287,4 GWh, Gaskraftwerke 267,6 GWh bei einem Verbrauch von 1 229,7 GWh.",
-      "Grenzflüsse aktuell: Saldo -1 858 MW (Netto-Import); größter Einzelfluss: Tschechien -1 565 MW (Import)."
+      "Photovoltaik lieferte 30,6 GWh, Windkraft 308,6 GWh, Gaskraftwerke 263,4 GWh bei einem Verbrauch von 1 230,6 GWh.",
+      "Grenzflüsse aktuell: Saldo -2 684 MW (Netto-Import); größter Einzelfluss: Tschechien -1 950 MW (Import)."
     ],
     "internationalHighlights": [
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 19.11.2026)",
-      "Kundenanlagen: Industrie und Energiewirtschaft wittern neue Perspektive (energate messenger, 19.11.2026)",
-      "EU-Strommarkt: SPD verlangt fairen Beitrag Großbritanniens (ad-hoc-news.de, 19.11.2026)"
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 20.11.2026)",
+      "EU-Strommarkt: SPD verlangt fairen Beitrag Großbritanniens (ad-hoc-news.de, 19.11.2026)",
+      "Windenergie und Stromerzeugung in Deutschland (Windbranche.de, 18.11.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 40,2 GWh pro Tag (≈ 1 676 MW). Zweite gegenüber erster Wochenhälfte: +2 % – weitgehend stabil.",
-      "pumpspeicherStatus": "Turbinenbetrieb 50 GWh, Pumpbetrieb 69,9 GWh. Die Preisspanne von 181,04 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 281,5 GWh gegenüber 302,9 GWh im Vorbericht (-7 %).",
+      "laufkraftTrend": "Im Mittel 39,9 GWh pro Tag (≈ 1 664 MW). Zweite gegenüber erster Wochenhälfte: +5 % – weitgehend stabil.",
+      "pumpspeicherStatus": "Turbinenbetrieb 50,9 GWh, Pumpbetrieb 64,1 GWh. Die Preisspanne von 181,04 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 279,5 GWh gegenüber 302,9 GWh im Vorbericht (-8 %).",
       "projektUpdates": [
         "Kraftwerk an der Schwarzen Sulm könnte doch gebaut werden (Salzburger Nachrichten, 20.11.2026)",
         "\"Bis zum letzten Tropfen - Tirol & die Wasserkraft\" Filmvorführung & Podiumsdiskussion (MeinBezirk.at, 20.11.2026)",
-        "Schwarze Sulm: WWF kritisiert geplante Millionenförderung für Kraftwerk im Schutzgebiet (WWF Österreich, 19.11.2026)"
+        "Steiermark: 4 Millionen Euro für Wasserkraftwerk (Pressefeuer, 20.11.2026)"
       ]
     },
     "strategicTips": [
@@ -35,48 +35,48 @@
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 181,04 €/MWh und 69,9 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 181,04 €/MWh und 64,1 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (275,1 GWh). Größter aktueller Fluss: Tschechien (-1 565 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (266,5 GWh). Größter aktueller Fluss: Tschechien (-1 950 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-11-14",
-    "periodEnd": "2026-11-20",
-    "dataAsOf": "2026-11-21T03:45:00.000Z",
-    "generatedAt": "2026-11-21T07:12:01.276Z",
+    "periodStart": "2026-11-15",
+    "periodEnd": "2026-11-21",
+    "dataAsOf": "2026-11-22T03:15:00.000Z",
+    "generatedAt": "2026-11-22T06:51:38.964Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "331,5 GWh"
+        "value": "330,4 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "281,5 GWh"
+        "value": "279,5 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "50 GWh"
+        "value": "50,9 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "69,9 GWh"
+        "value": "64,1 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "36,3 / 287,4 GWh"
+        "value": "30,6 / 308,6 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "68 %"
+        "value": "69 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "220,76 €/MWh (113,91 / 294,95)"
+        "value": "217,32 €/MWh (113,91 / 294,95)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,36 +84,54 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "275,1 GWh"
+        "value": "266,5 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 410 MW (23 % der Last)"
+        "value": "1 649 MW (31 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "205,68 €/MWh"
+        "value": "212,61 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 281.5,
-      "speicherGWh": 50,
-      "pumpenGWh": 69.9,
-      "pvGWh": 36.3,
-      "windGWh": 287.4,
-      "biomasseGWh": 44.8,
-      "gasGWh": 267.6,
-      "loadGWh": 1229.7,
-      "renewableGWh": 671.2,
-      "totalGenerationGWh": 988,
-      "renewableSharePercent": 68,
-      "priceAvg": 220.76,
+      "laufkraftGWh": 279.5,
+      "speicherGWh": 50.9,
+      "pumpenGWh": 64.1,
+      "pvGWh": 30.6,
+      "windGWh": 308.6,
+      "biomasseGWh": 45,
+      "gasGWh": 263.4,
+      "loadGWh": 1230.6,
+      "renewableGWh": 684.6,
+      "totalGenerationGWh": 998.4,
+      "renewableSharePercent": 69,
+      "priceAvg": 217.32,
       "priceMin": 113.91,
       "priceMax": 294.95,
       "negativePriceHours": 0,
-      "netExportGWh": -275.1
+      "netExportGWh": -266.5
     },
     "newsSources": [
+      {
+        "title": "Ohne modernes Stromnetz keine Energiewende",
+        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNjJJUEJEQUxJUFRMYUR2TmdOaXVzaWJPMWsxVWdVM01nV0ZFOEJpX3ZRLVdQdmJodkZKbnRBNFNsTHFjTTFQalppVmF5ZXpjWThQUVJoYXQ1bXREbHR2VXJVRXVZMWMwRDVFWUZiRnBqTmRUdUVhNnd6YkotNTdHalp3Nm5Qdw?oc=5",
+        "source": "DiePresse.com",
+        "pubDate": "2026-11-21"
+      },
+      {
+        "title": "Wind-Energie: Schlusslicht Schweiz?",
+        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBjUmxSQTZCSHlHWFpqMXdDX3ZiY2RxLW83Y3RMNHpoLTVqRDhiaFpCcGJzOFNWZzVyVW01eWV0NFd6Z0paWWxBcGJmcmJuWm1USnhEREI3S3hEUFYtcWxlZTN5NkNLZ2FUajZKNHpnNWhVSElmLXdaUkxiMVh3ZGM?oc=5",
+        "source": "Inside Paradeplatz",
+        "pubDate": "2026-11-21"
+      },
+      {
+        "title": "Strom und Gas: Was jetzt auf Haushalte zukommt",
+        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMUhDbER4NjVtRUQzejBKc29iV0xhQzhNbHk1QXdJLS11S0xrR0FlTXY5dEdGU2VMMjg5YzZLemZGRXVaNFBhS1huQzNmTnpNWjNOLU45STdZSjljbU9IZ3VHMHZwZXhYOXVLWnlwZDVxQVFONnhTRHAzNERkYlN4OG1PZ082VV9zblFOSzBVQTltd0QtMFE?oc=5",
+        "source": "Kleine Zeitung",
+        "pubDate": "2026-11-21"
+      },
       {
         "title": "Kraftwerk an der Schwarzen Sulm könnte doch gebaut werden",
         "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMXdGNnFiLVFPcF80ZzdKOHhYXzI4TDdCMmpCek1Oemd6Xzg3blhkZkcxZVZ1eTdJUzJXbnp6VzlvcnhmT2lDRUFYdTdLanBNR25EYlVxTVg2YnQyS2IwYktNX1hmbWMtU1hpVmVjU0J5VkJTVVhqQkIyUlJrNEtwSXdXMXR6WUtxc0ttTENDb01OeW1uZnBQQ1I3VmxjYjQ5VHBSSUczeWx1aXAybDhF?oc=5",
@@ -133,34 +151,16 @@
         "pubDate": "2026-11-20"
       },
       {
-        "title": "Schwarze Sulm: WWF kritisiert geplante Millionenförderung für Kraftwerk im Schutzgebiet",
-        "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONzZyREhpZFpvZGZUQ2VMSlhTYndMeTJNdUh4Y012eGdTeml0c2hyM1c4b243ZkZUZW1sZTVLM2pOTEtJQWtiNVRpWGNWUnpqdXprZkpRTU9nX0JWX0F4RDFMaHVYZnRraFFMZ0g1N2tpOHZiREFacWVPMmVwdmg2SzF3Nm5lQzZCRzdSOHlGRFZGUVNiZEFObWJwLVBjQXlrRmU0S0lmSWRNQV8x?oc=5",
-        "source": "WWF Österreich",
-        "pubDate": "2026-11-19"
+        "title": "Steiermark: 4 Millionen Euro für Wasserkraftwerk",
+        "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNZk9HVm01YTR0ZnNxWXJVNVJQcDVBQUMyYk5WVDczcXp6bnBaOVg3VTdQeEVCNnJtMlhaSFhLTzlHbjhodENid1JFVDYzUnd2VjQtVF9oSU5Tc1ZkWjdKR2FMSXJLMlUzazlsbGR0a1dVWXpXMW84YkFxUmF5Q0ZpMWNXWUpWbWlSZVE?oc=5",
+        "source": "Pressefeuer",
+        "pubDate": "2026-11-20"
       },
       {
-        "title": "So (un)sicher ist Österreichs Energieversorgung",
-        "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPUGVxczRENERERUszdWhWSVlmdE5Hc1RQMFB0M0xPRmdCWGFvbS1VaWlOSl96Wmh1WkpSc3F2aHFxdWtoZ0Y4RWJFMUZBbUhYUHBHRFR0Z2ZXeFFucHZhYUI1cjV6QTZpUTdwbkI3aF9qSERJRXVpS09XWG9QUnpJWVQwOTFBdldFeW9LYnVjc2h5dHpiWUZB?oc=5",
-        "source": "Energynewsmagazine",
-        "pubDate": "2026-11-19"
-      },
-      {
-        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
-        "source": "DIE ZEIT",
-        "pubDate": "2026-11-19"
-      },
-      {
-        "title": "Kundenanlagen: Industrie und Energiewirtschaft wittern neue Perspektive",
-        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQWW5VbS1peXNNYjRsOWNTOEtFdjJ6REhscEhTM2t0UlVJbUtEUzVCWHZOLV9rb2J4RDVtQ0hzMno0NlVqc1hMU0JuWDZac1dRcTBrNUZvWERwakhiTWZRUmN3TXM5Y2NidmpfT25VdnlaVnVIYllVWDlhb09VUHRRUzd1VUFSUmZvX290SFNkQl92N2FBcDQtaS0zMnRJZ1hUYTBIaGRnWEhVdExHVGVubzZfVXpNbk0?oc=5",
-        "source": "energate messenger",
-        "pubDate": "2026-11-19"
-      },
-      {
-        "title": "EU-Strommarkt: SPD verlangt fairen Beitrag Großbritanniens",
-        "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPZUU4aDV5SlVpMFY0clRIaWRUUW5iWmRKZmg4b2JRWWRCN1JLWEVvb01WRXp4RDRpMWR5Q2JHellycHFYYmFESnM0ZXRrbHp2WEVnSFNVOE9TbTFjY09hdm1zdzJVVVlFU3cwc2pFdUs5dFBlLUNZLTJ3dzZTX3pQZE1neGozcTBPc0FPeW40V1dzMDd6dUtrd0ZHQ3ZuSmF6Wm5Gdw?oc=5",
-        "source": "ad-hoc-news.de",
-        "pubDate": "2026-11-19"
+        "title": "Stromnetzentgelte 2027: Land Kärnten bringt umfassende Stellungnahme bei E-Control ein",
+        "link": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9pdDJxOG13LXVKb3BfZm5Ma29MWkstanF5QnRXc2ZjclJ0TXJRalhSVk55SlJSWWRiSlpabHZJQkMyMTRGSXIyWlV3NEVLX2szM3Nzek5JUQ?oc=5",
+        "source": "Land Kärnten",
+        "pubDate": "2026-11-20"
       }
     ]
   },
