@@ -3,28 +3,28 @@
     "id": "report-2026-kw48",
     "weekNumber": 48,
     "year": 2026,
-    "title": "Wochenbericht KW 48/2026: Wasserkraft 340 GWh, Spotpreis Ø 221,29 €/MWh",
+    "title": "Wochenbericht KW 48/2026: Wasserkraft 344 GWh, Spotpreis Ø 221,29 €/MWh",
     "dateGenerated": "2026-11-24",
-    "executiveSummary": "Im Zeitraum 17.11.2026–23.11.2026 erzeugten Österreichs Wasserkraftwerke 339,5 GWh – davon 281 GWh aus Laufwasserkraft und 58,5 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 67 %. Der Day-Ahead-Preis lag im Schnitt bei 221,29 €/MWh (Spanne 146,53 bis 312,96 €/MWh). Österreich war in Summe Netto-Importeur (263,2 GWh). Gegenüber dem Vorbericht: Wasserkraft 0 %, Spotpreis-Durchschnitt -1 %.",
+    "executiveSummary": "Im Zeitraum 17.11.2026–23.11.2026 erzeugten Österreichs Wasserkraftwerke 344 GWh – davon 283,2 GWh aus Laufwasserkraft und 60,8 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 67 %. Der Day-Ahead-Preis lag im Schnitt bei 221,29 €/MWh (Spanne 146,53 bis 312,96 €/MWh). Österreich war in Summe Netto-Importeur (264,3 GWh). Gegenüber dem Vorbericht: Wasserkraft +2 %, Spotpreis-Durchschnitt -1 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 281 GWh, Tageswerte zwischen 37 GWh (23.11.2026) und 41,7 GWh (18.11.2026).",
+      "Laufwasserkraft: 283,2 GWh, Tageswerte zwischen 39,2 GWh (23.11.2026) und 41,7 GWh (18.11.2026).",
       "Spotmarkt: teuerster Tag 17.11.2026 (Ø 245,77 €/MWh), günstigster Tag 21.11.2026 (Ø 189,14 €/MWh).",
-      "Photovoltaik lieferte 29,3 GWh, Windkraft 302 GWh, Gaskraftwerke 278,6 GWh bei einem Verbrauch von 1 238,6 GWh.",
-      "Grenzflüsse aktuell: Saldo -1 344 MW (Netto-Import); größter Einzelfluss: Tschechien -1 371 MW (Import)."
+      "Photovoltaik lieferte 28,9 GWh, Windkraft 305,3 GWh, Gaskraftwerke 279,9 GWh bei einem Verbrauch von 1 249,3 GWh.",
+      "Grenzflüsse aktuell: Saldo -646 MW (Netto-Import); größter Einzelfluss: Tschechien -1 618 MW (Import)."
     ],
     "internationalHighlights": [
-      "Warum Strom in Deutschland schmutzig und teuer ist – alle Zahlen, täglich aktualisiert (Neue Zürcher Zeitung, 20.11.2026)",
-      "Energiegesetze-Ticker: Welches Vorhaben wie weit ist (ZFK – Zeitung für kommunale Wirtschaft, 20.11.2026)",
-      "Stromschlucker Rechenzentren: Warum Österreich nicht Irland werden darf (Der Standard, 19.11.2026)"
+      "Lob für Brüsseler Beschleunigungspläne (energate messenger, 24.11.2026)",
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 22.11.2026)",
+      "Regierung fördert Industrie mit 750 Millionen Euro: Wie viel Klientelpolitik steckt da drinnen? (Der Standard, 24.11.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 40,1 GWh pro Tag (≈ 1 673 MW). Zweite gegenüber erster Wochenhälfte: -2 % – weitgehend stabil.",
-      "pumpspeicherStatus": "Turbinenbetrieb 58,5 GWh, Pumpbetrieb 59,8 GWh. Die Preisspanne von 166,43 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 281 GWh gegenüber 285,6 GWh im Vorbericht (-2 %).",
+      "laufkraftTrend": "Im Mittel 40,5 GWh pro Tag (≈ 1 686 MW). Zweite gegenüber erster Wochenhälfte: 0 % – weitgehend stabil.",
+      "pumpspeicherStatus": "Turbinenbetrieb 60,8 GWh, Pumpbetrieb 59,9 GWh. Die Preisspanne von 166,43 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 283,2 GWh gegenüber 285,6 GWh im Vorbericht (-1 %).",
       "projektUpdates": [
+        "Zürich: Ausstellung über Wasserkraft und Indigene Rechte ab 29. November (Nau, 24.11.2026)",
         "Andritz-Chef setzt auf Wasserkraft als Wachstumstreiber (Börsen-Zeitung, 23.11.2026)",
-        "Andritz-Aktie: Wasserkraft wird zum Wachstumstreiber (ad-hoc-news.de, 23.11.2026)",
-        "Kraftwerk an der Schwarzen Sulm könnte doch gebaut werden (Salzburger Nachrichten, 20.11.2026)"
+        "Andritz-Aktie: Wasserkraft wird zum Wachstumstreiber (ad-hoc-news.de, 23.11.2026)"
       ]
     },
     "strategicTips": [
@@ -35,40 +35,40 @@
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 166,43 €/MWh und 59,8 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 166,43 €/MWh und 59,9 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (263,2 GWh). Größter aktueller Fluss: Tschechien (-1 371 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (264,3 GWh). Größter aktueller Fluss: Tschechien (-1 618 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
     "periodStart": "2026-11-17",
     "periodEnd": "2026-11-23",
-    "dataAsOf": "2026-11-23T21:15:00.000Z",
-    "generatedAt": "2026-11-23T23:55:37.637Z",
+    "dataAsOf": "2026-11-24T19:30:00.000Z",
+    "generatedAt": "2026-11-24T22:28:54.361Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "339,5 GWh"
+        "value": "344 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "281 GWh"
+        "value": "283,2 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "58,5 GWh"
+        "value": "60,8 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "59,8 GWh"
+        "value": "59,9 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "29,3 / 302 GWh"
+        "value": "28,9 / 305,3 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
@@ -84,83 +84,83 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "263,2 GWh"
+        "value": "264,3 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "1 652 MW (22 % der Last)"
+        "value": "3 840 MW (46 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "204,11 €/MWh"
+        "value": "224,72 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 281,
-      "speicherGWh": 58.5,
-      "pumpenGWh": 59.8,
-      "pvGWh": 29.3,
-      "windGWh": 302,
-      "biomasseGWh": 45,
-      "gasGWh": 278.6,
-      "loadGWh": 1238.6,
-      "renewableGWh": 680.5,
-      "totalGenerationGWh": 1014.8,
+      "laufkraftGWh": 283.2,
+      "speicherGWh": 60.8,
+      "pumpenGWh": 59.9,
+      "pvGWh": 28.9,
+      "windGWh": 305.3,
+      "biomasseGWh": 45.5,
+      "gasGWh": 279.9,
+      "loadGWh": 1249.3,
+      "renewableGWh": 687.6,
+      "totalGenerationGWh": 1024,
       "renewableSharePercent": 67,
       "priceAvg": 221.29,
       "priceMin": 146.53,
       "priceMax": 312.96,
       "negativePriceHours": 0,
-      "netExportGWh": -263.2
+      "netExportGWh": -264.3
     },
     "newsSources": [
       {
-        "title": "Andritz-Chef setzt auf Wasserkraft als Wachstumstreiber",
-        "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQQ3Q1UU9CMVN1R1NoVDlWa05rT0k3cVRHREFzbzNrQjNPdHNHU0U3TllFdUZ6ZXZteVpabm1pR1FiSjRFd3NBRzhld3d5dHFuMm14QTRERXNmUE1DRW1GZU5VRzVQRXE2RzZGaG11OGx5NFJTRzFKV3Z3a0lubEM0QnRXTGZzbUd5SzV1ODdpTDczZ2dfanhTWjAtOTg3Y1QtS1ZkbVpVSFluVjg?oc=5",
-        "source": "Börsen-Zeitung",
-        "pubDate": "2026-11-23"
+        "title": "4,2 Milliarden Euro in sechs Monaten: Österreichs Verkehr kommt die Erdölabhängigkeit teuer",
+        "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd3R1TG5CTTFvajZBemNLcE5DN0hlN0RUVjNrTEpsTmhhaUx1cUtkTjZ0cklhVndoUXpYb3pyNFBTc20tdzNRYmNEdzdzbHE3bDQwMkRjblB6YTlJRjYyTjlyUVRRNzZyWFduWW5JVzRNVjFhY3ctaGlqV2lzUFl5YVBpUXlTel8wa0F6cWpLWHBOUjhVNGozWVZGUEpYS2E4SXgzclBtSl9fWHJObS0wcFptcFVJWlhKM1k3ZU44aDJvSDBz?oc=5",
+        "source": "Ökonews",
+        "pubDate": "2026-11-24"
       },
       {
-        "title": "Andritz-Aktie: Wasserkraft wird zum Wachstumstreiber",
-        "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRG53Z0QyV09FZERxNjNMSkxvbldNaUhSZzM5VmJuM3lOd20talc2bkpHYi0teWU5em92NXZ0X3ZrMFdKTEh5empLTS1veGxFckRRamdmWW1TMThQUzEyWUt0YzZ2SHJhVVpWRTh5X3kxZ0lrdzRuM3Q2WGNwMl9UNE8zU2tHXzBhb3MybzJRalhlZ0dMTjg0MXdacmNKaVE4RFAxZGtOZE9xdFFybDF6SUFkMlA?oc=5",
+        "title": "Zürich: Ausstellung über Wasserkraft und Indigene Rechte ab 29. November",
+        "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVWxRS3dCaFpuTHNnWWhBa1ctblJoV0hMRHVrNW1VS21ibnhvYTdtNjN2dTlYelJqcVZvN3RzQlE4Umd0cmJYejFIVWt5VmREU0tXWWpnLVlmSHptRFFaUkRwS3NrZG9rTkpIQU5UWlR2R3lHRXEyOXZfbnA0anpxMTgyZU5RV2l6dldVNF9GN3IzLU9oT09NV0o3QnNERDZzSkF0NWFXdGJ6OENOQnc?oc=5",
+        "source": "Nau",
+        "pubDate": "2026-11-24"
+      },
+      {
+        "title": "Verbund-Aktie vorbörslich 1,36 Prozent höher bei 69,38 Euro",
+        "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQR0FRaG9YcDlPWlB1S2txMDJ1RGdvSEtLMVRLeUVsc0JOS2hKTXFPTnhJem00QU1CSklKZVFNZWdJYXhYaXJRcUw5ZEllWXpnRWxSVW5CRklCTTE4S05lR3ZtOGdhLTVJSHc5NjFVSWxyRzQyTjdxT0lzTm81Q21ac0ZuY0diWkhuY29ZN2E4bUUxRkdicFdVaHhoVHRoSF9OSTB2cFQzSnA5YTlLZF9qMlNrNUVsdWhTTFRv?oc=5",
         "source": "ad-hoc-news.de",
-        "pubDate": "2026-11-23"
+        "pubDate": "2026-11-24"
       },
       {
-        "title": "Vera Immitzer von PVB Austria: „Es kommt mehr Kontinuität für die Handwerksbetriebe“",
-        "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOXzM1akVpNUFqWDhUdmxSajVncDJudU93aVpqdDlTSHNvOUtLclBNOHhwTFB2WXp5QjNkS2JHQUtCMFJ4dDl6Q09mWlRuNVloUnFVakMwX2FqV1BhXzBad2oxWmhiLVFiLWZqV0U5T25oUGxkUDNzc1pOR1RUcmNMb3pLT3Yxam04Ql9GUFB0RU9GYjVCT1dXd1gzZENvelNuZGZBMV9ZRjV3aXhvdnRaX2ZUeVVNY0MzNFRZaWFzdw?oc=5",
-        "source": "Photovoltaik.eu",
-        "pubDate": "2026-11-23"
+        "title": "Weiter Widerstand gegen 380-kV-Trasse",
+        "link": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFB5NHhzUWpFbktNZTg3T2ZPX0JUNW5xaVRXSTNhbHVWWnlJSXJ4alRZTmVSUU1GQjc0Z2lGbVNiUllzRGNwWk1OMDFHSFBvWW92dWc?oc=5",
+        "source": "kaernten.ORF.at",
+        "pubDate": "2026-11-24"
       },
       {
-        "title": "Ohne modernes Stromnetz keine Energiewende",
-        "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNjJJUEJEQUxJUFRMYUR2TmdOaXVzaWJPMWsxVWdVM01nV0ZFOEJpX3ZRLVdQdmJodkZKbnRBNFNsTHFjTTFQalppVmF5ZXpjWThQUVJoYXQ1bXREbHR2VXJVRXVZMWMwRDVFWUZiRnBqTmRUdUVhNnd6YkotNTdHalp3Nm5Qdw?oc=5",
-        "source": "DiePresse.com",
-        "pubDate": "2026-11-21"
+        "title": "Strommarkt-Skandal: Kunden blechen wegen Manipulation Millionen – Firma bleibt geheim",
+        "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPWnV3Ny1ST1g1b0RDQ1k2M2tZQU1ybnFRSng4dHhJNVd4VDlfQkZnbDFtT2dKMmxjR1ViNHFqRGRFN0lYbkdlR05GaWt5Zy1vTHhQZnp6aEJqeE5mYmI0RHJQeVUtX1ZFWGNYWFo1RmF6bXRPNURzX2E2dkVySVF1bVhSUmZqRFpidGdabXNmS1JzQUQzYnEzY1BmRmJhLVN2SURsUlpldkE?oc=5",
+        "source": "Report24",
+        "pubDate": "2026-11-24"
       },
       {
-        "title": "Wind-Energie: Schlusslicht Schweiz?",
-        "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBjUmxSQTZCSHlHWFpqMXdDX3ZiY2RxLW83Y3RMNHpoLTVqRDhiaFpCcGJzOFNWZzVyVW01eWV0NFd6Z0paWWxBcGJmcmJuWm1USnhEREI3S3hEUFYtcWxlZTN5NkNLZ2FUajZKNHpnNWhVSElmLXdaUkxiMVh3ZGM?oc=5",
-        "source": "Inside Paradeplatz",
-        "pubDate": "2026-11-21"
+        "title": "Regierung fördert Industrie mit 750 Millionen Euro: Wie viel Klientelpolitik steckt da drinnen?",
+        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPbVBLYzZ6Zkc5dmFQV0NXSUp6RTBuX3J1YWRsZlJQcVF5NlpsRU12dFZWTGkybi1nOHVhS3FRcXFLS09KUWptc0JOR3I2R2w5RFNBSmM3X05LU0lhQzZKbEpFY1o1UzRYTjNIbUZKS3R0cFVGTy1NcDlyc3F3X3Jnb0J4dnFpWGpIYVlOLVVOY09TQ1Zja0dZS0MxQXg4Q2NTckdsTThJRTdhRmp0MFJBdmY4cmtfLURxYmhQZ3N6a3FoOU8yTHZENktXSk4zX3BmMHRBcTNFbVk?oc=5",
+        "source": "Der Standard",
+        "pubDate": "2026-11-24"
       },
       {
-        "title": "Strom und Gas: Was jetzt auf Haushalte zukommt",
-        "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPMUhDbER4NjVtRUQzejBKc29iV0xhQzhNbHk1QXdJLS11S0xrR0FlTXY5dEdGU2VMMjg5YzZLemZGRXVaNFBhS1huQzNmTnpNWjNOLU45STdZSjljbU9IZ3VHMHZwZXhYOXVLWnlwZDVxQVFONnhTRHAzNERkYlN4OG1PZ082VV9zblFOSzBVQTltd0QtMFE?oc=5",
-        "source": "Kleine Zeitung",
-        "pubDate": "2026-11-21"
+        "title": "REPORT Mehrwert für Manager – Atomkraft - neue Technik, alte Diskussion",
+        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBGa1Y1UnVmU1UwNXd6NDlKNENGWldzcW1fbk9YeEpOS2gzdXUtdDhTdFpaN0NBbW92MU5NSldha0lFQUFpVzhhQWdMSGhjTVB1bzNkRFhaN3g0d3FLVnlQQ2ptVVZWOERrYlNSaVFyUXdRMEQyYkNn?oc=5",
+        "source": "Report Verlag",
+        "pubDate": "2026-11-24"
       },
       {
-        "title": "Kraftwerk an der Schwarzen Sulm könnte doch gebaut werden",
-        "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQMXdGNnFiLVFPcF80ZzdKOHhYXzI4TDdCMmpCek1Oemd6Xzg3blhkZkcxZVZ1eTdJUzJXbnp6VzlvcnhmT2lDRUFYdTdLanBNR25EYlVxTVg2YnQyS2IwYktNX1hmbWMtU1hpVmVjU0J5VkJTVVhqQkIyUlJrNEtwSXdXMXR6WUtxc0ttTENDb01OeW1uZnBQQ1I3VmxjYjQ5VHBSSUczeWx1aXAybDhF?oc=5",
-        "source": "Salzburger Nachrichten",
-        "pubDate": "2026-11-20"
-      },
-      {
-        "title": "Klimaneutral bis 2040: Wie gelingt die Energiewende?",
-        "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZzRlcThtb2dmcDEyeG1YQjJWWFBUbWl3cklZY05VYWFWRmtTS2dLN1gzWTh0NlJvdGhkVWtTZk1oeUJvem05ZTNQakRhNFc4TmQ3UXNPZE54dkhRYUlOVWtCSURWeHpySnFBck1nUEpadU9LRUVmUEhTd0tNZTlHZGZQXzZidllOWWJ3NWNjSWk?oc=5",
-        "source": "DiePresse.com",
-        "pubDate": "2026-11-20"
+        "title": "Stahlbeschäftigte fordern Strompreis von fünf Cent",
+        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNTzhfbUZhY3NoN19rZDdCNTBrSTZMVzhhRGtOa3NhYWpvQkJ1U0xjQ1NEeWR6bWx1V0RiQlplZFRhRDB2MWlmZmdFT2NLNkJRSHRpT0luWDZkQkJ0cmYwaEowQTV0bW9OTTBCcUdfbU1Mb0lqQnkySGxyZm13OXFNM0JuRGtubmktVUNhb3F0VzhHM3BMOW44aXlPQQ?oc=5",
+        "source": "Dosya Haber",
+        "pubDate": "2026-11-24"
       }
     ]
   },
