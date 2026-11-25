@@ -1,7 +1,7 @@
 {
   "periodStart": "2026-11-18",
   "periodEnd": "2026-11-24",
-  "generatedAt": "2026-11-25T08:37:55.484Z",
+  "generatedAt": "2026-11-25T21:43:30.005Z",
   "days": [
     {
       "date": "2026-11-18",
@@ -20,7 +20,7 @@
       "priceMin": 164.36,
       "priceMax": 282.4,
       "negativePriceHours": 0,
-      "netExportGWh": -40.3
+      "netExportGWh": -40.2
     },
     {
       "date": "2026-11-19",
@@ -119,16 +119,16 @@
     },
     {
       "date": "2026-11-24",
-      "laufkraftGWh": 41.3,
-      "speicherGWh": 30.9,
-      "pumpenGWh": 4,
-      "pvGWh": 10.6,
+      "laufkraftGWh": 40.7,
+      "speicherGWh": 33.5,
+      "pumpenGWh": 4.1,
+      "pvGWh": 9.8,
       "windGWh": 33.6,
       "biomasseGWh": 6.8,
-      "gasGWh": 50.9,
+      "gasGWh": 50.3,
       "loadGWh": 194,
-      "renewableGWh": 97.1,
-      "totalGenerationGWh": 177.1,
+      "renewableGWh": 97.8,
+      "totalGenerationGWh": 177.6,
       "renewableSharePercent": 55,
       "priceAvg": 254.73,
       "priceMin": 199.45,
@@ -138,21 +138,21 @@
     }
   ],
   "totals": {
-    "laufkraftGWh": 284.6,
-    "speicherGWh": 84.6,
-    "pumpenGWh": 58.2,
-    "pvGWh": 38,
+    "laufkraftGWh": 284,
+    "speicherGWh": 87.2,
+    "pumpenGWh": 58.3,
+    "pvGWh": 37.2,
     "windGWh": 313.6,
     "biomasseGWh": 45.9,
-    "gasGWh": 285.2,
+    "gasGWh": 284.6,
     "loadGWh": 1255.8,
-    "renewableGWh": 707.6,
-    "totalGenerationGWh": 1072.3,
+    "renewableGWh": 708.3,
+    "totalGenerationGWh": 1072.8,
     "renewableSharePercent": 66,
     "priceAvg": 222.57,
     "priceMin": 146.53,
     "priceMax": 340.49,
     "negativePriceHours": 0,
-    "netExportGWh": -222.3
+    "netExportGWh": -222.2
   }
 }
