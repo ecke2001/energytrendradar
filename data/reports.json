@@ -3,80 +3,80 @@
     "id": "report-2026-kw48",
     "weekNumber": 48,
     "year": 2026,
-    "title": "Wochenbericht KW 48/2026: Wasserkraft 369 GWh, Spotpreis Ø 222,57 €/MWh",
-    "dateGenerated": "2026-11-25",
-    "executiveSummary": "Im Zeitraum 18.11.2026–24.11.2026 erzeugten Österreichs Wasserkraftwerke 369,2 GWh – davon 284,6 GWh aus Laufwasserkraft und 84,6 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 66 %. Der Day-Ahead-Preis lag im Schnitt bei 222,57 €/MWh (Spanne 146,53 bis 340,49 €/MWh). Österreich war in Summe Netto-Importeur (222,3 GWh). Gegenüber dem Vorbericht: Wasserkraft +9 %, Spotpreis-Durchschnitt 0 %.",
+    "title": "Wochenbericht KW 48/2026: Wasserkraft 408 GWh, Spotpreis Ø 231,38 €/MWh",
+    "dateGenerated": "2026-11-26",
+    "executiveSummary": "Im Zeitraum 19.11.2026–25.11.2026 erzeugten Österreichs Wasserkraftwerke 407,6 GWh – davon 287,6 GWh aus Laufwasserkraft und 120 GWh aus Speicher- und Pumpspeicherturbinen. Der Erneuerbaren-Anteil an der Stromerzeugung lag bei 63 %. Der Day-Ahead-Preis lag im Schnitt bei 231,38 €/MWh (Spanne 146,53 bis 367,65 €/MWh). Österreich war in Summe Netto-Importeur (197,4 GWh). Gegenüber dem Vorbericht: Wasserkraft +21 %, Spotpreis-Durchschnitt +4 %.",
     "austriaHighlights": [
-      "Laufwasserkraft: 284,6 GWh, Tageswerte zwischen 39,2 GWh (23.11.2026) und 41,7 GWh (18.11.2026).",
-      "Spotmarkt: teuerster Tag 24.11.2026 (Ø 254,73 €/MWh), günstigster Tag 21.11.2026 (Ø 189,14 €/MWh).",
-      "Photovoltaik lieferte 38 GWh, Windkraft 313,6 GWh, Gaskraftwerke 285,2 GWh bei einem Verbrauch von 1 255,8 GWh.",
-      "Grenzflüsse aktuell: Saldo -359 MW (Netto-Import); größter Einzelfluss: Tschechien -1 024 MW (Import)."
+      "Laufwasserkraft: 287,6 GWh, Tageswerte zwischen 39,2 GWh (23.11.2026) und 45,3 GWh (25.11.2026).",
+      "Spotmarkt: teuerster Tag 25.11.2026 (Ø 276,32 €/MWh), günstigster Tag 21.11.2026 (Ø 189,14 €/MWh).",
+      "Photovoltaik lieferte 33,7 GWh, Windkraft 292,2 GWh, Gaskraftwerke 302,5 GWh bei einem Verbrauch von 1 268,2 GWh.",
+      "Grenzflüsse aktuell: Saldo -450 MW (Netto-Import); größter Einzelfluss: Tschechien -1 201 MW (Import)."
     ],
     "internationalHighlights": [
-      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 25.11.2026)",
-      "So schmutzig ist Deutschlands Strom gerade im Vergleich zu anderen Ländern (Neue Zürcher Zeitung, 24.11.2026)",
+      "Erneuerbaren-Ausbau-Gesetz und Ökostromgesetz werden geändert (Extrajournal.Net, 26.11.2026)",
+      "Energiemonitor: Schafft Deutschland die Energiewende? (DIE ZEIT, 24.11.2026)",
       "Lob für Brüsseler Beschleunigungspläne (energate messenger, 24.11.2026)"
     ],
     "hydroDeepDive": {
-      "laufkraftTrend": "Im Mittel 40,7 GWh pro Tag (≈ 1 694 MW). Zweite gegenüber erster Wochenhälfte: -0 % – weitgehend stabil.",
-      "pumpspeicherStatus": "Turbinenbetrieb 84,6 GWh, Pumpbetrieb 58,2 GWh. Die Preisspanne von 193,96 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
-      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 284,6 GWh gegenüber 285,6 GWh im Vorbericht (-0 %).",
+      "laufkraftTrend": "Im Mittel 41,1 GWh pro Tag (≈ 1 712 MW). Zweite gegenüber erster Wochenhälfte: +4 % – weitgehend stabil.",
+      "pumpspeicherStatus": "Turbinenbetrieb 120 GWh, Pumpbetrieb 47,6 GWh. Die Preisspanne von 221,12 €/MWh ist der zentrale Arbitrage-Indikator für Pumpspeicher.",
+      "pegelstandAnalyse": "Direkte Pegel- und Speicherfüllstandsdaten sind nicht angebunden. Indikator ist die Laufwasserkraft-Erzeugung: 287,6 GWh gegenüber 285,6 GWh im Vorbericht (+1 %).",
       "projektUpdates": [
-        "Zürich: Ausstellung über Wasserkraft und Indigene Rechte ab 29. November (Nau, 24.11.2026)",
-        "Andritz-Chef setzt auf Wasserkraft als Wachstumstreiber (Börsen-Zeitung, 23.11.2026)",
-        "Andritz-Aktie: Wasserkraft wird zum Wachstumstreiber (ad-hoc-news.de, 23.11.2026)"
+        "Betreiber von Kleinwasserkraftwerken ächzen unter immer mehr Auflagen (Energynewsmagazine, 25.11.2026)",
+        "Bad Schwanberg: Vier Millionen Förderung für Wasserkraftwerk an der Schwarzen Sulm (MeinBezirk.at, 25.11.2026)",
+        "Zürich: Ausstellung über Wasserkraft und Indigene Rechte ab 29. November (Nau, 24.11.2026)"
       ]
     },
     "strategicTips": [
       {
         "topic": "Preisspitzen bedienen",
-        "recommendation": "Bei einer Preisspanne von 193,96 €/MWh (Minimum 146,53, Maximum 340,49 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
+        "recommendation": "Bei einer Preisspanne von 221,12 €/MWh (Minimum 146,53, Maximum 367,65 €/MWh) lohnt sich die Verlagerung von Speicherabarbeitung in die Hochpreisstunden.",
         "targetGroup": "Erzeuger"
       },
       {
         "topic": "Wert von Flexibilität",
-        "recommendation": "Preisspanne 193,96 €/MWh und 58,2 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
+        "recommendation": "Preisspanne 221,12 €/MWh und 47,6 GWh Pumpenergie im Berichtszeitraum: Business Cases für Pumpspeicher, Batteriespeicher und Repowering mit aktuellen Spreads statt historischer Durchschnittswerte rechnen.",
         "targetGroup": "Investoren"
       },
       {
         "topic": "Grenzkuppelstellen beobachten",
-        "recommendation": "Österreich war Netto-Importeur (222,3 GWh). Größter aktueller Fluss: Tschechien (-1 024 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
+        "recommendation": "Österreich war Netto-Importeur (197,4 GWh). Größter aktueller Fluss: Tschechien (-1 201 MW). Engpass- und Redispatch-Bedarf an dieser Grenze im Blick behalten.",
         "targetGroup": "Netzbetreiber"
       }
     ],
-    "periodStart": "2026-11-18",
-    "periodEnd": "2026-11-24",
-    "dataAsOf": "2026-11-25T05:45:00.000Z",
-    "generatedAt": "2026-11-25T08:38:09.389Z",
+    "periodStart": "2026-11-19",
+    "periodEnd": "2026-11-25",
+    "dataAsOf": "2026-11-26T05:30:00.000Z",
+    "generatedAt": "2026-11-26T08:22:19.134Z",
     "generatedBy": "data",
     "keyFigures": [
       {
         "label": "Wasserkraft gesamt (7 Tage)",
-        "value": "369,2 GWh"
+        "value": "407,6 GWh"
       },
       {
         "label": "Laufwasserkraft",
-        "value": "284,6 GWh"
+        "value": "287,6 GWh"
       },
       {
         "label": "Speicher- & Pumpspeicherturbinen",
-        "value": "84,6 GWh"
+        "value": "120 GWh"
       },
       {
         "label": "Pumpenergie (Speicherung)",
-        "value": "58,2 GWh"
+        "value": "47,6 GWh"
       },
       {
         "label": "Photovoltaik / Wind",
-        "value": "38 / 313,6 GWh"
+        "value": "33,7 / 292,2 GWh"
       },
       {
         "label": "Erneuerbaren-Anteil an der Erzeugung",
-        "value": "66 %"
+        "value": "63 %"
       },
       {
         "label": "Day-Ahead Ø (Min / Max)",
-        "value": "222,57 €/MWh (146,53 / 340,49)"
+        "value": "231,38 €/MWh (146,53 / 367,65)"
       },
       {
         "label": "Stunden mit Negativpreisen",
@@ -84,40 +84,70 @@
       },
       {
         "label": "Netto-Import (7 Tage)",
-        "value": "222,3 GWh"
+        "value": "197,4 GWh"
       },
       {
         "label": "Momentaufnahme Wasserkraft",
-        "value": "4 127 MW (47 % der Last)"
+        "value": "3 820 MW (44 % der Last)"
       },
       {
         "label": "Momentaufnahme Spotpreis",
-        "value": "284,34 €/MWh"
+        "value": "334,45 €/MWh"
       }
     ],
     "totals": {
-      "laufkraftGWh": 284.6,
-      "speicherGWh": 84.6,
-      "pumpenGWh": 58.2,
-      "pvGWh": 38,
-      "windGWh": 313.6,
-      "biomasseGWh": 45.9,
-      "gasGWh": 285.2,
-      "loadGWh": 1255.8,
-      "renewableGWh": 707.6,
-      "totalGenerationGWh": 1072.3,
-      "renewableSharePercent": 66,
-      "priceAvg": 222.57,
+      "laufkraftGWh": 287.6,
+      "speicherGWh": 120,
+      "pumpenGWh": 47.6,
+      "pvGWh": 33.7,
+      "windGWh": 292.2,
+      "biomasseGWh": 46.3,
+      "gasGWh": 302.5,
+      "loadGWh": 1268.2,
+      "renewableGWh": 689.4,
+      "totalGenerationGWh": 1102.6,
+      "renewableSharePercent": 63,
+      "priceAvg": 231.38,
       "priceMin": 146.53,
-      "priceMax": 340.49,
+      "priceMax": 367.65,
       "negativePriceHours": 0,
-      "netExportGWh": -222.3
+      "netExportGWh": -197.4
     },
     "newsSources": [
       {
-        "title": "Energiemonitor: Schafft Deutschland die Energiewende?",
-        "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNcmZYS1EwRFd5cGs5V0Y5ZHV5bGJCbjZkeDZDMTFCWVcwYXlSM1R1Ym9QUDgtSmo2OXhUQXpoS3NYSTNHU04zc2RfTi1Yb0VaQkdIS1E0UkxhRHB4X2ZfZWpyMkdhWm5XMmlLUjN3NXZTV2NTX1lOamFzbnVPTlRfMC10WGRUMnBJaHBnR0pVd0ZUY1F1djBoYg?oc=5",
-        "source": "DIE ZEIT",
+        "title": "Erneuerbaren-Ausbau-Gesetz und Ökostromgesetz werden geändert",
+        "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQc0ZHZ1ZJNVIzZS1nM2Exbl9ZWUZ3V0hZbWVwOFM1MkdxbmZEV1pvcWhTOFk4blpfV0JRMi1hNUlPUVFOS1YyVzVnTk1CM2Z1UFhxUGxtcmk3ZXItSkdQeG9VZ21qMVNzcmF6cXcwZjR6UjYtMUpiM3paU2N3cXBtNjg2c3BZNU9rQzJvS25SSmhoOXE0NXlkX3M0S2hhT24xVVE?oc=5",
+        "source": "Extrajournal.Net",
+        "pubDate": "2026-11-26"
+      },
+      {
+        "title": "Betreiber von Kleinwasserkraftwerken ächzen unter immer mehr Auflagen",
+        "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeXlNdm95RmY4Q2JKTXhPdkozamxCeTdEWTZpdjVtODFRZE8wSzRMX0d6R21ILXNsMDd3TGJ2YngzaVNldGVFalgyV1pCSm5XTTM1NjVFYjM1RjI3MWM4SmljSkZQQi1RNVJpdWRTeEwtd3VVcmtOMjd4Q3o1V0cyMVFBUEpTNFNnZkFyWm4yWmo0U3BFUFA0MjIzOFNDcnJFTFNhTzdrM0xmaFRuMmFCTzZ3VElpaUk?oc=5",
+        "source": "Energynewsmagazine",
+        "pubDate": "2026-11-25"
+      },
+      {
+        "title": "Bad Schwanberg: Vier Millionen Förderung für Wasserkraftwerk an der Schwarzen Sulm",
+        "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOU0FaTzdzUC1HelVUQlFISlZhWnM5aWNPVmVaTDdRWVdhNE9ZTGVGRUYwa1lxQmNfVHFTcGx1Yk1HbV9KTWdWcUVaN2NmdG4zQUluUmRkV1FFNkljLUZpYU1BdGowV3dPR0dpaXdHX244eEwxT05Tem1qaTZRZktfMHV3OTNUVTRwWTFlNTVjRG8zdUpHc1ZtMkJGd1dkd2FpSUNtaXRuUWdCbEdRU3k0S0dsQVp1RnFhSkJqeGdHRXhLSFU3OXRwTnBR?oc=5",
+        "source": "MeinBezirk.at",
+        "pubDate": "2026-11-25"
+      },
+      {
+        "title": "VERBUND: Partner für die Energiewende vor Ort",
+        "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQUnQwQlVQang0NWt4T1BWQmRXOVN6amIydFl5dWJCT3c3ekV5cUF3bjRiMldrVEs5cEtzWlZsNE9IUnYxUWxFVFVJUHNBU2xxczc0d0V6REhXS0RTWmh5c0FiUkY1ZEVZcWRVWU41ekIzSExaenBvYW1YcFBNNF90U3gtRkhlWWd4WXBTVzFUVQ?oc=5",
+        "source": "ZFK – Zeitung für kommunale Wirtschaft",
+        "pubDate": "2026-11-25"
+      },
+      {
+        "title": "Stromfresser Rechenzentren: Netzbetreiber APG zieht die Notbremse, und am Ende zahlen alle",
+        "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOVVM5NzJyS1liOFhyQ1d3ZzdOOFIwTjZZbkNCNEZLNklpYmN3YkhtTTVqVXNSTlk1QlN2emxMZWsxWmJpa1BWN3VmNUlZWmN0V3ZyYWIxRmVnR0Q1cUxvR0l4RkhGT29ZeU9LYnJzOFJ0N0RTQUpVZ3NMU29zNmtKZFVWY18zYkZVV1BhUElKV3F3T2tEeWpBbnY3aldSWldFenV3VUJpUThSSWdpU200WW1na2liam9Y?oc=5",
+        "source": "exxpress",
+        "pubDate": "2026-11-25"
+      },
+      {
+        "title": "Mit Strom und Biokraftstoff fährt es sich bald günstiger als mit Benzin und Diesel",
+        "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQc1BmZXFTZVh5UVV4eTNabDNRcWRtV29GcVhKQWpzWm1zeHpPak14SWlFY3ZDOHMwdW5PTE9xSkJ5alhsOWpGZzB3aElRTWFkemV3Nk1ZdEtVamowZVAwVnJXX21rSUZ0Z1pzMTBIMzNhSVVjcjZTSy0wVWx6M203Yk9DcG5QZElzR285Z3pBWjM2WnVybXBkeE1kQ0hqR3Q4NFc0YnBjcThPZWd0bGd1QXB0S3EzQU8xbXJHVE9qczhDRWVSREoxa0FEQQ?oc=5",
+        "source": "Der Standard",
         "pubDate": "2026-11-25"
       },
       {
@@ -130,36 +160,6 @@
         "title": "Zürich: Ausstellung über Wasserkraft und Indigene Rechte ab 29. November",
         "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPVWxRS3dCaFpuTHNnWWhBa1ctblJoV0hMRHVrNW1VS21ibnhvYTdtNjN2dTlYelJqcVZvN3RzQlE4Umd0cmJYejFIVWt5VmREU0tXWWpnLVlmSHptRFFaUkRwS3NrZG9rTkpIQU5UWlR2R3lHRXEyOXZfbnA0anpxMTgyZU5RV2l6dldVNF9GN3IzLU9oT09NV0o3QnNERDZzSkF0NWFXdGJ6OENOQnc?oc=5",
         "source": "Nau",
-        "pubDate": "2026-11-24"
-      },
-      {
-        "title": "Verbund-Aktie vorbörslich 1,36 Prozent höher bei 69,38 Euro",
-        "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQR0FRaG9YcDlPWlB1S2txMDJ1RGdvSEtLMVRLeUVsc0JOS2hKTXFPTnhJem00QU1CSklKZVFNZWdJYXhYaXJRcUw5ZEllWXpnRWxSVW5CRklCTTE4S05lR3ZtOGdhLTVJSHc5NjFVSWxyRzQyTjdxT0lzTm81Q21ac0ZuY0diWkhuY29ZN2E4bUUxRkdicFdVaHhoVHRoSF9OSTB2cFQzSnA5YTlLZF9qMlNrNUVsdWhTTFRv?oc=5",
-        "source": "ad-hoc-news.de",
-        "pubDate": "2026-11-24"
-      },
-      {
-        "title": "Regierung fördert Industrie mit 750 Millionen Euro: Wie viel Klientelpolitik steckt da drinnen?",
-        "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPbVBLYzZ6Zkc5dmFQV0NXSUp6RTBuX3J1YWRsZlJQcVF5NlpsRU12dFZWTGkybi1nOHVhS3FRcXFLS09KUWptc0JOR3I2R2w5RFNBSmM3X05LU0lhQzZKbEpFY1o1UzRYTjNIbUZKS3R0cFVGTy1NcDlyc3F3X3Jnb0J4dnFpWGpIYVlOLVVOY09TQ1Zja0dZS0MxQXg4Q2NTckdsTThJRTdhRmp0MFJBdmY4cmtfLURxYmhQZ3N6a3FoOU8yTHZENktXSk4zX3BmMHRBcTNFbVk?oc=5",
-        "source": "Der Standard",
-        "pubDate": "2026-11-24"
-      },
-      {
-        "title": "REPORT Mehrwert für Manager – Atomkraft - neue Technik, alte Diskussion",
-        "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTFBGa1Y1UnVmU1UwNXd6NDlKNENGWldzcW1fbk9YeEpOS2gzdXUtdDhTdFpaN0NBbW92MU5NSldha0lFQUFpVzhhQWdMSGhjTVB1bzNkRFhaN3g0d3FLVnlQQ2ptVVZWOERrYlNSaVFyUXdRMEQyYkNn?oc=5",
-        "source": "Report Verlag",
-        "pubDate": "2026-11-24"
-      },
-      {
-        "title": "Stahlbeschäftigte fordern Strompreis von fünf Cent",
-        "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNTzhfbUZhY3NoN19rZDdCNTBrSTZMVzhhRGtOa3NhYWpvQkJ1U0xjQ1NEeWR6bWx1V0RiQlplZFRhRDB2MWlmZmdFT2NLNkJRSHRpT0luWDZkQkJ0cmYwaEowQTV0bW9OTTBCcUdfbU1Mb0lqQnkySGxyZm13OXFNM0JuRGtubmktVUNhb3F0VzhHM3BMOW44aXlPQQ?oc=5",
-        "source": "Dosya Haber",
-        "pubDate": "2026-11-24"
-      },
-      {
-        "title": "Widerstand gegen Redispatch-Vorbehalt im Netzpaket wächst",
-        "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOemstbFlOVVp4dlp1SWhfX05XcDNkeGRIZFI3TlRUaEJoN0FuM0hJeDAzWEdnOVh2OHlTMlMwNG9mZHpiUDBWLW1hUnlqYkxoVjlYWExjaTNEay1jMGUzTGNyT1hTTmppMVRQWVdLN3BqNGEzeFBGUXU4TlY0WG4zTlpfR3J3cnE5NmZiZmpFN1U5bVpKY0pRbFk2cWNpSWpkVUlF?oc=5",
-        "source": "Dosya Haber",
         "pubDate": "2026-11-24"
       }
     ]
