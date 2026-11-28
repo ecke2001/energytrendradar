@@ -1,7 +1,7 @@
 {
   "periodStart": "2026-11-21",
   "periodEnd": "2026-11-27",
-  "generatedAt": "2026-11-28T07:51:55.760Z",
+  "generatedAt": "2026-11-28T20:06:30.809Z",
   "days": [
     {
       "date": "2026-11-21",
@@ -119,13 +119,13 @@
     },
     {
       "date": "2026-11-27",
-      "laufkraftGWh": 38,
-      "speicherGWh": 37.2,
+      "laufkraftGWh": 37.9,
+      "speicherGWh": 37.5,
       "pumpenGWh": 3.8,
       "pvGWh": 4,
       "windGWh": 34.4,
       "biomasseGWh": 6.5,
-      "gasGWh": 47.6,
+      "gasGWh": 47.4,
       "loadGWh": 196.5,
       "renewableGWh": 90.9,
       "totalGenerationGWh": 170.7,
@@ -138,13 +138,13 @@
     }
   ],
   "totals": {
-    "laufkraftGWh": 286.8,
-    "speicherGWh": 184.4,
+    "laufkraftGWh": 286.7,
+    "speicherGWh": 184.7,
     "pumpenGWh": 38.5,
     "pvGWh": 31.5,
     "windGWh": 241.6,
     "biomasseGWh": 46.3,
-    "gasGWh": 321.2,
+    "gasGWh": 321,
     "loadGWh": 1300.2,
     "renewableGWh": 648.9,
     "totalGenerationGWh": 1132.1,
